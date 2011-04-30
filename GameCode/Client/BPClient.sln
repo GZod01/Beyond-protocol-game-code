@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BPClient", "BPClient.vbproj", "{1516A81C-D14B-4192-99A0-3AA5B587EB24}"
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 2
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BPClient.vbproj
-		SccLocalPath1 = .
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
