@@ -1,6 +1,0 @@
-SCC = This is a Source Code Control file.
-
-[UpdateServer.vbproj]
-SCC_Aux_Path = no profile
-SCC_Project_Name = $/Utilities/UpdateServer/UpdateServer/UpdateServer
-
