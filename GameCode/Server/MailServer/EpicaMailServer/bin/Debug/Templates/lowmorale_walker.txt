@@ -1,0 +1,9 @@
+[ColonyName] hampered by low-morale 
+Political turmoil strikes [ColonyName] 
+2 
+Jason Walker
+2
+2-5- 
+<div style="font-size: 8pt; color:#E2E2E2;"> 
+Feelings of neglect and economic disenfranchisement have continued to sink in as the population of [ColonyName], suffers decreased morale. This low confidence has impacted the colony's productivity and governance of [EnvirName]. The colony's aimless feelings will continue to wedge relations between the local populace and the central government, and the end result could be the [ColonyNamePossessive] destruction.
+</div> 

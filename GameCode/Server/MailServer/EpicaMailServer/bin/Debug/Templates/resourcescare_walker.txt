@@ -1,0 +1,8 @@
+[PlanetName] resources are near exhaustion 
+Its estimated [PlanetName] is estimated to have used 75% of its resources 
+8 
+Jason Walker
+2 
+2- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+[PlanetName] is believed to only have 25% of its planet-wide resources left. Human's persistence on exploiting [PlanetName]'s wealth has limited further exploitation of [PlanetName]. New resources must be found or [ColonyName]'s growth will be hampered. Regional financial markets anticipate a decline in the production capability of the colony. Financial experts point out that while its growth can be sustained; we can look forward to an increase in low-income households, unemployment, and crime.</div>

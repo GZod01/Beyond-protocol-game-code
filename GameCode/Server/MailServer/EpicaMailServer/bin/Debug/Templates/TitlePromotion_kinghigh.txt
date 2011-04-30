@@ -1,0 +1,17 @@
+[PlayerTitle] [PlayerName]
+[PlayerTitle] [PlayerName]
+23
+Random
+2
+2-5-7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Celebration broke out today in [EnvirName] as [PlayerName] was recognized as a [PlayerTitle]. This huge achievement comes in the wake of perfected planning and performance as a leader.
+<br><br>
+[PlayerNamePossessive] citizens were out in large masses to prepare for the celebration which is sure to last for quite a while. [PlayerName] will address the crowds at the celebration in the capitol later tonight.
+<br><br>
+With this new promotion, [PlayerName] will have a much stronger voice in the Galactic Senate. Many citizens are excited with this new opportunity to help shape the future of the galaxy.
+[EXCLUDE:OwnerOfTitlePreviously=""]
+<br><br>
+[OwnerOfTitlePreviously] was the previous owner of the title of [OwnerOfTitlePreviouslyTitle]. The title was lost when the planet ownership of the planets in the [EnvirName] system changed over to [PlayerName]. It is unclear how this will affect the relationship between [PlayerName] and [OwnerOfTitlePreviously].
+[/EXCLUDE]
+</div>

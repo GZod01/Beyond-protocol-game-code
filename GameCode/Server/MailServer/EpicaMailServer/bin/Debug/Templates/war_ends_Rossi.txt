@@ -1,0 +1,10 @@
+It's over! 
+War ends between [PlayerName] and [PlayerName2]. 
+14 
+Jeffrey Rossi
+7
+7-5- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+GNS Military and Political correspondents are reporting and end to the conflict between [PlayerName] and [PlayerName2] on [EndOfWar]. "It was a long and bloody engagement," reports one journalist planted inside the armies of [PlayerName]. "[PlayerName] lost a lot of good men and ships, but so did [PlayerName2]. Things were bloody on both sides and everyone involved in the conflict seems to be glad that things are finally over."
+<br><br>The conflict began on [StartOfWar] and took the lives of [TotalUnitsLostBothSides] on both sides of the conflict. Many will continue to mourn the lives of those who were lost but with an end to the conflict comes the probability of a new era of peace and prosperity for both empires as they continue to pursue their individual agendas. Hopefully this agreement will serve as an example to other war-torn empires as they continue to wage their battles and more agreements like this will be made in the future. This is GNS news signing off. 
+</div>

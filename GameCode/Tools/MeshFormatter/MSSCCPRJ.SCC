@@ -1,0 +1,10 @@
+SCC = This is a Source Code Control file.
+
+[MeshFormatter.vbproj]
+SCC_Aux_Path = no profile
+SCC_Project_Name = $/Utilities/MeshFormatter/MeshFormatter
+
+[MeshFormatter.sln]
+SCC_Aux_Path = no profile
+SCC_Project_Name = $/Utilities/MeshFormatter/MeshFormatter
+

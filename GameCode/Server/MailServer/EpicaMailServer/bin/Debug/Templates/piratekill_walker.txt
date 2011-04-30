@@ -1,0 +1,10 @@
+[PlayerName] 1/ Pirates 0 
+[PlayerName] has won a major victory against interstellar piracy! 
+11
+Jason Walker 
+2
+2-3-4- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+[PlayerName] has dealt interstellar piracy a serious blow with the destruction of a local pirate hotpot. The destruction of this center will facilitate an easier move of supplies and commerce throughout the system. Contacts familiar with the system pirates, report that the vagabonds are desperate to find a new location and re-establish themselves. 
+</div>
+

@@ -1,0 +1,352 @@
+'Interface created from Interface Builder
+Public Class frmRouteConfig
+	Inherits UIWindow
+
+	Private WithEvents muLine(0) As UIWindow
+	Private WithEvents muLine(1) As UIWindow
+	Private WithEvents muLine(2) As UIWindow
+	Private WithEvents muLine(3) As UIWindow
+	Private WithEvents vscScroll As UIScrollBar
+	Private WithEvents muLine(4) As UIWindow
+	Private WithEvents muLine(5) As UIWindow
+	Private WithEvents muLine(6) As UIWindow
+	Private WithEvents btnBegin As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents btnPause As UIButton
+	Private WithEvents btnClear As UIButton
+	Private WithEvents btnForceNext As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lblDest As UILabel
+	Private WithEvents lblLocation As UILabel
+	Private WithEvents lblMineral As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmRouteConfig initial props
+		With Me
+			.ControlName="frmRouteConfig"
+			.Left=293
+			.Top=160
+			.Width=512
+			.Height=256
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'muLine(0) initial props
+		muLine(0) = New UIWindow(oUILib)
+		With muLine(0)
+			.ControlName="muLine(0)"
+			.Left=2
+			.Top=50
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(0), UIControl))
+
+		'muLine(1) initial props
+		muLine(1) = New UIWindow(oUILib)
+		With muLine(1)
+			.ControlName="muLine(1)"
+			.Left=2
+			.Top=75
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(1), UIControl))
+
+		'muLine(2) initial props
+		muLine(2) = New UIWindow(oUILib)
+		With muLine(2)
+			.ControlName="muLine(2)"
+			.Left=2
+			.Top=100
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(2), UIControl))
+
+		'muLine(3) initial props
+		muLine(3) = New UIWindow(oUILib)
+		With muLine(3)
+			.ControlName="muLine(3)"
+			.Left=2
+			.Top=125
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(3), UIControl))
+
+		'vscScroll initial props
+		vscScroll = New UIScrollBar(oUILib, True)
+		With vscScroll
+			.ControlName="vscScroll"
+			.Left=488
+			.Top=50
+			.Width=24
+			.Height=175
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=True
+		End With
+		Me.AddChild(CType(vscScroll, UIControl))
+
+		'muLine(4) initial props
+		muLine(4) = New UIWindow(oUILib)
+		With muLine(4)
+			.ControlName="muLine(4)"
+			.Left=2
+			.Top=150
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(4), UIControl))
+
+		'muLine(5) initial props
+		muLine(5) = New UIWindow(oUILib)
+		With muLine(5)
+			.ControlName="muLine(5)"
+			.Left=2
+			.Top=175
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(5), UIControl))
+
+		'muLine(6) initial props
+		muLine(6) = New UIWindow(oUILib)
+		With muLine(6)
+			.ControlName="muLine(6)"
+			.Left=2
+			.Top=200
+			.Width=485
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muLine(6), UIControl))
+
+		'btnBegin initial props
+		btnBegin = New UIButton(oUILib)
+		With btnBegin
+			.ControlName="btnBegin"
+			.Left=410
+			.Top=230
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Begin Route"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnBegin, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=488
+			.Top=0
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'btnPause initial props
+		btnPause = New UIButton(oUILib)
+		With btnPause
+			.ControlName="btnPause"
+			.Left=305
+			.Top=230
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Pause"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnPause, UIControl))
+
+		'btnClear initial props
+		btnClear = New UIButton(oUILib)
+		With btnClear
+			.ControlName="btnClear"
+			.Left=5
+			.Top=230
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Clear"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClear, UIControl))
+
+		'btnForceNext initial props
+		btnForceNext = New UIButton(oUILib)
+		With btnForceNext
+			.ControlName="btnForceNext"
+			.Left=110
+			.Top=230
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Force Next"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnForceNext, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=25
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=0
+			.Width=144
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Route Configuration"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lblDest initial props
+		lblDest = New UILabel(oUILib)
+		With lblDest
+			.ControlName="lblDest"
+			.Left=7
+			.Top=25
+			.Width=144
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Destination Name"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDest, UIControl))
+
+		'lblLocation initial props
+		lblLocation = New UILabel(oUILib)
+		With lblLocation
+			.ControlName="lblLocation"
+			.Left=162
+			.Top=25
+			.Width=70
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Location"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLocation, UIControl))
+
+		'lblMineral initial props
+		lblMineral = New UILabel(oUILib)
+		With lblMineral
+			.ControlName="lblMineral"
+			.Left=312
+			.Top=25
+			.Width=94
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Pickup Mineral"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMineral, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,41 @@
+'Interface created from Interface Builder
+Public Class frmMultiDisplay
+	Inherits UIWindow
+
+	Private WithEvents lstData As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmMultiDisplay initial props
+		With Me
+			.ControlName="frmMultiDisplay"
+			.Left=15
+			.Top=341
+			.Width=190
+			.Height=86
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'lstData initial props
+		lstData = New UIListBox(oUILib)
+		With lstData
+			.ControlName="lstData"
+			.Left=1
+			.Top=1
+			.Width=188
+			.Height=84
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-1)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-14663588)
+		End With
+		Me.AddChild(lstData)
+	End Sub
+End Class

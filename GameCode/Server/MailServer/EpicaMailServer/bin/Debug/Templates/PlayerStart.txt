@@ -1,0 +1,11 @@
+A New Beginning on [PlanetName]
+A New Beginning on [PlanetName]
+5
+Random
+8
+8-5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+It was a sight to witness as the drop pods landed from high orbit over [PlanetName]. The drop pods signify the beginning of a new colony development plan on [PlanetName] led by the newly appointed leader, [PlayerName].
+<br><br>
+Colonists are already beginning to line up for registration as citizens in what promises to be a great society.
+</div>

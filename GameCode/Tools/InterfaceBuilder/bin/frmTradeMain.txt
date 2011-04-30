@@ -1,0 +1,212 @@
+'Interface created from Interface Builder
+Public Class frmTradeMain
+	Inherits UIWindow
+
+	Private WithEvents lstPlayers As UIListBox
+	Private WithEvents lblPlayers As UILabel
+	Private WithEvents btnNewTrade As UIButton
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lstTrades As UIListBox
+	Private WithEvents btnView As UIButton
+	Private WithEvents lblListHeader As UILabel
+	Private WithEvents btnClose2 As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmTradeMain initial props
+		With Me
+			.ControlName="frmTradeMain"
+			.Left=163
+			.Top=92
+			.Width=700
+			.Height=350
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstPlayers initial props
+		lstPlayers = New UIListBox(oUILib)
+		With lstPlayers
+			.ControlName="lstPlayers"
+			.Left=5
+			.Top=50
+			.Width=166
+			.Height=265
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstPlayers, UIControl))
+
+		'lblPlayers initial props
+		lblPlayers = New UILabel(oUILib)
+		With lblPlayers
+			.ControlName="lblPlayers"
+			.Left=5
+			.Top=30
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Known Players:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPlayers, UIControl))
+
+		'btnNewTrade initial props
+		btnNewTrade = New UIButton(oUILib)
+		With btnNewTrade
+			.ControlName="btnNewTrade"
+			.Left=15
+			.Top=320
+			.Width=150
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Propose New Trade"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnNewTrade, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Trade Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=25
+			.Width=700
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=676
+			.Top=1
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lstTrades initial props
+		lstTrades = New UIListBox(oUILib)
+		With lstTrades
+			.ControlName="lstTrades"
+			.Left=185
+			.Top=50
+			.Width=510
+			.Height=265
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstTrades, UIControl))
+
+		'btnView initial props
+		btnView = New UIButton(oUILib)
+		With btnView
+			.ControlName="btnView"
+			.Left=475
+			.Top=320
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="View Trade"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnView, UIControl))
+
+		'lblListHeader initial props
+		lblListHeader = New UILabel(oUILib)
+		With lblListHeader
+			.ControlName="lblListHeader"
+			.Left=187
+			.Top=31
+			.Width=500
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Player                Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblListHeader, UIControl))
+
+		'btnClose2 initial props
+		btnClose2 = New UIButton(oUILib)
+		With btnClose2
+			.ControlName="btnClose2"
+			.Left=595
+			.Top=320
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose2, UIControl))
+	End Sub
+End Class

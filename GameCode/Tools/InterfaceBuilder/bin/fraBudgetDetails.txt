@@ -1,0 +1,188 @@
+'Interface created from Interface Builder
+Public Class fraBudgetDetails
+	Inherits UIWindow
+
+	Private WithEvents ctlItem As UIWindow
+	Private WithEvents NewControl8 As UIScrollBar
+	Private WithEvents lblH_Type As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblH_Envir As UILabel
+	Private WithEvents lblH_Colony As UILabel
+	Private WithEvents lblH_Revenue As UILabel
+	Private WithEvents lblH_Expense As UILabel
+	Private WithEvents lblH_TaxRate As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraBudgetDetails initial props
+		With Me
+			.ControlName="fraBudgetDetails"
+			.Left=101
+			.Top=132
+			.Width=800
+			.Height=200
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'ctlItem initial props
+		ctlItem = New UIWindow(oUILib)
+		With ctlItem
+			.ControlName="ctlItem"
+			.Left=9
+			.Top=35
+			.Width=765
+			.Height=34
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(ctlItem, UIControl))
+
+		'NewControl8 initial props
+		NewControl8 = New UIScrollBar(oUILib, True)
+		With NewControl8
+			.ControlName="NewControl8"
+			.Left=775
+			.Top=34
+			.Width=24
+			.Height=165
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=True
+		End With
+		Me.AddChild(CType(NewControl8, UIControl))
+
+		'lblH_Type initial props
+		lblH_Type = New UILabel(oUILib)
+		With lblH_Type
+			.ControlName="lblH_Type"
+			.Left=10
+			.Top=10
+			.Width=40
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Type"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_Type, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=30
+			.Width=800
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblH_Envir initial props
+		lblH_Envir = New UILabel(oUILib)
+		With lblH_Envir
+			.ControlName="lblH_Envir"
+			.Left=60
+			.Top=10
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Environment Name"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_Envir, UIControl))
+
+		'lblH_Colony initial props
+		lblH_Colony = New UILabel(oUILib)
+		With lblH_Colony
+			.ControlName="lblH_Colony"
+			.Left=220
+			.Top=10
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Colony Name"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_Colony, UIControl))
+
+		'lblH_Revenue initial props
+		lblH_Revenue = New UILabel(oUILib)
+		With lblH_Revenue
+			.ControlName="lblH_Revenue"
+			.Left=380
+			.Top=10
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Revenue"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_Revenue, UIControl))
+
+		'lblH_Expense initial props
+		lblH_Expense = New UILabel(oUILib)
+		With lblH_Expense
+			.ControlName="lblH_Expense"
+			.Left=540
+			.Top=8
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Expense"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_Expense, UIControl))
+
+		'lblH_TaxRate initial props
+		lblH_TaxRate = New UILabel(oUILib)
+		With lblH_TaxRate
+			.ControlName="lblH_TaxRate"
+			.Left=700
+			.Top=8
+			.Width=90
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Tax Rate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(8, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblH_TaxRate, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,127 @@
+'Interface created from Interface Builder
+Public Class frmBudget
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents fraSummary As UIWindow
+	Private WithEvents fraActions As UIWindow
+	Private WithEvents fraDetails As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmBudget initial props
+		With Me
+			.ControlName="frmBudget"
+			.Left=59
+			.Top=43
+			.Width=800
+			.Height=600
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=True
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=400
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Budget Report for Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=30
+			.Width=800
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=775
+			.Top=3
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'fraSummary initial props
+		fraSummary = New UIWindow(oUILib)
+		With fraSummary
+			.ControlName="fraSummary"
+			.Left=10
+			.Top=40
+			.Width=310
+			.Height=80
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraSummary, UIControl))
+
+		'fraActions initial props
+		fraActions = New UIWindow(oUILib)
+		With fraActions
+			.ControlName="fraActions"
+			.Left=330
+			.Top=40
+			.Width=460
+			.Height=80
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraActions, UIControl))
+
+		'fraDetails initial props
+		fraDetails = New UIWindow(oUILib)
+		With fraDetails
+			.ControlName="fraDetails"
+			.Left=0
+			.Top=130
+			.Width=800
+			.Height=200
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraDetails, UIControl))
+	End Sub
+End Class

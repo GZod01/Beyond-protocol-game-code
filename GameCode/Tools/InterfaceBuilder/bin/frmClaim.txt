@@ -1,0 +1,135 @@
+'Interface created from Interface Builder
+Public Class frmClaim
+	Inherits UIWindow
+
+	Private WithEvents lstItems As UIListBox
+	Private WithEvents btnViewDetails As UIButton
+	Private WithEvents btnClaim As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblTitle As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmClaim initial props
+		With Me
+			.ControlName="frmClaim"
+			.Left=140
+			.Top=112
+			.Width=255
+			.Height=300
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstItems initial props
+		lstItems = New UIListBox(oUILib)
+		With lstItems
+			.ControlName="lstItems"
+			.Left=5
+			.Top=30
+			.Width=245
+			.Height=225
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstItems, UIControl))
+
+		'btnViewDetails initial props
+		btnViewDetails = New UIButton(oUILib)
+		With btnViewDetails
+			.ControlName="btnViewDetails"
+			.Left=5
+			.Top=260
+			.Width=100
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="View Details"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnViewDetails, UIControl))
+
+		'btnClaim initial props
+		btnClaim = New UIButton(oUILib)
+		With btnClaim
+			.ControlName="btnClaim"
+			.Left=150
+			.Top=260
+			.Width=100
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Claim"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClaim, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=230
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=25
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=0
+			.Width=105
+			.Height=25
+			.Enabled=True
+			.Visible=True
+			.Caption="Claim Rewards"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+	End Sub
+End Class

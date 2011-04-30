@@ -1,0 +1,151 @@
+'Interface created from Interface Builder
+Public Class frmMatRes
+	Inherits UIWindow
+
+	Private WithEvents btnDiscover As UIButton
+	Private WithEvents btnStudy As UIButton
+	Private WithEvents lstMaterials As UIListBox
+	Private WithEvents btnResearch As UIButton
+	Private WithEvents btnCancel As UIButton
+	Private WithEvents lnDivider As UILine
+	Private WithEvents lstDetails As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmMatRes initial props
+		With Me
+			.ControlName="frmMatRes"
+			.Left=54
+			.Top=34
+			.Width=580
+			.Height=444
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'btnDiscover initial props
+		btnDiscover = New UIButton(oUILib)
+		With btnDiscover
+			.ControlName="btnDiscover"
+			.Left=7
+			.Top=10
+			.Width=122
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Discover Material"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnDiscover)
+
+		'btnStudy initial props
+		btnStudy = New UIButton(oUILib)
+		With btnStudy
+			.ControlName="btnStudy"
+			.Left=135
+			.Top=10
+			.Width=122
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Study Material"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnStudy)
+
+		'lstMaterials initial props
+		lstMaterials = New UIListBox(oUILib)
+		With lstMaterials
+			.ControlName="lstMaterials"
+			.Left=9
+			.Top=53
+			.Width=184
+			.Height=347
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lstMaterials)
+
+		'btnResearch initial props
+		btnResearch = New UIButton(oUILib)
+		With btnResearch
+			.ControlName="btnResearch"
+			.Left=345
+			.Top=411
+			.Width=110
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Research"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnResearch)
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=463
+			.Top=411
+			.Width=110
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnCancel)
+
+		'lnDivider initial props
+		lnDivider = New UILine(oUILib)
+		With lnDivider
+			.ControlName="lnDivider"
+			.Left=0
+			.Top=41
+			.Width=580
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDivider)
+
+		'lstDetails initial props
+		lstDetails = New UIListBox(oUILib)
+		With lstDetails
+			.ControlName="lstDetails"
+			.Left=202
+			.Top=53
+			.Width=370
+			.Height=347
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Courier New", 8.25, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+		End With
+		Me.AddChild(lstDetails)
+	End Sub
+End Class

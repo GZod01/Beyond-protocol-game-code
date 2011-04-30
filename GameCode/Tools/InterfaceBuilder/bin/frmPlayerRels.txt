@@ -1,0 +1,204 @@
+'Interface created from Interface Builder
+Public Class frmPlayerRels
+	Inherits UIWindow
+
+	Private WithEvents lstPlayers As UIListBox
+	Private WithEvents hscrRel As UIScrollBar
+	Private WithEvents lnDivider As UILine
+	Private WithEvents lblRelDesc As UILabel
+	Private WithEvents New Control As UILine
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents btnApply As UIButton
+	Private WithEvents lblPlayers As UILabel
+	Private WithEvents btnBeginTrade As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmPlayerRels initial props
+		With Me
+			.ControlName="frmPlayerRels"
+			.Left=296
+			.Top=163
+			.Width=190
+			.Height=400
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstPlayers initial props
+		lstPlayers = New UIListBox(oUILib)
+		With lstPlayers
+			.ControlName="lstPlayers"
+			.Left=13
+			.Top=30
+			.Width=165
+			.Height=188
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(CType(lstPlayers, UIControl))
+
+		'hscrRel initial props
+		hscrRel = New UIScrollBar(oUILib, False)
+		With hscrRel
+			.ControlName="hscrRel"
+			.Left=13
+			.Top=254
+			.Width=165
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrRel, UIControl))
+
+		'lnDivider initial props
+		lnDivider = New UILine(oUILib)
+		With lnDivider
+			.ControlName="lnDivider"
+			.Left=0
+			.Top=227
+			.Width=189
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDivider, UIControl))
+
+		'lblRelDesc initial props
+		lblRelDesc = New UILabel(oUILib)
+		With lblRelDesc
+			.ControlName="lblRelDesc"
+			.Left=0
+			.Top=224
+			.Width=190
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRelDesc, UIControl))
+
+		'New Control initial props
+		New Control = New UILine(oUILib)
+		With New Control
+			.ControlName="New Control"
+			.Left=0
+			.Top=0
+			.Width=189
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(New Control, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=0
+			.Top=355
+			.Width=189
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=21
+			.Top=365
+			.Width=148
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="Close Window"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'btnApply initial props
+		btnApply = New UIButton(oUILib)
+		With btnApply
+			.ControlName="btnApply"
+			.Left=22
+			.Top=285
+			.Width=148
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="Set Relationship"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnApply, UIControl))
+
+		'lblPlayers initial props
+		lblPlayers = New UILabel(oUILib)
+		With lblPlayers
+			.ControlName="lblPlayers"
+			.Left=13
+			.Top=0
+			.Width=100
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Known Players"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPlayers, UIControl))
+
+		'btnBeginTrade initial props
+		btnBeginTrade = New UIButton(oUILib)
+		With btnBeginTrade
+			.ControlName="btnBeginTrade"
+			.Left=21
+			.Top=320
+			.Width=148
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="Begin Trade"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnBeginTrade, UIControl))
+	End Sub
+End Class

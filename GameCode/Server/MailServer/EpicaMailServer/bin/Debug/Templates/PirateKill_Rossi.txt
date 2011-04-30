@@ -1,0 +1,9 @@
+Pirates Killed! 
+A Pirate Infestation has been eliminated. 
+11 
+Jeffrey Rossi
+2
+2- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Reporters affiliated with GNS news are reporting that the pirate threat on [PlanetName] has been dealt with. Citizens of [PlanetName] are celebrating the downfall of this lawless band of pirate scum as they prepare to enter into a new era of law and order without the constant threat of attack by roving bands of space pirates. While the pirate leader managed to escape the clutches of authorities, without a base to lead their attacks from he has been deemed to be relatively harmless. <br><br>Regardless, should he ever surface again the denizens of [PlanetName] will be more then ready to stop whatever forces he should muster against them. GNS news correspondents will be on the ground reporting from [PlanetName] as they continue to build a prosperous colony and now that they are free of the pirate infestation that once clogged their world, who knows what may be next? Whatever happens just know that you can count on GNS news to deliver the best coverage available whenever news breaks!
+</div>

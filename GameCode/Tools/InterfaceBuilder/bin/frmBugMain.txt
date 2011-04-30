@@ -1,0 +1,235 @@
+'Interface created from Interface Builder
+Public Class frmBugMain
+	Inherits UIWindow
+
+	Private WithEvents lstBugs As UIListBox
+	Private WithEvents btnRefresh As UIButton
+	Private WithEvents btnNew As UIButton
+	Private WithEvents btnOpen As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lblCol1 As UILabel
+	Private WithEvents lblCol2 As UILabel
+	Private WithEvents lblCol3 As UILabel
+	Private WithEvents lblCol4 As UILabel
+	Private WithEvents lblCol5 As UILabel
+	Private WithEvents lblCol6 As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmBugMain initial props
+		With Me
+			.ControlName="frmBugMain"
+			.Left=29
+			.Top=32
+			.Width=950
+			.Height=450
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstBugs initial props
+		lstBugs = New UIListBox(oUILib)
+		With lstBugs
+			.ControlName="lstBugs"
+			.Left=10
+			.Top=25
+			.Width=930
+			.Height=384
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 8.25F, FontStyle.0, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstBugs, UIControl))
+
+		'btnRefresh initial props
+		btnRefresh = New UIButton(oUILib)
+		With btnRefresh
+			.ControlName="btnRefresh"
+			.Left=10
+			.Top=420
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Refresh List"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRefresh, UIControl))
+
+		'btnNew initial props
+		btnNew = New UIButton(oUILib)
+		With btnNew
+			.ControlName="btnNew"
+			.Left=600
+			.Top=420
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="New Bug"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnNew, UIControl))
+
+		'btnOpen initial props
+		btnOpen = New UIButton(oUILib)
+		With btnOpen
+			.ControlName="btnOpen"
+			.Left=720
+			.Top=419
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Open/View"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnOpen, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=840
+			.Top=418
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lblCol1 initial props
+		lblCol1 = New UILabel(oUILib)
+		With lblCol1
+			.ControlName="lblCol1"
+			.Left=14
+			.Top=5
+			.Width=15
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="ID"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol1, UIControl))
+
+		'lblCol2 initial props
+		lblCol2 = New UILabel(oUILib)
+		With lblCol2
+			.ControlName="lblCol2"
+			.Left=45
+			.Top=5
+			.Width=52
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Category"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol2, UIControl))
+
+		'lblCol3 initial props
+		lblCol3 = New UILabel(oUILib)
+		With lblCol3
+			.ControlName="lblCol3"
+			.Left=200
+			.Top=5
+			.Width=52
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Priority"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol3, UIControl))
+
+		'lblCol4 initial props
+		lblCol4 = New UILabel(oUILib)
+		With lblCol4
+			.ControlName="lblCol4"
+			.Left=300
+			.Top=5
+			.Width=68
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Description"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol4, UIControl))
+
+		'lblCol5 initial props
+		lblCol5 = New UILabel(oUILib)
+		With lblCol5
+			.ControlName="lblCol5"
+			.Left=730
+			.Top=5
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol5, UIControl))
+
+		'lblCol6 initial props
+		lblCol6 = New UILabel(oUILib)
+		With lblCol6
+			.ControlName="lblCol6"
+			.Left=810
+			.Top=5
+			.Width=29
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="User"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCol6, UIControl))
+	End Sub
+End Class

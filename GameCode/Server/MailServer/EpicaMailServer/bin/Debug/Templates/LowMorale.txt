@@ -1,0 +1,13 @@
+Mass Protests in [ColonyName]
+Civil Unrest in [ColonyName]
+2
+Random
+8
+8-
+<div style="font-size: 8pt; color:#E2E2E2;">
+In the [ColonyName] colony, protestors marched today complaining about [PlayerNamePossessive] domestic policies. Authorities were on the scene to control any potential problems. Several residence were injured due to non-riot related incidents and no large riots broke out.
+<br><br>
+[LowMoraleReason] has been a steadily growing issue and it is affecting everyone. One protestor had this to say, "We are fed up with the living condtions, something has got to change about the [LowMoraleReason]."
+<br><br>
+A representative from the office of [PlayerName] could not be reached for comment.
+</div>

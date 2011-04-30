@@ -1,0 +1,10 @@
+SCC = This is a Source Code Control file.
+
+[RegionServer.vbproj]
+SCC_Aux_Path = no profile
+SCC_Project_Name = $/Server/RegionServer/RegionServer
+
+[RegionServer.sln]
+SCC_Aux_Path = no profile
+SCC_Project_Name = $/Server/RegionServer/RegionServer
+

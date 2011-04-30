@@ -1,0 +1,11 @@
+Cease Fire On [EnvirName]
+Cease Fire On [EnvirName]
+20
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+At [EndOfBattle] the skirmish between the forces of [PlayerListSideA] and the forces of [PlayerListSideB] have ended as quickly as they began. The short conflict, which started on [StartOfBattle], claimed [TotalLostBothSides] lives on both sides of the engagement.
+<br><br>
+The skirmish came as a surprise to the citizens of [EnvirName] as the first shells hit their targets. Experts expected this conflict to draw on longer than it did. Skeptics warn that this decline should not be considered permanent and that more hostilities are probable as long as relations between the two factions remain strained.
+</div>

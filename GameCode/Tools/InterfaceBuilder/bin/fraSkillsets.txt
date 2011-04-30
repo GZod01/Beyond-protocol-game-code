@@ -1,0 +1,148 @@
+'Interface created from Interface Builder
+Public Class fraSkillSet
+	Inherits UIWindow
+
+	Private WithEvents lstSkillset As UIListBox
+	Private WithEvents lblSelect As UILabel
+	Private WithEvents moAgentAssign(0) As UIWindow
+	Private WithEvents hscrAssignments As UIScrollBar
+	Private WithEvents moAgentAssign(1) As UIWindow
+	Private WithEvents moAgentAssign(2) As UIWindow
+	Private WithEvents moAgentAssign(3) As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraSkillSet initial props
+		With Me
+			.ControlName="fraSkillSet"
+			.Left=64
+			.Top=405
+			.Width=780
+			.Height=170
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstSkillset initial props
+		lstSkillset = New UIListBox(oUILib)
+		With lstSkillset
+			.ControlName="lstSkillset"
+			.Left=5
+			.Top=25
+			.Width=165
+			.Height=140
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstSkillset, UIControl))
+
+		'lblSelect initial props
+		lblSelect = New UILabel(oUILib)
+		With lblSelect
+			.ControlName="lblSelect"
+			.Left=5
+			.Top=8
+			.Width=129
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Skillset to Use"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSelect, UIControl))
+
+		'moAgentAssign(0) initial props
+		moAgentAssign(0) = New UIWindow(oUILib)
+		With moAgentAssign(0)
+			.ControlName="moAgentAssign(0)"
+			.Left=175
+			.Top=5
+			.Width=150
+			.Height=138
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(moAgentAssign(0), UIControl))
+
+		'hscrAssignments initial props
+		hscrAssignments = New UIScrollBar(oUILib, False)
+		With hscrAssignments
+			.ControlName="hscrAssignments"
+			.Left=174
+			.Top=145
+			.Width=600
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrAssignments, UIControl))
+
+		'moAgentAssign(1) initial props
+		moAgentAssign(1) = New UIWindow(oUILib)
+		With moAgentAssign(1)
+			.ControlName="moAgentAssign(1)"
+			.Left=325
+			.Top=5
+			.Width=150
+			.Height=138
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(moAgentAssign(1), UIControl))
+
+		'moAgentAssign(2) initial props
+		moAgentAssign(2) = New UIWindow(oUILib)
+		With moAgentAssign(2)
+			.ControlName="moAgentAssign(2)"
+			.Left=475
+			.Top=5
+			.Width=150
+			.Height=138
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(moAgentAssign(2), UIControl))
+
+		'moAgentAssign(3) initial props
+		moAgentAssign(3) = New UIWindow(oUILib)
+		With moAgentAssign(3)
+			.ControlName="moAgentAssign(3)"
+			.Left=625
+			.Top=5
+			.Width=150
+			.Height=138
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(moAgentAssign(3), UIControl))
+	End Sub
+End Class

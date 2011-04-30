@@ -1,0 +1,250 @@
+'Interface created from Interface Builder
+Public Class frmViewMission
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lblMission As UILabel
+	Private WithEvents lblTarget As UILabel
+	Private WithEvents lblMethod As UILabel
+	Private WithEvents lblMethodName As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents btnHelp As UIButton
+	Private WithEvents lblTarget As UILabel
+	Private WithEvents lblMissionName As UILabel
+	Private WithEvents btnCancel As UIButton
+	Private WithEvents btnPause As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmViewMission initial props
+		With Me
+			.ControlName="frmViewMission"
+			.Left=87
+			.Top=81
+			.Width=800
+			.Height=600
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=3
+			.Width=175
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lblMission initial props
+		lblMission = New UILabel(oUILib)
+		With lblMission
+			.ControlName="lblMission"
+			.Left=10
+			.Top=35
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMission, UIControl))
+
+		'lblTarget initial props
+		lblTarget = New UILabel(oUILib)
+		With lblTarget
+			.ControlName="lblTarget"
+			.Left=310
+			.Top=35
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Target:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTarget, UIControl))
+
+		'lblMethod initial props
+		lblMethod = New UILabel(oUILib)
+		With lblMethod
+			.ControlName="lblMethod"
+			.Left=610
+			.Top=35
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Method:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMethod, UIControl))
+
+		'lblMethodName initial props
+		lblMethodName = New UILabel(oUILib)
+		With lblMethodName
+			.ControlName="lblMethodName"
+			.Left=680
+			.Top=35
+			.Width=110
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Seductively"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMethodName, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=27
+			.Width=799
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=774
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'btnHelp initial props
+		btnHelp = New UIButton(oUILib)
+		With btnHelp
+			.ControlName="btnHelp"
+			.Left=750
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="?"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnHelp, UIControl))
+
+		'lblTarget initial props
+		lblTarget = New UILabel(oUILib)
+		With lblTarget
+			.ControlName="lblTarget"
+			.Left=380
+			.Top=35
+			.Width=230
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Target List goes here...."
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTarget, UIControl))
+
+		'lblMissionName initial props
+		lblMissionName = New UILabel(oUILib)
+		With lblMissionName
+			.ControlName="lblMissionName"
+			.Left=80
+			.Top=35
+			.Width=230
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission Value goes here..."
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMissionName, UIControl))
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=675
+			.Top=570
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel Mission"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCancel, UIControl))
+
+		'btnPause initial props
+		btnPause = New UIButton(oUILib)
+		With btnPause
+			.ControlName="btnPause"
+			.Left=550
+			.Top=570
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Pause Mission"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnPause, UIControl))
+	End Sub
+End Class

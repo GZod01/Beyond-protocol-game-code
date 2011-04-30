@@ -1,0 +1,473 @@
+'Interface created from Interface Builder
+Public Class frmAlloyDesigner
+	Inherits UIWindow
+
+	Private WithEvents lblSelMats As UILabel
+	Private WithEvents lblProp1 As UILabel
+	Private WithEvents lblProp2 As UILabel
+	Private WithEvents lblProp3 As UILabel
+	Private WithEvents lblResLvl As UILabel
+	Private WithEvents lblProp1Act As UILabel
+	Private WithEvents lblProp2Act As UILabel
+	Private WithEvents lblProp3Act As UILabel
+	Private WithEvents cboResLvl As UIComboBox
+	Private WithEvents cboMinProp3 As UIComboBox
+	Private WithEvents cboMinProp2 As UIComboBox
+	Private WithEvents cboMinProp1 As UIComboBox
+	Private WithEvents cboMin4 As UIComboBox
+	Private WithEvents cboMin3 As UIComboBox
+	Private WithEvents cboMin2 As UIComboBox
+	Private WithEvents cboMin1 As UIComboBox
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents optHigh1 As UIOption
+	Private WithEvents optHigh2 As UIOption
+	Private WithEvents optHigh3 As UIOption
+	Private WithEvents optLow1 As UIOption
+	Private WithEvents optLow2 As UIOption
+	Private WithEvents optLow3 As UIOption
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmAlloyDesigner initial props
+		With Me
+			.ControlName="frmAlloyDesigner"
+			.Left=10
+			.Top=6
+			.Width=783
+			.Height=353
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'lblSelMats initial props
+		lblSelMats = New UILabel(oUILib)
+		With lblSelMats
+			.ControlName="lblSelMats"
+			.Left=42
+			.Top=77
+			.Width=201
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Select 2 to 4 Minerals/Alloys:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblSelMats)
+
+		'lblProp1 initial props
+		lblProp1 = New UILabel(oUILib)
+		With lblProp1
+			.ControlName="lblProp1"
+			.Left=42
+			.Top=151
+			.Width=181
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Select a Mineral Property:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp1)
+
+		'lblProp2 initial props
+		lblProp2 = New UILabel(oUILib)
+		With lblProp2
+			.ControlName="lblProp2"
+			.Left=42
+			.Top=187
+			.Width=181
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Select a Mineral Property:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp2)
+
+		'lblProp3 initial props
+		lblProp3 = New UILabel(oUILib)
+		With lblProp3
+			.ControlName="lblProp3"
+			.Left=42
+			.Top=223
+			.Width=181
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Select a Mineral Property:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp3)
+
+		'lblResLvl initial props
+		lblResLvl = New UILabel(oUILib)
+		With lblResLvl
+			.ControlName="lblResLvl"
+			.Left=42
+			.Top=288
+			.Width=181
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Select a Research Level:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblResLvl)
+
+		'lblProp1Act initial props
+		lblProp1Act = New UILabel(oUILib)
+		With lblProp1Act
+			.ControlName="lblProp1Act"
+			.Left=396
+			.Top=151
+			.Width=243
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Indicate whether to make the value:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp1Act)
+
+		'lblProp2Act initial props
+		lblProp2Act = New UILabel(oUILib)
+		With lblProp2Act
+			.ControlName="lblProp2Act"
+			.Left=396
+			.Top=187
+			.Width=243
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Indicate whether to make the value:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp2Act)
+
+		'lblProp3Act initial props
+		lblProp3Act = New UILabel(oUILib)
+		With lblProp3Act
+			.ControlName="lblProp3Act"
+			.Left=396
+			.Top=223
+			.Width=243
+			.Height=17
+			.Enabled=True
+			.Visible=True
+			.Caption="Indicate whether to make the value:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProp3Act)
+
+		'cboResLvl initial props
+		cboResLvl = New UIComboBox(oUILib)
+		With cboResLvl
+			.ControlName="cboResLvl"
+			.Left=225
+			.Top=285
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboResLvl)
+
+		'cboMinProp3 initial props
+		cboMinProp3 = New UIComboBox(oUILib)
+		With cboMinProp3
+			.ControlName="cboMinProp3"
+			.Left=225
+			.Top=220
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMinProp3)
+
+		'cboMinProp2 initial props
+		cboMinProp2 = New UIComboBox(oUILib)
+		With cboMinProp2
+			.ControlName="cboMinProp2"
+			.Left=225
+			.Top=185
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMinProp2)
+
+		'cboMinProp1 initial props
+		cboMinProp1 = New UIComboBox(oUILib)
+		With cboMinProp1
+			.ControlName="cboMinProp1"
+			.Left=225
+			.Top=150
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMinProp1)
+
+		'cboMin4 initial props
+		cboMin4 = New UIComboBox(oUILib)
+		With cboMin4
+			.ControlName="cboMin4"
+			.Left=545
+			.Top=100
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMin4)
+
+		'cboMin3 initial props
+		cboMin3 = New UIComboBox(oUILib)
+		With cboMin3
+			.ControlName="cboMin3"
+			.Left=385
+			.Top=100
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMin3)
+
+		'cboMin2 initial props
+		cboMin2 = New UIComboBox(oUILib)
+		With cboMin2
+			.ControlName="cboMin2"
+			.Left=225
+			.Top=100
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMin2)
+
+		'cboMin1 initial props
+		cboMin1 = New UIComboBox(oUILib)
+		With cboMin1
+			.ControlName="cboMin1"
+			.Left=65
+			.Top=100
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMin1)
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=15
+			.Top=15
+			.Width=201
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Alloy Designer"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 20.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblTitle)
+
+		'optHigh1 initial props
+		optHigh1 = New UIOption(oUILib)
+		With optHigh1
+			.ControlName="optHigh1"
+			.Left=643
+			.Top=151
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Higher"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optHigh1)
+
+		'optHigh2 initial props
+		optHigh2 = New UIOption(oUILib)
+		With optHigh2
+			.ControlName="optHigh2"
+			.Left=643
+			.Top=187
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Higher"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optHigh2)
+
+		'optHigh3 initial props
+		optHigh3 = New UIOption(oUILib)
+		With optHigh3
+			.ControlName="optHigh3"
+			.Left=643
+			.Top=223
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Higher"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optHigh3)
+
+		'optLow1 initial props
+		optLow1 = New UIOption(oUILib)
+		With optLow1
+			.ControlName="optLow1"
+			.Left=720
+			.Top=151
+			.Width=56
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Lower"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optLow1)
+
+		'optLow2 initial props
+		optLow2 = New UIOption(oUILib)
+		With optLow2
+			.ControlName="optLow2"
+			.Left=720
+			.Top=187
+			.Width=56
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Lower"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optLow2)
+
+		'optLow3 initial props
+		optLow3 = New UIOption(oUILib)
+		With optLow3
+			.ControlName="optLow3"
+			.Left=720
+			.Top=223
+			.Width=56
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Lower"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optLow3)
+	End Sub
+End Class

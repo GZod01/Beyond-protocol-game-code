@@ -1,0 +1,129 @@
+Option Strict On
+
+Imports Microsoft.DirectX
+Imports Microsoft.DirectX.Direct3D
+
+'Interface created from Interface Builder
+Public Class frmQuickBuilder
+	Inherits UIWindow
+
+	Private WithEvents fraDetails As UIWindow
+	Private WithEvents fraShieldHull As UIWindow
+	Private WithEvents fraErrors As UIWindow
+	Private WithEvents fraPowerHull As UIWindow
+	Private WithEvents fraEngines As UIWindow
+	Private WithEvents fraWeapons As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmQuickBuilder initial props
+		With Me
+			.ControlName="frmQuickBuilder"
+			.Left=9
+			.Top=10
+			.Width=950
+			.Height=750
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'fraDetails initial props
+		fraDetails = New UIWindow(oUILib)
+		With fraDetails
+			.ControlName="fraDetails"
+			.Left=5
+			.Top=5
+			.Width=285
+			.Height=325
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraDetails, UIControl))
+
+		'fraShieldHull initial props
+		fraShieldHull = New UIWindow(oUILib)
+		With fraShieldHull
+			.ControlName="fraShieldHull"
+			.Left=295
+			.Top=5
+			.Width=350
+			.Height=325
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraShieldHull, UIControl))
+
+		'fraErrors initial props
+		fraErrors = New UIWindow(oUILib)
+		With fraErrors
+			.ControlName="fraErrors"
+			.Left=650
+			.Top=5
+			.Width=295
+			.Height=325
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraErrors, UIControl))
+
+		'fraPowerHull initial props
+		fraPowerHull = New UIWindow(oUILib)
+		With fraPowerHull
+			.ControlName="fraPowerHull"
+			.Left=560
+			.Top=335
+			.Width=385
+			.Height=70
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraPowerHull, UIControl))
+
+		'fraEngines initial props
+		fraEngines = New UIWindow(oUILib)
+		With fraEngines
+			.ControlName="fraEngines"
+			.Left=5
+			.Top=335
+			.Width=550
+			.Height=220
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraEngines, UIControl))
+
+		'fraWeapons initial props
+		fraWeapons = New UIWindow(oUILib)
+		With fraWeapons
+			.ControlName="fraWeapons"
+			.Left=5
+			.Top=560
+			.Width=940
+			.Height=185
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraWeapons, UIControl))
+	End Sub
+End Class

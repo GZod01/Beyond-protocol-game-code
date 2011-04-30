@@ -1,0 +1,10 @@
+SCC = This is a Source Code Control file.
+
+[BumpTest.sln]
+SCC_Aux_Path = 
+SCC_Project_Name = $/Utilities/BumpTest
+
+[BumpTest.vbproj]
+SCC_Aux_Path = 
+SCC_Project_Name = $/Utilities/BumpTest
+

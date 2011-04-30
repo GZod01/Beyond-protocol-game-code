@@ -1,0 +1,220 @@
+'Interface created from Interface Builder
+Public Class frmNotePad
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lstNotes As UIListBox
+	Private WithEvents lblNoteTitle As UILabel
+	Private WithEvents txtNotetitle As UITextBox
+	Private WithEvents txtDetail As UITextBox
+	Private WithEvents btnCreate As UIButton
+	Private WithEvents btnDelete As UIButton
+	Private WithEvents New Control As UIButton
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmNotePad initial props
+		With Me
+			.ControlName="frmNotePad"
+			.Left=218
+			.Top=76
+			.Width=512
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=3
+			.Width=158
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Notes Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=26
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lstNotes initial props
+		lstNotes = New UIListBox(oUILib)
+		With lstNotes
+			.ControlName="lstNotes"
+			.Left=5
+			.Top=30
+			.Width=175
+			.Height=440
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstNotes, UIControl))
+
+		'lblNoteTitle initial props
+		lblNoteTitle = New UILabel(oUILib)
+		With lblNoteTitle
+			.ControlName="lblNoteTitle"
+			.Left=190
+			.Top=35
+			.Width=50
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Title:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNoteTitle, UIControl))
+
+		'txtNotetitle initial props
+		txtNotetitle = New UITextBox(oUILib)
+		With txtNotetitle
+			.ControlName="txtNotetitle"
+			.Left=235
+			.Top=35
+			.Width=130
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Untitled"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtNotetitle, UIControl))
+
+		'txtDetail initial props
+		txtDetail = New UITextBox(oUILib)
+		With txtDetail
+			.ControlName="txtDetail"
+			.Left=190
+			.Top=64
+			.Width=310
+			.Height=405
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtDetail, UIControl))
+
+		'btnCreate initial props
+		btnCreate = New UIButton(oUILib)
+		With btnCreate
+			.ControlName="btnCreate"
+			.Left=402
+			.Top=35
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Create Note"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCreate, UIControl))
+
+		'btnDelete initial props
+		btnDelete = New UIButton(oUILib)
+		With btnDelete
+			.ControlName="btnDelete"
+			.Left=190
+			.Top=480
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Delete Note"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDelete, UIControl))
+
+		'New Control initial props
+		New Control = New UIButton(oUILib)
+		With New Control
+			.ControlName="New Control"
+			.Left=401
+			.Top=480
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Save Note"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(New Control, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=487
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+	End Sub
+End Class

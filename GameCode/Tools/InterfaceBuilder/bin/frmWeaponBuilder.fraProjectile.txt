@@ -1,0 +1,505 @@
+'Interface created from Interface Builder
+Public Class fraProjectile
+	Inherits UIWindow
+
+	Private WithEvents lblProjectionType As UILabel
+	Private WithEvents lblSize As UILabel
+	Private WithEvents lbPierce As UILabel
+	Private WithEvents lblROF As UILabel
+	Private WithEvents lblMaxRange As UILabel
+	Private WithEvents lblPayloadType As UILabel
+	Private WithEvents lblExplosionRadius As UILabel
+	Private WithEvents lblBarrelMat As UILabel
+	Private WithEvents lblCasingMat As UILabel
+	Private WithEvents txtCartridgeSize As UITextBox
+	Private WithEvents txtManeuver As UITextBox
+	Private WithEvents txtROF As UITextBox
+	Private WithEvents txtMaxRange As UITextBox
+	Private WithEvents txtExplosionRadius As UITextBox
+	Private WithEvents lblPayload1Mat As UILabel
+	Private WithEvents lblPayload2Mat As UILabel
+	Private WithEvents lblProjectionMat As UILabel
+	Private WithEvents cboProjectionMat As UIComboBox
+	Private WithEvents cboPayload2Mat As UIComboBox
+	Private WithEvents cboPayload1Mat As UIComboBox
+	Private WithEvents cboCasingMat As UIComboBox
+	Private WithEvents cboBarrelMat As UIComboBox
+	Private WithEvents cboPayloadType As UIComboBox
+	Private WithEvents cboProjectionType As UIComboBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraProjectile initial props
+		With Me
+			.ControlName="fraProjectile"
+			.Left=150
+			.Top=101
+			.Width=381
+			.Height=335
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblProjectionType initial props
+		lblProjectionType = New UILabel(oUILib)
+		With lblProjectionType
+			.ControlName="lblProjectionType"
+			.Left=10
+			.Top=10
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Projection Type:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProjectionType, UIControl))
+
+		'lblSize initial props
+		lblSize = New UILabel(oUILib)
+		With lblSize
+			.ControlName="lblSize"
+			.Left=10
+			.Top=35
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cartridge Size:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSize, UIControl))
+
+		'lbPierce initial props
+		lbPierce = New UILabel(oUILib)
+		With lbPierce
+			.ControlName="lbPierce"
+			.Left=10
+			.Top=60
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Pierce Ratio:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lbPierce, UIControl))
+
+		'lblROF initial props
+		lblROF = New UILabel(oUILib)
+		With lblROF
+			.ControlName="lblROF"
+			.Left=10
+			.Top=85
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Rate of Fire:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblROF, UIControl))
+
+		'lblMaxRange initial props
+		lblMaxRange = New UILabel(oUILib)
+		With lblMaxRange
+			.ControlName="lblMaxRange"
+			.Left=10
+			.Top=110
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Maximum Range:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMaxRange, UIControl))
+
+		'lblPayloadType initial props
+		lblPayloadType = New UILabel(oUILib)
+		With lblPayloadType
+			.ControlName="lblPayloadType"
+			.Left=10
+			.Top=135
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Payload Type:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPayloadType, UIControl))
+
+		'lblExplosionRadius initial props
+		lblExplosionRadius = New UILabel(oUILib)
+		With lblExplosionRadius
+			.ControlName="lblExplosionRadius"
+			.Left=10
+			.Top=160
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Explosion Radius:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblExplosionRadius, UIControl))
+
+		'lblBarrelMat initial props
+		lblBarrelMat = New UILabel(oUILib)
+		With lblBarrelMat
+			.ControlName="lblBarrelMat"
+			.Left=10
+			.Top=200
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Barrel Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBarrelMat, UIControl))
+
+		'lblCasingMat initial props
+		lblCasingMat = New UILabel(oUILib)
+		With lblCasingMat
+			.ControlName="lblCasingMat"
+			.Left=10
+			.Top=225
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Casing Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCasingMat, UIControl))
+
+		'txtCartridgeSize initial props
+		txtCartridgeSize = New UITextBox(oUILib)
+		With txtCartridgeSize
+			.ControlName="txtCartridgeSize"
+			.Left=140
+			.Top=35
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtCartridgeSize, UIControl))
+
+		'txtManeuver initial props
+		txtManeuver = New UITextBox(oUILib)
+		With txtManeuver
+			.ControlName="txtManeuver"
+			.Left=140
+			.Top=60
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtManeuver, UIControl))
+
+		'txtROF initial props
+		txtROF = New UITextBox(oUILib)
+		With txtROF
+			.ControlName="txtROF"
+			.Left=140
+			.Top=85
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtROF, UIControl))
+
+		'txtMaxRange initial props
+		txtMaxRange = New UITextBox(oUILib)
+		With txtMaxRange
+			.ControlName="txtMaxRange"
+			.Left=140
+			.Top=110
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMaxRange, UIControl))
+
+		'txtExplosionRadius initial props
+		txtExplosionRadius = New UITextBox(oUILib)
+		With txtExplosionRadius
+			.ControlName="txtExplosionRadius"
+			.Left=140
+			.Top=160
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtExplosionRadius, UIControl))
+
+		'lblPayload1Mat initial props
+		lblPayload1Mat = New UILabel(oUILib)
+		With lblPayload1Mat
+			.ControlName="lblPayload1Mat"
+			.Left=10
+			.Top=250
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Payload 1 Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPayload1Mat, UIControl))
+
+		'lblPayload2Mat initial props
+		lblPayload2Mat = New UILabel(oUILib)
+		With lblPayload2Mat
+			.ControlName="lblPayload2Mat"
+			.Left=10
+			.Top=275
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Payload 2 Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPayload2Mat, UIControl))
+
+		'lblProjectionMat initial props
+		lblProjectionMat = New UILabel(oUILib)
+		With lblProjectionMat
+			.ControlName="lblProjectionMat"
+			.Left=10
+			.Top=300
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Projection Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProjectionMat, UIControl))
+
+		'cboProjectionMat initial props
+		cboProjectionMat = New UIComboBox(oUILib)
+		With cboProjectionMat
+			.ControlName="cboProjectionMat"
+			.Left=140
+			.Top=300
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboProjectionMat, UIControl))
+
+		'cboPayload2Mat initial props
+		cboPayload2Mat = New UIComboBox(oUILib)
+		With cboPayload2Mat
+			.ControlName="cboPayload2Mat"
+			.Left=140
+			.Top=275
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboPayload2Mat, UIControl))
+
+		'cboPayload1Mat initial props
+		cboPayload1Mat = New UIComboBox(oUILib)
+		With cboPayload1Mat
+			.ControlName="cboPayload1Mat"
+			.Left=140
+			.Top=250
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboPayload1Mat, UIControl))
+
+		'cboCasingMat initial props
+		cboCasingMat = New UIComboBox(oUILib)
+		With cboCasingMat
+			.ControlName="cboCasingMat"
+			.Left=140
+			.Top=225
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboCasingMat, UIControl))
+
+		'cboBarrelMat initial props
+		cboBarrelMat = New UIComboBox(oUILib)
+		With cboBarrelMat
+			.ControlName="cboBarrelMat"
+			.Left=140
+			.Top=200
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboBarrelMat, UIControl))
+
+		'cboPayloadType initial props
+		cboPayloadType = New UIComboBox(oUILib)
+		With cboPayloadType
+			.ControlName="cboPayloadType"
+			.Left=140
+			.Top=135
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboPayloadType, UIControl))
+
+		'cboProjectionType initial props
+		cboProjectionType = New UIComboBox(oUILib)
+		With cboProjectionType
+			.ControlName="cboProjectionType"
+			.Left=140
+			.Top=10
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboProjectionType, UIControl))
+	End Sub
+End Class

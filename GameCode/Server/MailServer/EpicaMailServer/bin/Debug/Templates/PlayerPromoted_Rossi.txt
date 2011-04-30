@@ -1,0 +1,9 @@
+[PlayerName] promoted! 
+[PlayerName] has received a promotion to [PlayerTitle]! 
+4
+Jeffrey Rossi 
+2
+2- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+GNS News correspondents are reporting from inside the government of [PlayerName] today as citizens prepare for the official announcement of [PlayerNamePossessive] promotion to [PlayerTitle]. This promotion comes as great news to all the citizens of [PlayerName] as it gives them something to be proud of in their leader. Despite strong challenges from others seeking the same glory [PlayerName] has managed to rise above them all and attain the rank of [PlayerTitle] as they continue their rise to the top of the ranks and continue to gain power within the Senate. <br><br>GNS News political correspondents speculate that this promotion may come as a double-edged sword for [PlayerName]. While [PlayerName] is now in a better position on the political forefront, stronger powers and other aspiring leaders may see this as a possible threat towards their positions and seek to undo this recent accomplishment. <br><br>With the citizens of [PlayerName] just beginning their celebrations perhaps now would be the perfect time for [PlayerNamePossessive] enemies to strike and take advantage of an otherwise distracted populace. Only time will tell what will happen as a result of [PlayerNamePossessive] promotion but GNS News correspondents will remain on the scene to monitor any upcoming developments as they arise.
+</div>

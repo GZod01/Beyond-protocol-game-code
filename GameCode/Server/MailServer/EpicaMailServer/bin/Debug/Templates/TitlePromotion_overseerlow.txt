@@ -1,0 +1,11 @@
+Celebration Begins On [EnvirName] for [PlayerName]
+Celebration Begins On [EnvirName] for [PlayerName]
+4
+Random
+5
+5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Congratulations to [PlayerName] for being recognized as [PlayerTitle]. This is a great milestone for [PlayerNamePossessive] domain and a majority of [PlayerNamePossessive] citizens are extremely satisfied.
+<br><br>
+A small number of citizens remain guarded until [PlayerName] proves that the promotion was indeed a positive step for their society.
+</div>

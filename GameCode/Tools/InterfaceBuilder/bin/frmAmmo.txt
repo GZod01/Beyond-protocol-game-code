@@ -1,0 +1,459 @@
+'Interface created from Interface Builder
+Public Class frmAmmo
+	Inherits UIWindow
+
+	Private WithEvents lstWeapons As UIListBox
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lblWeapons As UILabel
+	Private WithEvents txtQuantity1 As UITextBox
+	Private WithEvents btnLoadAmmo As UIButton
+	Private WithEvents lblArc As UILabel
+	Private WithEvents lblAmmoCaps As UILabel
+	Private WithEvents lblQty1 As UILabel
+	Private WithEvents lstCargo As UIListBox
+	Private WithEvents lblWeaponType As UILabel
+	Private WithEvents lblCargoQty As UILabel
+	Private WithEvents lblCargoSpace As UILabel
+	Private WithEvents lblCargo As UILabel
+	Private WithEvents lblCapacity As UILabel
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents cboWeaponType As UIComboBox
+	Private WithEvents lblAmmoSize As UILabel
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lblQty2 As UILabel
+	Private WithEvents txtQuantity2 As UITextBox
+	Private WithEvents btnLoadCargo As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmAmmo initial props
+		With Me
+			.ControlName="frmAmmo"
+			.Left=235
+			.Top=56
+			.Width=512
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstWeapons initial props
+		lstWeapons = New UIListBox(oUILib)
+		With lstWeapons
+			.ControlName="lstWeapons"
+			.Left=5
+			.Top=50
+			.Width=502
+			.Height=150
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstWeapons, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=4
+			.Width=400
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammo for Command Center"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=26
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=487
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lblWeapons initial props
+		lblWeapons = New UILabel(oUILib)
+		With lblWeapons
+			.ControlName="lblWeapons"
+			.Left=5
+			.Top=30
+			.Width=159
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Weapon"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWeapons, UIControl))
+
+		'txtQuantity1 initial props
+		txtQuantity1 = New UITextBox(oUILib)
+		With txtQuantity1
+			.ControlName="txtQuantity1"
+			.Left=305
+			.Top=205
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtQuantity1, UIControl))
+
+		'btnLoadAmmo initial props
+		btnLoadAmmo = New UIButton(oUILib)
+		With btnLoadAmmo
+			.ControlName="btnLoadAmmo"
+			.Left=410
+			.Top=205
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Load Ammo"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnLoadAmmo, UIControl))
+
+		'lblArc initial props
+		lblArc = New UILabel(oUILib)
+		With lblArc
+			.ControlName="lblArc"
+			.Left=195
+			.Top=30
+			.Width=26
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Arc"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblArc, UIControl))
+
+		'lblAmmoCaps initial props
+		lblAmmoCaps = New UILabel(oUILib)
+		With lblAmmoCaps
+			.ControlName="lblAmmoCaps"
+			.Left=265
+			.Top=30
+			.Width=180
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammo / Ammo Capacity"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAmmoCaps, UIControl))
+
+		'lblQty1 initial props
+		lblQty1 = New UILabel(oUILib)
+		With lblQty1
+			.ControlName="lblQty1"
+			.Left=235
+			.Top=205
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Quantity:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblQty1, UIControl))
+
+		'lstCargo initial props
+		lstCargo = New UIListBox(oUILib)
+		With lstCargo
+			.ControlName="lstCargo"
+			.Left=5
+			.Top=300
+			.Width=502
+			.Height=150
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstCargo, UIControl))
+
+		'lblWeaponType initial props
+		lblWeaponType = New UILabel(oUILib)
+		With lblWeaponType
+			.ControlName="lblWeaponType"
+			.Left=5
+			.Top=280
+			.Width=159
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Weapon Type"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWeaponType, UIControl))
+
+		'lblCargoQty initial props
+		lblCargoQty = New UILabel(oUILib)
+		With lblCargoQty
+			.ControlName="lblCargoQty"
+			.Left=195
+			.Top=280
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Quantity"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCargoQty, UIControl))
+
+		'lblCargoSpace initial props
+		lblCargoSpace = New UILabel(oUILib)
+		With lblCargoSpace
+			.ControlName="lblCargoSpace"
+			.Left=290
+			.Top=280
+			.Width=145
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo Space Used"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCargoSpace, UIControl))
+
+		'lblCargo initial props
+		lblCargo = New UILabel(oUILib)
+		With lblCargo
+			.ControlName="lblCargo"
+			.Left=5
+			.Top=255
+			.Width=180
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammunition in Cargo Bay"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCargo, UIControl))
+
+		'lblCapacity initial props
+		lblCapacity = New UILabel(oUILib)
+		With lblCapacity
+			.ControlName="lblCapacity"
+			.Left=255
+			.Top=255
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Capacity: 123456789 / 123456789"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCapacity, UIControl))
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=1
+			.Top=275
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv3, UIControl))
+
+		'cboWeaponType initial props
+		cboWeaponType = New UIComboBox(oUILib)
+		With cboWeaponType
+			.ControlName="cboWeaponType"
+			.Left=5
+			.Top=455
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboWeaponType, UIControl))
+
+		'lblAmmoSize initial props
+		lblAmmoSize = New UILabel(oUILib)
+		With lblAmmoSize
+			.ControlName="lblAmmoSize"
+			.Left=5
+			.Top=475
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Size: 0.0055 Hull Each"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAmmoSize, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=1
+			.Top=245
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'lblQty2 initial props
+		lblQty2 = New UILabel(oUILib)
+		With lblQty2
+			.ControlName="lblQty2"
+			.Left=235
+			.Top=455
+			.Width=64
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Quantity:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblQty2, UIControl))
+
+		'txtQuantity2 initial props
+		txtQuantity2 = New UITextBox(oUILib)
+		With txtQuantity2
+			.ControlName="txtQuantity2"
+			.Left=305
+			.Top=455
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtQuantity2, UIControl))
+
+		'btnLoadCargo initial props
+		btnLoadCargo = New UIButton(oUILib)
+		With btnLoadCargo
+			.ControlName="btnLoadCargo"
+			.Left=410
+			.Top=455
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Load Ammo"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnLoadCargo, UIControl))
+	End Sub
+End Class

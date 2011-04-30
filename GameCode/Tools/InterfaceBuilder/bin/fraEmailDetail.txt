@@ -1,0 +1,184 @@
+'Interface created from Interface Builder
+Public Class fraEmailDetail
+	Inherits UIWindow
+
+	Private WithEvents txtBody As UITextBox
+	Private WithEvents btnMoveToFolder As UIButton
+	Private WithEvents cboMoveToFolder As UIComboBox
+	Private WithEvents lblMoveToFolder As UILabel
+	Private WithEvents btnReply As UIButton
+	Private WithEvents btnReplyAll As UIButton
+	Private WithEvents btnForward As UIButton
+	Private WithEvents btnDelete As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraEmailDetail initial props
+		With Me
+			.ControlName="fraEmailDetail"
+			.Left=110
+			.Top=124
+			.Width=680
+			.Height=330
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'txtBody initial props
+		txtBody = New UITextBox(oUILib)
+		With txtBody
+			.ControlName="txtBody"
+			.Left=5
+			.Top=75
+			.Width=670
+			.Height=200
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtBody, UIControl))
+
+		'btnMoveToFolder initial props
+		btnMoveToFolder = New UIButton(oUILib)
+		With btnMoveToFolder
+			.ControlName="btnMoveToFolder"
+			.Left=160
+			.Top=300
+			.Width=70
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Move"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnMoveToFolder, UIControl))
+
+		'cboMoveToFolder initial props
+		cboMoveToFolder = New UIComboBox(oUILib)
+		With cboMoveToFolder
+			.ControlName="cboMoveToFolder"
+			.Left=5
+			.Top=300
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboMoveToFolder, UIControl))
+
+		'lblMoveToFolder initial props
+		lblMoveToFolder = New UILabel(oUILib)
+		With lblMoveToFolder
+			.ControlName="lblMoveToFolder"
+			.Left=5
+			.Top=280
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Move To Folder:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMoveToFolder, UIControl))
+
+		'btnReply initial props
+		btnReply = New UIButton(oUILib)
+		With btnReply
+			.ControlName="btnReply"
+			.Left=260
+			.Top=300
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Reply"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnReply, UIControl))
+
+		'btnReplyAll initial props
+		btnReplyAll = New UIButton(oUILib)
+		With btnReplyAll
+			.ControlName="btnReplyAll"
+			.Left=365
+			.Top=300
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Reply To All"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnReplyAll, UIControl))
+
+		'btnForward initial props
+		btnForward = New UIButton(oUILib)
+		With btnForward
+			.ControlName="btnForward"
+			.Left=470
+			.Top=300
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Forward"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnForward, UIControl))
+
+		'btnDelete initial props
+		btnDelete = New UIButton(oUILib)
+		With btnDelete
+			.ControlName="btnDelete"
+			.Left=575
+			.Top=300
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Delete"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDelete, UIControl))
+	End Sub
+End Class

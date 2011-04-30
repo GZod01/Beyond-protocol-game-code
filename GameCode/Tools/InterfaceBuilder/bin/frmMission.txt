@@ -1,0 +1,407 @@
+'Interface created from Interface Builder
+Public Class frmMission
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lblMission As UILabel
+	Private WithEvents cboMission As UIComboBox
+	Private WithEvents lblMissionDesc As UILabel
+	Private WithEvents lblTarget As UILabel
+	Private WithEvents cboTarget1 As UIComboBox
+	Private WithEvents cboTarget2 As UIComboBox
+	Private WithEvents cboTarget3 As UIComboBox
+	Private WithEvents lblMethod As UILabel
+	Private WithEvents cboMethod As UIComboBox
+	Private WithEvents lblMethodDesc As UILabel
+	Private WithEvents fraGoals As UIWindow
+	Private WithEvents lstGoals As UIListBox
+	Private WithEvents lblGoalTime As UILabel
+	Private WithEvents lblGoalRisk As UILabel
+	Private WithEvents lblGoalName As UILabel
+	Private WithEvents txtGoalDesc As UITextBox
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents btnHelp As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmMission initial props
+		With Me
+			.ControlName="frmMission"
+			.Left=87
+			.Top=81
+			.Width=800
+			.Height=600
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=3
+			.Width=175
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lblMission initial props
+		lblMission = New UILabel(oUILib)
+		With lblMission
+			.ControlName="lblMission"
+			.Left=10
+			.Top=35
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMission, UIControl))
+
+		'cboMission initial props
+		cboMission = New UIComboBox(oUILib)
+		With cboMission
+			.ControlName="cboMission"
+			.Left=80
+			.Top=35
+			.Width=220
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboMission, UIControl))
+
+		'lblMissionDesc initial props
+		lblMissionDesc = New UILabel(oUILib)
+		With lblMissionDesc
+			.ControlName="lblMissionDesc"
+			.Left=310
+			.Top=35
+			.Width=490
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Mission Description goes here..."
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMissionDesc, UIControl))
+
+		'lblTarget initial props
+		lblTarget = New UILabel(oUILib)
+		With lblTarget
+			.ControlName="lblTarget"
+			.Left=10
+			.Top=60
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Target:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTarget, UIControl))
+
+		'cboTarget1 initial props
+		cboTarget1 = New UIComboBox(oUILib)
+		With cboTarget1
+			.ControlName="cboTarget1"
+			.Left=80
+			.Top=60
+			.Width=220
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTarget1, UIControl))
+
+		'cboTarget2 initial props
+		cboTarget2 = New UIComboBox(oUILib)
+		With cboTarget2
+			.ControlName="cboTarget2"
+			.Left=325
+			.Top=60
+			.Width=220
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTarget2, UIControl))
+
+		'cboTarget3 initial props
+		cboTarget3 = New UIComboBox(oUILib)
+		With cboTarget3
+			.ControlName="cboTarget3"
+			.Left=570
+			.Top=60
+			.Width=220
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTarget3, UIControl))
+
+		'lblMethod initial props
+		lblMethod = New UILabel(oUILib)
+		With lblMethod
+			.ControlName="lblMethod"
+			.Left=10
+			.Top=85
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Method:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMethod, UIControl))
+
+		'cboMethod initial props
+		cboMethod = New UIComboBox(oUILib)
+		With cboMethod
+			.ControlName="cboMethod"
+			.Left=80
+			.Top=85
+			.Width=220
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboMethod, UIControl))
+
+		'lblMethodDesc initial props
+		lblMethodDesc = New UILabel(oUILib)
+		With lblMethodDesc
+			.ControlName="lblMethodDesc"
+			.Left=310
+			.Top=85
+			.Width=490
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Method Description goes here..."
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMethodDesc, UIControl))
+
+		'fraGoals initial props
+		fraGoals = New UIWindow(oUILib)
+		With fraGoals
+			.ControlName="fraGoals"
+			.Left=10
+			.Top=120
+			.Width=780
+			.Height=125
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraGoals, UIControl))
+
+		'lstGoals initial props
+		lstGoals = New UIListBox(oUILib)
+		With lstGoals
+			.ControlName="lstGoals"
+			.Left=20
+			.Top=135
+			.Width=250
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstGoals, UIControl))
+
+		'lblGoalTime initial props
+		lblGoalTime = New UILabel(oUILib)
+		With lblGoalTime
+			.ControlName="lblGoalTime"
+			.Left=280
+			.Top=165
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Goal Time: Approx. 3 days"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGoalTime, UIControl))
+
+		'lblGoalRisk initial props
+		lblGoalRisk = New UILabel(oUILib)
+		With lblGoalRisk
+			.ControlName="lblGoalRisk"
+			.Left=280
+			.Top=190
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Risk Assessment: HIGH"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGoalRisk, UIControl))
+
+		'lblGoalName initial props
+		lblGoalName = New UILabel(oUILib)
+		With lblGoalName
+			.ControlName="lblGoalName"
+			.Left=280
+			.Top=140
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Goal:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGoalName, UIControl))
+
+		'txtGoalDesc initial props
+		txtGoalDesc = New UITextBox(oUILib)
+		With txtGoalDesc
+			.ControlName="txtGoalDesc"
+			.Left=540
+			.Top=135
+			.Width=240
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption="Goal Description...."
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtGoalDesc, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=27
+			.Width=799
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=774
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'btnHelp initial props
+		btnHelp = New UIButton(oUILib)
+		With btnHelp
+			.ControlName="btnHelp"
+			.Left=750
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="?"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnHelp, UIControl))
+	End Sub
+End Class

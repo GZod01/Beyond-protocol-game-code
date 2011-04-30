@@ -1,0 +1,13 @@
+Titanic Clashes
+Titanic Clashes
+0
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+No hesitation. That is the feeling of soldiers on both sides of this heated conflict that began just a while ago at [StartOfBattle]. And now, only [SpanOfBattle] since the start of the battle, we have already seen [TotalLostBothSides] lives lost, countless more wounded and over [TotalEntitiesLostBothSides] units and facilities damaged or inoperable for both sides of the engagement.
+<br><br>
+And yet, even with the death toll rising, forces of [PlayerSideListA] continue to openly engage forces of [PlayerSideListB] in the [EnvirName] system. 
+<br><br>
+Citizens of the colonies within [EnvirName] are terrified and left wondering what the future holds for the jobs, economy and well-being of the entire system and its colonies. With such catastrophic death tolls that are only promising to rise as the fighting continues, there is enormous uncertainty in the air.
+</div>

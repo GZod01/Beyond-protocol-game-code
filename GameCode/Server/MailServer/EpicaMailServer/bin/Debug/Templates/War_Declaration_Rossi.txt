@@ -1,0 +1,8 @@
+[PlayerName] declares war! 
+[PlayerName] has declared war against [PlayerName2]! 
+13 
+Jeffrey Rossi
+7 
+7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Correspondents inside the dominion of [PlayerName] have confirmed for us today that [PlayerName] has declared war against [PlayerName2]. A special press conference has been called for later today from within [PlayerNamePossessive] government to explain the reasons for this declaration. Anonymous sources close to [PlayerName] have informed our correspondents that rising tensions between the two leaders are to blame and that this conflict will no doubt be a long and bloody one. <br><br>Military analysts for GNS News predict a long and drawn out conflict with both governments bringing everything they have to bear to the battlefield which could possibly create a power vacuum elsewhere in the galaxy. [EXCLUDE:TotalInvolved<3]It remains to be seen if [PlayerSideListA] or [PlayerSideListB], all known allies of [PlayerName] and [PlayerName2 will in any way be involved in the coming conflict or if this warfare will be limited to [PlayerName] and [PlayerName2].[/EXCLUDE] GNS news correspondents will remain close at hand to monitor any conflicts that may ensue as a result of this decision and will keep you all informed as this war ensues. </div>

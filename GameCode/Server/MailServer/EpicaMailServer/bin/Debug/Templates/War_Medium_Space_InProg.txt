@@ -1,0 +1,11 @@
+Space Clash Continues in [EnvirName]
+Space Clash Continues in [EnvirName]
+1
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Over [TotalLostBothSides] dead and even more wounded as conflict continues in [EnvirName]. Forces of [PlayerSideListA] have engaged the forces of [PlayerSideListB] in numerous attacks and counter attacks. The conflict that began [StartOfBattle] has seen the loss of [TotalUnitLostBothSides] units on both sides of the battle.
+<br><br>
+Sources indicate that no end to the conflict can be determined at this time. Contacts within the GTC have indicated that trade routes remain unaffected from the hostilities, however, there may be some delays as combat spills into trade lanes.
+</div>

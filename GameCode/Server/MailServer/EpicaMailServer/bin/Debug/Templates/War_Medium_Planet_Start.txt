@@ -1,0 +1,11 @@
+Planetary Battle Begins on [EnvirName]
+Planetary Battle Begins on [EnvirName]
+18
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+A large battle began today at [StartOfBattle] on [EnvirName]. Forces of [PlayerSideListA] engaged contingents belonging to [PlayerSideListB] in a violent clash of explosions and weapons fire.
+<br><br>
+Sources indicate that no end to the conflict can be determined at this time. The battle, in its early stages, has already claimed [TotalLostBothSides] lives and has seen [TotalUnitLostBothSides] military assets left destroyed. The citizens of [EnvirName] are concerned of the conflict. No reports of civilian casualties have been made, however, at this time it is too early to determine whether the conflict will claim lives of the citizens of [EnvirName].
+</div>

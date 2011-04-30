@@ -1,0 +1,536 @@
+'Interface created from Interface Builder
+Public Class frmArmorBuilder
+	Inherits UIWindow
+
+	Private WithEvents lblBeam As UILabel
+	Private WithEvents lblImpact As UILabel
+	Private WithEvents lblPiercing As UILabel
+	Private WithEvents lblMagnetic As UILabel
+	Private WithEvents lblChemical As UILabel
+	Private WithEvents lblBurn As UILabel
+	Private WithEvents lblRadar As UILabel
+	Private WithEvents lblHull As UILabel
+	Private WithEvents lblHP As UILabel
+	Private WithEvents lblOuter As UILabel
+	Private WithEvents lblMiddle As UILabel
+	Private WithEvents lblInner As UILabel
+	Private WithEvents lblArmorDesigner As UILabel
+	Private WithEvents txtBeam As UITextBox
+	Private WithEvents txtImpact As UITextBox
+	Private WithEvents txtPiercing As UITextBox
+	Private WithEvents txtMagnetic As UITextBox
+	Private WithEvents txtChemical As UITextBox
+	Private WithEvents txtBurn As UITextBox
+	Private WithEvents txtRadar As UITextBox
+	Private WithEvents txtHullUsage As UITextBox
+	Private WithEvents txtHPPerPlate As UITextBox
+	Private WithEvents cboOuter As UIComboBox
+	Private WithEvents cboMiddle As UIComboBox
+	Private WithEvents cboInner As UIComboBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmArmorBuilder initial props
+		With Me
+			.ControlName="frmArmorBuilder"
+			.Left=4
+			.Top=5
+			.Width=759
+			.Height=516
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(128, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'lblBeam initial props
+		lblBeam = New UILabel(oUILib)
+		With lblBeam
+			.ControlName="lblBeam"
+			.Left=30
+			.Top=45
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Beam Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblBeam)
+
+		'lblImpact initial props
+		lblImpact = New UILabel(oUILib)
+		With lblImpact
+			.ControlName="lblImpact"
+			.Left=30
+			.Top=70
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Impact Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblImpact)
+
+		'lblPiercing initial props
+		lblPiercing = New UILabel(oUILib)
+		With lblPiercing
+			.ControlName="lblPiercing"
+			.Left=30
+			.Top=95
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Piercing Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPiercing)
+
+		'lblMagnetic initial props
+		lblMagnetic = New UILabel(oUILib)
+		With lblMagnetic
+			.ControlName="lblMagnetic"
+			.Left=30
+			.Top=120
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Magnetic Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblMagnetic)
+
+		'lblChemical initial props
+		lblChemical = New UILabel(oUILib)
+		With lblChemical
+			.ControlName="lblChemical"
+			.Left=30
+			.Top=145
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Chemical Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblChemical)
+
+		'lblBurn initial props
+		lblBurn = New UILabel(oUILib)
+		With lblBurn
+			.ControlName="lblBurn"
+			.Left=30
+			.Top=170
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Burn Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblBurn)
+
+		'lblRadar initial props
+		lblRadar = New UILabel(oUILib)
+		With lblRadar
+			.ControlName="lblRadar"
+			.Left=30
+			.Top=195
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Radar Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRadar)
+
+		'lblHull initial props
+		lblHull = New UILabel(oUILib)
+		With lblHull
+			.ControlName="lblHull"
+			.Left=30
+			.Top=240
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Hull Usage Per Plate:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblHull)
+
+		'lblHP initial props
+		lblHP = New UILabel(oUILib)
+		With lblHP
+			.ControlName="lblHP"
+			.Left=30
+			.Top=265
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Hit Points Per Plate:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblHP)
+
+		'lblOuter initial props
+		lblOuter = New UILabel(oUILib)
+		With lblOuter
+			.ControlName="lblOuter"
+			.Left=30
+			.Top=310
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Outer Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblOuter)
+
+		'lblMiddle initial props
+		lblMiddle = New UILabel(oUILib)
+		With lblMiddle
+			.ControlName="lblMiddle"
+			.Left=30
+			.Top=335
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Middle Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblMiddle)
+
+		'lblInner initial props
+		lblInner = New UILabel(oUILib)
+		With lblInner
+			.ControlName="lblInner"
+			.Left=30
+			.Top=360
+			.Width=184
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Inner Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblInner)
+
+		'lblArmorDesigner initial props
+		lblArmorDesigner = New UILabel(oUILib)
+		With lblArmorDesigner
+			.ControlName="lblArmorDesigner"
+			.Left=10
+			.Top=5
+			.Width=182
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Armor Designer"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Arial", 18, 3, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblArmorDesigner)
+
+		'txtBeam initial props
+		txtBeam = New UITextBox(oUILib)
+		With txtBeam
+			.ControlName="txtBeam"
+			.Left=225
+			.Top=47
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtBeam)
+
+		'txtImpact initial props
+		txtImpact = New UITextBox(oUILib)
+		With txtImpact
+			.ControlName="txtImpact"
+			.Left=225
+			.Top=72
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtImpact)
+
+		'txtPiercing initial props
+		txtPiercing = New UITextBox(oUILib)
+		With txtPiercing
+			.ControlName="txtPiercing"
+			.Left=225
+			.Top=97
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtPiercing)
+
+		'txtMagnetic initial props
+		txtMagnetic = New UITextBox(oUILib)
+		With txtMagnetic
+			.ControlName="txtMagnetic"
+			.Left=225
+			.Top=122
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtMagnetic)
+
+		'txtChemical initial props
+		txtChemical = New UITextBox(oUILib)
+		With txtChemical
+			.ControlName="txtChemical"
+			.Left=225
+			.Top=147
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtChemical)
+
+		'txtBurn initial props
+		txtBurn = New UITextBox(oUILib)
+		With txtBurn
+			.ControlName="txtBurn"
+			.Left=225
+			.Top=172
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtBurn)
+
+		'txtRadar initial props
+		txtRadar = New UITextBox(oUILib)
+		With txtRadar
+			.ControlName="txtRadar"
+			.Left=225
+			.Top=197
+			.Width=37
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtRadar)
+
+		'txtHullUsage initial props
+		txtHullUsage = New UITextBox(oUILib)
+		With txtHullUsage
+			.ControlName="txtHullUsage"
+			.Left=225
+			.Top=242
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtHullUsage)
+
+		'txtHPPerPlate initial props
+		txtHPPerPlate = New UITextBox(oUILib)
+		With txtHPPerPlate
+			.ControlName="txtHPPerPlate"
+			.Left=225
+			.Top=267
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="255"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtHPPerPlate)
+
+		'cboOuter initial props
+		cboOuter = New UIComboBox(oUILib)
+		With cboOuter
+			.ControlName="cboOuter"
+			.Left=225
+			.Top=312
+			.Width=184
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboOuter)
+
+		'cboMiddle initial props
+		cboMiddle = New UIComboBox(oUILib)
+		With cboMiddle
+			.ControlName="cboMiddle"
+			.Left=225
+			.Top=337
+			.Width=184
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboMiddle)
+
+		'cboInner initial props
+		cboInner = New UIComboBox(oUILib)
+		With cboInner
+			.ControlName="cboInner"
+			.Left=225
+			.Top=362
+			.Width=184
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboInner)
+	End Sub
+End Class

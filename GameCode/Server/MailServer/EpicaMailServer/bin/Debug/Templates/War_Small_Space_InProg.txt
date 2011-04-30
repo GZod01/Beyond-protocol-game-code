@@ -1,0 +1,11 @@
+Skirmishes Continue in [EnvirName]
+Skirmishes Continue in [EnvirName]
+1
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+[TotalLostBothSides] lives have already been claimed and continue to grow every moment of battle in [EnvirName]. Forces of [PlayerListSideA] and those of [PlayerListSideB] have been engaged in conflict since [StartOfBattle]. What appeared to be the start of a brief conflict is showing signs of being a drawn out engagement.
+<br><br>
+Experts indicate that this may be the prelude to a much larger and drawn out campaign between these factions in the [EnvirName] system. With over [TotalEntitiesLostBothSides] units and facilities left in ruin already, it is sure to bring economic strain to the already strained economy of the region.
+</div>

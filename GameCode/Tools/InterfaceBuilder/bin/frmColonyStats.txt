@@ -1,0 +1,216 @@
+'Interface created from Interface Builder
+Public Class frmColonyStats
+	Inherits UIWindow
+
+	Private WithEvents lblPopulation As UILabel
+	Private WithEvents lblPopulation As UILabel
+	Private WithEvents lblNonWorker As UILabel
+	Private WithEvents lblEnlisted As UILabel
+	Private WithEvents lblOfficers As UILabel
+	Private WithEvents lblPowerGen As UILabel
+	Private WithEvents lblPowerNeed As UILabel
+	Private WithEvents lblName As UILabel
+	Private WithEvents txtName As UITextBox
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmColonyStats initial props
+		With Me
+			.ControlName="frmColonyStats"
+			.Left=179
+			.Top=106
+			.Width=194
+			.Height=170
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lblPopulation initial props
+		lblPopulation = New UILabel(oUILib)
+		With lblPopulation
+			.ControlName="lblPopulation"
+			.Left=5
+			.Top=25
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Population: 9,999,999,999"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPopulation)
+
+		'lblPopulation initial props
+		lblPopulation = New UILabel(oUILib)
+		With lblPopulation
+			.ControlName="lblPopulation"
+			.Left=5
+			.Top=25
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Population: 9,999,999,999"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPopulation)
+
+		'lblNonWorker initial props
+		lblNonWorker = New UILabel(oUILib)
+		With lblNonWorker
+			.ControlName="lblNonWorker"
+			.Left=5
+			.Top=45
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Nonworkers: 9,999,999,999"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblNonWorker)
+
+		'lblEnlisted initial props
+		lblEnlisted = New UILabel(oUILib)
+		With lblEnlisted
+			.ControlName="lblEnlisted"
+			.Left=5
+			.Top=65
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Enlisted: 9,999,999,999"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEnlisted)
+
+		'lblOfficers initial props
+		lblOfficers = New UILabel(oUILib)
+		With lblOfficers
+			.ControlName="lblOfficers"
+			.Left=5
+			.Top=85
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Officers: 9,999,999,999"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblOfficers)
+
+		'lblPowerGen initial props
+		lblPowerGen = New UILabel(oUILib)
+		With lblPowerGen
+			.ControlName="lblPowerGen"
+			.Left=5
+			.Top=105
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Power Generated: 1000000"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPowerGen)
+
+		'lblPowerNeed initial props
+		lblPowerNeed = New UILabel(oUILib)
+		With lblPowerNeed
+			.ControlName="lblPowerNeed"
+			.Left=5
+			.Top=125
+			.Width=185
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Power Needed: 1000000"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPowerNeed)
+
+		'lblName initial props
+		lblName = New UILabel(oUILib)
+		With lblName
+			.ControlName="lblName"
+			.Left=5
+			.Top=5
+			.Width=45
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Name:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblName)
+
+		'txtName initial props
+		txtName = New UITextBox(oUILib)
+		With txtName
+			.ControlName="txtName"
+			.Left=55
+			.Top=5
+			.Width=134
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Colony Name"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Courier New", 9.75, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=20
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtName)
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=47
+			.Top=145
+			.Width=100
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnClose)
+	End Sub
+End Class

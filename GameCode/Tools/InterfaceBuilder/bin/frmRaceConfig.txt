@@ -1,0 +1,572 @@
+'Interface created from Interface Builder
+Public Class frmRaceConfig
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblEntryFee As UILabel
+	Private WithEvents txtEntryFee As UITextBox
+	Private WithEvents lblHullSize As UILabel
+	Private WithEvents txtMinHull As UITextBox
+	Private WithEvents txtMaxHull As UITextBox
+	Private WithEvents lblMinRacers As UILabel
+	Private WithEvents txtMinRacers As UITextBox
+	Private WithEvents lblFirstPlace As UILabel
+	Private WithEvents txtFirstPlace As UITextBox
+	Private WithEvents lblSecondplace As UILabel
+	Private WithEvents lblThirdPlace As UILabel
+	Private WithEvents txtSecondplace As UITextBox
+	Private WithEvents txtThirdPlace As UITextBox
+	Private WithEvents lblGuildTake As UILabel
+	Private WithEvents txtGuildTake As UITextBox
+	Private WithEvents lblCourse As UILabel
+	Private WithEvents lstCourse As UIListBox
+	Private WithEvents btnAddWP As UIButton
+	Private WithEvents btnRemoveWP As UIButton
+	Private WithEvents lblLaps As UILabel
+	Private WithEvents txtLaps As UITextBox
+	Private WithEvents chkGroundOnly As UICheckBox
+	Private WithEvents lblPotSplit As UILabel
+	Private WithEvents btnViewWP As UIButton
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmRaceConfig initial props
+		With Me
+			.ControlName="frmRaceConfig"
+			.Left=347
+			.Top=193
+			.Width=512
+			.Height=256
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=155
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Race Configuration"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=30
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblEntryFee initial props
+		lblEntryFee = New UILabel(oUILib)
+		With lblEntryFee
+			.ControlName="lblEntryFee"
+			.Left=10
+			.Top=40
+			.Width=70
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Entry Fee:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEntryFee, UIControl))
+
+		'txtEntryFee initial props
+		txtEntryFee = New UITextBox(oUILib)
+		With txtEntryFee
+			.ControlName="txtEntryFee"
+			.Left=100
+			.Top=42
+			.Width=135
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="10000"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtEntryFee, UIControl))
+
+		'lblHullSize initial props
+		lblHullSize = New UILabel(oUILib)
+		With lblHullSize
+			.ControlName="lblHullSize"
+			.Left=10
+			.Top=70
+			.Width=60
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Hullsize:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblHullSize, UIControl))
+
+		'txtMinHull initial props
+		txtMinHull = New UITextBox(oUILib)
+		With txtMinHull
+			.ControlName="txtMinHull"
+			.Left=100
+			.Top=72
+			.Width=65
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMinHull, UIControl))
+
+		'txtMaxHull initial props
+		txtMaxHull = New UITextBox(oUILib)
+		With txtMaxHull
+			.ControlName="txtMaxHull"
+			.Left=170
+			.Top=72
+			.Width=65
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMaxHull, UIControl))
+
+		'lblMinRacers initial props
+		lblMinRacers = New UILabel(oUILib)
+		With lblMinRacers
+			.ControlName="lblMinRacers"
+			.Left=10
+			.Top=120
+			.Width=85
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Min. Racers:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMinRacers, UIControl))
+
+		'txtMinRacers initial props
+		txtMinRacers = New UITextBox(oUILib)
+		With txtMinRacers
+			.ControlName="txtMinRacers"
+			.Left=100
+			.Top=122
+			.Width=40
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="3"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMinRacers, UIControl))
+
+		'lblFirstPlace initial props
+		lblFirstPlace = New UILabel(oUILib)
+		With lblFirstPlace
+			.ControlName="lblFirstPlace"
+			.Left=10
+			.Top=170
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="1st:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFirstPlace, UIControl))
+
+		'txtFirstPlace initial props
+		txtFirstPlace = New UITextBox(oUILib)
+		With txtFirstPlace
+			.ControlName="txtFirstPlace"
+			.Left=40
+			.Top=172
+			.Width=35
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFirstPlace, UIControl))
+
+		'lblSecondplace initial props
+		lblSecondplace = New UILabel(oUILib)
+		With lblSecondplace
+			.ControlName="lblSecondplace"
+			.Left=85
+			.Top=170
+			.Width=30
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="2nd:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSecondplace, UIControl))
+
+		'lblThirdPlace initial props
+		lblThirdPlace = New UILabel(oUILib)
+		With lblThirdPlace
+			.ControlName="lblThirdPlace"
+			.Left=165
+			.Top=170
+			.Width=27
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="3rd:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblThirdPlace, UIControl))
+
+		'txtSecondplace initial props
+		txtSecondplace = New UITextBox(oUILib)
+		With txtSecondplace
+			.ControlName="txtSecondplace"
+			.Left=120
+			.Top=172
+			.Width=35
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtSecondplace, UIControl))
+
+		'txtThirdPlace initial props
+		txtThirdPlace = New UITextBox(oUILib)
+		With txtThirdPlace
+			.ControlName="txtThirdPlace"
+			.Left=200
+			.Top=172
+			.Width=35
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtThirdPlace, UIControl))
+
+		'lblGuildTake initial props
+		lblGuildTake = New UILabel(oUILib)
+		With lblGuildTake
+			.ControlName="lblGuildTake"
+			.Left=50
+			.Top=200
+			.Width=80
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Guild Take:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGuildTake, UIControl))
+
+		'txtGuildTake initial props
+		txtGuildTake = New UITextBox(oUILib)
+		With txtGuildTake
+			.ControlName="txtGuildTake"
+			.Left=135
+			.Top=200
+			.Width=35
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtGuildTake, UIControl))
+
+		'lblCourse initial props
+		lblCourse = New UILabel(oUILib)
+		With lblCourse
+			.ControlName="lblCourse"
+			.Left=255
+			.Top=35
+			.Width=106
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Course Details:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCourse, UIControl))
+
+		'lstCourse initial props
+		lstCourse = New UIListBox(oUILib)
+		With lstCourse
+			.ControlName="lstCourse"
+			.Left=255
+			.Top=55
+			.Width=230
+			.Height=135
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstCourse, UIControl))
+
+		'btnAddWP initial props
+		btnAddWP = New UIButton(oUILib)
+		With btnAddWP
+			.ControlName="btnAddWP"
+			.Left=255
+			.Top=195
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Add Waypoint"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAddWP, UIControl))
+
+		'btnRemoveWP initial props
+		btnRemoveWP = New UIButton(oUILib)
+		With btnRemoveWP
+			.ControlName="btnRemoveWP"
+			.Left=380
+			.Top=195
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemoveWP, UIControl))
+
+		'lblLaps initial props
+		lblLaps = New UILabel(oUILib)
+		With lblLaps
+			.ControlName="lblLaps"
+			.Left=155
+			.Top=120
+			.Width=36
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Laps:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLaps, UIControl))
+
+		'txtLaps initial props
+		txtLaps = New UITextBox(oUILib)
+		With txtLaps
+			.ControlName="txtLaps"
+			.Left=200
+			.Top=122
+			.Width=35
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtLaps, UIControl))
+
+		'chkGroundOnly initial props
+		chkGroundOnly = New UICheckBox(oUILib)
+		With chkGroundOnly
+			.ControlName="chkGroundOnly"
+			.Left=55
+			.Top=95
+			.Width=154
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Ground-Based Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkGroundOnly, UIControl))
+
+		'lblPotSplit initial props
+		lblPotSplit = New UILabel(oUILib)
+		With lblPotSplit
+			.ControlName="lblPotSplit"
+			.Left=10
+			.Top=150
+			.Width=152
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Pot Split Percentages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPotSplit, UIControl))
+
+		'btnViewWP initial props
+		btnViewWP = New UIButton(oUILib)
+		With btnViewWP
+			.ControlName="btnViewWP"
+			.Left=315
+			.Top=225
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="View Waypoint"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnViewWP, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=485
+			.Top=4
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+	End Sub
+End Class

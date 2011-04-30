@@ -1,0 +1,80 @@
+'Interface created from Interface Builder
+Public Class fraDTFirst
+	Inherits UIWindow
+
+	Private WithEvents lblSelect As UILabel
+	Private WithEvents lstTrades As UIListBox
+	Private WithEvents btnCreateNew As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraDTFirst initial props
+		With Me
+			.ControlName="fraDTFirst"
+			.Left=136
+			.Top=106
+			.Width=790
+			.Height=260
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblSelect initial props
+		lblSelect = New UILabel(oUILib)
+		With lblSelect
+			.ControlName="lblSelect"
+			.Left=5
+			.Top=33
+			.Width=196
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Or Select an Existing Trade:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSelect, UIControl))
+
+		'lstTrades initial props
+		lstTrades = New UIListBox(oUILib)
+		With lstTrades
+			.ControlName="lstTrades"
+			.Left=5
+			.Top=55
+			.Width=780
+			.Height=200
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstTrades, UIControl))
+
+		'btnCreateNew initial props
+		btnCreateNew = New UIButton(oUILib)
+		With btnCreateNew
+			.ControlName="btnCreateNew"
+			.Left=5
+			.Top=5
+			.Width=142
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Create New Trade"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCreateNew, UIControl))
+	End Sub
+End Class

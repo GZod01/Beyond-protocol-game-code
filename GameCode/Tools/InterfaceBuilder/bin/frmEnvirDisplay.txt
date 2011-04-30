@@ -1,0 +1,109 @@
+'Interface created from Interface Builder
+Public Class frmEnvirDisplay
+	Inherits UIWindow
+
+	Private WithEvents lblEnvirName As UILabel
+	Private WithEvents lblCommandCap As UILabel
+	Private WithEvents lblCredits As UILabel
+	Private WithEvents ln1 As UILine
+	Private WithEvents ln2 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmEnvirDisplay initial props
+		With Me
+			.ControlName="frmEnvirDisplay"
+			.Left=0
+			.Top=0
+			.Width=279
+			.Height=25
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(0)
+			.FullScreen=False
+		End With
+
+		'lblEnvirName initial props
+		lblEnvirName = New UILabel(oUILib)
+		With lblEnvirName
+			.ControlName="lblEnvirName"
+			.Left=0
+			.Top=0
+			.Width=139
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="Environment Name"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+		End With
+		Me.AddChild(lblEnvirName)
+
+		'lblCommandCap initial props
+		lblCommandCap = New UILabel(oUILib)
+		With lblCommandCap
+			.ControlName="lblCommandCap"
+			.Left=139
+			.Top=0
+			.Width=61
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="100/100"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+		End With
+		Me.AddChild(lblCommandCap)
+
+		'lblCredits initial props
+		lblCredits = New UILabel(oUILib)
+		With lblCredits
+			.ControlName="lblCredits"
+			.Left=203
+			.Top=0
+			.Width=76
+			.Height=27
+			.Enabled=True
+			.Visible=True
+			.Caption="1,234,567,890"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+		End With
+		Me.AddChild(lblCredits)
+
+		'ln1 initial props
+		ln1 = New UILine(oUILib)
+		With ln1
+			.ControlName="ln1"
+			.Left=139
+			.Top=0
+			.Width=0
+			.Height=26
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(ln1)
+
+		'ln2 initial props
+		ln2 = New UILine(oUILib)
+		With ln2
+			.ControlName="ln2"
+			.Left=203
+			.Top=0
+			.Width=0
+			.Height=26
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(ln2)
+	End Sub
+End Class

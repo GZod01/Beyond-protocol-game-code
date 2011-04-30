@@ -1,0 +1,216 @@
+'Interface created from Interface Builder
+Public Class fraBuyOrderDetails
+	Inherits UIWindow
+
+	Private WithEvents txtItemDetails As UITextBox
+	Private WithEvents lblEscrow As UILabel
+	Private WithEvents lblPayment As UILabel
+	Private WithEvents lblQuantity As UILabel
+	Private WithEvents lblBuyer As UILabel
+	Private WithEvents lblDeadline As UILabel
+	Private WithEvents lblDelivery As UILabel
+	Private WithEvents lblFinalDeadline As UILabel
+	Private WithEvents lblAcceptedBy As UILabel
+	Private WithEvents lblAcceptedOn As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraBuyOrderDetails initial props
+		With Me
+			.ControlName="fraBuyOrderDetails"
+			.Left=98
+			.Top=160
+			.Width=520
+			.Height=180
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=5
+			.Top=5
+			.Width=250
+			.Height=170
+			.Enabled=True
+			.Visible=True
+			.Caption="Requesting Buy Order Requirements..."
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtItemDetails, UIControl))
+
+		'lblEscrow initial props
+		lblEscrow = New UILabel(oUILib)
+		With lblEscrow
+			.ControlName="lblEscrow"
+			.Left=260
+			.Top=5
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Escrow: "
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEscrow, UIControl))
+
+		'lblPayment initial props
+		lblPayment = New UILabel(oUILib)
+		With lblPayment
+			.ControlName="lblPayment"
+			.Left=260
+			.Top=23
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Payment:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPayment, UIControl))
+
+		'lblQuantity initial props
+		lblQuantity = New UILabel(oUILib)
+		With lblQuantity
+			.ControlName="lblQuantity"
+			.Left=260
+			.Top=41
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Quantity:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblQuantity, UIControl))
+
+		'lblBuyer initial props
+		lblBuyer = New UILabel(oUILib)
+		With lblBuyer
+			.ControlName="lblBuyer"
+			.Left=260
+			.Top=59
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Buyer:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBuyer, UIControl))
+
+		'lblDeadline initial props
+		lblDeadline = New UILabel(oUILib)
+		With lblDeadline
+			.ControlName="lblDeadline"
+			.Left=260
+			.Top=77
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Deadline:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDeadline, UIControl))
+
+		'lblDelivery initial props
+		lblDelivery = New UILabel(oUILib)
+		With lblDelivery
+			.ControlName="lblDelivery"
+			.Left=260
+			.Top=95
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Delivery Time:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDelivery, UIControl))
+
+		'lblFinalDeadline initial props
+		lblFinalDeadline = New UILabel(oUILib)
+		With lblFinalDeadline
+			.ControlName="lblFinalDeadline"
+			.Left=260
+			.Top=113
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Adjusted Deadline:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFinalDeadline, UIControl))
+
+		'lblAcceptedBy initial props
+		lblAcceptedBy = New UILabel(oUILib)
+		With lblAcceptedBy
+			.ControlName="lblAcceptedBy"
+			.Left=260
+			.Top=131
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Accepted By:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAcceptedBy, UIControl))
+
+		'lblAcceptedOn initial props
+		lblAcceptedOn = New UILabel(oUILib)
+		With lblAcceptedOn
+			.ControlName="lblAcceptedOn"
+			.Left=260
+			.Top=149
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Accepted On:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAcceptedOn, UIControl))
+	End Sub
+End Class

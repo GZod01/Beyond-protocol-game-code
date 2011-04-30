@@ -1,0 +1,124 @@
+'Interface created from Interface Builder
+Public Class frmAddressBook
+	Inherits UIWindow
+
+	Private WithEvents txtNewContact As UITextBox
+	Private WithEvents btnAdd As UIButton
+	Private WithEvents lstContacts As UIListBox
+	Private WithEvents btnOK As UIButton
+	Private WithEvents btnCancel As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmAddressBook initial props
+		With Me
+			.ControlName="frmAddressBook"
+			.Left=266
+			.Top=108
+			.Width=255
+			.Height=284
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'txtNewContact initial props
+		txtNewContact = New UITextBox(oUILib)
+		With txtNewContact
+			.ControlName="txtNewContact"
+			.Left=10
+			.Top=10
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=20
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtNewContact, UIControl))
+
+		'btnAdd initial props
+		btnAdd = New UIButton(oUILib)
+		With btnAdd
+			.ControlName="btnAdd"
+			.Left=185
+			.Top=10
+			.Width=60
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Add"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAdd, UIControl))
+
+		'lstContacts initial props
+		lstContacts = New UIListBox(oUILib)
+		With lstContacts
+			.ControlName="lstContacts"
+			.Left=10
+			.Top=40
+			.Width=235
+			.Height=200
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.0, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstContacts, UIControl))
+
+		'btnOK initial props
+		btnOK = New UIButton(oUILib)
+		With btnOK
+			.ControlName="btnOK"
+			.Left=10
+			.Top=250
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="OK"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnOK, UIControl))
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=145
+			.Top=250
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCancel, UIControl))
+	End Sub
+End Class

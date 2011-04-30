@@ -1,0 +1,192 @@
+'Interface created from Interface Builder
+Public Class frmAmmoStatus
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblAmmoBays As UILabel
+	Private WithEvents lstBays As UIListBox
+	Private WithEvents lblCargo As UILabel
+	Private WithEvents lstCargo As UIListBox
+	Private WithEvents btnCtoA As UIButton
+	Private WithEvents btnAtoC As UIButton
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmAmmoStatus initial props
+		With Me
+			.ControlName="frmAmmoStatus"
+			.Left=171
+			.Top=167
+			.Width=512
+			.Height=256
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=129
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammunition Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=26
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblAmmoBays initial props
+		lblAmmoBays = New UILabel(oUILib)
+		With lblAmmoBays
+			.ControlName="lblAmmoBays"
+			.Left=5
+			.Top=30
+			.Width=73
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammo Bays"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAmmoBays, UIControl))
+
+		'lstBays initial props
+		lstBays = New UIListBox(oUILib)
+		With lstBays
+			.ControlName="lstBays"
+			.Left=5
+			.Top=50
+			.Width=235
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstBays, UIControl))
+
+		'lblCargo initial props
+		lblCargo = New UILabel(oUILib)
+		With lblCargo
+			.ControlName="lblCargo"
+			.Left=272
+			.Top=30
+			.Width=73
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo Bay"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCargo, UIControl))
+
+		'lstCargo initial props
+		lstCargo = New UIListBox(oUILib)
+		With lstCargo
+			.ControlName="lstCargo"
+			.Left=272
+			.Top=49
+			.Width=235
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstCargo, UIControl))
+
+		'btnCtoA initial props
+		btnCtoA = New UIButton(oUILib)
+		With btnCtoA
+			.ControlName="btnCtoA"
+			.Left=245
+			.Top=60
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="<<"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCtoA, UIControl))
+
+		'btnAtoC initial props
+		btnAtoC = New UIButton(oUILib)
+		With btnAtoC
+			.ControlName="btnAtoC"
+			.Left=245
+			.Top=115
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption=">>"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAtoC, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=487
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+	End Sub
+End Class

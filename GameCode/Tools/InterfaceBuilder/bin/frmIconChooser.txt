@@ -1,0 +1,213 @@
+'Interface created from Interface Builder
+Public Class frmIconChooser
+	Inherits UIWindow
+
+	Private WithEvents fraResult As UIWindow
+	Private WithEvents fraSpriteList As UIWindow
+	Private WithEvents optBack As UIOption
+	Private WithEvents optMiddle As UIOption
+	Private WithEvents optFore2 As UIOption
+	Private WithEvents btnAccept As UIButton
+	Private WithEvents btnCancel As UIButton
+	Private WithEvents hscrSprites As UIScrollBar
+	Private WithEvents fraColor As UIWindow
+	Private WithEvents hscrColor As UIScrollBar
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmIconChooser initial props
+		With Me
+			.ControlName="frmIconChooser"
+			.Left=339
+			.Top=239
+			.Width=250
+			.Height=250
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'fraResult initial props
+		fraResult = New UIWindow(oUILib)
+		With fraResult
+			.ControlName="fraResult"
+			.Left=10
+			.Top=10
+			.Width=67
+			.Height=67
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraResult, UIControl))
+
+		'fraSpriteList initial props
+		fraSpriteList = New UIWindow(oUILib)
+		With fraSpriteList
+			.ControlName="fraSpriteList"
+			.Left=10
+			.Top=85
+			.Width=230
+			.Height=67
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraSpriteList, UIControl))
+
+		'optBack initial props
+		optBack = New UIOption(oUILib)
+		With optBack
+			.ControlName="optBack"
+			.Left=85
+			.Top=10
+			.Width=53
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Back"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=True
+		End With
+		Me.AddChild(CType(optBack, UIControl))
+
+		'optMiddle initial props
+		optMiddle = New UIOption(oUILib)
+		With optMiddle
+			.ControlName="optMiddle"
+			.Left=85
+			.Top=30
+			.Width=63
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Middle"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optMiddle, UIControl))
+
+		'optFore2 initial props
+		optFore2 = New UIOption(oUILib)
+		With optFore2
+			.ControlName="optFore2"
+			.Left=85
+			.Top=50
+			.Width=52
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Front"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optFore2, UIControl))
+
+		'btnAccept initial props
+		btnAccept = New UIButton(oUILib)
+		With btnAccept
+			.ControlName="btnAccept"
+			.Left=160
+			.Top=10
+			.Width=80
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Accept"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAccept, UIControl))
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=160
+			.Top=50
+			.Width=80
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCancel, UIControl))
+
+		'hscrSprites initial props
+		hscrSprites = New UIScrollBar(oUILib, False)
+		With hscrSprites
+			.ControlName="hscrSprites"
+			.Left=10
+			.Top=154
+			.Width=230
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrSprites, UIControl))
+
+		'fraColor initial props
+		fraColor = New UIWindow(oUILib)
+		With fraColor
+			.ControlName="fraColor"
+			.Left=10
+			.Top=185
+			.Width=230
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraColor, UIControl))
+
+		'hscrColor initial props
+		hscrColor = New UIScrollBar(oUILib, False)
+		With hscrColor
+			.ControlName="hscrColor"
+			.Left=10
+			.Top=220
+			.Width=230
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrColor, UIControl))
+	End Sub
+End Class

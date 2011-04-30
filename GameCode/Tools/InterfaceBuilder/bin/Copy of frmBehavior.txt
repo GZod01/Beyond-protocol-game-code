@@ -1,0 +1,509 @@
+'Interface created from Interface Builder
+Public Class frmBehavior
+	Inherits UIWindow
+
+	Private WithEvents lblTargetingPref As UILabel
+	Private WithEvents chkTPFighter As UICheckBox
+	Private WithEvents chkTPCargo As UICheckBox
+	Private WithEvents chkTPTroopTrans As UICheckBox
+	Private WithEvents chkTPEscort As UICheckBox
+	Private WithEvents chkTPCarrier As UICheckBox
+	Private WithEvents chkTPCapital As UICheckBox
+	Private WithEvents chkTPArmed As UICheckBox
+	Private WithEvents chkTPUnarmed As UICheckBox
+	Private WithEvents chkTPFacility As UICheckBox
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblEngagement As UILabel
+	Private WithEvents optEPHoldFire As UIOption
+	Private WithEvents optEPStandGround As UIOption
+	Private WithEvents optEPPursue As UIOption
+	Private WithEvents optEPEvade As UIOption
+	Private WithEvents optEPEngage As UIOption
+	Private WithEvents optEPDock As UIOption
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lblTactic As UILabel
+	Private WithEvents optCTMinimize As UIOption
+	Private WithEvents optCTNormal As UIOption
+	Private WithEvents optCTMaximize As UIOption
+	Private WithEvents chkCTManeuver As UICheckBox
+	Private WithEvents chkCTLaunchAll As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmBehavior initial props
+		With Me
+			.ControlName="frmBehavior"
+			.Left=133
+			.Top=112
+			.Width=341
+			.Height=232
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lblTargetingPref initial props
+		lblTargetingPref = New UILabel(oUILib)
+		With lblTargetingPref
+			.ControlName="lblTargetingPref"
+			.Left=5
+			.Top=5
+			.Width=153
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Targeting Preference"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblTargetingPref)
+
+		'chkTPFighter initial props
+		chkTPFighter = New UICheckBox(oUILib)
+		With chkTPFighter
+			.ControlName="chkTPFighter"
+			.Left=16
+			.Top=29
+			.Width=49
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Fighter"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(chkTPFighter)
+
+		'chkTPCargo initial props
+		chkTPCargo = New UICheckBox(oUILib)
+		With chkTPCargo
+			.ControlName="chkTPCargo"
+			.Left=110
+			.Top=29
+			.Width=53
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPCargo)
+
+		'chkTPTroopTrans initial props
+		chkTPTroopTrans = New UICheckBox(oUILib)
+		With chkTPTroopTrans
+			.ControlName="chkTPTroopTrans"
+			.Left=205
+			.Top=29
+			.Width=115
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Troop Transport"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPTroopTrans)
+
+		'chkTPEscort initial props
+		chkTPEscort = New UICheckBox(oUILib)
+		With chkTPEscort
+			.ControlName="chkTPEscort"
+			.Left=16
+			.Top=65
+			.Width=54
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Escort"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPEscort)
+
+		'chkTPCarrier initial props
+		chkTPCarrier = New UICheckBox(oUILib)
+		With chkTPCarrier
+			.ControlName="chkTPCarrier"
+			.Left=110
+			.Top=65
+			.Width=56
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Carrier"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(chkTPCarrier)
+
+		'chkTPCapital initial props
+		chkTPCapital = New UICheckBox(oUILib)
+		With chkTPCapital
+			.ControlName="chkTPCapital"
+			.Left=205
+			.Top=65
+			.Width=57
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Capital"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPCapital)
+
+		'chkTPArmed initial props
+		chkTPArmed = New UICheckBox(oUILib)
+		With chkTPArmed
+			.ControlName="chkTPArmed"
+			.Left=16
+			.Top=47
+			.Width=47
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Armed"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPArmed)
+
+		'chkTPUnarmed initial props
+		chkTPUnarmed = New UICheckBox(oUILib)
+		With chkTPUnarmed
+			.ControlName="chkTPUnarmed"
+			.Left=110
+			.Top=47
+			.Width=72
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Unarmed"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkTPUnarmed)
+
+		'chkTPFacility initial props
+		chkTPFacility = New UICheckBox(oUILib)
+		With chkTPFacility
+			.ControlName="chkTPFacility"
+			.Left=205
+			.Top=47
+			.Width=59
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Facility"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(chkTPFacility)
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=5
+			.Top=85
+			.Width=330
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lnDiv1)
+
+		'lblEngagement initial props
+		lblEngagement = New UILabel(oUILib)
+		With lblEngagement
+			.ControlName="lblEngagement"
+			.Left=5
+			.Top=90
+			.Width=153
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Engagement Pattern"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEngagement)
+
+		'optEPHoldFire initial props
+		optEPHoldFire = New UIOption(oUILib)
+		With optEPHoldFire
+			.ControlName="optEPHoldFire"
+			.Left=16
+			.Top=110
+			.Width=72
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Hold Fire"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optEPHoldFire)
+
+		'optEPStandGround initial props
+		optEPStandGround = New UIOption(oUILib)
+		With optEPStandGround
+			.ControlName="optEPStandGround"
+			.Left=203
+			.Top=110
+			.Width=99
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Stand Ground"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optEPStandGround)
+
+		'optEPPursue initial props
+		optEPPursue = New UIOption(oUILib)
+		With optEPPursue
+			.ControlName="optEPPursue"
+			.Left=111
+			.Top=110
+			.Width=60
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Pursue"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(optEPPursue)
+
+		'optEPEvade initial props
+		optEPEvade = New UIOption(oUILib)
+		With optEPEvade
+			.ControlName="optEPEvade"
+			.Left=16
+			.Top=128
+			.Width=57
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Evade"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optEPEvade)
+
+		'optEPEngage initial props
+		optEPEngage = New UIOption(oUILib)
+		With optEPEngage
+			.ControlName="optEPEngage"
+			.Left=111
+			.Top=128
+			.Width=65
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Engage"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optEPEngage)
+
+		'optEPDock initial props
+		optEPDock = New UIOption(oUILib)
+		With optEPDock
+			.ControlName="optEPDock"
+			.Left=203
+			.Top=128
+			.Width=117
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Dock with Target"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optEPDock)
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=5
+			.Top=150
+			.Width=330
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lnDiv2)
+
+		'lblTactic initial props
+		lblTactic = New UILabel(oUILib)
+		With lblTactic
+			.ControlName="lblTactic"
+			.Left=5
+			.Top=155
+			.Width=153
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Combat Tactic"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblTactic)
+
+		'optCTMinimize initial props
+		optCTMinimize = New UIOption(oUILib)
+		With optCTMinimize
+			.ControlName="optCTMinimize"
+			.Left=16
+			.Top=175
+			.Width=125
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Minimize Damage"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optCTMinimize)
+
+		'optCTNormal initial props
+		optCTNormal = New UIOption(oUILib)
+		With optCTNormal
+			.ControlName="optCTNormal"
+			.Left=16
+			.Top=193
+			.Width=61
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Normal"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(optCTNormal)
+
+		'optCTMaximize initial props
+		optCTMaximize = New UIOption(oUILib)
+		With optCTMaximize
+			.ControlName="optCTMaximize"
+			.Left=16
+			.Top=211
+			.Width=129
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Maximize Damage"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(optCTMaximize)
+
+		'chkCTManeuver initial props
+		chkCTManeuver = New UICheckBox(oUILib)
+		With chkCTManeuver
+			.ControlName="chkCTManeuver"
+			.Left=205
+			.Top=175
+			.Width=79
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Maneuver"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=False
+		End With
+		Me.AddChild(chkCTManeuver)
+
+		'chkCTLaunchAll initial props
+		chkCTLaunchAll = New UICheckBox(oUILib)
+		With chkCTLaunchAll
+			.ControlName="chkCTLaunchAll"
+			.Left=205
+			.Top=193
+			.Width=114
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Launch Children"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(chkCTLaunchAll)
+	End Sub
+End Class

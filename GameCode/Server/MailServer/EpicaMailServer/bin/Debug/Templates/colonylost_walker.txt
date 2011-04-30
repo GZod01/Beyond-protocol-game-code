@@ -1,0 +1,9 @@
+[Colonyname] Lost! 
+Contact with [ColonyName] has been lost! 
+9
+Jason Walker
+2 
+2-8-7- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Numerous communication stations and relays have been unable to make contact with [ColonyName]. Although, this is initial reporting numerous theories have been put forward about the demise of the ill-fated colony. It could have been destroyed, or simply political turmoil broke the colony down. [ColonyNamePossessive] fate is unknown at this time, due to the lack of any communication coming out of [ColonyName] the worst has been expected. 
+</div>

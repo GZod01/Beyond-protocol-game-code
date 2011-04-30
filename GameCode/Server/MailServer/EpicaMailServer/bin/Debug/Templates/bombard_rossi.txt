@@ -1,0 +1,10 @@
+Bombs Away! 
+[PlanetName] is under bombardment from [PlayerName]. 
+16 
+Jeffrey Rossi
+7
+7-3-4-
+<div style="font-size: 8pt; color:#E2E2E2;"> 
+Breaking News on [PlanetName]! Reporters on the planet’s surface are reporting that bombs are falling from the skies above and that the facilities of the planet are under siege from ships high above [PlanetNamePossessive] surface. "We're unsure at this time who has initiated the bombardment and what their motives are, but it seems that everyone here is very worried that this is the start of a larger invasion and morale is steadily dropping as a result," one analyst on the ground reports. "If they keep this up [PlanetName] will very quickly be reduced to dust and unless a military response occurs soon then there will undoubtedly be nothing left!" 
+<br><br>GNS news will continue to follow this developing story and give you the latest from [PlanetName] as the bombardment continues and the citizens of [PlanetName] attempt to salvage whatever they can as the bombs continue to fall. 
+</div>

@@ -1,0 +1,11 @@
+Truce between [PlayerName] and [PlayerName2]
+Truce declared: [PlayerName] and [PlayerName2] reach accord!
+14
+Random
+5
+5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+[PlayerName] and [PlayerName2] finished talks today that concluded an agreement to cease all hostilities immediately. Citizens of both empires sighed a heavy sigh of relief.
+<br><br>
+The agreement comes after [SpanOfWar] of fighting and anomosity since the war started on [StartOfWar]. Experts are unsure if the truce will last or if tensions will escalate into open conflict again, however, the truce is always welcome.
+</div>

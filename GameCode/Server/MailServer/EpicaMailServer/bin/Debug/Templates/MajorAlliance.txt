@@ -1,0 +1,9 @@
+[PlayerName] forms Alliance with [PlayerName2]
+Major alliance formed between [PlayerName] and [PlayerName2]
+15
+Random
+5
+5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+This is a major alliance between [PlayerName] and [PlayerName2] with the following active war decs: [WarDecList].
+</div>

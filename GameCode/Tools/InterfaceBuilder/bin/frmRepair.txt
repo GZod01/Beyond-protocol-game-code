@@ -1,0 +1,955 @@
+'Interface created from Interface Builder
+Public Class frmRepair
+	Inherits UIWindow
+
+	Private WithEvents fraBack As UIWindow
+	Private WithEvents shpLeft As UIWindow
+	Private WithEvents shpFront As UIWindow
+	Private WithEvents shpStructure As UIWindow
+	Private WithEvents shpBack As UIWindow
+	Private WithEvents shpRight As UIWindow
+	Private WithEvents btnLeft As UIButton
+	Private WithEvents btnFront As UIButton
+	Private WithEvents btnStructure As UIButton
+	Private WithEvents btnBack As UIButton
+	Private WithEvents btnRight As UIButton
+	Private WithEvents btnRepairAll As UIButton
+	Private WithEvents lblLeft As UILabel
+	Private WithEvents lblFront As UILabel
+	Private WithEvents lblStructure As UILabel
+	Private WithEvents lblBack As UILabel
+	Private WithEvents lblRight As UILabel
+	Private WithEvents btnCancelRepair As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lblEngines As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents btnEngines As UIButton
+	Private WithEvents lblRadar As UILabel
+	Private WithEvents lblShields As UILabel
+	Private WithEvents lblHangar As UILabel
+	Private WithEvents lblCargo As UILabel
+	Private WithEvents lblWeapons As UILabel
+	Private WithEvents lblFore1 As UILabel
+	Private WithEvents lblFore2 As UILabel
+	Private WithEvents lblLeft1 As UILabel
+	Private WithEvents lblLeft2 As UILabel
+	Private WithEvents lblRear1 As UILabel
+	Private WithEvents lblRear2 As UILabel
+	Private WithEvents lblRight1 As UILabel
+	Private WithEvents lblRight2 As UILabel
+	Private WithEvents btnRepairAllComps As UIButton
+	Private WithEvents btnRadar As UIButton
+	Private WithEvents btnShield As UIButton
+	Private WithEvents btnHangar As UIButton
+	Private WithEvents btnCargo As UIButton
+	Private WithEvents btnFore1 As UIButton
+	Private WithEvents btnFore2 As UIButton
+	Private WithEvents btnLeft1 As UIButton
+	Private WithEvents btnLeft2 As UIButton
+	Private WithEvents btnRear1 As UIButton
+	Private WithEvents btnRear2 As UIButton
+	Private WithEvents btnRight1 As UIButton
+	Private WithEvents btnRight2 As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmRepair initial props
+		With Me
+			.ControlName="frmRepair"
+			.Left=211
+			.Top=119
+			.Width=512
+			.Height=225
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'fraBack initial props
+		fraBack = New UIWindow(oUILib)
+		With fraBack
+			.ControlName="fraBack"
+			.Left=20
+			.Top=25
+			.Width=105
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraBack, UIControl))
+
+		'shpLeft initial props
+		shpLeft = New UIWindow(oUILib)
+		With shpLeft
+			.ControlName="shpLeft"
+			.Left=21
+			.Top=65
+			.Width=20
+			.Height=60
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpLeft, UIControl))
+
+		'shpFront initial props
+		shpFront = New UIWindow(oUILib)
+		With shpFront
+			.ControlName="shpFront"
+			.Left=42
+			.Top=55
+			.Width=20
+			.Height=70
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpFront, UIControl))
+
+		'shpStructure initial props
+		shpStructure = New UIWindow(oUILib)
+		With shpStructure
+			.ControlName="shpStructure"
+			.Left=63
+			.Top=25
+			.Width=20
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpStructure, UIControl))
+
+		'shpBack initial props
+		shpBack = New UIWindow(oUILib)
+		With shpBack
+			.ControlName="shpBack"
+			.Left=84
+			.Top=70
+			.Width=20
+			.Height=55
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpBack, UIControl))
+
+		'shpRight initial props
+		shpRight = New UIWindow(oUILib)
+		With shpRight
+			.ControlName="shpRight"
+			.Left=105
+			.Top=75
+			.Width=20
+			.Height=50
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpRight, UIControl))
+
+		'btnLeft initial props
+		btnLeft = New UIButton(oUILib)
+		With btnLeft
+			.ControlName="btnLeft"
+			.Left=18
+			.Top=125
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnLeft, UIControl))
+
+		'btnFront initial props
+		btnFront = New UIButton(oUILib)
+		With btnFront
+			.ControlName="btnFront"
+			.Left=40
+			.Top=125
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnFront, UIControl))
+
+		'btnStructure initial props
+		btnStructure = New UIButton(oUILib)
+		With btnStructure
+			.ControlName="btnStructure"
+			.Left=63
+			.Top=125
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnStructure, UIControl))
+
+		'btnBack initial props
+		btnBack = New UIButton(oUILib)
+		With btnBack
+			.ControlName="btnBack"
+			.Left=84
+			.Top=125
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnBack, UIControl))
+
+		'btnRight initial props
+		btnRight = New UIButton(oUILib)
+		With btnRight
+			.ControlName="btnRight"
+			.Left=104
+			.Top=125
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRight, UIControl))
+
+		'btnRepairAll initial props
+		btnRepairAll = New UIButton(oUILib)
+		With btnRepairAll
+			.ControlName="btnRepairAll"
+			.Left=18
+			.Top=149
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Repair All"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRepairAll, UIControl))
+
+		'lblLeft initial props
+		lblLeft = New UILabel(oUILib)
+		With lblLeft
+			.ControlName="lblLeft"
+			.Left=21
+			.Top=4
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="L"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLeft, UIControl))
+
+		'lblFront initial props
+		lblFront = New UILabel(oUILib)
+		With lblFront
+			.ControlName="lblFront"
+			.Left=42
+			.Top=4
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="F"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFront, UIControl))
+
+		'lblStructure initial props
+		lblStructure = New UILabel(oUILib)
+		With lblStructure
+			.ControlName="lblStructure"
+			.Left=63
+			.Top=4
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="S"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStructure, UIControl))
+
+		'lblBack initial props
+		lblBack = New UILabel(oUILib)
+		With lblBack
+			.ControlName="lblBack"
+			.Left=84
+			.Top=4
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="B"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBack, UIControl))
+
+		'lblRight initial props
+		lblRight = New UILabel(oUILib)
+		With lblRight
+			.ControlName="lblRight"
+			.Left=105
+			.Top=4
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRight, UIControl))
+
+		'btnCancelRepair initial props
+		btnCancelRepair = New UIButton(oUILib)
+		With btnCancelRepair
+			.ControlName="btnCancelRepair"
+			.Left=205
+			.Top=195
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel Repair"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCancelRepair, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=486
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lblEngines initial props
+		lblEngines = New UILabel(oUILib)
+		With lblEngines
+			.ControlName="lblEngines"
+			.Left=150
+			.Top=5
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Engines"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEngines, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=140
+			.Top=0
+			.Width=0
+			.Height=185
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=0
+			.Top=185
+			.Width=512
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'btnEngines initial props
+		btnEngines = New UIButton(oUILib)
+		With btnEngines
+			.ControlName="btnEngines"
+			.Left=250
+			.Top=4
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnEngines, UIControl))
+
+		'lblRadar initial props
+		lblRadar = New UILabel(oUILib)
+		With lblRadar
+			.ControlName="lblRadar"
+			.Left=150
+			.Top=30
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Radar"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRadar, UIControl))
+
+		'lblShields initial props
+		lblShields = New UILabel(oUILib)
+		With lblShields
+			.ControlName="lblShields"
+			.Left=150
+			.Top=55
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Shield"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblShields, UIControl))
+
+		'lblHangar initial props
+		lblHangar = New UILabel(oUILib)
+		With lblHangar
+			.ControlName="lblHangar"
+			.Left=150
+			.Top=80
+			.Width=90
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Hangar Bay"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblHangar, UIControl))
+
+		'lblCargo initial props
+		lblCargo = New UILabel(oUILib)
+		With lblCargo
+			.ControlName="lblCargo"
+			.Left=150
+			.Top=105
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo Bay"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCargo, UIControl))
+
+		'lblWeapons initial props
+		lblWeapons = New UILabel(oUILib)
+		With lblWeapons
+			.ControlName="lblWeapons"
+			.Left=295
+			.Top=10
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="WEAPONS"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWeapons, UIControl))
+
+		'lblFore1 initial props
+		lblFore1 = New UILabel(oUILib)
+		With lblFore1
+			.ControlName="lblFore1"
+			.Left=300
+			.Top=30
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Forward 1"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFore1, UIControl))
+
+		'lblFore2 initial props
+		lblFore2 = New UILabel(oUILib)
+		With lblFore2
+			.ControlName="lblFore2"
+			.Left=410
+			.Top=30
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Forward 2"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFore2, UIControl))
+
+		'lblLeft1 initial props
+		lblLeft1 = New UILabel(oUILib)
+		With lblLeft1
+			.ControlName="lblLeft1"
+			.Left=300
+			.Top=55
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Left 1"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLeft1, UIControl))
+
+		'lblLeft2 initial props
+		lblLeft2 = New UILabel(oUILib)
+		With lblLeft2
+			.ControlName="lblLeft2"
+			.Left=411
+			.Top=55
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Left 2"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLeft2, UIControl))
+
+		'lblRear1 initial props
+		lblRear1 = New UILabel(oUILib)
+		With lblRear1
+			.ControlName="lblRear1"
+			.Left=300
+			.Top=80
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Rear 1"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRear1, UIControl))
+
+		'lblRear2 initial props
+		lblRear2 = New UILabel(oUILib)
+		With lblRear2
+			.ControlName="lblRear2"
+			.Left=410
+			.Top=80
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Rear 2"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRear2, UIControl))
+
+		'lblRight1 initial props
+		lblRight1 = New UILabel(oUILib)
+		With lblRight1
+			.ControlName="lblRight1"
+			.Left=300
+			.Top=105
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Right 1"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRight1, UIControl))
+
+		'lblRight2 initial props
+		lblRight2 = New UILabel(oUILib)
+		With lblRight2
+			.ControlName="lblRight2"
+			.Left=409
+			.Top=105
+			.Width=60
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Right 2"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRight2, UIControl))
+
+		'btnRepairAllComps initial props
+		btnRepairAllComps = New UIButton(oUILib)
+		With btnRepairAllComps
+			.ControlName="btnRepairAllComps"
+			.Left=280
+			.Top=145
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Repair All"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRepairAllComps, UIControl))
+
+		'btnRadar initial props
+		btnRadar = New UIButton(oUILib)
+		With btnRadar
+			.ControlName="btnRadar"
+			.Left=250
+			.Top=29
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRadar, UIControl))
+
+		'btnShield initial props
+		btnShield = New UIButton(oUILib)
+		With btnShield
+			.ControlName="btnShield"
+			.Left=250
+			.Top=54
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnShield, UIControl))
+
+		'btnHangar initial props
+		btnHangar = New UIButton(oUILib)
+		With btnHangar
+			.ControlName="btnHangar"
+			.Left=250
+			.Top=79
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnHangar, UIControl))
+
+		'btnCargo initial props
+		btnCargo = New UIButton(oUILib)
+		With btnCargo
+			.ControlName="btnCargo"
+			.Left=250
+			.Top=104
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCargo, UIControl))
+
+		'btnFore1 initial props
+		btnFore1 = New UIButton(oUILib)
+		With btnFore1
+			.ControlName="btnFore1"
+			.Left=375
+			.Top=28
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnFore1, UIControl))
+
+		'btnFore2 initial props
+		btnFore2 = New UIButton(oUILib)
+		With btnFore2
+			.ControlName="btnFore2"
+			.Left=480
+			.Top=28
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnFore2, UIControl))
+
+		'btnLeft1 initial props
+		btnLeft1 = New UIButton(oUILib)
+		With btnLeft1
+			.ControlName="btnLeft1"
+			.Left=375
+			.Top=53
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnLeft1, UIControl))
+
+		'btnLeft2 initial props
+		btnLeft2 = New UIButton(oUILib)
+		With btnLeft2
+			.ControlName="btnLeft2"
+			.Left=480
+			.Top=53
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnLeft2, UIControl))
+
+		'btnRear1 initial props
+		btnRear1 = New UIButton(oUILib)
+		With btnRear1
+			.ControlName="btnRear1"
+			.Left=375
+			.Top=78
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRear1, UIControl))
+
+		'btnRear2 initial props
+		btnRear2 = New UIButton(oUILib)
+		With btnRear2
+			.ControlName="btnRear2"
+			.Left=480
+			.Top=78
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRear2, UIControl))
+
+		'btnRight1 initial props
+		btnRight1 = New UIButton(oUILib)
+		With btnRight1
+			.ControlName="btnRight1"
+			.Left=375
+			.Top=103
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRight1, UIControl))
+
+		'btnRight2 initial props
+		btnRight2 = New UIButton(oUILib)
+		With btnRight2
+			.ControlName="btnRight2"
+			.Left=480
+			.Top=103
+			.Width=23
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="R"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRight2, UIControl))
+	End Sub
+End Class

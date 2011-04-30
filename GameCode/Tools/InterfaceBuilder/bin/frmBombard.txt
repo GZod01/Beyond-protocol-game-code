@@ -1,0 +1,141 @@
+'Interface created from Interface Builder
+Public Class frmBombard
+	Inherits UIWindow
+
+	Private WithEvents btnBlanket As UIButton
+	Private WithEvents btnPrecision As UIButton
+	Private WithEvents btnNormal As UIButton
+	Private WithEvents btnCease As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lblChoose As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmBombard initial props
+		With Me
+			.ControlName="frmBombard"
+			.Left=554
+			.Top=257
+			.Width=128
+			.Height=128
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'btnBlanket initial props
+		btnBlanket = New UIButton(oUILib)
+		With btnBlanket
+			.ControlName="btnBlanket"
+			.Left=5
+			.Top=25
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Blanket Fire"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnBlanket, UIControl))
+
+		'btnPrecision initial props
+		btnPrecision = New UIButton(oUILib)
+		With btnPrecision
+			.ControlName="btnPrecision"
+			.Left=5
+			.Top=75
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Precision Fire"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnPrecision, UIControl))
+
+		'btnNormal initial props
+		btnNormal = New UIButton(oUILib)
+		With btnNormal
+			.ControlName="btnNormal"
+			.Left=5
+			.Top=50
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Normal Fire"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnNormal, UIControl))
+
+		'btnCease initial props
+		btnCease = New UIButton(oUILib)
+		With btnCease
+			.ControlName="btnCease"
+			.Left=5
+			.Top=100
+			.Width=120
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cease Fire"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCease, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=105
+			.Top=0
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lblChoose initial props
+		lblChoose = New UILabel(oUILib)
+		With lblChoose
+			.ControlName="lblChoose"
+			.Left=5
+			.Top=5
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Choose One:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblChoose, UIControl))
+	End Sub
+End Class

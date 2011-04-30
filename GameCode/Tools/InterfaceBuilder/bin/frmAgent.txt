@@ -1,0 +1,183 @@
+'Interface created from Interface Builder
+Public Class frmAgent
+	Inherits UIWindow
+
+	Private WithEvents fraPhoto As UIWindow
+	Private WithEvents lblName As UILabel
+	Private WithEvents lblLocation As UILabel
+	Private WithEvents lblStatus As UILabel
+	Private WithEvents lblExperience As UILabel
+	Private WithEvents fraProficiencies As UIWindow
+	Private WithEvents fraSkills As UIWindow
+	Private WithEvents fraInfiltration As UIWindow
+	Private WithEvents fraHistory As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmAgent initial props
+		With Me
+			.ControlName="frmAgent"
+			.Left=241
+			.Top=106
+			.Width=420
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'fraPhoto initial props
+		fraPhoto = New UIWindow(oUILib)
+		With fraPhoto
+			.ControlName="fraPhoto"
+			.Left=5
+			.Top=5
+			.Width=128
+			.Height=128
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraPhoto, UIControl))
+
+		'lblName initial props
+		lblName = New UILabel(oUILib)
+		With lblName
+			.ControlName="lblName"
+			.Left=145
+			.Top=10
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Name: Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblName, UIControl))
+
+		'lblLocation initial props
+		lblLocation = New UILabel(oUILib)
+		With lblLocation
+			.ControlName="lblLocation"
+			.Left=145
+			.Top=30
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Location: Gunarus IV - Factory (Csaj)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblLocation, UIControl))
+
+		'lblStatus initial props
+		lblStatus = New UILabel(oUILib)
+		With lblStatus
+			.ControlName="lblStatus"
+			.Left=145
+			.Top=50
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Status: Infiltrated - Waiting"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus, UIControl))
+
+		'lblExperience initial props
+		lblExperience = New UILabel(oUILib)
+		With lblExperience
+			.ControlName="lblExperience"
+			.Left=145
+			.Top=70
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Time With Agency: 5d, 15h, 20m"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblExperience, UIControl))
+
+		'fraProficiencies initial props
+		fraProficiencies = New UIWindow(oUILib)
+		With fraProficiencies
+			.ControlName="fraProficiencies"
+			.Left=5
+			.Top=145
+			.Width=175
+			.Height=95
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraProficiencies, UIControl))
+
+		'fraSkills initial props
+		fraSkills = New UIWindow(oUILib)
+		With fraSkills
+			.ControlName="fraSkills"
+			.Left=5
+			.Top=250
+			.Width=175
+			.Height=225
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraSkills, UIControl))
+
+		'fraInfiltration initial props
+		fraInfiltration = New UIWindow(oUILib)
+		With fraInfiltration
+			.ControlName="fraInfiltration"
+			.Left=190
+			.Top=145
+			.Width=225
+			.Height=220
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraInfiltration, UIControl))
+
+		'fraHistory initial props
+		fraHistory = New UIWindow(oUILib)
+		With fraHistory
+			.ControlName="fraHistory"
+			.Left=190
+			.Top=375
+			.Width=225
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraHistory, UIControl))
+	End Sub
+End Class

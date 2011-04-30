@@ -1,0 +1,270 @@
+====== SERVERS ARE DOWN ======
+
+
+Servers are down for our daily maintenance window. Expected downtime is 60 minutes.
+
+
+We have updated our bandwidth pipes and the problem should now be forever resolved.
+
+If you are having issues whatsoever (login, graphical, whatever it may be), go to LiveChat to talk to CSR.
+
+Copy this link into your browser for help: http://www.beyondprotocol.com/livechat/internalClientAccess.jsp?queue=1
+
+
+ATTENTION:  DO NOT SKIP THE TUTORIAL.  THERE IS NO WAY TO TAKE YOU BACK THERE.
+We have had people state that they skipped it and wished they had not...don't let this happen to you!
+
+ATTENTION:  IF YOU HAVE SET YOUR GRAPHICS WITH Configure Client AND YOU ARE EXPERIENCING SUB-PAR GRAPHICS OR INABILITY TO PLAY, DELETE YOUR BPCLIENT.INI FILE
+
+Please play with your graphics settings by pressing Escape. There are many graphics options that are off by default to ensure maximum performance and compatibility.
+
+09/25/08
+========
+* Fixed the updater client to not peg out the CPU while downloading
+
+* Tutorial Step 1 now requires the Next button to be clicked
+
+* The Spider fighter hull has had a face lift
+
+* The Roach fighter hull has had a face lift
+
+* Fixed an issue where the client and server disagreed on the contour of certain planets making some build locations display as buildable but were not actually buildable
+
+* New accounts (including open beta) are now able to log all the way
+
+* Relationship adjustments now take Guild Mates and Faction members into consideration
+
+* All Route configurations have been removed to clean up some data issues related to the cargo route system from before the mining patch
+
+
+
+09/24/08
+========
+* The Out bid email now includes a waypoint for the location of the mine where you were out bid
+
+* We reset everyone's relationship that were at war to 60 (neutral) and cleared everyone's CP Penalty to clean up the mess caused by yesterday's server maintenance
+
+* Fixed a bug that would cause everyone's target relationship score to be 1 when a server was brought up
+
+* Faction Slot updates should be more responsive and work properly
+
+* Fixed a display bug that would occur when players clicked on the relationship bar and inadvertently changed the relationship target score
+
+* Removed the ability to change the target score by the relationship bar in the relationship list
+
+
+09/22/08
+========
+* Diplomatic Relationship standings can only be dropped by 5 per 4 hours. 
+  * If the other player's score is lower than your current score - 5, then you can go down to the other player's score immediately and then wait 4 hours to continue dropping assuming the target score is lower than the other player's score
+  * Scores can be raised without limit
+  * Each decrease of the relationship will send an email message now to both internal and external devices if you are offline
+  * Decreases in relationship have the Raise Full Invulnerability response action
+
+* Alias accounts no longer allow players to set up a username and password for the account. The username is always assumed to be the player giving the alias. (Issue #12512)
+
+* Existing alias accounts have been removed, you will need to re-assign your aliases
+
+* Weapon Placement in the hull builder no longer gives errors if the weapon placement touches multiple edges. Weapon side firing is now determined by the side that contains the most of the weapon and also touches an edge.
+
+* Fixed a bug that would cause Impossible Design results for Radar designs for Tanks
+
+* Fixed the placement of certain buttons in the builder windows when viewing results of designs
+
+* The Shield builder now notifies players if the recharge rate exceeds the maximum hitpoints when redesigning
+
+* Fixed a bug where missile weapons would stop firing altogether
+
+* Fixed the Point Defense weapons to be more effective against missile weapons
+
+* Point Defense weapons will fire at missiles targeting the unit/facility regardless of whether the unit/facility is actively engaged
+
+* Other units/facilities will provide Point Defense assistance if the unit/facility is engaged in the combat as well
+
+* Fixed a bug that would cause point defense weapons to not appear when they were shot at ships
+
+* Removed the turret portion of the tutorial as it caused the tutorial to feel very long
+
+* Updated the tutorial to use the new mining system
+
+* Orbital Bombardment only affects the player who is doing the bombardment and enemies of the player
+  * Orbital Bombardment no longer causes a war
+
+* Believe to have forever fixed the CP Discrepancy bug caused by Bad War Declarations (Issue #12474)
+
+* Pirate tradeposts no longer appear at the center of star systems
+
+* Fixed agent intelligence reports so that they now provide the reports to the players the scores of other players (Issue #12708)
+
+* Point defense weapons now look smaller than normal weapons
+
+* Players can no longer exceed their command points by more than 310 in the first phase of the tutorial
+
+* Aurelium Pirates are now aware that the Command Center is the primary target and will focus fire better on them
+
+* Primary weapons will now save their shots when the unit is moving so that the shots only fire at primary targets. If the unit is immobile, the primary weapon will act like a secondary weapon.
+
+* Secondary weapons act as all weapon groups have before
+
+
+09/19/08
+========
+* The hull builder now limits the player on acceptable slots for the component selected based on previous slot assignments
+
+* Fog of war is no longer required to render the bump mapped terrain
+
+* Added a Take Me There button on the tutorial system that allows players to see what the tutorial step is referencing
+
+* Typing /r now replaces the text with /pm {name}
+
+* The indicators in the relationship list portion of the Diplomacy Window can now be used to scroll the relationships of players
+
+* Fixed a pesky crash bug that would occur when closing the client normally
+
+* Fixed a crash bug when running the tutorial without sound on that was introduced in a previous patch
+
+* Fixed some issues that would cause crashes when missiles are fired while the sound is disabled or there is no sound device. This includes at the intro or in-game.
+
+* The steps in the tutorial are now displayed differently and are now categorized as Step number and then action number.
+
+* Loaded Tutorials now show the proper Step/Action numbers
+
+* Scrollbars in the Death Window now work properly in the tutorial
+
+* Pressing Tab while doing a /r will cycle through the players who have sent you a private message
+
+* Fixed a bug introduced in the previous patch that allowed hangar bay doors to be placed on the hull anywhere (it still gave an error but the filter should have worked)
+
+* Fixed a bug when hovering over Hangar Bay Doors giving a size of 0 at all times
+
+* The chat window is now resizable
+
+* The email received from the first tutorial will no longer allow players to double click the waypoint for the pirate factory causing players to get stuck in limbo
+
+* Filtered slots in the hull builder now present some more color in order to be able to determine the difference between arcs
+
+
+09/13/08
+========
+* Alloy Builder's Default lookup for mineral values now works correctly with hull types
+
+* Added missiles to the Alloy Builder's Default lookup for mineral values
+
+* Adjusted several balancing numbers on several types of ships
+
+* Bombs and Solid Beams are the only weapons that can be assigned to the Bomb grouping
+
+* Bomb grouping is now only allowed on Frigate class ships
+
+* Pierce ratio exploit has been removed - Thanks Rakura!
+
+* Trade Board Range 2 is now the default technology level
+
+* Weapons Fire Misses are not as random anymore
+
+* The player setup screen no longer has black on black for the icon chooser by default
+
+* Players are now told that they will lose their tanks when first attacking the power generator in the tutorial
+
+* The Tech Builder scrollers are now more reactive to sliding to the minimum and maximum values
+
+* Users are now reminded of clicking on the map and pressing Ctrl+E to find an engineer on step 309 of the tutorial
+
+* The agent mission in the tutorial should execute faster now
+
+* Renamed Optimum, Maximum and Scan Resolution labels on the radar builder to Visible, Detection and Point Defense Accuracy to be clearer as to what the attributes do
+
+* Framework for the new F1 Menu has begun. A simple first-step file has been included with this.
+
+* Add your own help files by creating XML files in the Help folder
+
+* While setting up the player, the audio from the intro screen will be muted
+
+* Fixed the flow of tutorial two to give the player a better impression on the next steps in the game.
+
+
+09/12/08
+========
+* Weapons assigned to Bombs will be the only weapons that fire in response to orbital bombardment
+
+* Added tooltips, rearranged labels and adjusted the presentation of the Mineral Bidding window to illustrate that all 4 bidders in the list have rights to minerals should the mine be pulling sufficient resources
+
+* Removed Full Screen capability for the time being. We have received numerous JIT issues that we believe may be a result of the Full screen mode and we are attempting to pinpoint the exact cause of it.
+
+
+
+09/11/08
+========
+* Add a Restart Tutorial button for players who are in the tutorial and wish to start over
+
+09/10/08
+========
+* ClientConfig.exe has been updated to NOT break the client
+
+* Finishing the tutorial all the way through will grant a player a 3 million credit death budget when going to live and will reward players with 4 hours play time (average play time through the tutorial is 2 hours)
+
+* Tutorial 2 now gives the player a 15 minute invulnerability field
+
+* Implemented a chat configuration window and chat channel listing window accessible from the quickbar
+
+* Removed the need for mining routes in order to get minerals
+
+* Mining Facilities no longer generate minerals into their cargo hold
+
+* The mining window (F8 by default) is now the ticket to getting minerals on a planet
+  * Implemented a new bid system for getting minerals on a planet
+  * Select an item in the mining window to bring up the bid window
+  * The bid system works in the following manner:
+    * Every mining facility is owned by the private sector and takes bids
+    * Players enter a bid amount (per mineral) and a Maximum Quantity
+    * Maximum Quantity is the total minerals you wish to pull from the cache
+    * Bid Amount is the amount of credits you will spend per mineral pulled
+    * 20% of the total credits spent on bids is deposited into the owner of the mining facility credits
+    * The top four bidders split the take of the minerals by 25%
+    * If all 100% cannot be distributed (lack of bidders, funds, etc...) the top bidder receives the remainder at the top bidders bid price
+    * If no bids, the minerals are not lost or distributed
+    * Using Full Invulnerability will cancel all bids currently active
+    * Owners of a planet get 20% of all bids on the planet they own
+
+* Adjusted the costs for all technologies related to components for Tanks, Escorts, Frigates, Corvettes, Destroyers and Cruisers to bring them in line with the other hull types
+
+* Fixed some very nagging login issues
+
+* Fixed some route issues causing routes to stop
+
+* Space stations are no longer required for Ranks
+
+* Reduced the requirement for Governor to 200k population
+
+* Reduced the requirement for Overseer to 500k population
+
+* Fixed the textures on the new facility models when rendering with Low Quality lighting
+
+* Fixed the textures on the Raider, Gnat, Tick, Roach, Bobcat, Angel, Wolverine, Sickle and Rapier when rendering with Low Quality lighting
+
+* Spawn location hopping has been removed
+
+* The NPC Market should no longer be filled with 0's
+
+09/04/08
+========
+* Fixed a bug with the DEV and DSE tags for Dark Sky Entertainment personnel making it difficult to send /r posts to them
+
+* Step 57 should no longer get players stuck in the tutorial
+
+
+09/03/08
+========
+* Fixed an issue with the client that made it reverse the armor integrity values for the armor builder based on minerals (minerals that were worst appeared to be better than the best minerals). The bug was only on the client and the client did not display the proper values. The server reported the actual numbers correctly and therefore, users who have made armors may have incorrect integrity values. Everyone is advised to check their armor designs for the actual integrity values before continuing use.
+
+
+09/02/08
+========
+* Sound should no longer be required to progress in the tutorial
+
+* Updated the Client Config application
+
+* The tech builders have been made more like wizards to improve flow and to reduce initial trauma of seeing them for the first time
+
+* Some additional Tutorial bug fixes
+ 

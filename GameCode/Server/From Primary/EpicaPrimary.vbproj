@@ -1,0 +1,313 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{020F7270-17C4-4017-A9D8-4D8F472604E8}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>EpicaPrimary</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>EpicaPrimary</RootNamespace>
+    <StartupObject>EpicaPrimary.Form1</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>EpicaPrimary.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>EXTENSIVELOGGING=0</DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>full</DebugType>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>EpicaPrimary.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>none</DebugType>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\EpicaShared.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\AureliusAI.vb" />
+    <Compile Include="EpicaPrimary\Base64.vb" />
+    <Compile Include="EpicaPrimary\EngineCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\Agent.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\AgentAssignment.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\AgentEffect.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\AgentEngine.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\Goal.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\Mission.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\MissionGoal.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\PlayerMission.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\PlayerMissionGoal.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\Skill.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\SkillSet.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Agent\SkillSet_Skill.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\AmmunitionCache.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaContestant.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaEvent.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaSide.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaSidePlayer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaStats.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\CP_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\CS_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\CTF_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\C_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\DM_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\ArenaTypes\S_Arena.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\Map\ArenaMap.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Arenas\UnitLimit.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Corporation.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\DomainServer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Entity\EntityDefHangarDoor.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Entity\EntityDefMineral.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Facility\MineBuyOrderManager.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\EventAdvancedConfig.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildEvent.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildMember.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildRel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildTransLog.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\SketchPad.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\MineralGeographyRel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\PlayerMineralProperty.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\ModelDefs.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\Guild.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildRank.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Guild\GuildVote.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\NonLocalData.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\Budget.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\Claimable.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerCommFolder.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerCPPenalty.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerIntel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerItemIntel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerSecurity.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerTechKnowledge.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\Player_Specials.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Production\ComponentCache.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Production\EntityProduction.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Entity\Epica_Entity.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Entity\Epica_Entity_Def.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Senate\SenateProposal.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Senate\SenateProposalMessage.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Senate\SenateVote.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\BombWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\ArmorTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\BombTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\EngineTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\MissileTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\ProjectileTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\PulseTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\RadarTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\ShieldTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\SolidTechComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Computers\TechBuilderComputer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\VersionRel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\TradeTreaty.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Transport\Transport.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Transport\TransportCargo.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Transport\TransportRoute.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Transport\TransportRouteAction.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\FormationDef.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\RouteItem.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Entity\WeaponDef.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\EpicaBug.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Facility\Facility.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Facility\FacilityDef.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\Colony.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\Galaxy.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\Nebula.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\Planet.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\SolarSystem.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\StarType.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Geography\Wormhole.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\GNS.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\Mineral.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\MineralCache.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\MineralProperty.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\MineralPropertyValue.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\PlayerMineral.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Mineral\ValueRangeName.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\Player.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerComm.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Player\PlayerRel.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Production\ProductionCost.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Production\ProductionCostItem.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Production\ResourceSource.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Senate\Senate.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\AlloyTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\ArmorTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\BaseWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\EngineTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Epica_Tech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\HullTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\MissileWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\ProjectileWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\Prototype.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\PulseWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\RadarTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\ShieldTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\BeamWeaponTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\SpecialTechs\SpecialTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\SpecialTechs\PlayerSpecialTech.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Techs\SpecialTechs\SpecialTechPrerequisite.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\BuyOrder.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\GalacticTradeSystem.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\SellOrder.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\DirectTrade.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\TradeDelivery.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\TradeHistory.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Trade\TradePlayer.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\RouteTemplate.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\Unit.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\UnitGroup.vb" />
+    <Compile Include="EpicaPrimary\EpicaObjects\Unit\UnitWeaponDef.vb" />
+    <Compile Include="EpicaPrimary\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\frmPlayer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\GlobalVars.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\MsgMonitor.vb" />
+    <Compile Include="EpicaPrimary\MsgSystem\MsgSystem.Clients.vb" />
+    <Compile Include="EpicaPrimary\MsgSystem\MsgSystem.Domains.vb" />
+    <Compile Include="EpicaPrimary\MsgSystem\MsgSystem.PassThru.vb" />
+    <Compile Include="EpicaPrimary\MsgSystem\MsgSystem.Pathfinding.vb" />
+    <Compile Include="EpicaPrimary\MsgSystem\MsgSystem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\frmMsgMonitor.Designer.vb">
+      <DependentUpon>frmMsgMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EpicaPrimary\frmMsgMonitor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EpicaPrimary\AllDataSaver.vb" />
+    <Compile Include="EpicaPrimary\StrEncDec.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EpicaPrimary\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EpicaPrimary\frmPlayer.resx">
+      <DependentUpon>frmPlayer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EpicaPrimary\frmMsgMonitor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMsgMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

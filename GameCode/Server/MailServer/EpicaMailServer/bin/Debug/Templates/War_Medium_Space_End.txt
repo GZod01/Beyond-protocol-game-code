@@ -1,0 +1,13 @@
+Decline in Engagements
+Decline in Engagements
+17
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Hostilites in [EnvirName] have come to a decline as of [EndOfBattle]. The conflict has already claimed at least [TotalLostBothSides] lives and seen the loss of [TotalEntitiesLostBothSides] units and facilities.
+<br><br>
+Battle began [StartOfBattle] when battle elements of [PlayerSideListA] engaged the forces of [PlayerSideListB]. Skeptics feel this decline in combat may only be temporary and warn against regarding it as a downward trend. 
+<br><br>
+The Galactic Trade Commission has begun taking advantage of the pause in combat to make large progress on clearing the debris left behind from the battles.
+</div>

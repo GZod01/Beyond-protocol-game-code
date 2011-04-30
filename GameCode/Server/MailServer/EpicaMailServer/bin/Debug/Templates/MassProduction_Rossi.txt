@@ -1,0 +1,9 @@
+Mass Production Launched! 
+[PlayerName] has ramped up production! 
+6 
+Jeffrey Rossi
+6 
+6-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Business and Economics correspondents inside [PlayerNamePossessive] empire have noticed a significant increase in production in all major production facilities. Analysts speculate that a major initiative may soon be launched and some new technology may have finally moved into mass production. Military analysts advise caution for all other empires in the region as increased production could signal an impending military campaign and all civilian personnel are urged to take the necessary precautions to ensure they are prepared for war should it come as a result.
+<br><br>Political analysts disagree and think that this increased production is peaceful in its intent and signal [PlayerNamePossessive] desire to increase trade amongst other empires in the region as they may have stumbled upon some useful technology. Regardless, something big is happening in the dominion of [PlayerName] and GNS News will continue watching [PlayerName] closely as they continue production and bring you the latest on what this could possibly mean for the friends and foes of [PlayerName].</div> 

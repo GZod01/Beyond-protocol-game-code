@@ -1,0 +1,6 @@
+SCC = This is a Source Code Control file.
+
+[ServerMon.vbproj]
+SCC_Aux_Path = no profile
+SCC_Project_Name = $/Utilities/ServerMon/ServerMon/ServerMon
+

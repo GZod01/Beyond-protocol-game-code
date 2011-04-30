@@ -1,0 +1,159 @@
+'Interface created from Interface Builder
+Public Class fraTradeDeliveryDetail
+	Inherits UIWindow
+
+	Private WithEvents lblPlayer As UILabel
+	Private WithEvents lblETA As UILabel
+	Private WithEvents lblOriginalETA As UILabel
+	Private WithEvents lblDestination As UILabel
+	Private WithEvents lblGoodShipped As UILabel
+	Private WithEvents lstShipped As UIListBox
+	Private WithEvents txtItemDetails As UITextBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraTradeDeliveryDetail initial props
+		With Me
+			.ControlName="fraTradeDeliveryDetail"
+			.Left=85
+			.Top=81
+			.Width=380
+			.Height=298
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblPlayer initial props
+		lblPlayer = New UILabel(oUILib)
+		With lblPlayer
+			.ControlName="lblPlayer"
+			.Left=10
+			.Top=10
+			.Width=360
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="From Player: Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPlayer, UIControl))
+
+		'lblETA initial props
+		lblETA = New UILabel(oUILib)
+		With lblETA
+			.ControlName="lblETA"
+			.Left=10
+			.Top=30
+			.Width=360
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Estimated Time of Arrival: 5d 14h 36m 23s"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblETA, UIControl))
+
+		'lblOriginalETA initial props
+		lblOriginalETA = New UILabel(oUILib)
+		With lblOriginalETA
+			.ControlName="lblOriginalETA"
+			.Left=10
+			.Top=50
+			.Width=360
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Original Estimated Time of Arrival: 5d 14h 36m 23s"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblOriginalETA, UIControl))
+
+		'lblDestination initial props
+		lblDestination = New UILabel(oUILib)
+		With lblDestination
+			.ControlName="lblDestination"
+			.Left=10
+			.Top=70
+			.Width=360
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Destination: Tradepost (Gunarus Prime)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDestination, UIControl))
+
+		'lblGoodShipped initial props
+		lblGoodShipped = New UILabel(oUILib)
+		With lblGoodShipped
+			.ControlName="lblGoodShipped"
+			.Left=10
+			.Top=90
+			.Width=110
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Goods Shipped"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGoodShipped, UIControl))
+
+		'lstShipped initial props
+		lstShipped = New UIListBox(oUILib)
+		With lstShipped
+			.ControlName="lstShipped"
+			.Left=10
+			.Top=110
+			.Width=200
+			.Height=178
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstShipped, UIControl))
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=215
+			.Top=110
+			.Width=155
+			.Height=178
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtItemDetails, UIControl))
+	End Sub
+End Class

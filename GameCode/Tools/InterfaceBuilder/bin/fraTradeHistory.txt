@@ -1,0 +1,41 @@
+'Interface created from Interface Builder
+Public Class fraTradeHistory
+	Inherits UIWindow
+
+	Private WithEvents lstHistory As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraTradeHistory initial props
+		With Me
+			.ControlName="fraTradeHistory"
+			.Left=78
+			.Top=110
+			.Width=790
+			.Height=543
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstHistory initial props
+		lstHistory = New UIListBox(oUILib)
+		With lstHistory
+			.ControlName="lstHistory"
+			.Left=5
+			.Top=5
+			.Width=780
+			.Height=350
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstHistory, UIControl))
+	End Sub
+End Class

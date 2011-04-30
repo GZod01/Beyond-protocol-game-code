@@ -1,0 +1,217 @@
+'Interface created from Interface Builder
+Public Class fraSellOrderDetail
+	Inherits UIWindow
+
+	Private WithEvents txtItemDetails As UITextBox
+	Private WithEvents lblRouteType As UILabel
+	Private WithEvents lblDeliverTime As UILabel
+	Private WithEvents lblSeller As UILabel
+	Private WithEvents lblItemScore As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblQuantity As UILabel
+	Private WithEvents txtPurchaseQty As UITextBox
+	Private WithEvents lblTotalPrice As UILabel
+	Private WithEvents btnPurchase As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraSellOrderDetail initial props
+		With Me
+			.ControlName="fraSellOrderDetail"
+			.Left=71
+			.Top=55
+			.Width=520
+			.Height=180
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=5
+			.Top=5
+			.Width=250
+			.Height=170
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtItemDetails, UIControl))
+
+		'lblRouteType initial props
+		lblRouteType = New UILabel(oUILib)
+		With lblRouteType
+			.ControlName="lblRouteType"
+			.Left=265
+			.Top=5
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Route Type: Intersystem"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRouteType, UIControl))
+
+		'lblDeliverTime initial props
+		lblDeliverTime = New UILabel(oUILib)
+		With lblDeliverTime
+			.ControlName="lblDeliverTime"
+			.Left=265
+			.Top=25
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Est. Delivery Time: 3d 15h 20m 32s"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDeliverTime, UIControl))
+
+		'lblSeller initial props
+		lblSeller = New UILabel(oUILib)
+		With lblSeller
+			.ControlName="lblSeller"
+			.Left=265
+			.Top=45
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Seller: Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSeller, UIControl))
+
+		'lblItemScore initial props
+		lblItemScore = New UILabel(oUILib)
+		With lblItemScore
+			.ControlName="lblItemScore"
+			.Left=265
+			.Top=65
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Score: 4,515,112,152 (98%)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblItemScore, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=265
+			.Top=90
+			.Width=245
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblQuantity initial props
+		lblQuantity = New UILabel(oUILib)
+		With lblQuantity
+			.ControlName="lblQuantity"
+			.Left=265
+			.Top=100
+			.Width=114
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Purchase Quantity:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblQuantity, UIControl))
+
+		'txtPurchaseQty initial props
+		txtPurchaseQty = New UITextBox(oUILib)
+		With txtPurchaseQty
+			.ControlName="txtPurchaseQty"
+			.Left=380
+			.Top=100
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtPurchaseQty, UIControl))
+
+		'lblTotalPrice initial props
+		lblTotalPrice = New UILabel(oUILib)
+		With lblTotalPrice
+			.ControlName="lblTotalPrice"
+			.Left=265
+			.Top=125
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Purchase Price: 45,000,000,000,000"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTotalPrice, UIControl))
+
+		'btnPurchase initial props
+		btnPurchase = New UIButton(oUILib)
+		With btnPurchase
+			.ControlName="btnPurchase"
+			.Left=335
+			.Top=150
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Purchase"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnPurchase, UIControl))
+	End Sub
+End Class

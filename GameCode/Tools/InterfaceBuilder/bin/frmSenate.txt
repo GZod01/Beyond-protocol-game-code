@@ -1,0 +1,206 @@
+'Interface created from Interface Builder
+Public Class frmSenate
+	Inherits UIWindow
+
+	Private WithEvents btnSenateFloor As UIButton
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnEmpChamber As UIButton
+	Private WithEvents lblProposed As UILabel
+	Private WithEvents lstProposals As UIListBox
+	Private WithEvents fraDetails As UIWindow
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents btnProposeNew As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmSenate initial props
+		With Me
+			.ControlName="frmSenate"
+			.Left=129
+			.Top=65
+			.Width=800
+			.Height=600
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'btnSenateFloor initial props
+		btnSenateFloor = New UIButton(oUILib)
+		With btnSenateFloor
+			.ControlName="btnSenateFloor"
+			.Left=3
+			.Top=28
+			.Width=150
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Senate Floor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSenateFloor, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=2
+			.Width=130
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Galactic Senate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=775
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=25
+			.Width=799
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnEmpChamber initial props
+		btnEmpChamber = New UIButton(oUILib)
+		With btnEmpChamber
+			.ControlName="btnEmpChamber"
+			.Left=153
+			.Top=28
+			.Width=150
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Emperor's Chamber"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnEmpChamber, UIControl))
+
+		'lblProposed initial props
+		lblProposed = New UILabel(oUILib)
+		With lblProposed
+			.ControlName="lblProposed"
+			.Left=10
+			.Top=60
+			.Width=130
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposed Legislation"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProposed, UIControl))
+
+		'lstProposals initial props
+		lstProposals = New UIListBox(oUILib)
+		With lstProposals
+			.ControlName="lstProposals"
+			.Left=10
+			.Top=80
+			.Width=780
+			.Height=195
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstProposals, UIControl))
+
+		'fraDetails initial props
+		fraDetails = New UIWindow(oUILib)
+		With fraDetails
+			.ControlName="fraDetails"
+			.Left=9
+			.Top=285
+			.Width=780
+			.Height=305
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraDetails, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=2
+			.Top=53
+			.Width=799
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'btnProposeNew initial props
+		btnProposeNew = New UIButton(oUILib)
+		With btnProposeNew
+			.ControlName="btnProposeNew"
+			.Left=645
+			.Top=28
+			.Width=150
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Create Proposal"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnProposeNew, UIControl))
+	End Sub
+End Class

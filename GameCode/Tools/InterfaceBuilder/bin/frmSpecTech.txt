@@ -1,0 +1,294 @@
+'Interface created from Interface Builder
+Public Class frmSpecTech
+	Inherits UIWindow
+
+	Private WithEvents lstTechs As UIListBox
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents txtRPDesc As UITextBox
+	Private WithEvents lblTech As UILabel
+	Private WithEvents lblRPDesc As UILabel
+	Private WithEvents lblBenefits As UILabel
+	Private WithEvents txtBenefits As UITextBox
+	Private WithEvents chkShowUnresearched As UICheckBox
+	Private WithEvents chkShowResearched As UICheckBox
+	Private WithEvents btnResearch As UIButton
+	Private WithEvents btnClose As UIButton
+	Private WithEvents mfrmProdCost As UIWindow
+	Private WithEvents lblCosts As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmSpecTech initial props
+		With Me
+			.ControlName="frmSpecTech"
+			.Left=115
+			.Top=102
+			.Width=600
+			.Height=455
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstTechs initial props
+		lstTechs = New UIListBox(oUILib)
+		With lstTechs
+			.ControlName="lstTechs"
+			.Left=5
+			.Top=55
+			.Width=335
+			.Height=360
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.0, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstTechs, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=300
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Special Project Technology Research"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=32
+			.Width=600
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'txtRPDesc initial props
+		txtRPDesc = New UITextBox(oUILib)
+		With txtRPDesc
+			.ControlName="txtRPDesc"
+			.Left=345
+			.Top=55
+			.Width=250
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtRPDesc, UIControl))
+
+		'lblTech initial props
+		lblTech = New UILabel(oUILib)
+		With lblTech
+			.ControlName="lblTech"
+			.Left=5
+			.Top=35
+			.Width=198
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Currently Proposed Projects"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTech, UIControl))
+
+		'lblRPDesc initial props
+		lblRPDesc = New UILabel(oUILib)
+		With lblRPDesc
+			.ControlName="lblRPDesc"
+			.Left=345
+			.Top=35
+			.Width=133
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposal Summary"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRPDesc, UIControl))
+
+		'lblBenefits initial props
+		lblBenefits = New UILabel(oUILib)
+		With lblBenefits
+			.ControlName="lblBenefits"
+			.Left=345
+			.Top=165
+			.Width=198
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Expected Project Benefits"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBenefits, UIControl))
+
+		'txtBenefits initial props
+		txtBenefits = New UITextBox(oUILib)
+		With txtBenefits
+			.ControlName="txtBenefits"
+			.Left=345
+			.Top=185
+			.Width=250
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtBenefits, UIControl))
+
+		'chkShowUnresearched initial props
+		chkShowUnresearched = New UICheckBox(oUILib)
+		With chkShowUnresearched
+			.ControlName="chkShowUnresearched"
+			.Left=20
+			.Top=425
+			.Width=138
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Show Unresearched"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkShowUnresearched, UIControl))
+
+		'chkShowResearched initial props
+		chkShowResearched = New UICheckBox(oUILib)
+		With chkShowResearched
+			.ControlName="chkShowResearched"
+			.Left=190
+			.Top=425
+			.Width=127
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Show Researched"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkShowResearched, UIControl))
+
+		'btnResearch initial props
+		btnResearch = New UIButton(oUILib)
+		With btnResearch
+			.ControlName="btnResearch"
+			.Left=373
+			.Top=422
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Research"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnResearch, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=496
+			.Top=423
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'mfrmProdCost initial props
+		mfrmProdCost = New UIWindow(oUILib)
+		With mfrmProdCost
+			.ControlName="mfrmProdCost"
+			.Left=345
+			.Top=314
+			.Width=250
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(mfrmProdCost, UIControl))
+
+		'lblCosts initial props
+		lblCosts = New UILabel(oUILib)
+		With lblCosts
+			.ControlName="lblCosts"
+			.Left=345
+			.Top=295
+			.Width=198
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposal Costs"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCosts, UIControl))
+	End Sub
+End Class

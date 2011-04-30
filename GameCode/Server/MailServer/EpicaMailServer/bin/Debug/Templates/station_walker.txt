@@ -1,0 +1,9 @@
+[PlayerName] completes a Space Station 
+[PlayerName] Continues to Advance Technology for his colonies. 
+12
+Jason Walker
+6 
+6-  
+<div style="font-size: 8pt; color:#E2E2E2;">
+[PlayerName] Commemorated the completion of construction of a new Space Station. This space station will be more than the harbinger of further technological advances by [PlayerName], and additional defense of the local colonies, it furthers confidence in [PlayerName]'s space program. This station signals a breakthrough in galactic relations. Local contributors confirm that officials there are plans to create more stations, however, they are still in the discussion stage and haven't decided on specifics or the budget required or any of the details
+</div>

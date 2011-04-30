@@ -1,0 +1,329 @@
+'Interface created from Interface Builder
+Public Class fraRank
+	Inherits UIWindow
+
+	Private WithEvents btnAdd As UIButton
+	Private WithEvents btnDelete As UIButton
+	Private WithEvents btnUp As UIButton
+	Private WithEvents btnDown As UIButton
+	Private WithEvents txtRankName As UITextBox
+	Private WithEvents btnUpdate As UIButton
+	Private WithEvents txtVoteRate As UITextBox
+	Private WithEvents lblVoteStr As UILabel
+	Private WithEvents lblRankName As UILabel
+	Private WithEvents lblTaxFlat As UILabel
+	Private WithEvents txtFlatRate As UITextBox
+	Private WithEvents lblTaxPerc As UILabel
+	Private WithEvents txtTaxPerc As UITextBox
+	Private WithEvents cboTaxPercType As UIComboBox
+	Private WithEvents tvwRanks As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraRank initial props
+		With Me
+			.ControlName="fraRank"
+			.Left=390
+			.Top=77
+			.Width=245
+			.Height=235
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'btnAdd initial props
+		btnAdd = New UIButton(oUILib)
+		With btnAdd
+			.ControlName="btnAdd"
+			.Left=10
+			.Top=206
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Add"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAdd, UIControl))
+
+		'btnDelete initial props
+		btnDelete = New UIButton(oUILib)
+		With btnDelete
+			.ControlName="btnDelete"
+			.Left=218
+			.Top=80
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDelete, UIControl))
+
+		'btnUp initial props
+		btnUp = New UIButton(oUILib)
+		With btnUp
+			.ControlName="btnUp"
+			.Left=218
+			.Top=10
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Up"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnUp, UIControl))
+
+		'btnDown initial props
+		btnDown = New UIButton(oUILib)
+		With btnDown
+			.ControlName="btnDown"
+			.Left=218
+			.Top=37
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Dn"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDown, UIControl))
+
+		'txtRankName initial props
+		txtRankName = New UITextBox(oUILib)
+		With txtRankName
+			.ControlName="txtRankName"
+			.Left=5
+			.Top=130
+			.Width=150
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Rank Name"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtRankName, UIControl))
+
+		'btnUpdate initial props
+		btnUpdate = New UIButton(oUILib)
+		With btnUpdate
+			.ControlName="btnUpdate"
+			.Left=131
+			.Top=208
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Update"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnUpdate, UIControl))
+
+		'txtVoteRate initial props
+		txtVoteRate = New UITextBox(oUILib)
+		With txtVoteRate
+			.ControlName="txtVoteRate"
+			.Left=170
+			.Top=130
+			.Width=49
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtVoteRate, UIControl))
+
+		'lblVoteStr initial props
+		lblVoteStr = New UILabel(oUILib)
+		With lblVoteStr
+			.ControlName="lblVoteStr"
+			.Left=170
+			.Top=105
+			.Width=60
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Vote Rate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblVoteStr, UIControl))
+
+		'lblRankName initial props
+		lblRankName = New UILabel(oUILib)
+		With lblRankName
+			.ControlName="lblRankName"
+			.Left=5
+			.Top=105
+			.Width=76
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Rank Name"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRankName, UIControl))
+
+		'lblTaxFlat initial props
+		lblTaxFlat = New UILabel(oUILib)
+		With lblTaxFlat
+			.ControlName="lblTaxFlat"
+			.Left=5
+			.Top=150
+			.Width=76
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Flat Rate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTaxFlat, UIControl))
+
+		'txtFlatRate initial props
+		txtFlatRate = New UITextBox(oUILib)
+		With txtFlatRate
+			.ControlName="txtFlatRate"
+			.Left=5
+			.Top=175
+			.Width=80
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFlatRate, UIControl))
+
+		'lblTaxPerc initial props
+		lblTaxPerc = New UILabel(oUILib)
+		With lblTaxPerc
+			.ControlName="lblTaxPerc"
+			.Left=90
+			.Top=150
+			.Width=89
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Percentage Of"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTaxPerc, UIControl))
+
+		'txtTaxPerc initial props
+		txtTaxPerc = New UITextBox(oUILib)
+		With txtTaxPerc
+			.ControlName="txtTaxPerc"
+			.Left=90
+			.Top=175
+			.Width=30
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="100"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtTaxPerc, UIControl))
+
+		'cboTaxPercType initial props
+		cboTaxPercType = New UIComboBox(oUILib)
+		With cboTaxPercType
+			.ControlName="cboTaxPercType"
+			.Left=125
+			.Top=175
+			.Width=115
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTaxPercType, UIControl))
+
+		'tvwRanks initial props
+		tvwRanks = New UIListBox(oUILib)
+		With tvwRanks
+			.ControlName="tvwRanks"
+			.Left=5
+			.Top=10
+			.Width=210
+			.Height=95
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(tvwRanks, UIControl))
+	End Sub
+End Class

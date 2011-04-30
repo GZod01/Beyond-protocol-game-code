@@ -1,0 +1,31 @@
+Did You Know... high damage weapons have an exceptionally difficult time hitting smaller targets? Use smaller Damage and DPS weapons to hit smaller targets consistently.
+Did You Know... many options can be configured for graphics and UI settings? Just press Escape and you will see the Options window.
+Did you know.  White, Red, and Green labels in mission skill assignments denote normal, hard, or exceptionally easy to succeed?
+Did You Know... you can move from one system to another system by using a battlegroup? Check F1 for more details.
+Did You Know... When you spawn in an (S) system, it is locked and safe from the outside galaxy until someone from your side traverses to another system?
+Did You Know... that units and facilities retain the AI settings of the Unit/Facility that builds them?
+Did You Know... you can send yourself emails with waypoint attachments to keep track of important locations?
+Did You Know... that you produce more tax income from Research Labs than any other facility?
+Did You Know... you can get a list of keyboard commands by pressing Escape and clicking on the Controls button?
+Did You Know... you can change the mineral color on a per planet basis in the Options window by pressing Escape, clicking Graphics and selecting Mineral Cache Colors?
+Did You Know... you can change the game by directing developer efforts by becoming part of the Senate?
+Did You Know... that if you experience frequent crashing during gameplay, your drivers may be out of date? Also, the Positional Override option in the Sound settings could also be the culprit.
+Did You Know... (Ctrl T) can be used to set a Tether Point which is where a unit will return to when it reacts to enemy units using Engage/Pursue AI settings and is no longer engaged?
+Did You Know... that units gain experience through fighting? Experience gained in this manner reduces CP usage and increases the unit's combat effectiveness.
+Did You Know... that if you hold shift while ordering a unit to build structures that you can queue multiple structures to be built?
+Did You Know... an engine can be placed in any facility to supply power? Excess power from facilities goes to the colony's power pool. An engine in a power generator hull provides a bonus to the power it generates.
+Did You Know... you can get 6,000 power generators for extremely cheap by using the beginning techs and redesigning the existing power generator prototype? Take a Beginning Power Generator and place it on the Power Generator Hull for 6,000 power.
+Did You Know... every 24 hours, mining corporations re-evaluate their prices based on demand causing minimum bids at mines to increase. To make sure mining does not get interrupted, bid a little more than the minimum bid.
+Did You Know... you can bombard a planet from orbit? Design a frigate, equip it with bombs and rain destruction
+Did You Know... the colonial production manager on the Quickbar can be used to quickly assign production and research tasks to multiple facilities within a colony?
+Did You Know... the default command center has special abilities, such as maxed detection range, and ability to dock any sized atmospheric unit?
+Did You Know... redesigning the default buildings with higher production value can provide you a mineral free improvement to the default version?
+Did You Know... having engine thrust below the hull value of a ship will add a penalty to speed and maneuver, however thrust greater than hull does not provide a bonus?
+Did You Know... units require empty space for crew or will run the risk of loss to pirates? Be sure to check the "Suggested Crew" for the design you are making.
+Did You Know... Small colonies outside of your home system incur a homeworld supplies tax? Having more population in the colony will allow it to be self sufficient and reduces the tax.
+Did You Know... You can change the colors you see players as in esc menu > identify colors? 
+Did You Know... Great sources of information are the F1 menu, the forums and www.beyondprotocol.com/wiki?
+Did You Know... that more bay doors in a design allow multiple hanger launches at once? Maneuver of the launching ships also make each launch faster.
+Did You Know... you can design any facility to have cargo bays and it increases your colony storage space? Warehouse facility hull also provides a bonus to assigned cargo space.
+Did You Know... If you have a game change you would like, you can become an emperor and propose changes to the Galactic Senate? If the changes pass, they will be implemented.
+Did You Know... That if you do not press F12 and send us bug reports that we will never know about your bug. Even if you think someone else has submitted the bug, please submit it. NOTE: In-game emails are not typically responded to.

@@ -1,0 +1,9 @@
+Disaster Stikes [ColonyName]! 
+Contact has been lost with [ColonyName] 
+9 
+Jeffrey Rossi
+7
+7-4- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+This is a breaking news bulletin from GNS News. Our main offices have lost contact with our observers inside [ColonyName] and predict the worst to have occurred. The colony was part of [PlayerNamePossessive] empire and was believed to have been lost because of [ColonyLostReason]. We here at GNS news extend our condolences for the family and friends of those who may have been lost as a result of [ColonyNamePossessive] demise and we extend our deepest sincerity to the families of our own reporters as we all begin to mourn the loss of such good people. Its a shame that such good people were lost as a result of [ColonyLostReason] and we wonder how this turn of events may effect [PlayerName] as they continue to rule their empire elsewhere. Stay tuned as we continue to follow the story and continue our investigation into the reasons behind [ColonyNamePossessive] downfall. 
+</div>

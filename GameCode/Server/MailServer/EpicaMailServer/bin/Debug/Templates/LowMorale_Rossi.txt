@@ -1,0 +1,10 @@
+Citizens of [ColonyName] Protest! 
+Citizens of [ColonyName] upset about the [LowMoraleReason] 
+2 
+Jeffrey Rossi
+2 
+2-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Reporters inside [ColonyName] are reporting that [LowMoraleReason]s have driven the population of [ColonyName] to march in protest of [PlayerNamePossessive] policies. "This is absolutely ridiculous!" says one disgruntled citizen of [ColonyName]. "How can [PlayerName] expect the people of this planet to go on living with the [LowMoraleReason] being as it is? It’s bad policies that lead people like myself to take such drastic actions! [PlayerName] needs to pay more attention to the [LowMoraleReason] or we all may be forced to take more drastic actions!" 
+<br><br>You heard it from us first folks. If [PlayerName] is listening then its probably best if [PlayerName] heeds the words of his disgruntled citizens and does something soon about the [LowMoraleReason]. That's all from [ColonyName] for now but we'll keep you updated with the latest on the [LowMoraleReason] situation.
+</div> 

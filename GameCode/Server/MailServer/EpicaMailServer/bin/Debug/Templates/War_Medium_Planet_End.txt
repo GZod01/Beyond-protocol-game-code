@@ -1,0 +1,15 @@
+Decline in Combat
+Decline in Combat on [EnvirName]
+20
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Hostilites on [EnvirName] have come to a decline as of [EndOfBattle]. The conflict has already claimed at least [TotalLostBothSides] lives and seen the loss of [TotalEntitiesLostBothSides] units and facilities.
+<br><br>
+Battle began [StartOfBattle] when battle elements of [PlayerSideListA] engaged the forces of [PlayerSideListB]. Skeptics feel this decline in combat may only be temporary and warn against regarding it as a downward trend. 
+[EXCLUDE:TotalFacilitiesLostBothSides=0]
+<br><br>
+Citizens of [EnvirName] are equally skeptical as the combat has already claimed countless lives of civilians and wrecked [TotalFacilitiesLostBothSides] facilities on both sides of the war. The individual colonial governments are anxious to begin the rebuilding process.
+[/EXCLUDE]
+</div>

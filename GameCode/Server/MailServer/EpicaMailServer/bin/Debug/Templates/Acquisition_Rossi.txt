@@ -1,0 +1,10 @@
+[PlayerName] makes significant acquisition! 
+[PlayerName] becomes majority owner of [PlanetName]! 
+7
+Jeffrey Rossi 
+2
+2-5- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Reporters on [PlanetName] are reporting a significant change in the power struggle for [PlanetName]. It seems that through superior leadership [PlayerName] has managed to wrestle control of the planet from [PreviousPlayerName] and as a result has become the new ruler of [PlanetName]. Political analysts are unsure if this turn of events may turn the relationship between [PlayerName] and [PreviousPlayerName] sour but many analysts predicted that [PreviousPlayerName] was on a downhill trend on [PlanetName] anyways and it was only a matter of time before someone wrestled control of [PlanetName] away from them anyways.
+<br><br> With a new planet under their control [PlayerName] continues to grow in power and it may only be a matter of time before great conflicts ensue as other empires take notice of [PlayerNamePossesive] growing influence in [SystemName] and attempt to change that to benefit their own agenda. Our reporters will keep a close eye on [PlayerName] as they continue to grow and will also continue to follow [PreviousPlayerName] as they react to losing control of [PlanetName]. 
+</div>

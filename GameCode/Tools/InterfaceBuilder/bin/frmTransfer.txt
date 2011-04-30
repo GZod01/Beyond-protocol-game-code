@@ -1,0 +1,273 @@
+'Interface created from Interface Builder
+Public Class frmTransfer
+	Inherits UIWindow
+
+	Private WithEvents lstEntity1 As UIListBox
+	Private WithEvents lstContents1 As UIListBox
+	Private WithEvents lstEntity2 As UIListBox
+	Private WithEvents lstContents2 As UIListBox
+	Private WithEvents btnTransfer2To1 As UIButton
+	Private WithEvents btnTransfer1To2 As UIButton
+	Private WithEvents lblAmmo As UILabel
+	Private WithEvents txtAmmoAmt As UITextBox
+	Private WithEvents btnLoadAmmo As UIButton
+	Private WithEvents lblContents1 As UILabel
+	Private WithEvents lblContents2 As UILabel
+	Private WithEvents lblEntity2 As UILabel
+	Private WithEvents lblEntity1 As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmTransfer initial props
+		With Me
+			.ControlName="frmTransfer"
+			.Left=87
+			.Top=77
+			.Width=405
+			.Height=313
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lstEntity1 initial props
+		lstEntity1 = New UIListBox(oUILib)
+		With lstEntity1
+			.ControlName="lstEntity1"
+			.Left=5
+			.Top=25
+			.Width=191
+			.Height=93
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-1)
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lstEntity1)
+
+		'lstContents1 initial props
+		lstContents1 = New UIListBox(oUILib)
+		With lstContents1
+			.ControlName="lstContents1"
+			.Left=209
+			.Top=25
+			.Width=191
+			.Height=93
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-1)
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lstContents1)
+
+		'lstEntity2 initial props
+		lstEntity2 = New UIListBox(oUILib)
+		With lstEntity2
+			.ControlName="lstEntity2"
+			.Left=5
+			.Top=187
+			.Width=191
+			.Height=93
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-1)
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lstEntity2)
+
+		'lstContents2 initial props
+		lstContents2 = New UIListBox(oUILib)
+		With lstContents2
+			.ControlName="lstContents2"
+			.Left=209
+			.Top=187
+			.Width=191
+			.Height=93
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-1)
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lstContents2)
+
+		'btnTransfer2To1 initial props
+		btnTransfer2To1 = New UIButton(oUILib)
+		With btnTransfer2To1
+			.ControlName="btnTransfer2To1"
+			.Left=169
+			.Top=127
+			.Width=64
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="ppp"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Wingdings 3", 9.75, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnTransfer2To1)
+
+		'btnTransfer1To2 initial props
+		btnTransfer1To2 = New UIButton(oUILib)
+		With btnTransfer1To2
+			.ControlName="btnTransfer1To2"
+			.Left=169
+			.Top=156
+			.Width=64
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="qqq"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Wingdings 3", 9.75, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnTransfer1To2)
+
+		'lblAmmo initial props
+		lblAmmo = New UILabel(oUILib)
+		With lblAmmo
+			.ControlName="lblAmmo"
+			.Left=77
+			.Top=289
+			.Width=47
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Ammo:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+		End With
+		Me.AddChild(lblAmmo)
+
+		'txtAmmoAmt initial props
+		txtAmmoAmt = New UITextBox(oUILib)
+		With txtAmmoAmt
+			.ControlName="txtAmmoAmt"
+			.Left=132
+			.Top=289
+			.Width=64
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=5
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtAmmoAmt)
+
+		'btnLoadAmmo initial props
+		btnLoadAmmo = New UIButton(oUILib)
+		With btnLoadAmmo
+			.ControlName="btnLoadAmmo"
+			.Left=209
+			.Top=287
+			.Width=100
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Load Ammo"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnLoadAmmo)
+
+		'lblContents1 initial props
+		lblContents1 = New UILabel(oUILib)
+		With lblContents1
+			.ControlName="lblContents1"
+			.Left=291
+			.Top=5
+			.Width=108
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo Contents"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+		End With
+		Me.AddChild(lblContents1)
+
+		'lblContents2 initial props
+		lblContents2 = New UILabel(oUILib)
+		With lblContents2
+			.ControlName="lblContents2"
+			.Left=291
+			.Top=166
+			.Width=108
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Cargo Contents"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+		End With
+		Me.AddChild(lblContents2)
+
+		'lblEntity2 initial props
+		lblEntity2 = New UILabel(oUILib)
+		With lblEntity2
+			.ControlName="lblEntity2"
+			.Left=5
+			.Top=166
+			.Width=108
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Unit/Facility"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEntity2)
+
+		'lblEntity1 initial props
+		lblEntity1 = New UILabel(oUILib)
+		With lblEntity1
+			.ControlName="lblEntity1"
+			.Left=5
+			.Top=5
+			.Width=108
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Unit/Facility"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEntity1)
+	End Sub
+End Class

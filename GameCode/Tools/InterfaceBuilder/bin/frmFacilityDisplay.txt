@@ -1,0 +1,489 @@
+'Interface created from Interface Builder
+Public Class frmFacilityDisplay
+	Inherits UIWindow
+
+	Private WithEvents lblEntityName As UILabel
+	Private WithEvents lblEngineStatus As UILabel
+	Private WithEvents lblRadarStatus As UILabel
+	Private WithEvents lblShieldStatus As UILabel
+	Private WithEvents lblHangarStatus As UILabel
+	Private WithEvents lblCargoStatus As UILabel
+	Private WithEvents lblCurrentProgress As UILabel
+	Private WithEvents lblForeWpn As UILabel
+	Private WithEvents lblLeftWpns As UILabel
+	Private WithEvents lblRearWpns As UILabel
+	Private WithEvents lblRightWpns As UILabel
+	Private WithEvents lblAllArcWpns As UILabel
+	Private WithEvents lblForeWpn1Stat As UILabel
+	Private WithEvents lblForeWpn2Stat As UILabel
+	Private WithEvents lblLeftWpn1Stat As UILabel
+	Private WithEvents lblLeftWpn2Stat As UILabel
+	Private WithEvents lblRearWpn1Stat As UILabel
+	Private WithEvents lblRearWpn2Stat As UILabel
+	Private WithEvents lblRightWpn1Stat As UILabel
+	Private WithEvents lblRightWpn2Stat As UILabel
+	Private WithEvents lblAllArcWpn1Stat As UILabel
+	Private WithEvents lblAllArcWpn2Stat As UILabel
+	Private WithEvents shpProgressBack As UIWindow
+	Private WithEvents shpProgressFore As UIWindow
+	Private WithEvents vln2 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmFacilityDisplay initial props
+		With Me
+			.ControlName="frmFacilityDisplay"
+			.Left=15
+			.Top=341
+			.Width=190
+			.Height=86
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'lblEntityName initial props
+		lblEntityName = New UILabel(oUILib)
+		With lblEntityName
+			.ControlName="lblEntityName"
+			.Left=5
+			.Top=2
+			.Width=150
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="ENTITY NAME"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEntityName)
+
+		'lblEngineStatus initial props
+		lblEngineStatus = New UILabel(oUILib)
+		With lblEngineStatus
+			.ControlName="lblEngineStatus"
+			.Left=6
+			.Top=24
+			.Width=60
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="ENGINES"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEngineStatus)
+
+		'lblRadarStatus initial props
+		lblRadarStatus = New UILabel(oUILib)
+		With lblRadarStatus
+			.ControlName="lblRadarStatus"
+			.Left=6
+			.Top=34
+			.Width=60
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="RADAR"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRadarStatus)
+
+		'lblShieldStatus initial props
+		lblShieldStatus = New UILabel(oUILib)
+		With lblShieldStatus
+			.ControlName="lblShieldStatus"
+			.Left=6
+			.Top=44
+			.Width=60
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="SHIELDS"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblShieldStatus)
+
+		'lblHangarStatus initial props
+		lblHangarStatus = New UILabel(oUILib)
+		With lblHangarStatus
+			.ControlName="lblHangarStatus"
+			.Left=6
+			.Top=54
+			.Width=60
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="HANGAR"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblHangarStatus)
+
+		'lblCargoStatus initial props
+		lblCargoStatus = New UILabel(oUILib)
+		With lblCargoStatus
+			.ControlName="lblCargoStatus"
+			.Left=6
+			.Top=64
+			.Width=60
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="CARGO BAY"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCargoStatus)
+
+		'lblCurrentProgress initial props
+		lblCurrentProgress = New UILabel(oUILib)
+		With lblCurrentProgress
+			.ControlName="lblCurrentProgress"
+			.Left=6
+			.Top=74
+			.Width=106
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="CURRENT PROGRESS:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCurrentProgress)
+
+		'lblForeWpn initial props
+		lblForeWpn = New UILabel(oUILib)
+		With lblForeWpn
+			.ControlName="lblForeWpn"
+			.Left=67
+			.Top=24
+			.Width=95
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="FORWARD WPNS    /"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblForeWpn)
+
+		'lblLeftWpns initial props
+		lblLeftWpns = New UILabel(oUILib)
+		With lblLeftWpns
+			.ControlName="lblLeftWpns"
+			.Left=67
+			.Top=34
+			.Width=95
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="LEFT WPNS    /"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblLeftWpns)
+
+		'lblRearWpns initial props
+		lblRearWpns = New UILabel(oUILib)
+		With lblRearWpns
+			.ControlName="lblRearWpns"
+			.Left=67
+			.Top=44
+			.Width=95
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="REAR WPNS    /"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRearWpns)
+
+		'lblRightWpns initial props
+		lblRightWpns = New UILabel(oUILib)
+		With lblRightWpns
+			.ControlName="lblRightWpns"
+			.Left=67
+			.Top=54
+			.Width=95
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="RIGHT WPNS    /"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRightWpns)
+
+		'lblAllArcWpns initial props
+		lblAllArcWpns = New UILabel(oUILib)
+		With lblAllArcWpns
+			.ControlName="lblAllArcWpns"
+			.Left=67
+			.Top=64
+			.Width=95
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="ALL ARC WPNS    /"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblAllArcWpns)
+
+		'lblForeWpn1Stat initial props
+		lblForeWpn1Stat = New UILabel(oUILib)
+		With lblForeWpn1Stat
+			.ControlName="lblForeWpn1Stat"
+			.Left=152
+			.Top=24
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblForeWpn1Stat)
+
+		'lblForeWpn2Stat initial props
+		lblForeWpn2Stat = New UILabel(oUILib)
+		With lblForeWpn2Stat
+			.ControlName="lblForeWpn2Stat"
+			.Left=165
+			.Top=24
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="2"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblForeWpn2Stat)
+
+		'lblLeftWpn1Stat initial props
+		lblLeftWpn1Stat = New UILabel(oUILib)
+		With lblLeftWpn1Stat
+			.ControlName="lblLeftWpn1Stat"
+			.Left=127
+			.Top=34
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblLeftWpn1Stat)
+
+		'lblLeftWpn2Stat initial props
+		lblLeftWpn2Stat = New UILabel(oUILib)
+		With lblLeftWpn2Stat
+			.ControlName="lblLeftWpn2Stat"
+			.Left=139
+			.Top=34
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="2"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblLeftWpn2Stat)
+
+		'lblRearWpn1Stat initial props
+		lblRearWpn1Stat = New UILabel(oUILib)
+		With lblRearWpn1Stat
+			.ControlName="lblRearWpn1Stat"
+			.Left=130
+			.Top=44
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRearWpn1Stat)
+
+		'lblRearWpn2Stat initial props
+		lblRearWpn2Stat = New UILabel(oUILib)
+		With lblRearWpn2Stat
+			.ControlName="lblRearWpn2Stat"
+			.Left=142
+			.Top=44
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="2"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRearWpn2Stat)
+
+		'lblRightWpn1Stat initial props
+		lblRightWpn1Stat = New UILabel(oUILib)
+		With lblRightWpn1Stat
+			.ControlName="lblRightWpn1Stat"
+			.Left=133
+			.Top=54
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRightWpn1Stat)
+
+		'lblRightWpn2Stat initial props
+		lblRightWpn2Stat = New UILabel(oUILib)
+		With lblRightWpn2Stat
+			.ControlName="lblRightWpn2Stat"
+			.Left=146
+			.Top=54
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="2"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRightWpn2Stat)
+
+		'lblAllArcWpn1Stat initial props
+		lblAllArcWpn1Stat = New UILabel(oUILib)
+		With lblAllArcWpn1Stat
+			.ControlName="lblAllArcWpn1Stat"
+			.Left=143
+			.Top=64
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblAllArcWpn1Stat)
+
+		'lblAllArcWpn2Stat initial props
+		lblAllArcWpn2Stat = New UILabel(oUILib)
+		With lblAllArcWpn2Stat
+			.ControlName="lblAllArcWpn2Stat"
+			.Left=155
+			.Top=64
+			.Width=10
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="2"
+			.ForeColor=System.Drawing.Color.FromArgb(-8355712)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblAllArcWpn2Stat)
+
+		'shpProgressBack initial props
+		shpProgressBack = New UIWindow(oUILib)
+		With shpProgressBack
+			.ControlName="shpProgressBack"
+			.Left=116
+			.Top=74
+			.Width=70
+			.Height=8
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711936)
+			.FillColor=System.Drawing.Color.FromArgb(-65536)
+			.FullScreen=False
+		End With
+		Me.AddChild(shpProgressBack)
+
+		'shpProgressFore initial props
+		shpProgressFore = New UIWindow(oUILib)
+		With shpProgressFore
+			.ControlName="shpProgressFore"
+			.Left=116
+			.Top=75
+			.Width=50
+			.Height=6
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711936)
+			.FillColor=System.Drawing.Color.FromArgb(-16711936)
+			.FullScreen=False
+		End With
+		Me.AddChild(shpProgressFore)
+
+		'vln2 initial props
+		vln2 = New UILine(oUILib)
+		With vln2
+			.ControlName="vln2"
+			.Left=0
+			.Top=19
+			.Width=190
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(vln2)
+	End Sub
+End Class

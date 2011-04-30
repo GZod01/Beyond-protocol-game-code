@@ -1,0 +1,17 @@
+Death Toll Rises on [EnvirName]
+Death Toll Rises on [EnvirName]
+19
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Over [TotalLostBothSides] dead and even more wounded as conflict continues on [EnvirName]. Forces of [PlayerSideListA] have engaged the forces of [PlayerSideListB] in numerous attacks and counter attacks. The conflict that began [StartOfBattle] has seen the loss of [TotalUnitLostBothSides] units on both sides of the battle.
+<br><br>
+Sources indicate that no end to the conflict can be determined at this time. Contacts within the GTC have indicated that trade routes remain unaffected from the hostilities.
+[EXCLUDE:TotalLostResidenceBothSides=0]
+[EXCLUDE:TotalLostJobsBothSides=0]
+<br><br>
+The citizens of the empires involved in the war are victims as [TotalLostResidenceBothSides] homes have been destroyed and [TotalLostJobsBothSides] jobs have been removed from the economy due to lost factories and other facilities.
+[/EXCLUDE]
+[/EXCLUDE]
+</div>

@@ -1,0 +1,133 @@
+'Interface created from Interface Builder
+Public Class frmFacilityAdv
+	Inherits UIWindow
+
+	Private WithEvents lblWorkers As UILabel
+	Private WithEvents lblColonists As UILabel
+	Private WithEvents lblPower As UILabel
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDivider As UILine
+	Private WithEvents chkActive As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmFacilityAdv initial props
+		With Me
+			.ControlName="frmFacilityAdv"
+			.Left=160
+			.Top=125
+			.Width=277
+			.Height=75
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lblWorkers initial props
+		lblWorkers = New UILabel(oUILib)
+		With lblWorkers
+			.ControlName="lblWorkers"
+			.Left=6
+			.Top=25
+			.Width=264
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Workers: 0 / 0"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblWorkers)
+
+		'lblColonists initial props
+		lblColonists = New UILabel(oUILib)
+		With lblColonists
+			.ControlName="lblColonists"
+			.Left=5
+			.Top=40
+			.Width=271
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Colonists: 0 / 0"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblColonists)
+
+		'lblPower initial props
+		lblPower = New UILabel(oUILib)
+		With lblPower
+			.ControlName="lblPower"
+			.Left=5
+			.Top=55
+			.Width=171
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Power Usage: 0"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPower)
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=3
+			.Width=95
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Facility Stats:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblTitle)
+
+		'lnDivider initial props
+		lnDivider = New UILine(oUILib)
+		With lnDivider
+			.ControlName="lnDivider"
+			.Left=0
+			.Top=22
+			.Width=277
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lnDivider)
+
+		'chkActive initial props
+		chkActive = New UICheckBox(oUILib)
+		With chkActive
+			.ControlName="chkActive"
+			.Left=212
+			.Top=3
+			.Width=58
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Active"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.Value=True
+		End With
+		Me.AddChild(chkActive)
+	End Sub
+End Class

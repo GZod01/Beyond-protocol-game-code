@@ -1,0 +1,98 @@
+'Interface created from Interface Builder
+Public Class fraHeader
+	Inherits UIWindow
+
+	Private WithEvents lblFrom As UILabel
+	Private WithEvents lblTo As UILabel
+	Private WithEvents lblSentOn As UILabel
+	Private WithEvents lblSubject As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraHeader initial props
+		With Me
+			.ControlName="fraHeader"
+			.Left=119
+			.Top=213
+			.Width=680
+			.Height=70
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblFrom initial props
+		lblFrom = New UILabel(oUILib)
+		With lblFrom
+			.ControlName="lblFrom"
+			.Left=5
+			.Top=5
+			.Width=330
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="From:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFrom, UIControl))
+
+		'lblTo initial props
+		lblTo = New UILabel(oUILib)
+		With lblTo
+			.ControlName="lblTo"
+			.Left=345
+			.Top=5
+			.Width=330
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="To:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTo, UIControl))
+
+		'lblSentOn initial props
+		lblSentOn = New UILabel(oUILib)
+		With lblSentOn
+			.ControlName="lblSentOn"
+			.Left=5
+			.Top=25
+			.Width=670
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Sent On: GTS 23/41/5000 at 05:51 (10/05/2006 at 5:51 PM GMT Earth Time)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSentOn, UIControl))
+
+		'lblSubject initial props
+		lblSubject = New UILabel(oUILib)
+		With lblSubject
+			.ControlName="lblSubject"
+			.Left=5
+			.Top=45
+			.Width=670
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Subject: Re: Your mom..."
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSubject, UIControl))
+	End Sub
+End Class

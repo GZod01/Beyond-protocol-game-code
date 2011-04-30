@@ -1,0 +1,404 @@
+'Interface created from Interface Builder
+Public Class fraRules
+	Inherits UIWindow
+
+	Private WithEvents chkRequirePeace As UICheckBox
+	Private WithEvents chkAutoTrade As UICheckBox
+	Private WithEvents chkShareVision As UICheckBox
+	Private WithEvents chkGuildRels As UICheckBox
+	Private WithEvents cboVoteWeight As UIComboBox
+	Private WithEvents lblVoteWeight As UILabel
+	Private WithEvents lblTaxInterval As UILabel
+	Private WithEvents cboTaxInterval As UIComboBox
+	Private WithEvents lblTaxDay As UILabel
+	Private WithEvents txtTaxDay As UITextBox
+	Private WithEvents lblTaxMonth As UILabel
+	Private WithEvents txtTaxMonth As UITextBox
+	Private WithEvents chkDemoteRA As UICheckBox
+	Private WithEvents chkAcceptRA As UICheckBox
+	Private WithEvents chkPromoteRA As UICheckBox
+	Private WithEvents chkRemoveRA As UICheckBox
+	Private WithEvents chkCreateRankRA As UICheckBox
+	Private WithEvents chkDeleteRankRA As UICheckBox
+	Private WithEvents chkChangeVoteRA As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraRules initial props
+		With Me
+			.ControlName="fraRules"
+			.Left=272
+			.Top=210
+			.Width=245
+			.Height=308
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'chkRequirePeace initial props
+		chkRequirePeace = New UICheckBox(oUILib)
+		With chkRequirePeace
+			.ControlName="chkRequirePeace"
+			.Left=10
+			.Top=100
+			.Width=179
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Require Peace Between Members"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRequirePeace, UIControl))
+
+		'chkAutoTrade initial props
+		chkAutoTrade = New UICheckBox(oUILib)
+		With chkAutoTrade
+			.ControlName="chkAutoTrade"
+			.Left=10
+			.Top=118
+			.Width=187
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Automatic Trade Between Members"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAutoTrade, UIControl))
+
+		'chkShareVision initial props
+		chkShareVision = New UICheckBox(oUILib)
+		With chkShareVision
+			.ControlName="chkShareVision"
+			.Left=10
+			.Top=136
+			.Width=136
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Share Unit/Facility Vision"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkShareVision, UIControl))
+
+		'chkGuildRels initial props
+		chkGuildRels = New UICheckBox(oUILib)
+		With chkGuildRels
+			.ControlName="chkGuildRels"
+			.Left=10
+			.Top=154
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Unified Foreign Policy"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkGuildRels, UIControl))
+
+		'cboVoteWeight initial props
+		cboVoteWeight = New UIComboBox(oUILib)
+		With cboVoteWeight
+			.ControlName="cboVoteWeight"
+			.Left=130
+			.Top=12
+			.Width=110
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboVoteWeight, UIControl))
+
+		'lblVoteWeight initial props
+		lblVoteWeight = New UILabel(oUILib)
+		With lblVoteWeight
+			.ControlName="lblVoteWeight"
+			.Left=10
+			.Top=10
+			.Width=111
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Vote Weight Based On:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblVoteWeight, UIControl))
+
+		'lblTaxInterval initial props
+		lblTaxInterval = New UILabel(oUILib)
+		With lblTaxInterval
+			.ControlName="lblTaxInterval"
+			.Left=10
+			.Top=40
+			.Width=60
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Tax Interval:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTaxInterval, UIControl))
+
+		'cboTaxInterval initial props
+		cboTaxInterval = New UIComboBox(oUILib)
+		With cboTaxInterval
+			.ControlName="cboTaxInterval"
+			.Left=130
+			.Top=42
+			.Width=110
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTaxInterval, UIControl))
+
+		'lblTaxDay initial props
+		lblTaxDay = New UILabel(oUILib)
+		With lblTaxDay
+			.ControlName="lblTaxDay"
+			.Left=10
+			.Top=70
+			.Width=60
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Tax Day:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTaxDay, UIControl))
+
+		'txtTaxDay initial props
+		txtTaxDay = New UITextBox(oUILib)
+		With txtTaxDay
+			.ControlName="txtTaxDay"
+			.Left=65
+			.Top=72
+			.Width=25
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="30"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtTaxDay, UIControl))
+
+		'lblTaxMonth initial props
+		lblTaxMonth = New UILabel(oUILib)
+		With lblTaxMonth
+			.ControlName="lblTaxMonth"
+			.Left=135
+			.Top=70
+			.Width=60
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Tax Month:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTaxMonth, UIControl))
+
+		'txtTaxMonth initial props
+		txtTaxMonth = New UITextBox(oUILib)
+		With txtTaxMonth
+			.ControlName="txtTaxMonth"
+			.Left=200
+			.Top=72
+			.Width=25
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtTaxMonth, UIControl))
+
+		'chkDemoteRA initial props
+		chkDemoteRA = New UICheckBox(oUILib)
+		With chkDemoteRA
+			.ControlName="chkDemoteRA"
+			.Left=10
+			.Top=172
+			.Width=160
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Demote Member By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkDemoteRA, UIControl))
+
+		'chkAcceptRA initial props
+		chkAcceptRA = New UICheckBox(oUILib)
+		With chkAcceptRA
+			.ControlName="chkAcceptRA"
+			.Left=10
+			.Top=191
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Accept Member By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAcceptRA, UIControl))
+
+		'chkPromoteRA initial props
+		chkPromoteRA = New UICheckBox(oUILib)
+		With chkPromoteRA
+			.ControlName="chkPromoteRA"
+			.Left=10
+			.Top=208
+			.Width=162
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Promote Member By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkPromoteRA, UIControl))
+
+		'chkRemoveRA initial props
+		chkRemoveRA = New UICheckBox(oUILib)
+		With chkRemoveRA
+			.ControlName="chkRemoveRA"
+			.Left=10
+			.Top=226
+			.Width=163
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove Member By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRemoveRA, UIControl))
+
+		'chkCreateRankRA initial props
+		chkCreateRankRA = New UICheckBox(oUILib)
+		With chkCreateRankRA
+			.ControlName="chkCreateRankRA"
+			.Left=10
+			.Top=244
+			.Width=142
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Create Rank By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkCreateRankRA, UIControl))
+
+		'chkDeleteRankRA initial props
+		chkDeleteRankRA = New UICheckBox(oUILib)
+		With chkDeleteRankRA
+			.ControlName="chkDeleteRankRA"
+			.Left=10
+			.Top=262
+			.Width=142
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Delete Rank By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkDeleteRankRA, UIControl))
+
+		'chkChangeVoteRA initial props
+		chkChangeVoteRA = New UICheckBox(oUILib)
+		With chkChangeVoteRA
+			.ControlName="chkChangeVoteRA"
+			.Left=10
+			.Top=280
+			.Width=189
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Change Voting Weight By Vote Only"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkChangeVoteRA, UIControl))
+	End Sub
+End Class

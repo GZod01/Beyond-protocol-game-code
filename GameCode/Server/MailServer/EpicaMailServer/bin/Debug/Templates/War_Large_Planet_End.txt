@@ -1,0 +1,23 @@
+[EnvirName] Begins Rebuilding
+[EnvirName] Begins Rebuilding
+20
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+After [SpanOfBattle], hostilities have seemingly drawn to an end on [EnvirName]. The turmoil of the engagement claimed [TotalLostBothSides] lives on both sides of the line.
+<br><br>
+Early estimates report [TotalLostUnitsBothSides] units [EXCLUDE:TotalFacilitiesLostBothSides=0] and [TotalFacilitiesLostBothSides] facilities [/EXCLUDE]were destroyed on both sides of the fighting. Debris litters the ground and smoke fills the sky from the fires across [EnvirName] remaining from the long battle.
+<br><br>
+The combat began [StartOfBattle] when [PlayerSideListA] forces clashed with [PlayerSideListB] forces. It was unclear at the start of the battle how devastating it would be on [EnvirName]. Humanitarian efforts dispatched from the Galactic Senate are underway.
+<br><br>
+"The sight of the destruction is amazing. It is hard to imagine the loss of life from this encounter.", one spokesperson from the GTC reported.
+[EXCLUDE:TotalLostJobsBothSides=0]
+[EXCLUDE:TotalLostResidenceBothSides=0]
+It is reported that [TotalLostJobsBothSides] jobs have been removed from the economy of [EnvirName] and [TotalLostResidenceBothSides] homes have been destroyed.<br><br>
+"The economical strain on [EnvirName] will be huge for quite a while. The rebuilding process will take a lot of time.", the GTC spokesperson stated.
+[/EXCLUDE]
+[/EXCLUDE]
+<br><br>
+It is still unclear whether this decline in hostilities is permanent or if it is only temporary. While relations remain strained between the warring factions, everything remains uncertain. 
+</div>

@@ -1,0 +1,14 @@
+Resource Scare on [PlanetName]
+Resource Scare on [PlanetName]
+8
+Random
+7
+7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Experts on geological sciences have determined that the natural resources of [PlanetName] are beginning to run dry from mass mining efforts. The planet has been a major source of [PlanetPrimaryComposition] and other materials, however, mining crews are reporting a depletion of most of the below surface mineral caches.
+<br><br>
+[EXCLUDE:PlayerName=""]
+As planetary controller, [PlayerName] is looked to for answers on the crisis.
+[/EXCLUDE]
+Obviously, importing materials will be on the rise as the materials needed for basic production efforts become more and more scarce on the planet. Conservation efforts will need to be enforced in order to ensure that a major crisis does not develop.
+</div>

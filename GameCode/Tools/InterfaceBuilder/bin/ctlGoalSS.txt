@@ -1,0 +1,93 @@
+'Interface created from Interface Builder
+Public Class ctlGoalSS
+	Inherits UIWindow
+
+	Private WithEvents muAA1 As UIWindow
+	Private WithEvents hscrScroll As UIScrollBar
+	Private WithEvents muAA2 As UIWindow
+	Private WithEvents muAA3 As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'ctlGoalSS initial props
+		With Me
+			.ControlName="ctlGoalSS"
+			.Left=105
+			.Top=173
+			.Width=520
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'muAA1 initial props
+		muAA1 = New UIWindow(oUILib)
+		With muAA1
+			.ControlName="muAA1"
+			.Left=5
+			.Top=10
+			.Width=170
+			.Height=60
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muAA1, UIControl))
+
+		'hscrScroll initial props
+		hscrScroll = New UIScrollBar(oUILib, False)
+		With hscrScroll
+			.ControlName="hscrScroll"
+			.Left=5
+			.Top=73
+			.Width=510
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrScroll, UIControl))
+
+		'muAA2 initial props
+		muAA2 = New UIWindow(oUILib)
+		With muAA2
+			.ControlName="muAA2"
+			.Left=175
+			.Top=10
+			.Width=170
+			.Height=60
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muAA2, UIControl))
+
+		'muAA3 initial props
+		muAA3 = New UIWindow(oUILib)
+		With muAA3
+			.ControlName="muAA3"
+			.Left=345
+			.Top=10
+			.Width=170
+			.Height=60
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muAA3, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,10 @@
+Resources Are Scarce! 
+[PlanetNamePossessive] resource levels are dangerously low! 
+8 
+Jeffrey Rossi
+2 
+2-
+<div style="font-size: 8pt; color:#E2E2E2;">
+GNS Science correspondents are reporting today that resources on [PlanetName] are reaching critically low levels and that something must be done to prevent a planetwide catastrophe. Political analysts speculate that whatever empires remain on the planet will have no choice but to reach an agreement on how to share the remaining resources or war will ensue to secure the remainder.<br><br> "Ah they should all just settle their differences with their weapons," says one military analyst. "We all know that all diplomatic agreements are off when resources became scarce. No empire can survive without a strong supply of resources with which to sustain their economy and with so few resources left who cares what happens to the other guy? Survival of the strongest I say and let the guy who’s better suited for the job win!" <br><br>
+We're not so sure that the military always has the answers but when push comes to shove we do know one thing, there's only one name in news that you can trust to deliver the breaking news headlines and all of us at GNS news will be sure to keep a close eye on [PlanetName] while this resource shortage is sorted out.
+</div>

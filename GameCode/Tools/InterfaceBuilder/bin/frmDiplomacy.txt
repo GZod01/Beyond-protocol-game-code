@@ -1,0 +1,110 @@
+'Interface created from Interface Builder
+Public Class frmDiplomacy
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents fraDiplomacyList As UIWindow
+	Private WithEvents fraPlayerDetails As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmDiplomacy initial props
+		With Me
+			.ControlName="frmDiplomacy"
+			.Left=63
+			.Top=42
+			.Width=745
+			.Height=600
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=0
+			.Width=600
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Foreign Policy for Magistrate Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=720
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=25
+			.Width=745
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'fraDiplomacyList initial props
+		fraDiplomacyList = New UIWindow(oUILib)
+		With fraDiplomacyList
+			.ControlName="fraDiplomacyList"
+			.Left=5
+			.Top=30
+			.Width=735
+			.Height=280
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraDiplomacyList, UIControl))
+
+		'fraPlayerDetails initial props
+		fraPlayerDetails = New UIWindow(oUILib)
+		With fraPlayerDetails
+			.ControlName="fraPlayerDetails"
+			.Left=5
+			.Top=315
+			.Width=735
+			.Height=280
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraPlayerDetails, UIControl))
+	End Sub
+End Class

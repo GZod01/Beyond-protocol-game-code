@@ -1,0 +1,479 @@
+'Interface created from Interface Builder
+Public Class fraPlayerDetails
+	Inherits UIWindow
+
+	Private WithEvents lblThreatscores As UILabel
+	Private WithEvents lblTech As UILabel
+	Private WithEvents lblDiplomacy As UILabel
+	Private WithEvents lblMilitary As UILabel
+	Private WithEvents lblPopulace As UILabel
+	Private WithEvents lblProduction As UILabel
+	Private WithEvents lblWealth As UILabel
+	Private WithEvents lblTechScore As UILabel
+	Private WithEvents lblDiplomacyScore As UILabel
+	Private WithEvents lblMilitaryScore As UILabel
+	Private WithEvents lblPopScore As UILabel
+	Private WithEvents lblProdScore As UILabel
+	Private WithEvents lblWealthScore As UILabel
+	Private WithEvents lblTotalScore As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblRelationship As UILabel
+	Private WithEvents lblTowardsYou As UILabel
+	Private WithEvents lblTheirScore As UILabel
+	Private WithEvents lblTowardsThem As UILabel
+	Private WithEvents lblOurScore As UILabel
+	Private WithEvents hscrRel As UIScrollBar
+	Private WithEvents btnSet As UIButton
+	Private WithEvents btnReset As UIButton
+	Private WithEvents lnDiv2 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraPlayerDetails initial props
+		With Me
+			.ControlName="fraPlayerDetails"
+			.Left=104
+			.Top=182
+			.Width=490
+			.Height=280
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblThreatscores initial props
+		lblThreatscores = New UILabel(oUILib)
+		With lblThreatscores
+			.ControlName="lblThreatscores"
+			.Left=5
+			.Top=7
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Threat Scores"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblThreatscores, UIControl))
+
+		'lblTech initial props
+		lblTech = New UILabel(oUILib)
+		With lblTech
+			.ControlName="lblTech"
+			.Left=15
+			.Top=25
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Technology:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTech, UIControl))
+
+		'lblDiplomacy initial props
+		lblDiplomacy = New UILabel(oUILib)
+		With lblDiplomacy
+			.ControlName="lblDiplomacy"
+			.Left=15
+			.Top=45
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Diplomacy:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDiplomacy, UIControl))
+
+		'lblMilitary initial props
+		lblMilitary = New UILabel(oUILib)
+		With lblMilitary
+			.ControlName="lblMilitary"
+			.Left=15
+			.Top=65
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Military:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMilitary, UIControl))
+
+		'lblPopulace initial props
+		lblPopulace = New UILabel(oUILib)
+		With lblPopulace
+			.ControlName="lblPopulace"
+			.Left=15
+			.Top=85
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Population:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPopulace, UIControl))
+
+		'lblProduction initial props
+		lblProduction = New UILabel(oUILib)
+		With lblProduction
+			.ControlName="lblProduction"
+			.Left=15
+			.Top=105
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Production:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProduction, UIControl))
+
+		'lblWealth initial props
+		lblWealth = New UILabel(oUILib)
+		With lblWealth
+			.ControlName="lblWealth"
+			.Left=15
+			.Top=125
+			.Width=83
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Wealth:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWealth, UIControl))
+
+		'lblTechScore initial props
+		lblTechScore = New UILabel(oUILib)
+		With lblTechScore
+			.ControlName="lblTechScore"
+			.Left=100
+			.Top=27
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblTechScore, UIControl))
+
+		'lblDiplomacyScore initial props
+		lblDiplomacyScore = New UILabel(oUILib)
+		With lblDiplomacyScore
+			.ControlName="lblDiplomacyScore"
+			.Left=100
+			.Top=47
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblDiplomacyScore, UIControl))
+
+		'lblMilitaryScore initial props
+		lblMilitaryScore = New UILabel(oUILib)
+		With lblMilitaryScore
+			.ControlName="lblMilitaryScore"
+			.Left=100
+			.Top=67
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblMilitaryScore, UIControl))
+
+		'lblPopScore initial props
+		lblPopScore = New UILabel(oUILib)
+		With lblPopScore
+			.ControlName="lblPopScore"
+			.Left=100
+			.Top=87
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblPopScore, UIControl))
+
+		'lblProdScore initial props
+		lblProdScore = New UILabel(oUILib)
+		With lblProdScore
+			.ControlName="lblProdScore"
+			.Left=100
+			.Top=107
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblProdScore, UIControl))
+
+		'lblWealthScore initial props
+		lblWealthScore = New UILabel(oUILib)
+		With lblWealthScore
+			.ControlName="lblWealthScore"
+			.Left=100
+			.Top=127
+			.Width=100
+			.Height=13
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 0, 0)
+		End With
+		Me.AddChild(CType(lblWealthScore, UIControl))
+
+		'lblTotalScore initial props
+		lblTotalScore = New UILabel(oUILib)
+		With lblTotalScore
+			.ControlName="lblTotalScore"
+			.Left=15
+			.Top=145
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Total Score: 2,222,222,222"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTotalScore, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=220
+			.Top=0
+			.Width=0
+			.Height=280
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblRelationship initial props
+		lblRelationship = New UILabel(oUILib)
+		With lblRelationship
+			.ControlName="lblRelationship"
+			.Left=225
+			.Top=5
+			.Width=164
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Relationship Standings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRelationship, UIControl))
+
+		'lblTowardsYou initial props
+		lblTowardsYou = New UILabel(oUILib)
+		With lblTowardsYou
+			.ControlName="lblTowardsYou"
+			.Left=235
+			.Top=25
+			.Width=85
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Towards You:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTowardsYou, UIControl))
+
+		'lblTheirScore initial props
+		lblTheirScore = New UILabel(oUILib)
+		With lblTheirScore
+			.ControlName="lblTheirScore"
+			.Left=325
+			.Top=25
+			.Width=160
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Neutral (65)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirScore, UIControl))
+
+		'lblTowardsThem initial props
+		lblTowardsThem = New UILabel(oUILib)
+		With lblTowardsThem
+			.ControlName="lblTowardsThem"
+			.Left=235
+			.Top=50
+			.Width=99
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Towards Them:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTowardsThem, UIControl))
+
+		'lblOurScore initial props
+		lblOurScore = New UILabel(oUILib)
+		With lblOurScore
+			.ControlName="lblOurScore"
+			.Left=335
+			.Top=50
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Neutral (65)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblOurScore, UIControl))
+
+		'hscrRel initial props
+		hscrRel = New UIScrollBar(oUILib, False)
+		With hscrRel
+			.ControlName="hscrRel"
+			.Left=235
+			.Top=75
+			.Width=250
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=65
+			.MaxValue=255
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrRel, UIControl))
+
+		'btnSet initial props
+		btnSet = New UIButton(oUILib)
+		With btnSet
+			.ControlName="btnSet"
+			.Left=265
+			.Top=100
+			.Width=80
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Set"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSet, UIControl))
+
+		'btnReset initial props
+		btnReset = New UIButton(oUILib)
+		With btnReset
+			.ControlName="btnReset"
+			.Left=375
+			.Top=100
+			.Width=80
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Reset"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnReset, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=220
+			.Top=130
+			.Width=270
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+	End Sub
+End Class

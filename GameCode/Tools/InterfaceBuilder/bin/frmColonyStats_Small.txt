@@ -1,0 +1,240 @@
+'Interface created from Interface Builder
+Public Class frmColonyStats_Small
+	Inherits UIWindow
+
+	Private WithEvents lblExpand As UILabel
+	Private WithEvents lblPowerInd As UILabel
+	Private WithEvents lblPopInd As UILabel
+	Private WithEvents lblMoraleInd As UILabel
+	Private WithEvents shpPowerBack As UIWindow
+	Private WithEvents shpPowerFore As UIWindow
+	Private WithEvents shpPopHomeless As UIWindow
+	Private WithEvents shpMoraleNeg As UIWindow
+	Private WithEvents shpPopPowerless As UIWindow
+	Private WithEvents shpPopGood As UIWindow
+	Private WithEvents shpMoraleGood As UIWindow
+	Private WithEvents lblPopGrowth As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmColonyStats_Small initial props
+		With Me
+			.ControlName="frmColonyStats_Small"
+			.Left=292
+			.Top=61
+			.Width=163
+			.Height=82
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblExpand initial props
+		lblExpand = New UILabel(oUILib)
+		With lblExpand
+			.ControlName="lblExpand"
+			.Left=2
+			.Top=2
+			.Width=160
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = rectangle.FromLTRB(0, 235, 159, 10)
+		End With
+		Me.AddChild(CType(lblExpand, UIControl))
+
+		'lblPowerInd initial props
+		lblPowerInd = New UILabel(oUILib)
+		With lblPowerInd
+			.ControlName="lblPowerInd"
+			.Left=6
+			.Top=18
+			.Width=16
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = rectangle.FromLTRB(111, 144, 16, 16)
+		End With
+		Me.AddChild(CType(lblPowerInd, UIControl))
+
+		'lblPopInd initial props
+		lblPopInd = New UILabel(oUILib)
+		With lblPopInd
+			.ControlName="lblPopInd"
+			.Left=5
+			.Top=37
+			.Width=16
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = rectangle.FromLTRB(111, 158, 15, 15)
+		End With
+		Me.AddChild(CType(lblPopInd, UIControl))
+
+		'lblMoraleInd initial props
+		lblMoraleInd = New UILabel(oUILib)
+		With lblMoraleInd
+			.ControlName="lblMoraleInd"
+			.Left=6
+			.Top=57
+			.Width=16
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = rectangle.FromLTRB(110, 173, 16, 16)
+		End With
+		Me.AddChild(CType(lblMoraleInd, UIControl))
+
+		'shpPowerBack initial props
+		shpPowerBack = New UIWindow(oUILib)
+		With shpPowerBack
+			.ControlName="shpPowerBack"
+			.Left=25
+			.Top=18
+			.Width=120
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpPowerBack, UIControl))
+
+		'shpPowerFore initial props
+		shpPowerFore = New UIWindow(oUILib)
+		With shpPowerFore
+			.ControlName="shpPowerFore"
+			.Left=26
+			.Top=19
+			.Width=119
+			.Height=12
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpPowerFore, UIControl))
+
+		'shpPopHomeless initial props
+		shpPopHomeless = New UIWindow(oUILib)
+		With shpPopHomeless
+			.ControlName="shpPopHomeless"
+			.Left=25
+			.Top=38
+			.Width=120
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpPopHomeless, UIControl))
+
+		'shpMoraleNeg initial props
+		shpMoraleNeg = New UIWindow(oUILib)
+		With shpMoraleNeg
+			.ControlName="shpMoraleNeg"
+			.Left=25
+			.Top=58
+			.Width=120
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpMoraleNeg, UIControl))
+
+		'shpPopPowerless initial props
+		shpPopPowerless = New UIWindow(oUILib)
+		With shpPopPowerless
+			.ControlName="shpPopPowerless"
+			.Left=26
+			.Top=39
+			.Width=80
+			.Height=12
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpPopPowerless, UIControl))
+
+		'shpPopGood initial props
+		shpPopGood = New UIWindow(oUILib)
+		With shpPopGood
+			.ControlName="shpPopGood"
+			.Left=26
+			.Top=39
+			.Width=61
+			.Height=12
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpPopGood, UIControl))
+
+		'shpMoraleGood initial props
+		shpMoraleGood = New UIWindow(oUILib)
+		With shpMoraleGood
+			.ControlName="shpMoraleGood"
+			.Left=26
+			.Top=59
+			.Width=80
+			.Height=12
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(shpMoraleGood, UIControl))
+
+		'lblPopGrowth initial props
+		lblPopGrowth = New UILabel(oUILib)
+		With lblPopGrowth
+			.ControlName="lblPopGrowth"
+			.Left=148
+			.Top=39
+			.Width=14
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.Caption="+"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPopGrowth, UIControl))
+	End Sub
+End Class

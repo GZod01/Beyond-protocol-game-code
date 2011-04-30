@@ -1,0 +1,144 @@
+'Interface created from Interface Builder
+Public Class frmTaxRate
+	Inherits UIWindow
+
+	Private WithEvents lblColonial As UILabel
+	Private WithEvents txtColonial As UITextBox
+	Private WithEvents lblImperial As UILabel
+	Private WithEvents txtImperial As UITextBox
+	Private WithEvents btnOK As UIButton
+	Private WithEvents btnCancel As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmTaxRate initial props
+		With Me
+			.ControlName="frmTaxRate"
+			.Left=104
+			.Top=101
+			.Width=186
+			.Height=82
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lblColonial initial props
+		lblColonial = New UILabel(oUILib)
+		With lblColonial
+			.ControlName="lblColonial"
+			.Left=5
+			.Top=30
+			.Width=129
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Colonial Tax Rate:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblColonial)
+
+		'txtColonial initial props
+		txtColonial = New UITextBox(oUILib)
+		With txtColonial
+			.ControlName="txtColonial"
+			.Left=138
+			.Top=30
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=4
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtColonial)
+
+		'lblImperial initial props
+		lblImperial = New UILabel(oUILib)
+		With lblImperial
+			.ControlName="lblImperial"
+			.Left=5
+			.Top=5
+			.Width=129
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Imperial Tax Rate:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblImperial)
+
+		'txtImperial initial props
+		txtImperial = New UITextBox(oUILib)
+		With txtImperial
+			.ControlName="txtImperial"
+			.Left=138
+			.Top=5
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=4
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtImperial)
+
+		'btnOK initial props
+		btnOK = New UIButton(oUILib)
+		With btnOK
+			.ControlName="btnOK"
+			.Left=5
+			.Top=56
+			.Width=83
+			.Height=21
+			.Enabled=True
+			.Visible=True
+			.Caption="OK"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnOK)
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=99
+			.Top=56
+			.Width=83
+			.Height=21
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnCancel)
+	End Sub
+End Class

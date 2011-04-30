@@ -1,0 +1,365 @@
+'Interface created from Interface Builder
+Public Class fraDetails
+	Inherits UIWindow
+
+	Private WithEvents lblProposedBy As UILabel
+	Private WithEvents lblProposedOn As UILabel
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents txtTitle As UITextBox
+	Private WithEvents lblDesc As UILabel
+	Private WithEvents txtDescription As UITextBox
+	Private WithEvents lblPropVotes As UILabel
+	Private WithEvents lstVotes As UIListBox
+	Private WithEvents txtFind As UITextBox
+	Private WithEvents btnFindVote As UIButton
+	Private WithEvents lblMessages As UILabel
+	Private WithEvents lstMessages As UIListBox
+	Private WithEvents txtMessage As UITextBox
+	Private WithEvents btnAddMessage As UIButton
+	Private WithEvents btnVoteYes As UIButton
+	Private WithEvents btnVoteNo As UIButton
+	Private WithEvents lblYourVote As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraDetails initial props
+		With Me
+			.ControlName="fraDetails"
+			.Left=59
+			.Top=121
+			.Width=780
+			.Height=305
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblProposedBy initial props
+		lblProposedBy = New UILabel(oUILib)
+		With lblProposedBy
+			.ControlName="lblProposedBy"
+			.Left=15
+			.Top=10
+			.Width=270
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposed By: Emperor Enoch Dagor"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProposedBy, UIControl))
+
+		'lblProposedOn initial props
+		lblProposedOn = New UILabel(oUILib)
+		With lblProposedOn
+			.ControlName="lblProposedOn"
+			.Left=15
+			.Top=30
+			.Width=270
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposed On: 05/19/2008 at 3:38 PM"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblProposedOn, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=15
+			.Top=60
+			.Width=29
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Title:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'txtTitle initial props
+		txtTitle = New UITextBox(oUILib)
+		With txtTitle
+			.ControlName="txtTitle"
+			.Left=14
+			.Top=80
+			.Width=270
+			.Height=45
+			.Enabled=True
+			.Visible=True
+			.Caption="Title"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtTitle, UIControl))
+
+		'lblDesc initial props
+		lblDesc = New UILabel(oUILib)
+		With lblDesc
+			.ControlName="lblDesc"
+			.Left=15
+			.Top=130
+			.Width=70
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Description:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDesc, UIControl))
+
+		'txtDescription initial props
+		txtDescription = New UITextBox(oUILib)
+		With txtDescription
+			.ControlName="txtDescription"
+			.Left=15
+			.Top=150
+			.Width=270
+			.Height=117
+			.Enabled=True
+			.Visible=True
+			.Caption="Description"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtDescription, UIControl))
+
+		'lblPropVotes initial props
+		lblPropVotes = New UILabel(oUILib)
+		With lblPropVotes
+			.ControlName="lblPropVotes"
+			.Left=300
+			.Top=10
+			.Width=270
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Proposal Endorsements"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPropVotes, UIControl))
+
+		'lstVotes initial props
+		lstVotes = New UIListBox(oUILib)
+		With lstVotes
+			.ControlName="lstVotes"
+			.Left=300
+			.Top=30
+			.Width=200
+			.Height=210
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstVotes, UIControl))
+
+		'txtFind initial props
+		txtFind = New UITextBox(oUILib)
+		With txtFind
+			.ControlName="txtFind"
+			.Left=300
+			.Top=245
+			.Width=145
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Find Voter"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=20
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFind, UIControl))
+
+		'btnFindVote initial props
+		btnFindVote = New UIButton(oUILib)
+		With btnFindVote
+			.ControlName="btnFindVote"
+			.Left=450
+			.Top=245
+			.Width=54
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Find"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnFindVote, UIControl))
+
+		'lblMessages initial props
+		lblMessages = New UILabel(oUILib)
+		With lblMessages
+			.ControlName="lblMessages"
+			.Left=510
+			.Top=10
+			.Width=270
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMessages, UIControl))
+
+		'lstMessages initial props
+		lstMessages = New UIListBox(oUILib)
+		With lstMessages
+			.ControlName="lstMessages"
+			.Left=510
+			.Top=32
+			.Width=259
+			.Height=103
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstMessages, UIControl))
+
+		'txtMessage initial props
+		txtMessage = New UITextBox(oUILib)
+		With txtMessage
+			.ControlName="txtMessage"
+			.Left=510
+			.Top=140
+			.Width=260
+			.Height=125
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMessage, UIControl))
+
+		'btnAddMessage initial props
+		btnAddMessage = New UIButton(oUILib)
+		With btnAddMessage
+			.ControlName="btnAddMessage"
+			.Left=590
+			.Top=275
+			.Width=110
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Add Message"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAddMessage, UIControl))
+
+		'btnVoteYes initial props
+		btnVoteYes = New UIButton(oUILib)
+		With btnVoteYes
+			.ControlName="btnVoteYes"
+			.Left=15
+			.Top=275
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Endorse"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnVoteYes, UIControl))
+
+		'btnVoteNo initial props
+		btnVoteNo = New UIButton(oUILib)
+		With btnVoteNo
+			.ControlName="btnVoteNo"
+			.Left=185
+			.Top=275
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Unendorse"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnVoteNo, UIControl))
+
+		'lblYourVote initial props
+		lblYourVote = New UILabel(oUILib)
+		With lblYourVote
+			.ControlName="lblYourVote"
+			.Left=300
+			.Top=275
+			.Width=200
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="You have voted FOR"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblYourVote, UIControl))
+	End Sub
+End Class

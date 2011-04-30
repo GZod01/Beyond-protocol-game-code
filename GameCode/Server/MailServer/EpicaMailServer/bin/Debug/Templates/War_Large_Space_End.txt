@@ -1,0 +1,15 @@
+[EnvirName] Calms
+[EnvirName] Calms
+17
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+After [SpanOfBattle], hostilities have seemingly drawn to an end in [EnvirName]. The turmoil of the engagement claimed [TotalLostBothSides] lives on both sides of the line.
+<br><br>
+The combat began [StartOfBattle] when [PlayerSideListA] forces clashed with [PlayerSideListB] forces. It was unclear at the start of the battle how devastating it would be. The wreckage left in the space lanes will be an issue for quite a while as crews begin the salvage process.
+<br><br>
+It is unclear the costs of the battle in monetary amounts and how far the conflict will set back the civilizations of the sides involved. As more than [TotalUnitsLostBothSides] military assets are left in ruin floating in space, it will remain uncertain how both sides of the conflict will rebound.
+<br><br>
+It is still unclear whether this decline in hostilities is permanent or if it is only temporary. While relations remain strained between the warring factions, everything remains uncertain. 
+</div>

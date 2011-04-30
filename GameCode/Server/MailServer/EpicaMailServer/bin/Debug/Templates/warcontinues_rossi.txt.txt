@@ -1,0 +1,8 @@
+Update from [PlanetName]! 
+The Epic Battle continues on [PlanetName]! 
+19
+Jeffrey Rossi 
+4 
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+This is a GNS news update from [PlanetName]. The conflict between [PlayerSideListA] and [PlayerSideListB] over the possession of [PlanetName] continues to rage as both sides continue to take losses. The conflict began at [StartOfBattle] and rages on into the present as each side continues to take losses. <br><br>Unofficial casualty reports from our observers inside each army put [PlayerSideListAPossessive] losses at [TotalUnitLostSideA] and [PlayerSideListBPossessive] losses at [TotalUnitLostSideB]. Hopefully this conflict will soon be over and these two groups can put aside their differences and come to a peace agreement. GNS News will continue to follow this battle as it continues and will bring you the official casualty numbers and post-conflict report when this battle if finally over. </div>

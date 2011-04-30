@@ -1,0 +1,15 @@
+[PlayerName] Declares War
+[PlayerName] Declares War
+13
+Random
+7
+7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+[PlayerName] has declared war on [PlayerName2]! Some have seen this coming while others were completely blind-sided by it.
+[EXCLUDE:TotalInvolved<3]
+<br><br>
+In response to the war declaration, [PlayerSideListA] joined in the war declaration against [PlayerName2] while [PlayerSideListB] joined sides with [PlayerName2]. The scale of this war can grow to immense proportions.
+[/EXCLUDE]
+<br><br>
+Citizens of both sides have mixed feelings about the war. Some polls indicate that the war is good and are anxious for the economical and territorial benefits that can be obtained. However, other polls show that some citizens are terrified of the potential death toll that can result from the war.
+</div>

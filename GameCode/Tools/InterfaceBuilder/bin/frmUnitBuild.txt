@@ -1,0 +1,102 @@
+'Interface created from Interface Builder
+Public Class frmUnitBuild
+	Inherits UIWindow
+
+	Private WithEvents lstBuildable As UIListBox
+	Private WithEvents lblBuildable As UILabel
+	Private WithEvents txtItemDetails As UITextBox
+	Private WithEvents lblDetails As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmUnitBuild initial props
+		With Me
+			.ControlName="frmUnitBuild"
+			.Left=363
+			.Top=95
+			.Width=289
+			.Height=123
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'lstBuildable initial props
+		lstBuildable = New UIListBox(oUILib)
+		With lstBuildable
+			.ControlName="lstBuildable"
+			.Left=3
+			.Top=20
+			.Width=159
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16760704)
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16744193)
+		End With
+		Me.AddChild(lstBuildable)
+
+		'lblBuildable initial props
+		lblBuildable = New UILabel(oUILib)
+		With lblBuildable
+			.ControlName="lblBuildable"
+			.Left=3
+			.Top=0
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Buildable Items"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblBuildable)
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=165
+			.Top=20
+			.Width=120
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=0
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-16760704)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtItemDetails)
+
+		'lblDetails initial props
+		lblDetails = New UILabel(oUILib)
+		With lblDetails
+			.ControlName="lblDetails"
+			.Left=165
+			.Top=0
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Item Details"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblDetails)
+	End Sub
+End Class

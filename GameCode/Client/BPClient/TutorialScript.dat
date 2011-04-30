@@ -1,0 +1,1876 @@
+BEGIN STEP
+   StepID=1
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Welcome to Beyond Protocol![VBCRLF][VBCRLF]This is a simulation to get you acquainted with the interfaces you will need to command your empire.[VBCRLF][VBCRLF]NOTE: The tutorial can be stopped and resumed later from the same computer. If you normally play on a different computer than you are on now and do not have several hours to invest in the tutorial we recommend you log off and wait to begin the tutorial.[VBCRLF][VBCRLF]TIP: Type "Any <DSE> on?" into the chat window if you need help.[VBCRLF][VBCRLF]Click Next to continue.
+   GroupID=-1
+   PreqStepID=-1
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 1.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=7
+   BeginStepGroupNum=0
+   BEGIN UICONTROL
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      SetZoomLevel:5000
+      CenterScreen:MyEngineer
+      UIEnable:frmDeath
+      UIEnable:frmDeath.btnDeath
+      UIEnable:frmDeath.txtDetails
+      UIEnable:frmDeath.btnSpawnLive
+      UIEnable:frmResearchMain.btnClose
+      UIEnable:frmTradeMain.btnClose
+      UIDisable:frmResearchMain.btnResearch
+      UIDisable:frmAdvanceDisplay<RepairDismantle>
+      UIDisable:frmAdvanceDisplay<Orders>
+      UIDisable:frmAdvanceDisplay<Contents>
+      UIEnable:frmAvailRes.btnClose
+TODO disable ALL sliders
+TODO: lock down all armor sliders and lock/unlocks
+   END UICONTROL
+END STEP
+
+//BEGIN STEP
+//   StepID=318
+//   AlertControl=
+//   DisplayLocX=-1
+//   DisplayLocY=-1
+//   DisplayText=This is only a simulation. Everything you do here will not affect you in the live system.[VBCRLF][VBCRLF]For completing this tutorial all the way through, you will receive the ability to instant build units and facilities in the live game for a short period.
+//   GroupID=-1
+//   PreqStepID=1
+//   StepTitle=
+//   StepType=0
+//   WAVFile=
+//   RequirementFireStepID=-1
+//   RequirementInitializeStepID=-1
+//   BEGIN UICONTROL
+//      UIDisable:ALL
+//      HotkeyDisable:ALL
+//   END UICONTROL
+//END STEP
+//BEGIN STEP
+//   StepID=319
+//   AlertControl=
+//   DisplayLocX=-1
+//   DisplayLocY=-1
+//   DisplayText=We should alert the other colonies that we have arrived safely. The chat window is the tool you will use to communicate with other players.[VBCRLF][VBCRLF]You can begin typing by hitting the Enter key or clicking on the send textbox.[VBCRLF][VBCRLF]We will notify the other colonies by typing:[VBCRLF][VBCRLF]We have made planetfall safely.[VBCRLF][VBCRLF]Then press Enter to send the message.
+//   GroupID=-1
+//   PreqStepID=318
+//   StepTitle=
+//   StepType=0
+//   WAVFile=
+//   RequirementFireStepID=-1
+//   RequirementInitializeStepID=-1
+//   BEGIN UICONTROL
+//      UIDisable:ALL
+//      HotkeyDisable:ALL
+//   END UICONTROL
+//END STEP
+
+BEGIN STEP
+   StepID=2
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=To begin, select the engineer.[VBCRLF][VBCRLF]You can select any unit by left-clicking on that unit.
+   GroupID=-1
+   //PreqStepID=319
+   PreqStepID=1
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 2.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=1
+   ImStuckTimer=5
+   BeginStepGroupNum=1
+   //RequirementInitializeStepID=319
+   BEGIN UICONTROL
+      UIForceNoFocus
+      DeselectAll
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:ClickOnSelect<-1,-1,4>
+      UIEnable:GroupBoxSelect<-1,-1,4>
+      CenterScreen:MyEngineer
+      SetZoomLevel:1000
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=76
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+   //BEGIN REQUIREMENT
+   //   TriggerType=92
+   //   Extended1=-1
+   //   Extended2=-1
+   //   Extended3=-1
+   //   ExtendedText=
+   //   Count=1
+   //END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=3
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=To deselect a unit, left-click anywhere there is not a unit or an interface window. [VBCRLF][VBCRLF]Deselect the Engineer.
+   GroupID=-1
+   PreqStepID=2
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 3.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=2
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:Deselect
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=1
+      Extended1=-1
+      Extended2=-1
+      Extended3=4
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=4
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=You can also select engineers by pressing Control E which cycles through all units that can build facilities. [VBCRLF][VBCRLF]Press Control E Now.
+   GroupID=-1
+   PreqStepID=3
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 4.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=3
+   ImStuckTimer=7
+   BEGIN UICONTROL
+      DeselectAll
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyEnable:CtrlE
+      CenterScreen:MyEngineer
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=2
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=5
+   AlertControl=frmAdvanceDisplay.Build
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=In the lower left corner of the screen, you will find a BUILD button.[VBCRLF][VBCRLF]Click that button to bring up the Engineer's BUILD SCREEN.
+   GroupID=-1
+   PreqStepID=4
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 5.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=4
+   ImStuckTimer=6
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      SetZoomLevel:6000
+      UIDisable:frmAdvanceDisplay<RepairDismantle>
+      UIEnable:frmAdvanceDisplay<Build>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=3
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=6
+   AlertControl=frmBuildWindow.lstBuildable
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Your colony begins by constructing a Command Center.[VBCRLF][VBCRLF]Select the Command Center in the Buildable Items list.
+   GroupID=-1
+   PreqStepID=5
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 6.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=5
+   ImStuckTimer=6
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmBuildWindow.lstBuildable<5,11>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=4
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=7
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=While a facility is selected, it will show up as a ghost representation of what the final facility will look like once it is constructed. [VBCRLF][VBCRLF]Move your mouse over one of your tanks. [VBCRLF][VBCRLF]NOTE: If you select a facility and wish to cancel the selection, simply right-click.
+   GroupID=-1
+   PreqStepID=6
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 7.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=6
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=5
+      Extended1=5
+      Extended2=11
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=8
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Notice that the tanks (or any other ground units) and terrain will prevent the placement of the structure at that position and the ghost will turn red. [VBCRLF][VBCRLF]When the ghost is white, it can be placed at that location. [VBCRLF][VBCRLF]When you are satisfied with the postion of the Command Center, Left-Click and the engineer will move to that position to begin construction.
+   GroupID=-1
+   PreqStepID=7
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 8.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=7
+   ImStuckTimer=17
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      SetZoomLevel:3000
+      UIEnable:FacilityPlacement<5,11>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=6
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=9
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=The build ghost appears over the engineer while it is building indicating that construction is in progress.[VBCRLF][VBCRLF]The build ghost will become opaque the closer the construction progress is to being 100%.
+   GroupID=-1
+   PreqStepID=8
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 9.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=8
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIDisable:MinimapLeftClick
+      UIDisable:frmMinimapZoom.btnZoomIn
+      UIDisable:frmMinimapZoom.btnZoomOut
+      HotkeyDisable:Tab
+      UIDisable:frmNoteHistory
+      UIDisable:frmNotification
+      CloseWindow:frmBuildWindow
+      EnsureSelection:MyEngineer
+      CenterScreen:MyEngineer
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=7
+      Extended1=5
+      Extended2=11
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=10
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=While we wait for the construction of the Command Center, we will cover the other panels.
+   GroupID=-1
+   PreqStepID=9
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 10.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=4
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=11
+   AlertControl=frmChat
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=In the bottom middle is the chat window.[VBCRLF][VBCRLF]Unlike typical RTS games, Beyond Protocol requires you to work with others in order to be successful.[VBCRLF][VBCRLF]For more help on the chat window, click the "?" button on the chat window for a quick tutorial at a later time.
+   GroupID=-1
+   PreqStepID=10
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 11.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=12
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=12
+   AlertControl=frmSingleSelect
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=In the lower left, is the Selection Specifics panel. It displays an overview of the selection's details.[VBCRLF][VBCRLF]Hovering over the individual items will reveal a tooltip for that item and how to use it.
+   GroupID=-1
+   PreqStepID=11
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 12.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      EnsureSelection:MyEngineer
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=13
+   AlertControl=frmAdvanceDisplay
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Next to the Selection Specifics panel is the Advanced Display Panel which provides access to the abilities of this selection.[VBCRLF][VBCRLF]Hovering over the buttons will give you details of what they do and how to utilize them.
+   GroupID=-1
+   PreqStepID=12
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 13.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=14
+   AlertControl=frmQuickBar
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The Quickbar on the left side of the screen provides one-click access to all of the tools you will need to run your empire.[VBCRLF][VBCRLF]Hovering over the buttons will give you details of what they do and how to utilize them. We will cover each of these in detail later. [VBCRLF][VBCRLF]Click Next when you are ready.
+   GroupID=-1
+   PreqStepID=13
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 14.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=12
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=15
+   AlertControl=frmMinimapZoom
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=At the top left corner of the screen is a minimap. It is a zoomed in representation of the environment you are in.[VBCRLF][VBCRLF]Below the minimap are two buttons, one for zooming in and one for zooming out.
+   GroupID=-1
+   PreqStepID=14
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 15.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=14
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=76
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=16
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Left-Click on the minimap to move the camera to the selected location.
+   GroupID=-1
+   PreqStepID=15
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 16.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=3
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:MinimapLeftClick
+      UIEnable:frmMinimapZoom.btnZoomIn
+      UIEnable:frmMinimapZoom.btnZoomOut
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=17
+   AlertControl=frmProdStatus
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Next to the minimap is the Production Status Bar which indicates the Production Status of the current selection and what it is producing.
+   GroupID=-1
+   PreqStepID=16
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 17.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=16
+   ImStuckTimer=7
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      //UIDisable:MinimapLeftClick
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=8
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=18
+   AlertControl=frmNotification
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Notice that there is a test notification in the notification window at the top of the screen.[VBCRLF][VBCRLF]You can click on most alerts to take you to the location that caused the event. The window automatically fades over time.
+   GroupID=-1
+   PreqStepID=17
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 18.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      AddNotification:<This is a test notification from your engineer><CLICKTO:MyEngineer>
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=19
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The notification window can be expanded to see notification history by pressing Tab.[VBCRLF][VBCRLF]Press the Tab key to bring up the expanded notification window.
+   GroupID=-1
+   PreqStepID=18
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 19.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=8
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyEnable:Tab
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=20
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Click on the alert "This is a test notification from your engineer".
+   GroupID=-1
+   PreqStepID=19
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 20.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=19
+   ImStuckTimer=4
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmNoteHistory
+      UIEnable:frmNotification
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=21
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmNoteHistory
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=21
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Press Tab again to return to the normal notification window mode.
+   GroupID=-1
+   PreqStepID=20
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 21.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=20
+   ImStuckTimer=4
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=9
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=22
+   AlertControl=frmEnvirDisplay
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=In the upper right corner of the screen is the Environment Display Panel.[VBCRLF][VBCRLF]Hovering over the individual items will reveal a tooltip for that item and how to use it.
+   GroupID=-1
+   PreqStepID=21
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 22.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=21
+   ImStuckTimer=8
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=22
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmNoteHistory
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=23
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Normally, you would have to wait for facilities to finish building.[VBCRLF][VBCRLF]However, since you have picked this up so quickly, we will accelerate our build times if the production is not yet finished.
+   GroupID=-1
+   PreqStepID=22
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 23.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=8
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:FacilityPlacement<5,11>
+      <send_tutorial_production_finish:-1,-1>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=82
+      Extended1=5
+      Extended2=11
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=24
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Now that you have completed the Command Center and established a colony, Press F6.
+   GroupID=-1
+   PreqStepID=23
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 24.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyEnable:F6
+      UIEnable:frmQuickBar<ColonyStats>
+      UIDisable:frmColonyStats.txtColonyName
+      UIDisable:frmColonyStats.txtTaxRate<45>
+      UIDisable:frmColonyStats.btnSetTax
+      UIDisable:frmColonyStats.btnClose
+      CenterScreen:MyCommandCenter
+      UpdateStepID
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=25
+   AlertControl=frmColonyStats
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=This is the Colony Stats Window.[VBCRLF][VBCRLF]This panel provides important information about the colony.
+   GroupID=-1
+   PreqStepID=24
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 25.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=24
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyDisable:F6
+      UIDisable:frmQuickBar<ColonyStats>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=21
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmColonyStats
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=26
+   AlertControl=frmColonyStats.txtColonyName
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=At the top of this window is a textbox that displays the colony's name.[VBCRLF][VBCRLF]Enter a new name for this colony and press Enter.
+   GroupID=-1
+   PreqStepID=25
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 26.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=6
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmColonyStats.txtColonyName
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=27
+   AlertControl=frmColonyStats.lblPop
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The first section contains the population, number of jobs, unemployment rate and the intelligence of your scientists.
+   GroupID=-1
+   PreqStepID=26
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 27.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=26
+   ImStuckTimer=7
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=10
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=28
+   AlertControl=frmColonyStats.lblHousing
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The next panel provides detailed information regarding the housing situation on this colony.
+   GroupID=-1
+   PreqStepID=27
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 28.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=29
+   AlertControl=frmColonyStats.lblMorale
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Below that, there are indications of morale and growth rate.[VBCRLF][VBCRLF]You can hover over the morale area to get a better description of what is affecting this colony's morale.[VBCRLF][VBCRLF]Press Next to Continue.
+   GroupID=-1
+   PreqStepID=28
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 29.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=30
+   AlertControl=frmColonyStats.txtTaxRate
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The Tax Rate is currently set at 40 percent. Raise your tax rate to 45% and click set or press the enter key.
+   GroupID=-1
+   PreqStepID=29
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 30.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=29
+   ImStuckTimer=2
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmColonyStats.txtTaxRate<45>
+      UIEnable:frmColonyStats.btnSetTax
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=76
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=31
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=This is acceptable when the colony's population is lower as colonists want to aid in building a new colony.[VBCRLF][VBCRLF]As the colony grows, colonists will demand the tax rate be lowered.
+   GroupID=-1
+   PreqStepID=30
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 31.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=30
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIDisable:frmColonyStats.txtTaxRate
+      UIDisable:frmColonyStats.btnSetTax
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=11
+      Extended1=45
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=32
+   AlertControl=frmColonyStats.lblEnlisted
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The next section indicates how many enlisted and officers are in the colony.
+   GroupID=-1
+   PreqStepID=31
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 32.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=4
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=33
+   AlertControl=frmColonyStats.lblPowerGen
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=The next section describes the power situation for this colony.
+   GroupID=-1
+   PreqStepID=32
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 33.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=3
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=34
+   AlertControl=frmColonyStats.lblPowerGen
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Power Generation is how much power is being generated by all facilities within the colony.
+   GroupID=-1
+   PreqStepID=33
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 34.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=35
+   AlertControl=frmColonyStats.lblPowerNeed
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Power Need indicates how much power is needed by facilities currently powered.
+   GroupID=-1
+   PreqStepID=34
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 35.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=36
+   AlertControl=frmColonyStats.lblTotalPowerNeed
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Total Need indicates the total power required by all facilities powered or unpowered.
+   GroupID=-1
+   PreqStepID=35
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 36.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=37
+   AlertControl=frmColonyStats.lblExpand
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=You can switch to an advanced view of this window by clicking the three-arrowed button at the top of the colony window.[VBCRLF][VBCRLF]This will be available at a later time when you are more comfortable with the colony stats window.
+   GroupID=-1
+   PreqStepID=36
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 37.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=38
+   AlertControl=frmColonyStats.btnClose
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=Close the colony window by pressing F6 or the Close button on the window.
+   GroupID=-1
+   PreqStepID=37
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 38.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmColonyStats.btnClose
+      HotkeyEnable:F6
+      UIEnable:frmQuickBar<ColonyStats>
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=39
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=These green dots represent unknown objects outside of visible radar range.
+   GroupID=-1
+   PreqStepID=38
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 39.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=38
+   ImStuckTimer=5
+   BeginStepGroupNum=2
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyDisable:CtrlU
+      UIEnable:Deselect
+      HotkeyDisable:CtrlS
+      UIDisable:frmMultiDisplay.lstData.moScroll.btnDecreaser
+      UIDisable:frmMultiDisplay.lstData.moScroll.btnIncreaser
+      UIDisable:frmMultiDisplay.lstData.moScroll.btnScroller
+      UIEnable:ClickOnSelect<-1,-1,0>
+      UIEnable:GroupBoxSelect<-1,-1,0>
+      UIDisable:OrderMovement
+      CenterScreen:PirateTurrets
+      SetZoomLevel:3000
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=22
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmColonyStats
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=40
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=The Command Center has a radar that has two properties, visible range and detection range.[VBCRLF][VBCRLF]Because these objects are outside of the visible range but within the detection range, they appear as green radar blips.
+   GroupID=-1
+   PreqStepID=39
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 40.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=11
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=41
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=Control U cycles through all of your units in this environment.[VBCRLF][VBCRLF]Press Control U until a tank is selected.
+   GroupID=-1
+   PreqStepID=40
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 41.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=6
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyEnable:CtrlU
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=42
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=Control S selects all units within the environment that use the same hull as the currently selected items.[VBCRLF][VBCRLF]Now press Control S. Then, click the Next button to move on.
+   GroupID=-1
+   PreqStepID=41
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 42.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=41
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyDisable:CtrlU
+      UIDisable:Deselect
+      HotkeyEnable:CtrlS
+      UIEnable:frmMultiDisplay.lstData.moScroll.btnDecreaser
+      UIEnable:frmMultiDisplay.lstData.moScroll.btnIncreaser
+      UIEnable:frmMultiDisplay.lstData.moScroll.btnScroller
+      UIDisable:ClickOnSelect<-1,-1,0>
+      UIDisable:GroupBoxSelect<-1,-1,0>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=12
+      Extended1=-1
+      Extended2=-1
+      Extended3=0
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=43
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=Right-click near one of the green dots to send your tanks there to check things out.
+   GroupID=-1
+   PreqStepID=42
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 43.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=42
+   ImStuckTimer=4
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      CenterScreen:PirateTurrets
+      SetZoomLevel:3000
+      UIEnable:OrderMovement
+      UIDisable:frmMinimapZoom
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=13
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+   BEGIN REQUIREMENT
+      TriggerType=76
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=44
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Your tanks are now moving to investigate what the long range radar is picking up.[VBCRLF][VBCRLF]While we wait, we are going to cover the basics of camera control.
+   GroupID=-1
+   PreqStepID=43
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 44.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=43
+   ImStuckTimer=7
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      HotkeyEnable:CtrlU
+      UIEnable:Deselect
+      UIEnable:ClickOnSelect<-1,-1,0>
+      UIEnable:GroupBoxSelect<-1,-1,0>
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=78
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=45
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=First, try to scroll the camera. To do so, move the mouse to the edge of the screen. Be sure not to move the mouse over an interface that is on an edge as it will not allow the camera to scroll.[VBCRLF][VBCRLF]Optionally, you can use the arrow keys to scroll the camera.[VBCRLF][VBCRLF]Scroll the camera.
+   GroupID=-1
+   PreqStepID=44
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 45.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   ImStuckTimer=13
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:ScrollCamera
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=46
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Good! To rotate the camera, click and hold the right mouse button and then drag the mouse while holding the right mouse button down.[VBCRLF][VBCRLF]Rotate the camera now.
+   GroupID=-1
+   PreqStepID=45
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 46.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=45
+   ImStuckTimer=8
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:RotateCamera
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=80
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=47
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Finally, use the mouse wheel on the mouse to zoom in and out. If you do not have a mouse wheel, press and hold the Z key on the keyboard and move the mouse up and down.[VBCRLF][VBCRLF]Zoom the camera in and out.
+   GroupID=-1
+   PreqStepID=46
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 47.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=46
+   ImStuckTimer=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:ZoomCamera
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=79
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=48
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Excellent, now, let's return to those green dots.[VBCRLF][VBCRLF]Your tanks should be on their way to investigate.[VBCRLF][VBCRLF]NOTE: You can adjust the scroll and zoom speeds as well as other options of the game in the Options Window by pressing Escape.
+   GroupID=-1
+   PreqStepID=47
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 48.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=47
+   ImStuckTimer=5
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIDisable:AssignTarget
+      UIEnable:SelectionBoxStart
+      CenterScreen:PirateTurrets
+      SetZoomLevel:3000
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=81
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=49
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=Pirates have placed turrets here.  Remove them.[VBCRLF][VBCRLF]Right-click the terrain to move your units. Right-click on an enemy target to attack it.[VBCRLF][VBCRLF]You can select enemy units and facilities by left-clicking on them.[VBCRLF][VBCRLF]You can left-click and drag a box around your tanks to select them all.[VBCRLF][VBCRLF]Notice that combat in Beyond Protocol lasts longer than in most real time strategies. This allows for combat tactics and strategies to evolve during combat.
+   GroupID=-1
+   PreqStepID=48
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 49.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=43
+   ImStuckTimer=21
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:AssignTarget
+      UIEnable:SelectionBoxStart
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=14
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=50
+   AlertControl=
+   DisplayLocX=-1
+   DisplayLocY=-1
+   DisplayText=This concludes this part of the tutorial. You will now be placed in the Aurelium system where you can learn the more complex elements of the game.[VBCRLF][VBCRLF]Press Next to continue.
+   GroupID=-1
+   PreqStepID=49
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 50.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=43
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=15
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=3
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=51
+   AlertControl=
+   DisplayLocX=0
+   DisplayLocY=-1
+   DisplayText=Loading Aurelium...
+   GroupID=-1
+   PreqStepID=50
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 51.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=50
+   ImStuckTimer=6
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=76
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=301
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //old-DisplayText=Commander, welcome to your new home.  From here on out, we will not enforce the tutorial restrictions.  Keep in mind though, this portion of the game is a test to see what you have learned. You will be asked to kill each other.
+   DisplayText=Commander, welcome to your new home. From here on out, we will not enforce the tutorial restrictions.[VBCRLF][VBCRLF]NOTE: Once you finish reading the remainder of the tutorial and are wished good luck you will receive the reward for completing the tutorial.
+   GroupID=-1
+   PreqStepID=300
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 301.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=300
+   BeginStepGroupNum=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIDisable:ChangeView_3
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=0
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=302
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Before we start the (OPTIONAL) countdown, we want to show you a couple of items. [VBCRLF][VBCRLF]You will find the guild billboards in the following manner.  Press the Backspace key.[VBCRLF][VBCRLF]NOTE: As a reminder, the four hours are optional gameplay time and do not need to be played in one sitting.
+   DisplayText=You are looking at planet view which you should remember from tutorial one.[VBCRLF][VBCRLF]We are going to explain how to change views and environments.[VBCRLF][VBCRLF]Press the Backspace key.
+   GroupID=-1
+   PreqStepID=301
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 302.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=303
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=This is the space view. You will notice on the Environment Display window that you are showing in the Aurelium system but you are still in the planet environment. If there were units currently on the screen you would be unable to see them as you are not in the system's environment.[VBCRLF][VBCRLF]You can press the Home key to return to the current environment's default view, which for planets would be the planet view. For now, left-click anywhere on the screen to change to the system space environment.
+   GroupID=-1
+   PreqStepID=302
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 303.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=302
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:ChangeView_3
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=3
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=304
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=This is the system tactical view.  You will notice in the upper right that you are showing in the Aurelium system but you are still in the planet environment.[VBCRLF][VBCRLF]You can press the Home key to return to the current environment.  For now, left-click anywhere on the screen to change to the system space environment.
+   DisplayText=Notice that you are in the space view. You may see ships, space stations and guild billboards. The Guild Billboards are guilds in the live game that are interested in recruiting new players from the tutorials. Clicking on the billboards will provide more access to the information related to that guild.
+   GroupID=-1
+   PreqStepID=303
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 304.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=303
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=89
+      Extended1=-1
+      Extended2=2
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=305
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Notice that you are in the system space view. If you move your camera around, you may see there are billboards in the distance. These are billboards from guilds which have paid credits in order to attempt to recruit you into their guild. [VBCRLF][VBCRLF]When you click on the billboard, the system will let the guild monitor your progress and score for this 4 hour scenario.
+   DisplayText=Press Backspace to switch to Strategic View.
+   GroupID=-1
+   PreqStepID=304
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 305.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=304
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=306
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=You may also elect to find some friends in the system. If you can connect with those friends, you can create a guild and join the real game galaxy starting on the same planet together.[VBCRLF][VBCRLF]If you see the need to become a group, click on the guild interface and invite the player.[VBCRLF][VBCRLF]Click Next to continue.
+   DisplayText= This view gives a general overview of the planet and the surrounding objects in space.[VBCRLF][VBCRLF]It is useful for quickly navigating the camera in a contained area.[VBCRLF][VBCRLF]Press Backspace one more time to switch to Solar System View.
+   GroupID=-1
+   PreqStepID=305
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 306.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=-1
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=2
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=307
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Let's return to the planet surface environment. To do this, left click on the planet to bring you to the planet map view.
+   DisplayText=This view displays the entire solar system with the planets and groups of units.[VBCRLF][VBCRLF]The white square that is over the planet you are on indicates the boundaries of the Tactical View you were just looking at.[VBCRLF][VBCRLF]Let's return to the planet surface environment.
+   GroupID=-1
+   PreqStepID=306
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 307.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=306
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=308
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Left click on the map to change environments to the planet again.
+   DisplayText=To do this, left click on the Solar System Map at the point where the planet you are on is located. This will change you to Tactical View.
+   GroupID=-1
+   PreqStepID=307
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 308.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=307
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+END STEP
+BEGIN STEP
+   StepID=309
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Now, click on the planet map where the green dot is blinking.  This is your engineer.[VBCRLF][VBCRLF]Reminder: Left-click on the map and press Ctrl+E if you cannot find the green dot.
+   DisplayText=Now, left click on the Tactical Map at the planet to switch to Space View.
+   GroupID=-1
+   PreqStepID=308
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 309.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=308
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=2
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=310
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   //DisplayText=Start building your Command Center.
+   DisplayText=Now, left click on the Planet to switch to Planet View.
+   GroupID=-1
+   PreqStepID=309
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 310.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=301
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=3
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=311
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=You are now in Planet View, however, you are still in the system's environment as indicated by the Environment Display window. The map will appear empty because units and facilities will not appear until you enter the Planet's Environment.[VBCRLF][VBCRLF]To do this, left-click anywhere on the planet map.
+   GroupID=-1
+   PreqStepID=310
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 311.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=310
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL 
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=4
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=312
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Now, click on the planet map where the green dot is blinking. This is your engineer.[VBCRLF][VBCRLF]Reminder: Left-click on the map and press Ctrl+E if you cannot find the green dot.
+   GroupID=-1
+   PreqStepID=311
+   StepTitle=
+   StepType=0
+   WAVFile=
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=311
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=89
+      Extended1=-1
+      Extended2=3
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=313
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Start building your Command Center.[VBCRLF][VBCRLF]Notice the red covering your engineer, this is the offline invulnerability covered earlier in the tutorial. You cannot fire at anyone or be fired upon while this field is up.[VBCRLF][VBCRLF]Use this time to get built up.
+   GroupID=-1
+   PreqStepID=312
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 310.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=312
+   ImStuckTimer=10
+   BeginStepGroupNum=10
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      CenterScreen:MyEngineer
+      SetZoomLevel:1000
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=88
+      Extended1=5
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=314
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Press F5 or select the Diplomacy icon from the Quickbar to bring up the diplomacy screen.
+   GroupID=-1
+   PreqStepID=313
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 311.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=313
+   ImStuckTimer=9
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=82
+      Extended1=5
+      Extended2=11
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=315
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=Notice that Aurelius has already declared war on you.[VBCRLF][VBCRLF]Go ahead and adjust the slider on the bottom of the screen and set your stance to Blood War (1).
+   GroupID=-1
+   PreqStepID=314
+   StepTitle=
+   StepType=0
+   WAVFile=Tutorial\Line 312.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=314
+   ImStuckTimer=7
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      UIEnable:frmDiplomacy
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=21
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmDiplomacy
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=316
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=There are many things on this screen that you can do, but we will allow you to click the question mark at your own convenience.[VBCRLF][VBCRLF]Click the X in the upper right corner or press F5 to close the Diplomacy window.
+   GroupID=-1
+   PreqStepID=315
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 313.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=315
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIDisable:ALL
+      HotkeyDisable:ALL
+      CenterScreen:MyCommandCenter
+      UIEnable:frmDiplomacy.btnClose
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=90
+      Extended1=1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=
+      Count=1
+   END REQUIREMENT
+END STEP
+BEGIN STEP
+   StepID=317
+   AlertControl=
+   DisplayLocX=-2
+   DisplayLocY=-1
+   DisplayText=By completing this tutorial you have already earned 3,000,000 credits to begin your colony when you go live. The credits spent in this manner will allow for instant building.[VBCRLF][VBCRLF]You may continue in this simulation to practice what you have learned before it counts. Optionally, you may choose to go to live immediately by pressing Escape and clicking the Self-Destruct button.[VBCRLF][VBCRLF]Good luck, commander![VBCRLF][VBCRLF]NOTE: We suggest that you press the F1 key or click the Help icon on the quickbar should you need help.
+   GroupID=-1
+   PreqStepID=316
+   StepTitle=
+   StepType=0
+   //WAVFile=Tutorial\Line 314.wav
+   RequirementFireStepID=-1
+   RequirementInitializeStepID=316
+   BEGIN UICONTROL
+      UIForceNoFocus
+      UIEnable:ALL
+      HotkeyEnable:ALL
+      CenterScreen:MyCommandCenter
+      UpdateStepID
+   END UICONTROL
+   BEGIN REQUIREMENT
+      TriggerType=22
+      Extended1=-1
+      Extended2=-1
+      Extended3=-1
+      ExtendedText=frmDiplomacy
+      Count=1
+   END REQUIREMENT
+END STEP
+ 

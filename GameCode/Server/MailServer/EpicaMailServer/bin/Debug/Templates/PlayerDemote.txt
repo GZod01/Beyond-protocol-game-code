@@ -1,0 +1,10 @@
+[PlayerName] Demoted
+Senate Announces Demotion of [PlayerName]
+24
+Random
+2
+2-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Earlier today the Galactic Senate concluded with an announcement that [PlayerName] has been demoted in title. [PlayerName] is to now be recognized as [PlayerTitle] [PlayerName].<br><br>
+[PlayerName] could not be reached directly for comment. Due to this demotion, [PlayerName Possessive] faction members no longer will contribute research assistance in order to stay within Senate regulations for a period of seven standard days.
+</div>

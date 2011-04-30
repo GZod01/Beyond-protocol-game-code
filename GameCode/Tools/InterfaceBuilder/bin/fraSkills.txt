@@ -1,0 +1,41 @@
+'Interface created from Interface Builder
+Public Class fraSkills
+	Inherits UIWindow
+
+	Private WithEvents lstSkills As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraSkills initial props
+		With Me
+			.ControlName="fraSkills"
+			.Left=154
+			.Top=137
+			.Width=175
+			.Height=225
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstSkills initial props
+		lstSkills = New UIListBox(oUILib)
+		With lstSkills
+			.ControlName="lstSkills"
+			.Left=5
+			.Top=10
+			.Width=165
+			.Height=210
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstSkills, UIControl))
+	End Sub
+End Class

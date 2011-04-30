@@ -1,0 +1,236 @@
+'Interface created from Interface Builder
+Public Class fraControls
+	Inherits UIWindow
+
+	Private WithEvents lblZoom As UILabel
+	Private WithEvents hscrZoomRate As UIScrollBar
+	Private WithEvents lblGalScroll As UILabel
+	Private WithEvents hscrScroll0 As UIScrollBar
+	Private WithEvents lblScrollSys As UILabel
+	Private WithEvents lblScrollPlanet As UILabel
+	Private WithEvents hscrScroll3 As UIScrollBar
+	Private WithEvents hscrScroll5 As UIScrollBar
+	Private WithEvents lblNotificationDly As UILabel
+	Private WithEvents hscrNoteDly As UIScrollBar
+	Private WithEvents lblNoteDlyVal As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraControls initial props
+		With Me
+			.ControlName="fraControls"
+			.Left=168
+			.Top=117
+			.Width=350
+			.Height=300
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblZoom initial props
+		lblZoom = New UILabel(oUILib)
+		With lblZoom
+			.ControlName="lblZoom"
+			.Left=15
+			.Top=15
+			.Width=82
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Zoom Rate:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblZoom, UIControl))
+
+		'hscrZoomRate initial props
+		hscrZoomRate = New UIScrollBar(oUILib, False)
+		With hscrZoomRate
+			.ControlName="hscrZoomRate"
+			.Left=180
+			.Top=16
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=100
+			.MaxValue=300
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrZoomRate, UIControl))
+
+		'lblGalScroll initial props
+		lblGalScroll = New UILabel(oUILib)
+		With lblGalScroll
+			.ControlName="lblGalScroll"
+			.Left=15
+			.Top=40
+			.Width=147
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Scroll Rate (Galaxy):"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGalScroll, UIControl))
+
+		'hscrScroll0 initial props
+		hscrScroll0 = New UIScrollBar(oUILib, False)
+		With hscrScroll0
+			.ControlName="hscrScroll0"
+			.Left=180
+			.Top=41
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=100
+			.MaxValue=1000
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrScroll0, UIControl))
+
+		'lblScrollSys initial props
+		lblScrollSys = New UILabel(oUILib)
+		With lblScrollSys
+			.ControlName="lblScrollSys"
+			.Left=15
+			.Top=65
+			.Width=147
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Scroll Rate (System):"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblScrollSys, UIControl))
+
+		'lblScrollPlanet initial props
+		lblScrollPlanet = New UILabel(oUILib)
+		With lblScrollPlanet
+			.ControlName="lblScrollPlanet"
+			.Left=15
+			.Top=90
+			.Width=147
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Scroll Rate (Planet):"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblScrollPlanet, UIControl))
+
+		'hscrScroll3 initial props
+		hscrScroll3 = New UIScrollBar(oUILib, False)
+		With hscrScroll3
+			.ControlName="hscrScroll3"
+			.Left=180
+			.Top=66
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=100
+			.MaxValue=1000
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrScroll3, UIControl))
+
+		'hscrScroll5 initial props
+		hscrScroll5 = New UIScrollBar(oUILib, False)
+		With hscrScroll5
+			.ControlName="hscrScroll5"
+			.Left=180
+			.Top=91
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=100
+			.MaxValue=1000
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrScroll5, UIControl))
+
+		'lblNotificationDly initial props
+		lblNotificationDly = New UILabel(oUILib)
+		With lblNotificationDly
+			.ControlName="lblNotificationDly"
+			.Left=15
+			.Top=140
+			.Width=147
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Notification Delay:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNotificationDly, UIControl))
+
+		'hscrNoteDly initial props
+		hscrNoteDly = New UIScrollBar(oUILib, False)
+		With hscrNoteDly
+			.ControlName="hscrNoteDly"
+			.Left=180
+			.Top=141
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=5
+			.MaxValue=16
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrNoteDly, UIControl))
+
+		'lblNoteDlyVal initial props
+		lblNoteDlyVal = New UILabel(oUILib)
+		With lblNoteDlyVal
+			.ControlName="lblNoteDlyVal"
+			.Left=180
+			.Top=160
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="5 Seconds"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNoteDlyVal, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,147 @@
+'Interface created from Interface Builder
+Public Class fraGoalList
+	Inherits UIWindow
+
+	Private WithEvents muGSS1 As UIWindow
+	Private WithEvents muGSS2 As UIWindow
+	Private WithEvents muGSS3 As UIWindow
+	Private WithEvents muGSS4 As UIWindow
+	Private WithEvents vscrScroller As UIScrollBar
+	Private WithEvents mfraPopup As UIWindow
+	Private WithEvents btnSkipAssignment As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraGoalList initial props
+		With Me
+			.ControlName="fraGoalList"
+			.Left=73
+			.Top=106
+			.Width=780
+			.Height=480
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'muGSS1 initial props
+		muGSS1 = New UIWindow(oUILib)
+		With muGSS1
+			.ControlName="muGSS1"
+			.Left=10
+			.Top=15
+			.Width=520
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muGSS1, UIControl))
+
+		'muGSS2 initial props
+		muGSS2 = New UIWindow(oUILib)
+		With muGSS2
+			.ControlName="muGSS2"
+			.Left=10
+			.Top=130
+			.Width=520
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muGSS2, UIControl))
+
+		'muGSS3 initial props
+		muGSS3 = New UIWindow(oUILib)
+		With muGSS3
+			.ControlName="muGSS3"
+			.Left=10
+			.Top=245
+			.Width=520
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muGSS3, UIControl))
+
+		'muGSS4 initial props
+		muGSS4 = New UIWindow(oUILib)
+		With muGSS4
+			.ControlName="muGSS4"
+			.Left=10
+			.Top=360
+			.Width=520
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(muGSS4, UIControl))
+
+		'vscrScroller initial props
+		vscrScroller = New UIScrollBar(oUILib, True)
+		With vscrScroller
+			.ControlName="vscrScroller"
+			.Left=535
+			.Top=15
+			.Width=24
+			.Height=450
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(vscrScroller, UIControl))
+
+		'mfraPopup initial props
+		mfraPopup = New UIWindow(oUILib)
+		With mfraPopup
+			.ControlName="mfraPopup"
+			.Left=560
+			.Top=15
+			.Width=221
+			.Height=382
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(mfraPopup, UIControl))
+
+		'btnSkipAssignment initial props
+		btnSkipAssignment = New UIButton(oUILib)
+		With btnSkipAssignment
+			.ControlName="btnSkipAssignment"
+			.Left=620
+			.Top=405
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Skip"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSkipAssignment, UIControl))
+	End Sub
+End Class

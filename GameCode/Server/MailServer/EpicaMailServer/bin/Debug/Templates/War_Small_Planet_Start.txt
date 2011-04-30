@@ -1,0 +1,11 @@
+Conflict Breaks Out on [EnvirName]
+Conflict Breaks Out on [EnvirName]
+18
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Battle elements belonging to [PlayerSideListA] engaged in combat with the forces of [PlayerSideListB] on [StartOfBattle]. The conflicts were reported to take place sporadically on [EnvirName].
+<br><br>
+Citizens of [EnvirName] are bracing for the possibility of an extended conflict. So far, both sides are reporting minor losses of [TotalLostBothSides]. The death toll is expected to only increase as this conflict develops.
+</div>

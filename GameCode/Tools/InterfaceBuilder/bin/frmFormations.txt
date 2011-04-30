@@ -1,0 +1,414 @@
+'Interface created from Interface Builder
+Public Class frmFormations
+	Inherits UIWindow
+
+	Private WithEvents ctlSlots As UIWindow
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblTotal As UILabel
+	Private WithEvents lblNext As UILabel
+	Private WithEvents txtNextSlot As UITextBox
+	Private WithEvents optInsert As UIOption
+	Private WithEvents optReplace As UIOption
+	Private WithEvents optRemove As UIOption
+	Private WithEvents btnClear As UIButton
+	Private WithEvents btnSave As UIButton
+	Private WithEvents lblFormations As UILabel
+	Private WithEvents cboFormations As UIComboBox
+	Private WithEvents btnCreate As UIButton
+	Private WithEvents btnCopy As UIButton
+	Private WithEvents lblName As UILabel
+	Private WithEvents txtName As UITextBox
+	Private WithEvents cboSortBy As UIComboBox
+	Private WithEvents lblBasedOn As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmFormations initial props
+		With Me
+			.ControlName="frmFormations"
+			.Left=251
+			.Top=69
+			.Width=512
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'ctlSlots initial props
+		ctlSlots = New UIWindow(oUILib)
+		With ctlSlots
+			.ControlName="ctlSlots"
+			.Left=5
+			.Top=80
+			.Width=400
+			.Height=400
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(ctlSlots, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=149
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Formation Manager"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=487
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=25
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblTotal initial props
+		lblTotal = New UILabel(oUILib)
+		With lblTotal
+			.ControlName="lblTotal"
+			.Left=410
+			.Top=180
+			.Width=95
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Total Slots: 625"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTotal, UIControl))
+
+		'lblNext initial props
+		lblNext = New UILabel(oUILib)
+		With lblNext
+			.ControlName="lblNext"
+			.Left=410
+			.Top=200
+			.Width=66
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Next Slot:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNext, UIControl))
+
+		'txtNextSlot initial props
+		txtNextSlot = New UITextBox(oUILib)
+		With txtNextSlot
+			.ControlName="txtNextSlot"
+			.Left=425
+			.Top=220
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtNextSlot, UIControl))
+
+		'optInsert initial props
+		optInsert = New UIOption(oUILib)
+		With optInsert
+			.ControlName="optInsert"
+			.Left=425
+			.Top=240
+			.Width=45
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Insert"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optInsert, UIControl))
+
+		'optReplace initial props
+		optReplace = New UIOption(oUILib)
+		With optReplace
+			.ControlName="optReplace"
+			.Left=425
+			.Top=260
+			.Width=65
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Replace"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optReplace, UIControl))
+
+		'optRemove initial props
+		optRemove = New UIOption(oUILib)
+		With optRemove
+			.ControlName="optRemove"
+			.Left=425
+			.Top=280
+			.Width=65
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optRemove, UIControl))
+
+		'btnClear initial props
+		btnClear = New UIButton(oUILib)
+		With btnClear
+			.ControlName="btnClear"
+			.Left=5
+			.Top=485
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Clear"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClear, UIControl))
+
+		'btnSave initial props
+		btnSave = New UIButton(oUILib)
+		With btnSave
+			.ControlName="btnSave"
+			.Left=310
+			.Top=485
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Save"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSave, UIControl))
+
+		'lblFormations initial props
+		lblFormations = New UILabel(oUILib)
+		With lblFormations
+			.ControlName="lblFormations"
+			.Left=5
+			.Top=30
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Formations:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFormations, UIControl))
+
+		'cboFormations initial props
+		cboFormations = New UIComboBox(oUILib)
+		With cboFormations
+			.ControlName="cboFormations"
+			.Left=80
+			.Top=30
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboFormations, UIControl))
+
+		'btnCreate initial props
+		btnCreate = New UIButton(oUILib)
+		With btnCreate
+			.ControlName="btnCreate"
+			.Left=235
+			.Top=28
+			.Width=85
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Add New"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCreate, UIControl))
+
+		'btnCopy initial props
+		btnCopy = New UIButton(oUILib)
+		With btnCopy
+			.ControlName="btnCopy"
+			.Left=325
+			.Top=28
+			.Width=85
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Copy"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCopy, UIControl))
+
+		'lblName initial props
+		lblName = New UILabel(oUILib)
+		With lblName
+			.ControlName="lblName"
+			.Left=5
+			.Top=55
+			.Width=42
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Name:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblName, UIControl))
+
+		'txtName initial props
+		txtName = New UITextBox(oUILib)
+		With txtName
+			.ControlName="txtName"
+			.Left=50
+			.Top=55
+			.Width=110
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="New Formation"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=20
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtName, UIControl))
+
+		'cboSortBy initial props
+		cboSortBy = New UIComboBox(oUILib)
+		With cboSortBy
+			.ControlName="cboSortBy"
+			.Left=255
+			.Top=55
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSortBy, UIControl))
+
+		'lblBasedOn initial props
+		lblBasedOn = New UILabel(oUILib)
+		With lblBasedOn
+			.ControlName="lblBasedOn"
+			.Left=185
+			.Top=55
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Based On:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBasedOn, UIControl))
+	End Sub
+End Class

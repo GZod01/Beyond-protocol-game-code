@@ -1,0 +1,11 @@
+Pirates Removed from [PlanetName]
+Pirates are gone from [PlanetName]!
+11
+Random
+8
+8-4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+A major pirate infestation on [PlanetName] was wiped out today after a military contingent skillfully decimated their pirate base. The citizens of [PlanetName] rejoiced at the news as it means easier living conditions on [PlanetName].
+<br><br>
+"I am just happy they are gone.", one citizen stated. "It is not a good way to live; in fear, day in, day out."
+</div>

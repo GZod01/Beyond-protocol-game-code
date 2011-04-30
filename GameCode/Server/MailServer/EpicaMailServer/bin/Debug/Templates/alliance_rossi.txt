@@ -1,0 +1,9 @@
+Keep Your Friends Close… 
+[PlayerName] and [PlayerName2] Announce Alliance! 
+15 
+Jeffrey Rossi
+7
+7-5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Breaking news from inside the GNS! Formal documents have been signed and handshakes exchanged between [PlayerName] and [PlayerName2] announcing that, effective immediately, they have become allies and will work together to achieve their mutual goals and crush all opposition that may oppose them! Sources close to both leaders foresee this alliance as a great benefit to both empires as they attempt to crush [WarDecList], who have been foes to each leader for far too long. <br><br>This reporter doesn’t know for sure about anything, but what I do know is if I were [WarDecList] I would be very worried about this new alliance and might think about forming an alliance of my own to counteract this new combined power. GNS reporters will continue to follow any events as they unfold as a result of this new alliance and continue to bring you the latest from around the galaxy!
+</div>

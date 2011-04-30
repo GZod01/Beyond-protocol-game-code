@@ -1,0 +1,8 @@
+Space War Ends! 
+[PlayerSideListA] and [PlayerSideListB] End Bitter Battle! 
+17
+Jeffrey Rossi 
+3 
+3- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Military observers in [SystemName] are reporting that the epic battle between [PlayerSideListA] and [PlayerSideListB] in [SystemName] has come to an end after much blood has been shed. [TotalUnitsLostBothSides] were destroyed in this epic battle between the two armies and as is the case in all battles, when lives are lost, no one can really be considered a true winner. "Even with the damage done on both sides, it’s clear that this is only one battle in what will surely become a larger conflict soon enough." One observer with [PlayerSideListA] notes. <br><br>"Now that one of the battles in space has been resolved the conflict will almost certainly spread to nearby planets as [PlayerSideListA] and [PlayerSideListB] attempt to sort out their differences through bloody warfare." This reporter wishes their condolences to the families of those who lost their lives in this bitter struggle and hopes that both empires will be able to sort out their differences over a cup of coffee rather then through guns and explosions in the not so distant future. GNS News will continue to keep you all updated as this conflict continues but hopefully both sides can come to an agreement soon to prevent the lives of good men and women from being needlessly wasted on the fields of battle.</div> 

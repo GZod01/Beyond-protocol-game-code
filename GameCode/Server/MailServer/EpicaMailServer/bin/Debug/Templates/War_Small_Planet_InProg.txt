@@ -1,0 +1,11 @@
+Skirmishes Continue on [EnvirName]
+Skirmishes Continue on [EnvirName]
+19
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Battle elements belonging to [PlayerSideListA] engaged in combat with the forces of [PlayerSideListB] on [StartOfBattle]. The conflict, which has already claimed [TotalLostBothSides] lives, is still being fought on [EnvirName].
+<br><br>
+Experts indicate that this may be the prelude to a much larger and drawn out campaign between these factions on [EnvirName]. With over [TotalEntitiesLostBothSides] units and facilities left in ruin already, it is sure to bring economic strain to the already strained economy of [EnvirName].
+</div>

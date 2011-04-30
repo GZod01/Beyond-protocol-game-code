@@ -1,0 +1,192 @@
+'Interface created from Interface Builder
+Public Class ctlDiplomacy
+	Inherits UIWindow
+
+	Private WithEvents fraPlayerIcon As UIWindow
+	Private WithEvents lblPlayerName As UILabel
+	Private WithEvents lblGuild As UILabel
+	Private WithEvents lblSenate As UILabel
+	Private WithEvents lblHomeworld As UILabel
+	Private WithEvents lblThreat As UILabel
+	Private WithEvents lblThreatVal As UILabel
+	Private WithEvents lblRelationship As UILabel
+	Private WithEvents imgRelBar As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'ctlDiplomacy initial props
+		With Me
+			.ControlName="ctlDiplomacy"
+			.Left=72
+			.Top=76
+			.Width=710
+			.Height=71
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'fraPlayerIcon initial props
+		fraPlayerIcon = New UIWindow(oUILib)
+		With fraPlayerIcon
+			.ControlName="fraPlayerIcon"
+			.Left=2
+			.Top=2
+			.Width=67
+			.Height=67
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraPlayerIcon, UIControl))
+
+		'lblPlayerName initial props
+		lblPlayerName = New UILabel(oUILib)
+		With lblPlayerName
+			.ControlName="lblPlayerName"
+			.Left=72
+			.Top=2
+			.Width=275
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate Enoch Dagor and Company"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPlayerName, UIControl))
+
+		'lblGuild initial props
+		lblGuild = New UILabel(oUILib)
+		With lblGuild
+			.ControlName="lblGuild"
+			.Left=72
+			.Top=24
+			.Width=275
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate Enoch Dagor and Company"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGuild, UIControl))
+
+		'lblSenate initial props
+		lblSenate = New UILabel(oUILib)
+		With lblSenate
+			.ControlName="lblSenate"
+			.Left=72
+			.Top=48
+			.Width=275
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate Enoch Dagor and Company"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSenate, UIControl))
+
+		'lblHomeworld initial props
+		lblHomeworld = New UILabel(oUILib)
+		With lblHomeworld
+			.ControlName="lblHomeworld"
+			.Left=350
+			.Top=2
+			.Width=205
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Homeworld: Unknown"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblHomeworld, UIControl))
+
+		'lblThreat initial props
+		lblThreat = New UILabel(oUILib)
+		With lblThreat
+			.ControlName="lblThreat"
+			.Left=560
+			.Top=2
+			.Width=45
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Threat:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblThreat, UIControl))
+
+		'lblThreatVal initial props
+		lblThreatVal = New UILabel(oUILib)
+		With lblThreatVal
+			.ControlName="lblThreatVal"
+			.Left=605
+			.Top=5
+			.Width=100
+			.Height=12
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(4, DrawTextFormat)
+			.ControlImageRect = New Rectangle(192, 211, 64, 9)
+		End With
+		Me.AddChild(CType(lblThreatVal, UIControl))
+
+		'lblRelationship initial props
+		lblRelationship = New UILabel(oUILib)
+		With lblRelationship
+			.ControlName="lblRelationship"
+			.Left=350
+			.Top=24
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Relationship:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRelationship, UIControl))
+
+		'imgRelBar initial props
+		imgRelBar = New UILabel(oUILib)
+		With imgRelBar
+			.ControlName="imgRelBar"
+			.Left=450
+			.Top=25
+			.Width=255
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Relationship Bar Goes here"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+		End With
+		Me.AddChild(CType(imgRelBar, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,9 @@
+Planetary Warfare Begins! 
+[PlayerSideListA] and [PlayerSideListB] begin battle on surface of [PlanetName!] 
+18
+Jeffrey Rossi
+7 
+7-4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Breaking News from [PlanetName]! Reporters on the ground have confirmed that fighting has broken out between [PlayerSideListA] and [PlayerSideListB] on the surface of [PlanetName] as their bloody war progresses. Military analysts are unsure who will prevail this early in the fight but are certain that the winner of this battle will undoubtedly become the undisputed owner of [PlanetName]. <br><br>Casualty figures cannot be confirmed at this time as the fight has only just begun but hopefully the death toll will remain low as the fight ensues and innocent civilians will not get caught up in the crossfire between these two combatants. GNS News hopes for the best as the citizens of [PlanetName] persevere through these attacks and hopefully peace will be restored to [PlanetName] in the near future!
+</div>

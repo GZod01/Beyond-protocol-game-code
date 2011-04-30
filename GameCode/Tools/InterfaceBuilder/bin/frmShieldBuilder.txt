@@ -1,0 +1,326 @@
+'Interface created from Interface Builder
+Public Class frmShieldBuilder
+	Inherits UIWindow
+
+	Private WithEvents lblMaxHP As UILabel
+	Private WithEvents lblRecRate As UILabel
+	Private WithEvents lblRecInt As UILabel
+	Private WithEvents lblProjHull As UILabel
+	Private WithEvents lblCoilMat As UILabel
+	Private WithEvents lblAccMat As UILabel
+	Private WithEvents lblCaseMat As UILabel
+	Private WithEvents cboCasingMat As UIComboBox
+	Private WithEvents cboAccMat As UIComboBox
+	Private WithEvents cboCoilMat As UIComboBox
+	Private WithEvents txtProjectionHullSize As UITextBox
+	Private WithEvents txtRechargeInterval As UITextBox
+	Private WithEvents txtRechargeRate As UITextBox
+	Private WithEvents txtMaxHP As UITextBox
+	Private WithEvents NewControl4 As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmShieldBuilder initial props
+		With Me
+			.ControlName="frmShieldBuilder"
+			.Left=14
+			.Top=13
+			.Width=723
+			.Height=497
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(128, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'lblMaxHP initial props
+		lblMaxHP = New UILabel(oUILib)
+		With lblMaxHP
+			.ControlName="lblMaxHP"
+			.Left=15
+			.Top=55
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Maximum Hitpoints:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblMaxHP)
+
+		'lblRecRate initial props
+		lblRecRate = New UILabel(oUILib)
+		With lblRecRate
+			.ControlName="lblRecRate"
+			.Left=15
+			.Top=80
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Recharge Rate:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRecRate)
+
+		'lblRecInt initial props
+		lblRecInt = New UILabel(oUILib)
+		With lblRecInt
+			.ControlName="lblRecInt"
+			.Left=15
+			.Top=105
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Recharge Interval:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRecInt)
+
+		'lblProjHull initial props
+		lblProjHull = New UILabel(oUILib)
+		With lblProjHull
+			.ControlName="lblProjHull"
+			.Left=15
+			.Top=130
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Projection Hull Size:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblProjHull)
+
+		'lblCoilMat initial props
+		lblCoilMat = New UILabel(oUILib)
+		With lblCoilMat
+			.ControlName="lblCoilMat"
+			.Left=15
+			.Top=175
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Coil Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCoilMat)
+
+		'lblAccMat initial props
+		lblAccMat = New UILabel(oUILib)
+		With lblAccMat
+			.ControlName="lblAccMat"
+			.Left=15
+			.Top=200
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Accelerator Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblAccMat)
+
+		'lblCaseMat initial props
+		lblCaseMat = New UILabel(oUILib)
+		With lblCaseMat
+			.ControlName="lblCaseMat"
+			.Left=15
+			.Top=225
+			.Width=167
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Casing Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCaseMat)
+
+		'cboCasingMat initial props
+		cboCasingMat = New UIComboBox(oUILib)
+		With cboCasingMat
+			.ControlName="cboCasingMat"
+			.Left=190
+			.Top=225
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboCasingMat)
+
+		'cboAccMat initial props
+		cboAccMat = New UIComboBox(oUILib)
+		With cboAccMat
+			.ControlName="cboAccMat"
+			.Left=190
+			.Top=200
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboAccMat)
+
+		'cboCoilMat initial props
+		cboCoilMat = New UIComboBox(oUILib)
+		With cboCoilMat
+			.ControlName="cboCoilMat"
+			.Left=190
+			.Top=175
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboCoilMat)
+
+		'txtProjectionHullSize initial props
+		txtProjectionHullSize = New UITextBox(oUILib)
+		With txtProjectionHullSize
+			.ControlName="txtProjectionHullSize"
+			.Left=190
+			.Top=130
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtProjectionHullSize)
+
+		'txtRechargeInterval initial props
+		txtRechargeInterval = New UITextBox(oUILib)
+		With txtRechargeInterval
+			.ControlName="txtRechargeInterval"
+			.Left=190
+			.Top=105
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtRechargeInterval)
+
+		'txtRechargeRate initial props
+		txtRechargeRate = New UITextBox(oUILib)
+		With txtRechargeRate
+			.ControlName="txtRechargeRate"
+			.Left=190
+			.Top=80
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtRechargeRate)
+
+		'txtMaxHP initial props
+		txtMaxHP = New UITextBox(oUILib)
+		With txtMaxHP
+			.ControlName="txtMaxHP"
+			.Left=190
+			.Top=55
+			.Width=175
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtMaxHP)
+
+		'NewControl4 initial props
+		NewControl4 = New UILabel(oUILib)
+		With NewControl4
+			.ControlName="NewControl4"
+			.Left=15
+			.Top=10
+			.Width=187
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Shield Designer"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Arial", 18, 3, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(NewControl4)
+	End Sub
+End Class

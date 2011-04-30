@@ -1,0 +1,134 @@
+GAME DESIGN
+  James "Aurelius" Campbell
+  Matthew "Enoch Dagor" Campbell
+  Caleb "Csaj" Coey
+    
+ORIGINAL CONCEPT
+  James Campbell
+  Matthew Campbell
+  Caleb Coey
+  Josh Coey
+  David Lambert
+  Timothy Boyer
+  Chris Brewer
+
+EXECUTIVE PRODUCER
+  James Campbell
+
+SERVER PROGRAMMING
+  Matthew Campbell
+
+NETWORK PROGRAMMING
+  Matthew Campbell
+
+CLIENT PROGRAMMING
+  Matthew Campbell
+  
+WEBSITE DEVELOPMENT
+  James Campbell
+  Matthew Campbell
+
+COMPOSER
+  Matthew Campbell
+  
+AUDIO PROGRAMMING
+  Matthew Campbell
+
+ART/GRAPHICS
+  Peter Benyovszki
+  Charles Oines
+  Tommy Starks
+
+GUILD HULL TEXTURES
+  Andrew "Megatron" Marelli - Black Hand
+  Eric "Malinko" Hafferkamp - Traders Consortium
+  Manus "InfinityMoo" Du Plessis - Qua'Sha Conclave
+  
+PROJECT COORDINATION
+  Bill Sturges
+  Ron Gooch
+  Jim Cox
+  Scott Langley
+
+VOICE TALENT
+  Alexis Tipton
+  Kathleen Campbell
+  Matthew Campbell
+  Caleb Coey
+
+QA LEAD
+  Caleb Coey
+
+QA COORDINATOR
+  Eric "Rakura" Tipton
+
+SERVER SUPPORT
+  Jim Cox
+  Neil Van Wart
+  Wayne Baker
+  Ron Gooch
+  Garrod Alwood
+  David Francis
+  Eric Johnson
+
+ACCOUNTING
+  Bill Sturges
+  Kat Tam
+
+MARKETING AND PROMOTION
+  Bill Sturges
+  Anthony V. Codispoti
+  Blake Harrison
+  John Mac
+  Ricardo Lopez De Azua
+  Kathleen Campbell
+  Kat Tam
+
+STRATEGY GUIDE
+  Eric Tipton
+  Scott Chivers
+  Jeffrey Rossi
+  Joshua Beckus
+  Jason Walker
+  Brandon Beltran
+  Pamela Langley
+  Will Potter
+  Kat Tam
+  Caleb Coey
+  
+TESTING
+  Glen Harper
+  Malice
+  Ryan Mongold
+
+  ALL OF OUR BETA TESTERS!
+    YOU WERE INVALUABLE!
+  
+  EXPLOIT FINDERS: THE BEST OF OUR TESTERS
+  Lifeform
+  YankeeJim
+  Skazz
+  Rogue190
+  HusseinsRopeBurn
+  Kleeron
+  Trifler
+  Kylin
+  Nosehair
+  Hybok
+  SirParadox
+  GilliganZaftig
+  Zelik
+  Anxcon
+  Milso
+  
+SPECIAL THANKS
+  Our Investors
+  Havoc
+  Vimes
+  Trifler
+  1M Crew
+  Bill "matwurks" Elmer
+  Nick "StrawberryBunny" Dumas
+  Will "willpotter" Potter
+  (Mom,Dad)^2
+  You

@@ -1,0 +1,13 @@
+[ColonyName] in [EnvirName] Lost
+[PlayerName] loses colony in [EnvirName]
+9
+Random
+7
+7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Contact with the [ColonyName] colony has been lost. The colony was located in [EnvirName]. Officials are still attempting to piece together the colony's demise.
+<br><br>
+Immediate impressions are that the colony was lost due to [ColonyLostReason]. [PlayerName] was the leader of the colony, however, representatives could not be contacted for comment.
+<br><br>
+The colony was established on [ColonyStart] and grew in size and population up to a total citizenship of [MaxTotalPopulation]. It is unclear if the colony will be rebuilt or not.
+</div>

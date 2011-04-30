@@ -1,0 +1,11 @@
+Skirmishes Begin in [EnvirName]
+Skirmishes Begin in [EnvirName]
+0
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Battle elements belonging to [PlayerSideListA] engaged in combat with the forces of [PlayerSideListB] on [StartOfBattle]. The conflicts were reported to take place sporadically throughout the [EnvirName] system.
+<br><br>
+Citizens of the colonies in [EnvirName] are bracing for the possibility of an extended conflict. So far, both sides are reporting minor losses of [TotalLostBothSides]. The death toll is expected to only increase as this conflict develops.
+</div>

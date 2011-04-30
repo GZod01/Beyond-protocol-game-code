@@ -1,0 +1,11 @@
+Space Conflict Begins in [EnvirName]
+Space Conflict Begins in [EnvirName]
+0
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+A large battle began today at [StartOfBattle] in [EnvirName]. Forces of [PlayerSideListA] engaged contingents belonging to [PlayerSideListB] in a violent clash of explosions and weapons fire.
+<br><br>
+Sources indicate that no end to the conflict can be determined at this time. The battle, in its early stages, has already claimed [TotalLostBothSides] lives and has seen [TotalUnitsLostBothSides] military assets left destroyed.
+</div>

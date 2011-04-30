@@ -1,0 +1,256 @@
+'Interface created from Interface Builder
+Public Class frmPlayerSetup
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lblPlayerName As UILabel
+	Private WithEvents txtPlayerName As UITextBox
+	Private WithEvents lblEmpireName As UILabel
+	Private WithEvents lblGender As UILabel
+	Private WithEvents fraIconChooser As UIWindow
+	Private WithEvents btnSubmit As UIButton
+	Private WithEvents btnCancel As UIButton
+	Private WithEvents txtEmpireName As UITextBox
+	Private WithEvents optMale As UIOption
+	Private WithEvents optFemale As UIOption
+	Private WithEvents NewControl8 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmPlayerSetup initial props
+		With Me
+			.ControlName="frmPlayerSetup"
+			.Left=174
+			.Top=109
+			.Width=256
+			.Height=420
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=179
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Player Initial Setup"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, Italic, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lblPlayerName initial props
+		lblPlayerName = New UILabel(oUILib)
+		With lblPlayerName
+			.ControlName="lblPlayerName"
+			.Left=10
+			.Top=50
+			.Width=85
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Player Name:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPlayerName, UIControl))
+
+		'txtPlayerName initial props
+		txtPlayerName = New UITextBox(oUILib)
+		With txtPlayerName
+			.ControlName="txtPlayerName"
+			.Left=100
+			.Top=51
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=20
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtPlayerName, UIControl))
+
+		'lblEmpireName initial props
+		lblEmpireName = New UILabel(oUILib)
+		With lblEmpireName
+			.ControlName="lblEmpireName"
+			.Left=10
+			.Top=75
+			.Width=85
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Empire Name:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEmpireName, UIControl))
+
+		'lblGender initial props
+		lblGender = New UILabel(oUILib)
+		With lblGender
+			.ControlName="lblGender"
+			.Left=10
+			.Top=100
+			.Width=85
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Gender:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGender, UIControl))
+
+		'fraIconChooser initial props
+		fraIconChooser = New UIWindow(oUILib)
+		With fraIconChooser
+			.ControlName="fraIconChooser"
+			.Left=3
+			.Top=132
+			.Width=250
+			.Height=250
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraIconChooser, UIControl))
+
+		'btnSubmit initial props
+		btnSubmit = New UIButton(oUILib)
+		With btnSubmit
+			.ControlName="btnSubmit"
+			.Left=6
+			.Top=391
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Submit"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSubmit, UIControl))
+
+		'btnCancel initial props
+		btnCancel = New UIButton(oUILib)
+		With btnCancel
+			.ControlName="btnCancel"
+			.Left=150
+			.Top=391
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Cancel"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCancel, UIControl))
+
+		'txtEmpireName initial props
+		txtEmpireName = New UITextBox(oUILib)
+		With txtEmpireName
+			.ControlName="txtEmpireName"
+			.Left=100
+			.Top=75
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=20
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtEmpireName, UIControl))
+
+		'optMale initial props
+		optMale = New UIOption(oUILib)
+		With optMale
+			.ControlName="optMale"
+			.Left=80
+			.Top=100
+			.Width=50
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Male"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optMale, UIControl))
+
+		'optFemale initial props
+		optFemale = New UIOption(oUILib)
+		With optFemale
+			.ControlName="optFemale"
+			.Left=175
+			.Top=100
+			.Width=66
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Female"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(optFemale, UIControl))
+
+		'NewControl8 initial props
+		NewControl8 = New UILine(oUILib)
+		With NewControl8
+			.ControlName="NewControl8"
+			.Left=1
+			.Top=35
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(NewControl8, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,274 @@
+'Interface created from Interface Builder
+Public Class fraInfiltration
+	Inherits UIWindow
+
+	Private WithEvents lblCurrent As UILabel
+	Private WithEvents lblCurrentInfType As UILabel
+	Private WithEvents lblCurrentTarget As UILabel
+	Private WithEvents lblCurrentFreq As UILabel
+	Private WithEvents lblNew As UILabel
+	Private WithEvents lblNewType As UILabel
+	Private WithEvents cboNewInfType As UIComboBox
+	Private WithEvents lblNewTarget As UILabel
+	Private WithEvents cboNewTarget As UIComboBox
+	Private WithEvents lblNewFreq As UILabel
+	Private WithEvents cboReportFreq As UIComboBox
+	Private WithEvents btnDeinfiltrate As UIButton
+	Private WithEvents btnSet As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraInfiltration initial props
+		With Me
+			.ControlName="fraInfiltration"
+			.Left=264
+			.Top=165
+			.Width=225
+			.Height=220
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblCurrent initial props
+		lblCurrent = New UILabel(oUILib)
+		With lblCurrent
+			.ControlName="lblCurrent"
+			.Left=10
+			.Top=10
+			.Width=181
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Current Infiltration Settings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCurrent, UIControl))
+
+		'lblCurrentInfType initial props
+		lblCurrentInfType = New UILabel(oUILib)
+		With lblCurrentInfType
+			.ControlName="lblCurrentInfType"
+			.Left=20
+			.Top=27
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Type: General"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCurrentInfType, UIControl))
+
+		'lblCurrentTarget initial props
+		lblCurrentTarget = New UILabel(oUILib)
+		With lblCurrentTarget
+			.ControlName="lblCurrentTarget"
+			.Left=20
+			.Top=45
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Target: Csaj"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCurrentTarget, UIControl))
+
+		'lblCurrentFreq initial props
+		lblCurrentFreq = New UILabel(oUILib)
+		With lblCurrentFreq
+			.ControlName="lblCurrentFreq"
+			.Left=20
+			.Top=62
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Report Frequency: once per day"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCurrentFreq, UIControl))
+
+		'lblNew initial props
+		lblNew = New UILabel(oUILib)
+		With lblNew
+			.ControlName="lblNew"
+			.Left=10
+			.Top=85
+			.Width=163
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="New Infiltration Settings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNew, UIControl))
+
+		'lblNewType initial props
+		lblNewType = New UILabel(oUILib)
+		With lblNewType
+			.ControlName="lblNewType"
+			.Left=20
+			.Top=105
+			.Width=36
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Type:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNewType, UIControl))
+
+		'cboNewInfType initial props
+		cboNewInfType = New UIComboBox(oUILib)
+		With cboNewInfType
+			.ControlName="cboNewInfType"
+			.Left=80
+			.Top=105
+			.Width=140
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboNewInfType, UIControl))
+
+		'lblNewTarget initial props
+		lblNewTarget = New UILabel(oUILib)
+		With lblNewTarget
+			.ControlName="lblNewTarget"
+			.Left=20
+			.Top=130
+			.Width=44
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Target:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNewTarget, UIControl))
+
+		'cboNewTarget initial props
+		cboNewTarget = New UIComboBox(oUILib)
+		With cboNewTarget
+			.ControlName="cboNewTarget"
+			.Left=80
+			.Top=130
+			.Width=140
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboNewTarget, UIControl))
+
+		'lblNewFreq initial props
+		lblNewFreq = New UILabel(oUILib)
+		With lblNewFreq
+			.ControlName="lblNewFreq"
+			.Left=20
+			.Top=153
+			.Width=44
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Report:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblNewFreq, UIControl))
+
+		'cboReportFreq initial props
+		cboReportFreq = New UIComboBox(oUILib)
+		With cboReportFreq
+			.ControlName="cboReportFreq"
+			.Left=80
+			.Top=155
+			.Width=140
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboReportFreq, UIControl))
+
+		'btnDeinfiltrate initial props
+		btnDeinfiltrate = New UIButton(oUILib)
+		With btnDeinfiltrate
+			.ControlName="btnDeinfiltrate"
+			.Left=10
+			.Top=190
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Deinfiltrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDeinfiltrate, UIControl))
+
+		'btnSet initial props
+		btnSet = New UIButton(oUILib)
+		With btnSet
+			.ControlName="btnSet"
+			.Left=115
+			.Top=190
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Set Settings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSet, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,9 @@
+Station construction near [NearestPlanetName]
+Ominous Station arrives near [NearestPlanetName]
+12
+Random
+7
+7-8-
+<div style="font-size: 8pt; color:#E2E2E2;">
+A new space station constructed by [PlayerName] was completed today. The location of the space station is being kept secret, however, a general location of around [NearestPlanetName] has been leaked.
+</div>

@@ -1,0 +1,320 @@
+'Interface created from Interface Builder
+Public Class frmFacilityBuild
+	Inherits UIWindow
+
+	Private WithEvents lstBuildable As UIListBox
+	Private WithEvents lblBuildable As UILabel
+	Private WithEvents txtItemDetails As UITextBox
+	Private WithEvents lblDetails As UILabel
+	Private WithEvents lstQueue As UIListBox
+	Private WithEvents lblBuildQueue As UILabel
+	Private WithEvents txtQueueCost As UITextBox
+	Private WithEvents lblQueueCost As UILabel
+	Private WithEvents lblAvailResources As UILabel
+	Private WithEvents txtAvailResources As UITextBox
+	Private WithEvents btnMoveUp As UIButton
+	Private WithEvents btnMoveDown As UIButton
+	Private WithEvents btnRemove As UIButton
+	Private WithEvents btnClear As UIButton
+	Private WithEvents chkActive As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmFacilityBuild initial props
+		With Me
+			.ControlName="frmFacilityBuild"
+			.Left=364
+			.Top=95
+			.Width=289
+			.Height=388
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'lstBuildable initial props
+		lstBuildable = New UIListBox(oUILib)
+		With lstBuildable
+			.ControlName="lstBuildable"
+			.Left=3
+			.Top=20
+			.Width=159
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16760704)
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16744193)
+		End With
+		Me.AddChild(lstBuildable)
+
+		'lblBuildable initial props
+		lblBuildable = New UILabel(oUILib)
+		With lblBuildable
+			.ControlName="lblBuildable"
+			.Left=3
+			.Top=0
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Buildable Items"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblBuildable)
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=165
+			.Top=20
+			.Width=120
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=0
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-16760704)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtItemDetails)
+
+		'lblDetails initial props
+		lblDetails = New UILabel(oUILib)
+		With lblDetails
+			.ControlName="lblDetails"
+			.Left=165
+			.Top=0
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Item Details"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblDetails)
+
+		'lstQueue initial props
+		lstQueue = New UIListBox(oUILib)
+		With lstQueue
+			.ControlName="lstQueue"
+			.Left=3
+			.Top=140
+			.Width=159
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16760704)
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16744193)
+		End With
+		Me.AddChild(lstQueue)
+
+		'lblBuildQueue initial props
+		lblBuildQueue = New UILabel(oUILib)
+		With lblBuildQueue
+			.ControlName="lblBuildQueue"
+			.Left=3
+			.Top=120
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Build Queue"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblBuildQueue)
+
+		'txtQueueCost initial props
+		txtQueueCost = New UITextBox(oUILib)
+		With txtQueueCost
+			.ControlName="txtQueueCost"
+			.Left=165
+			.Top=140
+			.Width=120
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=0
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-16760704)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtQueueCost)
+
+		'lblQueueCost initial props
+		lblQueueCost = New UILabel(oUILib)
+		With lblQueueCost
+			.ControlName="lblQueueCost"
+			.Left=165
+			.Top=120
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Queue Costs"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblQueueCost)
+
+		'lblAvailResources initial props
+		lblAvailResources = New UILabel(oUILib)
+		With lblAvailResources
+			.ControlName="lblAvailResources"
+			.Left=3
+			.Top=264
+			.Width=159
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Available Resources"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblAvailResources)
+
+		'txtAvailResources initial props
+		txtAvailResources = New UITextBox(oUILib)
+		With txtAvailResources
+			.ControlName="txtAvailResources"
+			.Left=3
+			.Top=284
+			.Width=282
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 8.25, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=0
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-16760704)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtAvailResources)
+
+		'btnMoveUp initial props
+		btnMoveUp = New UIButton(oUILib)
+		With btnMoveUp
+			.ControlName="btnMoveUp"
+			.Left=84
+			.Top=241
+			.Width=20
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="+"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnMoveUp)
+
+		'btnMoveDown initial props
+		btnMoveDown = New UIButton(oUILib)
+		With btnMoveDown
+			.ControlName="btnMoveDown"
+			.Left=104
+			.Top=241
+			.Width=20
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="-"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnMoveDown)
+
+		'btnRemove initial props
+		btnRemove = New UIButton(oUILib)
+		With btnRemove
+			.ControlName="btnRemove"
+			.Left=124
+			.Top=241
+			.Width=20
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="x"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnRemove)
+
+		'btnClear initial props
+		btnClear = New UIButton(oUILib)
+		With btnClear
+			.ControlName="btnClear"
+			.Left=144
+			.Top=241
+			.Width=20
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="c"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnClear)
+
+            'chkActive initial props
+            chkActive = New UICheckBox(oUILib)
+            With chkActive
+                .ControlName="chkActive"
+                .Left=180
+                .Top=243
+                .Width=49
+                .Height=16
+                .Enabled=True
+                .Visible=True
+                .Caption="Active"
+                .ForeColor=System.Drawing.Color.FromArgb(-1)
+                .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 0, 3, 0))
+                .DrawBackImage=False
+                .FontFormat=6
+                .Value=False
+            End With
+            Me.AddChild(chkActive)
+	End Sub
+End Class

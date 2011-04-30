@@ -1,0 +1,8 @@
+A New Frontier! 
+[PlayerName] completes work on new space colony. 
+12 
+Jeffrey Rossi
+2
+2- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Reporters were unsure what to expect when [PlayerName] told them to report to a spaceport inside the [SystemName] system. They were told to bring video cameras and appropriate reporting tools and their imaginations ran wild as they attempted to figure out what the big deal might be. They were soon surprised to find out that they were bound for a brand new Space Station that [PlayerName] had just completed earlier in the day! <br><br>"The facilities were state of the art and will no doubt bring about a new standard in space living", reports one of our correspondents that was invited to tour the brand new facility. "It was simply amazing and will no doubt usher in a new era of prosperity for everyone in the empire of [PlayerName]". <br><br>Military analysts ponder the significance of a move to space by [PlayerName] and also wonder if the relative secrecy surrounding the new space station's location could signify a potential military campaign in the near future. No one can know for sure but as always GNS news will remain your leading provider of any breaking news stories as we continue to follow the biggest events inside and outside [PlayerNamePossessive] empire! </div>

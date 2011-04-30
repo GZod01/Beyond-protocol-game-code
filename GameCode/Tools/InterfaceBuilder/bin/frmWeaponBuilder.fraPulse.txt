@@ -1,0 +1,427 @@
+'Interface created from Interface Builder
+Public Class frmWeaponBuilder.fraPulse
+	Inherits UIWindow
+
+	Private WithEvents lblInputEnergy As UILabel
+	Private WithEvents txtInputEnergy As UITextBox
+	Private WithEvents lblCompress As UILabel
+	Private WithEvents txtCompress As UITextBox
+	Private WithEvents lblMaxRange As UILabel
+	Private WithEvents txtMaxRange As UITextBox
+	Private WithEvents lblROF As UILabel
+	Private WithEvents txtROF As UITextBox
+	Private WithEvents lblScatterRadius As UILabel
+	Private WithEvents txtScatterRadois As UITextBox
+	Private WithEvents lblCoil As UILabel
+	Private WithEvents cboCoilMat As UIComboBox
+	Private WithEvents lblAccMat As UILabel
+	Private WithEvents lblCasing As UILabel
+	Private WithEvents lblFocuser As UILabel
+	Private WithEvents lblCompChmbr As UILabel
+	Private WithEvents cboAccelerator As UIComboBox
+	Private WithEvents cboCasing As UIComboBox
+	Private WithEvents cboFocuser As UIComboBox
+	Private WithEvents cboCompressChmbr As UIComboBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmWeaponBuilder.fraPulse initial props
+		With Me
+			.ControlName="frmWeaponBuilder.fraPulse"
+			.Left=225
+			.Top=158
+			.Width=380
+			.Height=335
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblInputEnergy initial props
+		lblInputEnergy = New UILabel(oUILib)
+		With lblInputEnergy
+			.ControlName="lblInputEnergy"
+			.Left=10
+			.Top=10
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Input Energy:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblInputEnergy, UIControl))
+
+		'txtInputEnergy initial props
+		txtInputEnergy = New UITextBox(oUILib)
+		With txtInputEnergy
+			.ControlName="txtInputEnergy"
+			.Left=150
+			.Top=10
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtInputEnergy, UIControl))
+
+		'lblCompress initial props
+		lblCompress = New UILabel(oUILib)
+		With lblCompress
+			.ControlName="lblCompress"
+			.Left=10
+			.Top=35
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Compression Factor:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCompress, UIControl))
+
+		'txtCompress initial props
+		txtCompress = New UITextBox(oUILib)
+		With txtCompress
+			.ControlName="txtCompress"
+			.Left=150
+			.Top=35
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtCompress, UIControl))
+
+		'lblMaxRange initial props
+		lblMaxRange = New UILabel(oUILib)
+		With lblMaxRange
+			.ControlName="lblMaxRange"
+			.Left=10
+			.Top=60
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Maximum Range:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMaxRange, UIControl))
+
+		'txtMaxRange initial props
+		txtMaxRange = New UITextBox(oUILib)
+		With txtMaxRange
+			.ControlName="txtMaxRange"
+			.Left=150
+			.Top=60
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=5
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMaxRange, UIControl))
+
+		'lblROF initial props
+		lblROF = New UILabel(oUILib)
+		With lblROF
+			.ControlName="lblROF"
+			.Left=10
+			.Top=85
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Rate of Fire:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblROF, UIControl))
+
+		'txtROF initial props
+		txtROF = New UITextBox(oUILib)
+		With txtROF
+			.ControlName="txtROF"
+			.Left=150
+			.Top=85
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtROF, UIControl))
+
+		'lblScatterRadius initial props
+		lblScatterRadius = New UILabel(oUILib)
+		With lblScatterRadius
+			.ControlName="lblScatterRadius"
+			.Left=10
+			.Top=110
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Scatter Radius:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblScatterRadius, UIControl))
+
+		'txtScatterRadois initial props
+		txtScatterRadois = New UITextBox(oUILib)
+		With txtScatterRadois
+			.ControlName="txtScatterRadois"
+			.Left=150
+			.Top=110
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtScatterRadois, UIControl))
+
+		'lblCoil initial props
+		lblCoil = New UILabel(oUILib)
+		With lblCoil
+			.ControlName="lblCoil"
+			.Left=10
+			.Top=155
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Coil Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCoil, UIControl))
+
+		'cboCoilMat initial props
+		cboCoilMat = New UIComboBox(oUILib)
+		With cboCoilMat
+			.ControlName="cboCoilMat"
+			.Left=150
+			.Top=155
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboCoilMat, UIControl))
+
+		'lblAccMat initial props
+		lblAccMat = New UILabel(oUILib)
+		With lblAccMat
+			.ControlName="lblAccMat"
+			.Left=10
+			.Top=180
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Accelerator Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAccMat, UIControl))
+
+		'lblCasing initial props
+		lblCasing = New UILabel(oUILib)
+		With lblCasing
+			.ControlName="lblCasing"
+			.Left=10
+			.Top=205
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Casing Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCasing, UIControl))
+
+		'lblFocuser initial props
+		lblFocuser = New UILabel(oUILib)
+		With lblFocuser
+			.ControlName="lblFocuser"
+			.Left=10
+			.Top=230
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Focuser Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFocuser, UIControl))
+
+		'lblCompChmbr initial props
+		lblCompChmbr = New UILabel(oUILib)
+		With lblCompChmbr
+			.ControlName="lblCompChmbr"
+			.Left=10
+			.Top=255
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Chamber Material:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblCompChmbr, UIControl))
+
+		'cboAccelerator initial props
+		cboAccelerator = New UIComboBox(oUILib)
+		With cboAccelerator
+			.ControlName="cboAccelerator"
+			.Left=150
+			.Top=180
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboAccelerator, UIControl))
+
+		'cboCasing initial props
+		cboCasing = New UIComboBox(oUILib)
+		With cboCasing
+			.ControlName="cboCasing"
+			.Left=150
+			.Top=205
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboCasing, UIControl))
+
+		'cboFocuser initial props
+		cboFocuser = New UIComboBox(oUILib)
+		With cboFocuser
+			.ControlName="cboFocuser"
+			.Left=150
+			.Top=230
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboFocuser, UIControl))
+
+		'cboCompressChmbr initial props
+		cboCompressChmbr = New UIComboBox(oUILib)
+		With cboCompressChmbr
+			.ControlName="cboCompressChmbr"
+			.Left=150
+			.Top=255
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboCompressChmbr, UIControl))
+	End Sub
+End Class

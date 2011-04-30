@@ -1,0 +1,373 @@
+'Interface created from Interface Builder
+Public Class frmChatTabProps
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblFilter As UILabel
+	Private WithEvents chkLocal As UICheckBox
+	Private WithEvents chkSystem As UICheckBox
+	Private WithEvents chkChannel As UICheckBox
+	Private WithEvents txtChannel As UITextBox
+	Private WithEvents chkAlliance As UICheckBox
+	Private WithEvents chkSenate As UICheckBox
+	Private WithEvents txtPM As UICheckBox
+	Private WithEvents chkNotification As UICheckBox
+	Private WithEvents txtTabName As UITextBox
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lbPrefix As UILabel
+	Private WithEvents txtMsgPrefix As UITextBox
+	Private WithEvents btnDelete As UIButton
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmChatTabProps initial props
+		With Me
+			.ControlName="frmChatTabProps"
+			.Left=199
+			.Top=97
+			.Width=280
+			.Height=255
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=116
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Chat Tab Name:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=25
+			.Width=280
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblFilter initial props
+		lblFilter = New UILabel(oUILib)
+		With lblFilter
+			.ControlName="lblFilter"
+			.Left=5
+			.Top=30
+			.Width=36
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Filter"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFilter, UIControl))
+
+		'chkLocal initial props
+		chkLocal = New UICheckBox(oUILib)
+		With chkLocal
+			.ControlName="chkLocal"
+			.Left=10
+			.Top=50
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Local Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkLocal, UIControl))
+
+		'chkSystem initial props
+		chkSystem = New UICheckBox(oUILib)
+		With chkSystem
+			.ControlName="chkSystem"
+			.Left=10
+			.Top=70
+			.Width=172
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="System Admin Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSystem, UIControl))
+
+		'chkChannel initial props
+		chkChannel = New UICheckBox(oUILib)
+		With chkChannel
+			.ControlName="chkChannel"
+			.Left=10
+			.Top=90
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Channel Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkChannel, UIControl))
+
+		'txtChannel initial props
+		txtChannel = New UITextBox(oUILib)
+		With txtChannel
+			.ControlName="txtChannel"
+			.Left=165
+			.Top=91
+			.Width=112
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtChannel, UIControl))
+
+		'chkAlliance initial props
+		chkAlliance = New UICheckBox(oUILib)
+		With chkAlliance
+			.ControlName="chkAlliance"
+			.Left=10
+			.Top=110
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Alliance Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAlliance, UIControl))
+
+		'chkSenate initial props
+		chkSenate = New UICheckBox(oUILib)
+		With chkSenate
+			.ControlName="chkSenate"
+			.Left=10
+			.Top=130
+			.Width=130
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Senate Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSenate, UIControl))
+
+		'txtPM initial props
+		txtPM = New UICheckBox(oUILib)
+		With txtPM
+			.ControlName="txtPM"
+			.Left=10
+			.Top=150
+			.Width=164
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Private Messages (tells)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(txtPM, UIControl))
+
+		'chkNotification initial props
+		chkNotification = New UICheckBox(oUILib)
+		With chkNotification
+			.ControlName="chkNotification"
+			.Left=10
+			.Top=170
+			.Width=153
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Notification Messages"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkNotification, UIControl))
+
+		'txtTabName initial props
+		txtTabName = New UITextBox(oUILib)
+		With txtTabName
+			.ControlName="txtTabName"
+			.Left=127
+			.Top=4
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtTabName, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=0
+			.Top=190
+			.Width=280
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'lbPrefix initial props
+		lbPrefix = New UILabel(oUILib)
+		With lbPrefix
+			.ControlName="lbPrefix"
+			.Left=5
+			.Top=195
+			.Width=144
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Default Message Prefix:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lbPrefix, UIControl))
+
+		'txtMsgPrefix initial props
+		txtMsgPrefix = New UITextBox(oUILib)
+		With txtMsgPrefix
+			.ControlName="txtMsgPrefix"
+			.Left=152
+			.Top=195
+			.Width=125
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtMsgPrefix, UIControl))
+
+		'btnDelete initial props
+		btnDelete = New UIButton(oUILib)
+		With btnDelete
+			.ControlName="btnDelete"
+			.Left=5
+			.Top=225
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Delete Tab"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDelete, UIControl))
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=0
+			.Top=218
+			.Width=280
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv3, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=178
+			.Top=225
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+	End Sub
+End Class

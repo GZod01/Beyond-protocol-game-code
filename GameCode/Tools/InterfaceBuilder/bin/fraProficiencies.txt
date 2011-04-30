@@ -1,0 +1,98 @@
+'Interface created from Interface Builder
+Public Class fraProficiencies
+	Inherits UIWindow
+
+	Private WithEvents lblInfiltration As UILabel
+	Private WithEvents lblInfiltration As UILabel
+	Private WithEvents lblResourcefulness As UILabel
+	Private WithEvents lblSuspicion As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraProficiencies initial props
+		With Me
+			.ControlName="fraProficiencies"
+			.Left=127
+			.Top=132
+			.Width=175
+			.Height=95
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblInfiltration initial props
+		lblInfiltration = New UILabel(oUILib)
+		With lblInfiltration
+			.ControlName="lblInfiltration"
+			.Left=27
+			.Top=10
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Dagger: XXX"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblInfiltration, UIControl))
+
+		'lblInfiltration initial props
+		lblInfiltration = New UILabel(oUILib)
+		With lblInfiltration
+			.ControlName="lblInfiltration"
+			.Left=27
+			.Top=30
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Infiltration: XXX"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblInfiltration, UIControl))
+
+		'lblResourcefulness initial props
+		lblResourcefulness = New UILabel(oUILib)
+		With lblResourcefulness
+			.ControlName="lblResourcefulness"
+			.Left=27
+			.Top=50
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Resourcefulness: XXX"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblResourcefulness, UIControl))
+
+		'lblSuspicion initial props
+		lblSuspicion = New UILabel(oUILib)
+		With lblSuspicion
+			.ControlName="lblSuspicion"
+			.Left=27
+			.Top=70
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Suspicion: XXX"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSuspicion, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,312 @@
+'Interface created from Interface Builder
+Public Class frmColonyResearch
+	Inherits UIWindow
+
+	Private WithEvents lstTechs As UIListBox
+	Private WithEvents txtCost As UITextBox
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lblResearchProjects As UILabel
+	Private WithEvents lblItemCosts As UILabel
+	Private WithEvents lblResFacs As UILabel
+	Private WithEvents New Control As UIListBox
+	Private WithEvents lblResQueue As UILabel
+	Private WithEvents New Control As UILabel
+	Private WithEvents txtAssign As UITextBox
+	Private WithEvents btnAddToQueue As UIButton
+	Private WithEvents btnRemove As UIButton
+	Private WithEvents fraResLabs As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmColonyResearch initial props
+		With Me
+			.ControlName="frmColonyResearch"
+			.Left=245
+			.Top=76
+			.Width=512
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstTechs initial props
+		lstTechs = New UIListBox(oUILib)
+		With lstTechs
+			.ControlName="lstTechs"
+			.Left=5
+			.Top=55
+			.Width=365
+			.Height=130
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstTechs, UIControl))
+
+		'txtCost initial props
+		txtCost = New UITextBox(oUILib)
+		With txtCost
+			.ControlName="txtCost"
+			.Left=375
+			.Top=55
+			.Width=132
+			.Height=130
+			.Enabled=True
+			.Visible=True
+			.Caption="Costs"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtCost, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=255
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Colonial Research Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=30
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=485
+			.Top=4
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lblResearchProjects initial props
+		lblResearchProjects = New UILabel(oUILib)
+		With lblResearchProjects
+			.ControlName="lblResearchProjects"
+			.Left=5
+			.Top=35
+			.Width=160
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Researchable Projects"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblResearchProjects, UIControl))
+
+		'lblItemCosts initial props
+		lblItemCosts = New UILabel(oUILib)
+		With lblItemCosts
+			.ControlName="lblItemCosts"
+			.Left=375
+			.Top=35
+			.Width=95
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Project Costs"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblItemCosts, UIControl))
+
+		'lblResFacs initial props
+		lblResFacs = New UILabel(oUILib)
+		With lblResFacs
+			.ControlName="lblResFacs"
+			.Left=5
+			.Top=315
+			.Width=136
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Research Facilities"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblResFacs, UIControl))
+
+		'New Control initial props
+		New Control = New UIListBox(oUILib)
+		With New Control
+			.ControlName="New Control"
+			.Left=5
+			.Top=210
+			.Width=365
+			.Height=101
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(New Control, UIControl))
+
+		'lblResQueue initial props
+		lblResQueue = New UILabel(oUILib)
+		With lblResQueue
+			.ControlName="lblResQueue"
+			.Left=5
+			.Top=190
+			.Width=180
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Colonial Research Queue"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblResQueue, UIControl))
+
+		'New Control initial props
+		New Control = New UILabel(oUILib)
+		With New Control
+			.ControlName="New Control"
+			.Left=375
+			.Top=205
+			.Width=130
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Facilities to Assign"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(New Control, UIControl))
+
+		'txtAssign initial props
+		txtAssign = New UITextBox(oUILib)
+		With txtAssign
+			.ControlName="txtAssign"
+			.Left=390
+			.Top=230
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="1"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtAssign, UIControl))
+
+		'btnAddToQueue initial props
+		btnAddToQueue = New UIButton(oUILib)
+		With btnAddToQueue
+			.ControlName="btnAddToQueue"
+			.Left=390
+			.Top=255
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Queue"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAddToQueue, UIControl))
+
+		'btnRemove initial props
+		btnRemove = New UIButton(oUILib)
+		With btnRemove
+			.ControlName="btnRemove"
+			.Left=390
+			.Top=285
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove, UIControl))
+
+		'fraResLabs initial props
+		fraResLabs = New UIWindow(oUILib)
+		With fraResLabs
+			.ControlName="fraResLabs"
+			.Left=5
+			.Top=335
+			.Width=502
+			.Height=172
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraResLabs, UIControl))
+	End Sub
+End Class

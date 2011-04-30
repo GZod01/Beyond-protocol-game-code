@@ -1,0 +1,251 @@
+'Interface created from Interface Builder
+Public Class fraColorSelect
+	Inherits UIWindow
+
+	Private WithEvents lblRed As UILabel
+	Private WithEvents lblGreen As UILabel
+	Private WithEvents lblBlue As UILabel
+	Private WithEvents hscrRed As UIScrollBar
+	Private WithEvents txtSample As UITextBox
+	Private WithEvents hscrGreen As UIScrollBar
+	Private WithEvents hscrBlue As UIScrollBar
+	Private WithEvents txtRed As UITextBox
+	Private WithEvents txtGreen As UITextBox
+	Private WithEvents txtBlue As UITextBox
+	Private WithEvents btnClose As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraColorSelect initial props
+		With Me
+			.ControlName="fraColorSelect"
+			.Left=276
+			.Top=92
+			.Width=256
+			.Height=128
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblRed initial props
+		lblRed = New UILabel(oUILib)
+		With lblRed
+			.ControlName="lblRed"
+			.Left=10
+			.Top=10
+			.Width=25
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Red"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRed, UIControl))
+
+		'lblGreen initial props
+		lblGreen = New UILabel(oUILib)
+		With lblGreen
+			.ControlName="lblGreen"
+			.Left=10
+			.Top=35
+			.Width=40
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Green"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGreen, UIControl))
+
+		'lblBlue initial props
+		lblBlue = New UILabel(oUILib)
+		With lblBlue
+			.ControlName="lblBlue"
+			.Left=10
+			.Top=60
+			.Width=30
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Blue"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBlue, UIControl))
+
+		'hscrRed initial props
+		hscrRed = New UIScrollBar(oUILib, False)
+		With hscrRed
+			.ControlName="hscrRed"
+			.Left=60
+			.Top=10
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=255
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrRed, UIControl))
+
+		'txtSample initial props
+		txtSample = New UITextBox(oUILib)
+		With txtSample
+			.ControlName="txtSample"
+			.Left=10
+			.Top=85
+			.Width=100
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Sample"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtSample, UIControl))
+
+		'hscrGreen initial props
+		hscrGreen = New UIScrollBar(oUILib, False)
+		With hscrGreen
+			.ControlName="hscrGreen"
+			.Left=60
+			.Top=35
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=255
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrGreen, UIControl))
+
+		'hscrBlue initial props
+		hscrBlue = New UIScrollBar(oUILib, False)
+		With hscrBlue
+			.ControlName="hscrBlue"
+			.Left=60
+			.Top=60
+			.Width=135
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=255
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrBlue, UIControl))
+
+		'txtRed initial props
+		txtRed = New UITextBox(oUILib)
+		With txtRed
+			.ControlName="txtRed"
+			.Left=205
+			.Top=9
+			.Width=40
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtRed, UIControl))
+
+		'txtGreen initial props
+		txtGreen = New UITextBox(oUILib)
+		With txtGreen
+			.ControlName="txtGreen"
+			.Left=205
+			.Top=34
+			.Width=40
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtGreen, UIControl))
+
+		'txtBlue initial props
+		txtBlue = New UITextBox(oUILib)
+		With txtBlue
+			.ControlName="txtBlue"
+			.Left=205
+			.Top=59
+			.Width=40
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtBlue, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=145
+			.Top=86
+			.Width=100
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+	End Sub
+End Class

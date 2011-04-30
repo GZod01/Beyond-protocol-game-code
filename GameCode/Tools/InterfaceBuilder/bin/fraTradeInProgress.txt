@@ -1,0 +1,150 @@
+'Interface created from Interface Builder
+Public Class fraTradeInProgress
+	Inherits UIWindow
+
+	Private WithEvents lblDirectTrades As UILabel
+	Private WithEvents lstDirectTrades As UIListBox
+	Private WithEvents lblTradeDelivery As UILabel
+	Private WithEvents lstTradeDelivery As UIListBox
+	Private WithEvents btnViewDirectTrade As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents fraTradeDeliveryDetail As UIWindow
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraTradeInProgress initial props
+		With Me
+			.ControlName="fraTradeInProgress"
+			.Left=88
+			.Top=54
+			.Width=790
+			.Height=543
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblDirectTrades initial props
+		lblDirectTrades = New UILabel(oUILib)
+		With lblDirectTrades
+			.ControlName="lblDirectTrades"
+			.Left=5
+			.Top=5
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Direct Trades"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDirectTrades, UIControl))
+
+		'lstDirectTrades initial props
+		lstDirectTrades = New UIListBox(oUILib)
+		With lstDirectTrades
+			.ControlName="lstDirectTrades"
+			.Left=5
+			.Top=25
+			.Width=780
+			.Height=150
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstDirectTrades, UIControl))
+
+		'lblTradeDelivery initial props
+		lblTradeDelivery = New UILabel(oUILib)
+		With lblTradeDelivery
+			.ControlName="lblTradeDelivery"
+			.Left=5
+			.Top=220
+			.Width=186
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="GTC Trade Delivery Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTradeDelivery, UIControl))
+
+		'lstTradeDelivery initial props
+		lstTradeDelivery = New UIListBox(oUILib)
+		With lstTradeDelivery
+			.ControlName="lstTradeDelivery"
+			.Left=5
+			.Top=240
+			.Width=390
+			.Height=298
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstTradeDelivery, UIControl))
+
+		'btnViewDirectTrade initial props
+		btnViewDirectTrade = New UIButton(oUILib)
+		With btnViewDirectTrade
+			.ControlName="btnViewDirectTrade"
+			.Left=685
+			.Top=180
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="View"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnViewDirectTrade, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=210
+			.Width=789
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'fraTradeDeliveryDetail initial props
+		fraTradeDeliveryDetail = New UIWindow(oUILib)
+		With fraTradeDeliveryDetail
+			.ControlName="fraTradeDeliveryDetail"
+			.Left=405
+			.Top=240
+			.Width=380
+			.Height=298
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+		Me.AddChild(CType(fraTradeDeliveryDetail, UIControl))
+	End Sub
+End Class

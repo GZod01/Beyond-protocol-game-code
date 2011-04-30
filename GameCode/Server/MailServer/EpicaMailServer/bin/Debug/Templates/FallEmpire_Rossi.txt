@@ -1,0 +1,11 @@
+The Fall of an Empire 
+[PlayerNamePossessive] empire has been overthrown! 
+10
+Jeffrey Rossi 
+7
+7-5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+This is a breaking news bulletin from GNS News. Reporters close to [PlayerName] are reporting that they have mysteriously disappeared after the fall of their last remaining colony. Analysts are unsure what may have prompted this sudden disappearance but with the destruction of their empire and the fall of their homeworld [PlanetName] many speculate that they may have disappeared to some secret location in an effort to return to power. "I'm sure that [PlayerName] will return soon enough," says one of [PlayerNamePossessive] highest ranking military advisors. "While times are difficult for [PlayerName] at the moment, no good leader is without a backup plan and I assure you that before you know it [PlayerName] will resurface and bring their empire to new heights that may even surpass what we had accomplished before!"
+<br><br>
+This reporter is unsure if that is the case but it seems that [PlayerName] may have created a secret base on another planet just in case things went south, and this reporter speculates that that may be where [PlayerName] has disappeared to. We’ll be following this story very closely as we wait for [PlayerName] to reappear and just remember, you'll always hear it first on GNS news! 
+</div>

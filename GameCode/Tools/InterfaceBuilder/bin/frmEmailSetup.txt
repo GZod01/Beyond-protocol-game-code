@@ -1,0 +1,636 @@
+'Interface created from Interface Builder
+Public Class frmEmailSetup
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblAddress As UILabel
+	Private WithEvents txtAddress As UITextBox
+	Private WithEvents chkPlayerRel As UICheckBox
+	Private WithEvents chkLowRes As UICheckBox
+	Private WithEvents chkEngaged As UICheckBox
+	Private WithEvents chkUnderAttack As UICheckBox
+	Private WithEvents btnSubmit As UIButton
+	Private WithEvents chkBuyOrderAccept As UICheckBox
+	Private WithEvents chkResearchComplete As UICheckBox
+	Private WithEvents chkTradeRequests As UICheckBox
+	Private WithEvents chkRebuildAI As UICheckBox
+	Private WithEvents lblInt As UILabel
+	Private WithEvents lblExt As UILabel
+	Private WithEvents chkAgentUpdates As UICheckBox
+	Private WithEvents chkGuildNotices As UICheckBox
+	Private WithEvents chkUnitLost As UICheckBox
+	Private WithEvents chkFacilityLost As UICheckBox
+	Private WithEvents chkColonyLost As UICheckBox
+	Private WithEvents chkTitleChange As UICheckBox
+	Private WithEvents chkFactionUpdates As UICheckBox
+	Private WithEvents chkPlayerRelExt As UICheckBox
+	Private WithEvents chkLowResExt As UICheckBox
+	Private WithEvents chkEngagedExt As UICheckBox
+	Private WithEvents chkUnderAttackExt As UICheckBox
+	Private WithEvents chkBuyOrderAcceptExt As UICheckBox
+	Private WithEvents chkResearchCompleteExt As UICheckBox
+	Private WithEvents chkTradeRequestsExt As UICheckBox
+	Private WithEvents chkRebuildAIExt As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmEmailSetup initial props
+		With Me
+			.ControlName="frmEmailSetup"
+			.Left=326
+			.Top=136
+			.Width=256
+			.Height=414
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=158
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Email Alert Setup"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=231
+			.Top=1
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=25
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblAddress initial props
+		lblAddress = New UILabel(oUILib)
+		With lblAddress
+			.ControlName="lblAddress"
+			.Left=5
+			.Top=30
+			.Width=55
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Address:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAddress, UIControl))
+
+		'txtAddress initial props
+		txtAddress = New UITextBox(oUILib)
+		With txtAddress
+			.ControlName="txtAddress"
+			.Left=60
+			.Top=30
+			.Width=190
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="enochdagor@hotmail.com"
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=255
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtAddress, UIControl))
+
+		'chkPlayerRel initial props
+		chkPlayerRel = New UICheckBox(oUILib)
+		With chkPlayerRel
+			.ControlName="chkPlayerRel"
+			.Left=55
+			.Top=70
+			.Width=192
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Player Relationship Changes"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkPlayerRel, UIControl))
+
+		'chkLowRes initial props
+		chkLowRes = New UICheckBox(oUILib)
+		With chkLowRes
+			.ControlName="chkLowRes"
+			.Left=55
+			.Top=90
+			.Width=141
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Low Resource Alerts"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkLowRes, UIControl))
+
+		'chkEngaged initial props
+		chkEngaged = New UICheckBox(oUILib)
+		With chkEngaged
+			.ControlName="chkEngaged"
+			.Left=55
+			.Top=110
+			.Width=156
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Engaged Enemy Alerts"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkEngaged, UIControl))
+
+		'chkUnderAttack initial props
+		chkUnderAttack = New UICheckBox(oUILib)
+		With chkUnderAttack
+			.ControlName="chkUnderAttack"
+			.Left=55
+			.Top=130
+			.Width=132
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Under Attack Alerts"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkUnderAttack, UIControl))
+
+		'btnSubmit initial props
+		btnSubmit = New UIButton(oUILib)
+		With btnSubmit
+			.ControlName="btnSubmit"
+			.Left=76
+			.Top=380
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Submit"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnSubmit, UIControl))
+
+		'chkBuyOrderAccept initial props
+		chkBuyOrderAccept = New UICheckBox(oUILib)
+		With chkBuyOrderAccept
+			.ControlName="chkBuyOrderAccept"
+			.Left=55
+			.Top=150
+			.Width=139
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Buy Order Accepted"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkBuyOrderAccept, UIControl))
+
+		'chkResearchComplete initial props
+		chkResearchComplete = New UICheckBox(oUILib)
+		With chkResearchComplete
+			.ControlName="chkResearchComplete"
+			.Left=55
+			.Top=170
+			.Width=139
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Research Complete "
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkResearchComplete, UIControl))
+
+		'chkTradeRequests initial props
+		chkTradeRequests = New UICheckBox(oUILib)
+		With chkTradeRequests
+			.ControlName="chkTradeRequests"
+			.Left=55
+			.Top=190
+			.Width=117
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Trade Requests"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkTradeRequests, UIControl))
+
+		'chkRebuildAI initial props
+		chkRebuildAI = New UICheckBox(oUILib)
+		With chkRebuildAI
+			.ControlName="chkRebuildAI"
+			.Left=55
+			.Top=210
+			.Width=81
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Rebuild AI"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRebuildAI, UIControl))
+
+		'lblInt initial props
+		lblInt = New UILabel(oUILib)
+		With lblInt
+			.ControlName="lblInt"
+			.Left=55
+			.Top=53
+			.Width=43
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Internal"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblInt, UIControl))
+
+		'lblExt initial props
+		lblExt = New UILabel(oUILib)
+		With lblExt
+			.ControlName="lblExt"
+			.Left=5
+			.Top=53
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="External"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblExt, UIControl))
+
+		'chkAgentUpdates initial props
+		chkAgentUpdates = New UICheckBox(oUILib)
+		With chkAgentUpdates
+			.ControlName="chkAgentUpdates"
+			.Left=55
+			.Top=230
+			.Width=109
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Agent Updates"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAgentUpdates, UIControl))
+
+		'chkGuildNotices initial props
+		chkGuildNotices = New UICheckBox(oUILib)
+		With chkGuildNotices
+			.ControlName="chkGuildNotices"
+			.Left=55
+			.Top=250
+			.Width=177
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Guild Membership Notices"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkGuildNotices, UIControl))
+
+		'chkUnitLost initial props
+		chkUnitLost = New UICheckBox(oUILib)
+		With chkUnitLost
+			.ControlName="chkUnitLost"
+			.Left=55
+			.Top=270
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Unit Lost"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkUnitLost, UIControl))
+
+		'chkFacilityLost initial props
+		chkFacilityLost = New UICheckBox(oUILib)
+		With chkFacilityLost
+			.ControlName="chkFacilityLost"
+			.Left=55
+			.Top=290
+			.Width=90
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Facility Lost"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkFacilityLost, UIControl))
+
+		'chkColonyLost initial props
+		chkColonyLost = New UICheckBox(oUILib)
+		With chkColonyLost
+			.ControlName="chkColonyLost"
+			.Left=55
+			.Top=310
+			.Width=90
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Colony Lost"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkColonyLost, UIControl))
+
+		'chkTitleChange initial props
+		chkTitleChange = New UICheckBox(oUILib)
+		With chkTitleChange
+			.ControlName="chkTitleChange"
+			.Left=55
+			.Top=330
+			.Width=97
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Title Change"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkTitleChange, UIControl))
+
+		'chkFactionUpdates initial props
+		chkFactionUpdates = New UICheckBox(oUILib)
+		With chkFactionUpdates
+			.ControlName="chkFactionUpdates"
+			.Left=55
+			.Top=350
+			.Width=120
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Faction Updates"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkFactionUpdates, UIControl))
+
+		'chkPlayerRelExt initial props
+		chkPlayerRelExt = New UICheckBox(oUILib)
+		With chkPlayerRelExt
+			.ControlName="chkPlayerRelExt"
+			.Left=20
+			.Top=70
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkPlayerRelExt, UIControl))
+
+		'chkLowResExt initial props
+		chkLowResExt = New UICheckBox(oUILib)
+		With chkLowResExt
+			.ControlName="chkLowResExt"
+			.Left=20
+			.Top=90
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkLowResExt, UIControl))
+
+		'chkEngagedExt initial props
+		chkEngagedExt = New UICheckBox(oUILib)
+		With chkEngagedExt
+			.ControlName="chkEngagedExt"
+			.Left=20
+			.Top=110
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkEngagedExt, UIControl))
+
+		'chkUnderAttackExt initial props
+		chkUnderAttackExt = New UICheckBox(oUILib)
+		With chkUnderAttackExt
+			.ControlName="chkUnderAttackExt"
+			.Left=20
+			.Top=130
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkUnderAttackExt, UIControl))
+
+		'chkBuyOrderAcceptExt initial props
+		chkBuyOrderAcceptExt = New UICheckBox(oUILib)
+		With chkBuyOrderAcceptExt
+			.ControlName="chkBuyOrderAcceptExt"
+			.Left=20
+			.Top=150
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkBuyOrderAcceptExt, UIControl))
+
+		'chkResearchCompleteExt initial props
+		chkResearchCompleteExt = New UICheckBox(oUILib)
+		With chkResearchCompleteExt
+			.ControlName="chkResearchCompleteExt"
+			.Left=20
+			.Top=170
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkResearchCompleteExt, UIControl))
+
+		'chkTradeRequestsExt initial props
+		chkTradeRequestsExt = New UICheckBox(oUILib)
+		With chkTradeRequestsExt
+			.ControlName="chkTradeRequestsExt"
+			.Left=20
+			.Top=190
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkTradeRequestsExt, UIControl))
+
+		'chkRebuildAIExt initial props
+		chkRebuildAIExt = New UICheckBox(oUILib)
+		With chkRebuildAIExt
+			.ControlName="chkRebuildAIExt"
+			.Left=20
+			.Top=210
+			.Width=18
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRebuildAIExt, UIControl))
+	End Sub
+End Class

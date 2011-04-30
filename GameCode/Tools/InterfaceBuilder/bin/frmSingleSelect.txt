@@ -1,0 +1,535 @@
+'Selection of a single entity display
+Public Class frmSingleSelect
+    Inherits UIWindow
+
+    Private lblEntityName As UILabel
+    Private lblEngineStatus As UILabel
+    Private lblRadarStatus As UILabel
+    Private lblShieldStatus As UILabel
+    Private lblHangarStatus As UILabel
+    Private lblCargoStatus As UILabel
+    Private lblCurrentProgress As UILabel
+    Private lblForeWpn As UILabel
+    Private lblLeftWpns As UILabel
+    Private lblRearWpns As UILabel
+    Private lblRightWpns As UILabel
+    Private lblForeWpn1Stat As UILabel
+    Private lblForeWpn2Stat As UILabel
+    Private lblLeftWpn1Stat As UILabel
+    Private lblLeftWpn2Stat As UILabel
+    Private lblRearWpn1Stat As UILabel
+    Private lblRearWpn2Stat As UILabel
+    Private lblRightWpn1Stat As UILabel
+    Private lblRightWpn2Stat As UILabel
+
+    Private lblFuelStatus As UILabel
+    Private lblFuelAmmo As UILabel
+    Private lblFuelCap As UILabel
+    Private lblAmmoCap As UILabel
+
+    Private shpProgressBack As UIWindow
+    Private shpProgressFore As UIWindow
+    Private hln1 As UILine
+    Private lblExpLevel As UILabel
+
+    Private mlEntityIndex As Int32=-1
+    Private mbForceUpdate As Boolean
+
+    Public Sub New(ByRef oUILib As UILib)
+        MyBase.New(oUILib)
+
+        'frmSingleSelect initial props
+        With Me
+            .ControlName="frmSingleSelect"
+            .Left=0
+            .Top=moUILib.oDevice.PresentationParameters.BackBufferHeight - 86
+            .Width=190
+            .Height=86
+            .Enabled=True
+            .Visible=True
+            .BorderColor=System.Drawing.Color.FromArgb(-16711681)
+            .FillColor=System.Drawing.Color.FromArgb(-16768960)
+            .FullScreen=False
+        End With
+        Debug.Write(Me.ControlName & " Newed" & vbCrLf)
+
+        'lblEntityName initial props
+        lblEntityName=New UILabel(oUILib)
+        With lblEntityName
+            .ControlName="lblEntityName"
+            .Left=5
+            .Top=2
+            .Width=150
+            .Height=16
+            .Enabled=True
+            .Visible=True
+            .Caption="ENTITY NAME"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Arial", 9, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblEntityName, UIControl))
+
+        'lblEngineStatus initial props
+        lblEngineStatus=New UILabel(oUILib)
+        With lblEngineStatus
+            .ControlName="lblEngineStatus"
+            .Left=6
+            .Top=24
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="ENGINES"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblEngineStatus, UIControl))
+
+        'lblRadarStatus initial props
+        lblRadarStatus=New UILabel(oUILib)
+        With lblRadarStatus
+            .ControlName="lblRadarStatus"
+            .Left=6
+            .Top=34
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="RADAR"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRadarStatus, UIControl))
+
+        'lblShieldStatus initial props
+        lblShieldStatus=New UILabel(oUILib)
+        With lblShieldStatus
+            .ControlName="lblShieldStatus"
+            .Left=6
+            .Top=44
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="SHIELDS"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblShieldStatus, UIControl))
+
+        'lblHangarStatus initial props
+        lblHangarStatus=New UILabel(oUILib)
+        With lblHangarStatus
+            .ControlName="lblHangarStatus"
+            .Left=6
+            .Top=54
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="HANGAR"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblHangarStatus, UIControl))
+
+        'lblCargoStatus initial props
+        lblCargoStatus=New UILabel(oUILib)
+        With lblCargoStatus
+            .ControlName="lblCargoStatus"
+            .Left=6
+            .Top=64
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="CARGO BAY"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblCargoStatus, UIControl))
+
+        'lblFuelStatus initial props
+        lblFuelStatus=New UILabel(oUILib)
+        With lblFuelStatus
+            .ControlName="lblFuelStatus"
+            .Left=6
+            .Top=74
+            .Width=60
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="FUEL BAY"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblFuelStatus, UIControl))
+
+        'lblCurrentProgress initial props
+        lblCurrentProgress=New UILabel(oUILib)
+        With lblCurrentProgress
+            .ControlName="lblCurrentProgress"
+            .Left=67
+            .Top=74
+            .Width=106
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="PROD:"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblCurrentProgress, UIControl))
+
+        'lblForeWpn initial props
+        lblForeWpn=New UILabel(oUILib)
+        With lblForeWpn
+            .ControlName="lblForeWpn"
+            .Left=67
+            .Top=24
+            .Width=95
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="FORWARD WPNS    /"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblForeWpn, UIControl))
+
+        'lblLeftWpns initial props
+        lblLeftWpns=New UILabel(oUILib)
+        With lblLeftWpns
+            .ControlName="lblLeftWpns"
+            .Left=67
+            .Top=34
+            .Width=95
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="LEFT WPNS    /"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblLeftWpns, UIControl))
+
+        'lblRearWpns initial props
+        lblRearWpns=New UILabel(oUILib)
+        With lblRearWpns
+            .ControlName="lblRearWpns"
+            .Left=67
+            .Top=44
+            .Width=95
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="REAR WPNS    /"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRearWpns, UIControl))
+
+        'lblRightWpns initial props
+        lblRightWpns=New UILabel(oUILib)
+        With lblRightWpns
+            .ControlName="lblRightWpns"
+            .Left=67
+            .Top=54
+            .Width=95
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="RIGHT WPNS    /"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRightWpns, UIControl))
+
+        'lblFuelAmmo initial props
+        lblFuelAmmo=New UILabel(oUILib)
+        With lblFuelAmmo
+            .ControlName="lblFuelAmmo"
+            .Left=67
+            .Top=64
+            .Width=95
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="FUEL / AMMO          /"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711681)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblFuelAmmo, UIControl))
+
+        'lblForeWpn1Stat initial props
+        lblForeWpn1Stat=New UILabel(oUILib)
+        With lblForeWpn1Stat
+            .ControlName="lblForeWpn1Stat"
+            .Left=152
+            .Top=24
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="1"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblForeWpn1Stat, UIControl))
+
+        'lblForeWpn2Stat initial props
+        lblForeWpn2Stat=New UILabel(oUILib)
+        With lblForeWpn2Stat
+            .ControlName="lblForeWpn2Stat"
+            .Left=165
+            .Top=24
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="2"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblForeWpn2Stat, UIControl))
+
+        'lblLeftWpn1Stat initial props
+        lblLeftWpn1Stat=New UILabel(oUILib)
+        With lblLeftWpn1Stat
+            .ControlName="lblLeftWpn1Stat"
+            .Left=127
+            .Top=34
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="1"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblLeftWpn1Stat, UIControl))
+
+        'lblLeftWpn2Stat initial props
+        lblLeftWpn2Stat=New UILabel(oUILib)
+        With lblLeftWpn2Stat
+            .ControlName="lblLeftWpn2Stat"
+            .Left=139
+            .Top=34
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="2"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblLeftWpn2Stat, UIControl))
+
+        'lblRearWpn1Stat initial props
+        lblRearWpn1Stat=New UILabel(oUILib)
+        With lblRearWpn1Stat
+            .ControlName="lblRearWpn1Stat"
+            .Left=130
+            .Top=44
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="1"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRearWpn1Stat, UIControl))
+
+        'lblRearWpn2Stat initial props
+        lblRearWpn2Stat=New UILabel(oUILib)
+        With lblRearWpn2Stat
+            .ControlName="lblRearWpn2Stat"
+            .Left=142
+            .Top=44
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="2"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRearWpn2Stat, UIControl))
+
+        'lblRightWpn1Stat initial props
+        lblRightWpn1Stat=New UILabel(oUILib)
+        With lblRightWpn1Stat
+            .ControlName="lblRightWpn1Stat"
+            .Left=133
+            .Top=54
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="1"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRightWpn1Stat, UIControl))
+
+        'lblRightWpn2Stat initial props
+        lblRightWpn2Stat=New UILabel(oUILib)
+        With lblRightWpn2Stat
+            .ControlName="lblRightWpn2Stat"
+            .Left=146
+            .Top=54
+            .Width=10
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="2"
+            .ForeColor=System.Drawing.Color.FromArgb(-8355712)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblRightWpn2Stat, UIControl))
+
+        'lblFuelCap initial props
+        lblFuelCap=New UILabel(oUILib)
+        With lblFuelCap
+            .ControlName="lblFuelCap"
+            .Left=134
+            .Top=64
+            .Width=22
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="100%"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblFuelCap, UIControl))
+
+        'lblAmmoCap initial props
+        lblAmmoCap=New UILabel(oUILib)
+        With lblAmmoCap
+            .ControlName="lblAmmoCap"
+            .Left=164
+            .Top=64
+            .Width=22
+            .Height=10
+            .Enabled=True
+            .Visible=True
+            .Caption="100%"
+            .ForeColor=System.Drawing.Color.FromArgb(-16711936)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblAmmoCap, UIControl))
+
+        'shpProgressBack initial props
+        shpProgressBack=New UIWindow(oUILib)
+        With shpProgressBack
+            .ControlName="shpProgressBack"
+            .Left=116
+            .Top=74
+            .Width=70
+            .Height=8
+            .Enabled=True
+            .Visible=True
+            .BorderColor=System.Drawing.Color.FromArgb(-16711936)
+            .FillColor=System.Drawing.Color.FromArgb(-65536)
+            .FullScreen=False
+        End With
+        Me.AddChild(CType(shpProgressBack, UIControl))
+
+        'shpProgressFore initial props
+        shpProgressFore=New UIWindow(oUILib)
+        With shpProgressFore
+            .ControlName="shpProgressFore"
+            .Left=116
+            .Top=75
+            .Width=50
+            .Height=6
+            .Enabled=True
+            .Visible=True
+            .BorderColor=System.Drawing.Color.FromArgb(-16711936)
+            .FillColor=System.Drawing.Color.FromArgb(-16711936)
+            .FullScreen=False
+        End With
+        Me.AddChild(CType(shpProgressFore, UIControl))
+
+        'vln2 initial props
+        hln1=New UILine(oUILib)
+        With hln1
+            .ControlName="hln1"
+            .Left=0
+            .Top=19
+            .Width=190
+            .Height=0
+            .Enabled=True
+            .Visible=True
+            .BorderColor=System.Drawing.Color.FromArgb(-16711681)
+        End With
+        Me.AddChild(CType(hln1, UIControl))
+
+        'lblExpLevel initial props
+        lblExpLevel=New UILabel(oUILib)
+        With lblExpLevel
+            .ControlName="lblExpLevel"
+            .Left=150
+            .Top=2
+            .Width=40
+            .Height=16
+            .Enabled=True
+            .Visible=True
+            .Caption="G"
+            .ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 0)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 12, FontStyle.Bold, GraphicsUnit.Point, 0))
+            .DrawBackImage=False
+            .FontFormat=DrawTextFormat.Right Or DrawTextFormat.VerticalCenter
+        End With
+        Me.AddChild(CType(lblExpLevel, UIControl))
+    End Sub
+    
+End Class

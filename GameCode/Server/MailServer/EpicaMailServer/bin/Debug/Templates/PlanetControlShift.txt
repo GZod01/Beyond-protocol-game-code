@@ -1,0 +1,13 @@
+New Census Data for [PlayerName]
+Balance of power shifts on [PlanetName]
+7
+Random
+5
+5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+New census data from the Galactic Census Commission released today indicates that [PlayerName] is now majority controller of [PlanetName]. This is great news for the people of [PlayerName] as it indicates great growth and enormous prosperity.
+<br><br>
+[EXCLUDE:PreviousPlayerName=""]
+The majority controller of [PlanetName] was previously [PreviousPlayerName] who lost the title when [PlayerName] acquired 75% of the planet's population. Experts speculate as to how this change will impact the political relationship between [PlayerName] and [PreviousPlayerName].
+[/EXCLUDE]
+</div>

@@ -1,0 +1,317 @@
+'Interface created from Interface Builder
+Public Class fraGraphics
+	Inherits UIWindow
+
+	Private WithEvents chkWindowed As UICheckBox
+	Private WithEvents lblRes As UILabel
+	Private WithEvents cboResolution As UIComboBox
+	Private WithEvents lblFOWRes As UILabel
+	Private WithEvents cboFOWRes As UIComboBox
+	Private WithEvents lblModelRes As UILabel
+	Private WithEvents cboTextureRes As UIComboBox
+	Private WithEvents lblWaterRes As UILabel
+	Private WithEvents cboWaterRes As UIComboBox
+	Private WithEvents lblEntityClipPlane As UILabel
+	Private WithEvents hscrEntityClipPlane As UIScrollBar
+	Private WithEvents chkSpecular As UICheckBox
+	Private WithEvents chkShowMinimap As UICheckBox
+	Private WithEvents chkDrawGrid As UICheckBox
+	Private WithEvents chkRenderCache As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraGraphics initial props
+		With Me
+			.ControlName="fraGraphics"
+			.Left=145
+			.Top=123
+			.Width=350
+			.Height=300
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'chkWindowed initial props
+		chkWindowed = New UICheckBox(oUILib)
+		With chkWindowed
+			.ControlName="chkWindowed"
+			.Left=15
+			.Top=15
+			.Width=92
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Windowed"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkWindowed, UIControl))
+
+		'lblRes initial props
+		lblRes = New UILabel(oUILib)
+		With lblRes
+			.ControlName="lblRes"
+			.Left=15
+			.Top=40
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Fullscreen Resolution:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRes, UIControl))
+
+		'cboResolution initial props
+		cboResolution = New UIComboBox(oUILib)
+		With cboResolution
+			.ControlName="cboResolution"
+			.Left=180
+			.Top=40
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboResolution, UIControl))
+
+		'lblFOWRes initial props
+		lblFOWRes = New UILabel(oUILib)
+		With lblFOWRes
+			.ControlName="lblFOWRes"
+			.Left=15
+			.Top=65
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Fog of War Resolution:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFOWRes, UIControl))
+
+		'cboFOWRes initial props
+		cboFOWRes = New UIComboBox(oUILib)
+		With cboFOWRes
+			.ControlName="cboFOWRes"
+			.Left=180
+			.Top=65
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboFOWRes, UIControl))
+
+		'lblModelRes initial props
+		lblModelRes = New UILabel(oUILib)
+		With lblModelRes
+			.ControlName="lblModelRes"
+			.Left=15
+			.Top=90
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Texture Resolution:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblModelRes, UIControl))
+
+		'cboTextureRes initial props
+		cboTextureRes = New UIComboBox(oUILib)
+		With cboTextureRes
+			.ControlName="cboTextureRes"
+			.Left=180
+			.Top=90
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboTextureRes, UIControl))
+
+		'lblWaterRes initial props
+		lblWaterRes = New UILabel(oUILib)
+		With lblWaterRes
+			.ControlName="lblWaterRes"
+			.Left=15
+			.Top=115
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Water Resolution:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWaterRes, UIControl))
+
+		'cboWaterRes initial props
+		cboWaterRes = New UIComboBox(oUILib)
+		With cboWaterRes
+			.ControlName="cboWaterRes"
+			.Left=180
+			.Top=115
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboWaterRes, UIControl))
+
+		'lblEntityClipPlane initial props
+		lblEntityClipPlane = New UILabel(oUILib)
+		With lblEntityClipPlane
+			.ControlName="lblEntityClipPlane"
+			.Left=15
+			.Top=150
+			.Width=157
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Entity Clip Plane:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEntityClipPlane, UIControl))
+
+		'hscrEntityClipPlane initial props
+		hscrEntityClipPlane = New UIScrollBar(oUILib, False)
+		With hscrEntityClipPlane
+			.ControlName="hscrEntityClipPlane"
+			.Left=180
+			.Top=150
+			.Width=155
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=10000
+			.MaxValue=40000
+			.MinValue=10000
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrEntityClipPlane, UIControl))
+
+		'chkSpecular initial props
+		chkSpecular = New UICheckBox(oUILib)
+		With chkSpecular
+			.ControlName="chkSpecular"
+			.Left=15
+			.Top=180
+			.Width=139
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Specular Lighting"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSpecular, UIControl))
+
+		'chkShowMinimap initial props
+		chkShowMinimap = New UICheckBox(oUILib)
+		With chkShowMinimap
+			.ControlName="chkShowMinimap"
+			.Left=15
+			.Top=205
+			.Width=122
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Show Mini Map"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkShowMinimap, UIControl))
+
+		'chkDrawGrid initial props
+		chkDrawGrid = New UICheckBox(oUILib)
+		With chkDrawGrid
+			.ControlName="chkDrawGrid"
+			.Left=15
+			.Top=230
+			.Width=152
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Draw Grid in Space"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkDrawGrid, UIControl))
+
+		'chkRenderCache initial props
+		chkRenderCache = New UICheckBox(oUILib)
+		With chkRenderCache
+			.ControlName="chkRenderCache"
+			.Left=15
+			.Top=255
+			.Width=181
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Render Mineral Caches"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRenderCache, UIControl))
+	End Sub
+End Class

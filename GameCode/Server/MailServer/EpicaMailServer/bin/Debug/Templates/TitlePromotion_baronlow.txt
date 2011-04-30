@@ -1,0 +1,15 @@
+Newly Appointed [PlayerTitle] [PlayerName]
+Newly Appointed [PlayerTitle] [PlayerName]
+23
+Random
+5
+5-7-
+<div style="font-size: 8pt; color:#E2E2E2;">
+The GTC and Galactic Senate annouced today that [PlayerName] is to be recognized as a [PlayerTitle]. Thousands of citizens gathered for the announcement and were exuberant in response to the news.
+<br><br>
+[PlayerName] addressed the people with a short speech which addressed some of the growing concerns of the citizens and also congratulated the citizens on being a successful society. The speech also included some encouragment to the citizens to celebrate the day.
+[EXCLUDE:OwnerOfTitlePreviously=""]
+<br><br>
+[OwnerOfTitlePreviously] previously held [OwnerOfTitlePreviouslyTitle] in [EnvirName]. However, the GTC and Galactic Senate found favor with [PlayerName] and altered the title recognition. It is unclear how this will affect the relationship between [PlayerName] and [OwnerOfTitlePreviously].
+[/EXCLUDE]
+</div>

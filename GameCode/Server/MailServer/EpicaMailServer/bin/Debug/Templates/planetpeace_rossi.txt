@@ -1,0 +1,9 @@
+[PlanetName] Returns to Peace! 
+[PlayerSideListA] and [PlayerSideListB] End Planetary Conflict: Citizens Rejoice! 
+20
+Jeffrey Rossi 
+4
+4- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Our observers on the ground of [PlanetName] are reporting an end to the conflict between [PlayerSideListA] and [PlayerSideListB]. This bloody conflict began at [StartOfBattle] and lasted [SpanOfBattle]. Citizens of [PlanetName] lost much in the conflict and are filled with mixed emotions of joy and sadness as they begin to pick up the pieces of what’s left of their homes as they attempt to rebuild what they lost in the conflict. <br><br>Military observers report that between both sides [TotalEntitiesLostBothSides] were destroyed and many great soldiers were lost in the field of battle. Hopefully this bloody conflict will serve as an example to other empires of the consequences of war and what terrible turmoil it can bring to those who are not ready for it. GNS News will continue to follow [PlayerSideListA] and [PlayerSideListB] as they continue their conflict but hopefully this war will soon be brought to an end and peace will be restored between these two groups. <br><br>GNS news extend their condolences to the families and friends of those who lost loved ones in this battle and hopes for a swift end to the conflict so that those affected by the war can begin the process of healing. 
+</div>

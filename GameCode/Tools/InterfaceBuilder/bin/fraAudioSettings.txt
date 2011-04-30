@@ -1,0 +1,394 @@
+'Interface created from Interface Builder
+Public Class fraAudio
+	Inherits UIWindow
+
+	Private WithEvents chkAudio As UICheckBox
+	Private WithEvents chkMusicOn As UICheckBox
+	Private WithEvents lblVolume As UILabel
+	Private WithEvents lblMaster As UILabel
+	Private WithEvents hscrMaster As UIScrollBar
+	Private WithEvents lblMusicVol As UILabel
+	Private WithEvents hscrVG0 As UIScrollBar
+	Private WithEvents lblWpn As UILabel
+	Private WithEvents lblEntityA As UILabel
+	Private WithEvents lblEnvirA As UILabel
+	Private WithEvents lblUnitSpeech As UILabel
+	Private WithEvents lblUI As UILabel
+	Private WithEvents lblGameNarr As UILabel
+	Private WithEvents hscrVG1 As UIScrollBar
+	Private WithEvents hscrVG2 As UIScrollBar
+	Private WithEvents hscrVG3 As UIScrollBar
+	Private WithEvents hscrVG4 As UIScrollBar
+	Private WithEvents hscrVG5 As UIScrollBar
+	Private WithEvents hscrVG6 As UIScrollBar
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraAudio initial props
+		With Me
+			.ControlName="fraAudio"
+			.Left=199
+			.Top=71
+			.Width=350
+			.Height=300
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+			.Caption = "Audio Settings"
+		End With
+
+		'chkAudio initial props
+		chkAudio = New UICheckBox(oUILib)
+		With chkAudio
+			.ControlName="chkAudio"
+			.Left=15
+			.Top=15
+			.Width=123
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Audio Enabled"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAudio, UIControl))
+
+		'chkMusicOn initial props
+		chkMusicOn = New UICheckBox(oUILib)
+		With chkMusicOn
+			.ControlName="chkMusicOn"
+			.Left=15
+			.Top=35
+			.Width=123
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Music Enabled"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkMusicOn, UIControl))
+
+		'lblVolume initial props
+		lblVolume = New UILabel(oUILib)
+		With lblVolume
+			.ControlName="lblVolume"
+			.Left=15
+			.Top=65
+			.Width=134
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Volume Settings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblVolume, UIControl))
+
+		'lblMaster initial props
+		lblMaster = New UILabel(oUILib)
+		With lblMaster
+			.ControlName="lblMaster"
+			.Left=40
+			.Top=90
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Master:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMaster, UIControl))
+
+		'hscrMaster initial props
+		hscrMaster = New UIScrollBar(oUILib, False)
+		With hscrMaster
+			.ControlName="hscrMaster"
+			.Left=150
+			.Top=91
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrMaster, UIControl))
+
+		'lblMusicVol initial props
+		lblMusicVol = New UILabel(oUILib)
+		With lblMusicVol
+			.ControlName="lblMusicVol"
+			.Left=40
+			.Top=115
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Music:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMusicVol, UIControl))
+
+		'hscrVG0 initial props
+		hscrVG0 = New UIScrollBar(oUILib, False)
+		With hscrVG0
+			.ControlName="hscrVG0"
+			.Left=150
+			.Top=116
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG0, UIControl))
+
+		'lblWpn initial props
+		lblWpn = New UILabel(oUILib)
+		With lblWpn
+			.ControlName="lblWpn"
+			.Left=40
+			.Top=140
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Combat:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblWpn, UIControl))
+
+		'lblEntityA initial props
+		lblEntityA = New UILabel(oUILib)
+		With lblEntityA
+			.ControlName="lblEntityA"
+			.Left=40
+			.Top=165
+			.Width=96
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Entity Sound:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEntityA, UIControl))
+
+		'lblEnvirA initial props
+		lblEnvirA = New UILabel(oUILib)
+		With lblEnvirA
+			.ControlName="lblEnvirA"
+			.Left=40
+			.Top=190
+			.Width=95
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Environment:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblEnvirA, UIControl))
+
+		'lblUnitSpeech initial props
+		lblUnitSpeech = New UILabel(oUILib)
+		With lblUnitSpeech
+			.ControlName="lblUnitSpeech"
+			.Left=40
+			.Top=215
+			.Width=89
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Unit Speech:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblUnitSpeech, UIControl))
+
+		'lblUI initial props
+		lblUI = New UILabel(oUILib)
+		With lblUI
+			.ControlName="lblUI"
+			.Left=40
+			.Top=240
+			.Width=65
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="UI:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblUI, UIControl))
+
+		'lblGameNarr initial props
+		lblGameNarr = New UILabel(oUILib)
+		With lblGameNarr
+			.ControlName="lblGameNarr"
+			.Left=40
+			.Top=265
+			.Width=95
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Game Voice:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblGameNarr, UIControl))
+
+		'hscrVG1 initial props
+		hscrVG1 = New UIScrollBar(oUILib, False)
+		With hscrVG1
+			.ControlName="hscrVG1"
+			.Left=150
+			.Top=141
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG1, UIControl))
+
+		'hscrVG2 initial props
+		hscrVG2 = New UIScrollBar(oUILib, False)
+		With hscrVG2
+			.ControlName="hscrVG2"
+			.Left=150
+			.Top=166
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG2, UIControl))
+
+		'hscrVG3 initial props
+		hscrVG3 = New UIScrollBar(oUILib, False)
+		With hscrVG3
+			.ControlName="hscrVG3"
+			.Left=150
+			.Top=191
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG3, UIControl))
+
+		'hscrVG4 initial props
+		hscrVG4 = New UIScrollBar(oUILib, False)
+		With hscrVG4
+			.ControlName="hscrVG4"
+			.Left=150
+			.Top=216
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG4, UIControl))
+
+		'hscrVG5 initial props
+		hscrVG5 = New UIScrollBar(oUILib, False)
+		With hscrVG5
+			.ControlName="hscrVG5"
+			.Left=150
+			.Top=241
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG5, UIControl))
+
+		'hscrVG6 initial props
+		hscrVG6 = New UIScrollBar(oUILib, False)
+		With hscrVG6
+			.ControlName="hscrVG6"
+			.Left=150
+			.Top=266
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Value=0
+			.MaxValue=100
+			.MinValue=0
+			.SmallChange=1
+			.LargeChange=1
+			.ReverseDirection=False
+		End With
+		Me.AddChild(CType(hscrVG6, UIControl))
+	End Sub
+End Class

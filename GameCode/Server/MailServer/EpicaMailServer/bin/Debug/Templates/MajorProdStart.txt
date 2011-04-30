@@ -1,0 +1,11 @@
+Huge Government Contract awarded by [PlayerNamePossessive] empire
+Windfall Contract awarded by [PlayerNamePossessive] empire
+6
+Random
+6
+6-
+<div style="font-size: 8pt; color:#E2E2E2;">
+[CorporationName] announced today that it has just finished talks with the government offices of [PlayerName] in an effort to begin mass production on several projects.
+<br><br>
+"This is a huge boost to our quarterly outlook.", one spokesperson of [CorporationName] mentioned, "We stand to gain a lot of ground on our competitors."
+</div>

@@ -1,0 +1,79 @@
+'Interface created from Interface Builder
+Public Class ctlGoalAA
+	Inherits UIWindow
+
+	Private WithEvents lblAgent As UILabel
+	Private WithEvents lblSkill As UILabel
+	Private WithEvents lblScore As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'ctlGoalAA initial props
+		With Me
+			.ControlName="ctlGoalAA"
+			.Left=197
+			.Top=240
+			.Width=170
+			.Height=60
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblAgent initial props
+		lblAgent = New UILabel(oUILib)
+		With lblAgent
+			.ControlName="lblAgent"
+			.Left=5
+			.Top=2
+			.Width=165
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Agent Name Here"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblAgent, UIControl))
+
+		'lblSkill initial props
+		lblSkill = New UILabel(oUILib)
+		With lblSkill
+			.ControlName="lblSkill"
+			.Left=5
+			.Top=20
+			.Width=165
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Demolitions (79)"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblSkill, UIControl))
+
+		'lblScore initial props
+		lblScore = New UILabel(oUILib)
+		With lblScore
+			.ControlName="lblScore"
+			.Left=5
+			.Top=40
+			.Width=160
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="6 / 15"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblScore, UIControl))
+	End Sub
+End Class

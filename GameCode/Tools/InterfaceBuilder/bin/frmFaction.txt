@@ -1,0 +1,854 @@
+'Interface created from Interface Builder
+Public Class frmFaction
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lblFactionSlots As UILabel
+	Private WithEvents cboSlot1 As UIComboBox
+	Private WithEvents cboSlot2 As UIComboBox
+	Private WithEvents cboSlot3 As UIComboBox
+	Private WithEvents cboSlot4 As UIComboBox
+	Private WithEvents cboSlot5 As UIComboBox
+	Private WithEvents lblTheirRank As UILabel
+	Private WithEvents lblTheirTitle1 As UILabel
+	Private WithEvents lblTheirTitle2 As UILabel
+	Private WithEvents lblTheirTitle3 As UILabel
+	Private WithEvents lblTheirTitle4 As UILabel
+	Private WithEvents lblTheirTitle5 As UILabel
+	Private WithEvents lblStatus1 As UILabel
+	Private WithEvents lblStatus As UILabel
+	Private WithEvents btnRemove1 As UIButton
+	Private WithEvents btnRemove2 As UIButton
+	Private WithEvents btnRemove3 As UIButton
+	Private WithEvents btnRemove4 As UIButton
+	Private WithEvents btnRemove5 As UIButton
+	Private WithEvents lblStatus2 As UILabel
+	Private WithEvents lblStatus3 As UILabel
+	Private WithEvents lblStatus4 As UILabel
+	Private WithEvents lblStatus5 As UILabel
+	Private WithEvents lblFactionBonus As UILabel
+	Private WithEvents lblFactionCnt As UILabel
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents txtFaction1 As UITextBox
+	Private WithEvents lblFactionStatus As UILabel
+	Private WithEvents lblFactionStatus1 As UILabel
+	Private WithEvents lblFactionStatus2 As UILabel
+	Private WithEvents lblFactionStatus3 As UILabel
+	Private WithEvents txtFaction2 As UITextBox
+	Private WithEvents txtFaction3 As UITextBox
+	Private WithEvents btnRemoveFaction1 As UIButton
+	Private WithEvents btnRemoveFaction2 As UIButton
+	Private WithEvents btnRemoveFaction3 As UIButton
+	Private WithEvents lblResTimeReduct As UILabel
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents btnHelp As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmFaction initial props
+		With Me
+			.ControlName="frmFaction"
+			.Left=187
+			.Top=81
+			.Width=512
+			.Height=377
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=164
+			.Height=22
+			.Enabled=True
+			.Visible=True
+			.Caption="Faction Management"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=487
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=1
+			.Top=30
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=35
+			.Width=218
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Your Current Title: Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lblFactionSlots initial props
+		lblFactionSlots = New UILabel(oUILib)
+		With lblFactionSlots
+			.ControlName="lblFactionSlots"
+			.Left=5
+			.Top=60
+			.Width=91
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Faction Slots"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionSlots, UIControl))
+
+		'cboSlot1 initial props
+		cboSlot1 = New UIComboBox(oUILib)
+		With cboSlot1
+			.ControlName="cboSlot1"
+			.Left=5
+			.Top=80
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSlot1, UIControl))
+
+		'cboSlot2 initial props
+		cboSlot2 = New UIComboBox(oUILib)
+		With cboSlot2
+			.ControlName="cboSlot2"
+			.Left=5
+			.Top=105
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSlot2, UIControl))
+
+		'cboSlot3 initial props
+		cboSlot3 = New UIComboBox(oUILib)
+		With cboSlot3
+			.ControlName="cboSlot3"
+			.Left=5
+			.Top=130
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSlot3, UIControl))
+
+		'cboSlot4 initial props
+		cboSlot4 = New UIComboBox(oUILib)
+		With cboSlot4
+			.ControlName="cboSlot4"
+			.Left=5
+			.Top=155
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSlot4, UIControl))
+
+		'cboSlot5 initial props
+		cboSlot5 = New UIComboBox(oUILib)
+		With cboSlot5
+			.ControlName="cboSlot5"
+			.Left=5
+			.Top=180
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(CType(cboSlot5, UIControl))
+
+		'lblTheirRank initial props
+		lblTheirRank = New UILabel(oUILib)
+		With lblTheirRank
+			.ControlName="lblTheirRank"
+			.Left=185
+			.Top=60
+			.Width=91
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Their Title"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirRank, UIControl))
+
+		'lblTheirTitle1 initial props
+		lblTheirTitle1 = New UILabel(oUILib)
+		With lblTheirTitle1
+			.ControlName="lblTheirTitle1"
+			.Left=190
+			.Top=80
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirTitle1, UIControl))
+
+		'lblTheirTitle2 initial props
+		lblTheirTitle2 = New UILabel(oUILib)
+		With lblTheirTitle2
+			.ControlName="lblTheirTitle2"
+			.Left=190
+			.Top=105
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirTitle2, UIControl))
+
+		'lblTheirTitle3 initial props
+		lblTheirTitle3 = New UILabel(oUILib)
+		With lblTheirTitle3
+			.ControlName="lblTheirTitle3"
+			.Left=190
+			.Top=130
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirTitle3, UIControl))
+
+		'lblTheirTitle4 initial props
+		lblTheirTitle4 = New UILabel(oUILib)
+		With lblTheirTitle4
+			.ControlName="lblTheirTitle4"
+			.Left=190
+			.Top=155
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirTitle4, UIControl))
+
+		'lblTheirTitle5 initial props
+		lblTheirTitle5 = New UILabel(oUILib)
+		With lblTheirTitle5
+			.ControlName="lblTheirTitle5"
+			.Left=190
+			.Top=180
+			.Width=70
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Magistrate"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTheirTitle5, UIControl))
+
+		'lblStatus1 initial props
+		lblStatus1 = New UILabel(oUILib)
+		With lblStatus1
+			.ControlName="lblStatus1"
+			.Left=280
+			.Top=80
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus1, UIControl))
+
+		'lblStatus initial props
+		lblStatus = New UILabel(oUILib)
+		With lblStatus
+			.ControlName="lblStatus"
+			.Left=275
+			.Top=60
+			.Width=91
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus, UIControl))
+
+		'btnRemove1 initial props
+		btnRemove1 = New UIButton(oUILib)
+		With btnRemove1
+			.ControlName="btnRemove1"
+			.Left=430
+			.Top=80
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove1, UIControl))
+
+		'btnRemove2 initial props
+		btnRemove2 = New UIButton(oUILib)
+		With btnRemove2
+			.ControlName="btnRemove2"
+			.Left=430
+			.Top=105
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove2, UIControl))
+
+		'btnRemove3 initial props
+		btnRemove3 = New UIButton(oUILib)
+		With btnRemove3
+			.ControlName="btnRemove3"
+			.Left=430
+			.Top=130
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove3, UIControl))
+
+		'btnRemove4 initial props
+		btnRemove4 = New UIButton(oUILib)
+		With btnRemove4
+			.ControlName="btnRemove4"
+			.Left=430
+			.Top=155
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove4, UIControl))
+
+		'btnRemove5 initial props
+		btnRemove5 = New UIButton(oUILib)
+		With btnRemove5
+			.ControlName="btnRemove5"
+			.Left=430
+			.Top=180
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemove5, UIControl))
+
+		'lblStatus2 initial props
+		lblStatus2 = New UILabel(oUILib)
+		With lblStatus2
+			.ControlName="lblStatus2"
+			.Left=280
+			.Top=105
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus2, UIControl))
+
+		'lblStatus3 initial props
+		lblStatus3 = New UILabel(oUILib)
+		With lblStatus3
+			.ControlName="lblStatus3"
+			.Left=280
+			.Top=130
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus3, UIControl))
+
+		'lblStatus4 initial props
+		lblStatus4 = New UILabel(oUILib)
+		With lblStatus4
+			.ControlName="lblStatus4"
+			.Left=280
+			.Top=155
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus4, UIControl))
+
+		'lblStatus5 initial props
+		lblStatus5 = New UILabel(oUILib)
+		With lblStatus5
+			.ControlName="lblStatus5"
+			.Left=280
+			.Top=180
+			.Width=150
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblStatus5, UIControl))
+
+		'lblFactionBonus initial props
+		lblFactionBonus = New UILabel(oUILib)
+		With lblFactionBonus
+			.ControlName="lblFactionBonus"
+			.Left=30
+			.Top=205
+			.Width=218
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Your Faction Bonus: 0%"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionBonus, UIControl))
+
+		'lblFactionCnt initial props
+		lblFactionCnt = New UILabel(oUILib)
+		With lblFactionCnt
+			.ControlName="lblFactionCnt"
+			.Left=5
+			.Top=240
+			.Width=207
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="You are currently in 0 factions:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionCnt, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=1
+			.Top=230
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'txtFaction1 initial props
+		txtFaction1 = New UITextBox(oUILib)
+		With txtFaction1
+			.ControlName="txtFaction1"
+			.Left=5
+			.Top=260
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFaction1, UIControl))
+
+		'lblFactionStatus initial props
+		lblFactionStatus = New UILabel(oUILib)
+		With lblFactionStatus
+			.ControlName="lblFactionStatus"
+			.Left=245
+			.Top=240
+			.Width=91
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Status"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionStatus, UIControl))
+
+		'lblFactionStatus1 initial props
+		lblFactionStatus1 = New UILabel(oUILib)
+		With lblFactionStatus1
+			.ControlName="lblFactionStatus1"
+			.Left=250
+			.Top=260
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionStatus1, UIControl))
+
+		'lblFactionStatus2 initial props
+		lblFactionStatus2 = New UILabel(oUILib)
+		With lblFactionStatus2
+			.ControlName="lblFactionStatus2"
+			.Left=250
+			.Top=285
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionStatus2, UIControl))
+
+		'lblFactionStatus3 initial props
+		lblFactionStatus3 = New UILabel(oUILib)
+		With lblFactionStatus3
+			.ControlName="lblFactionStatus3"
+			.Left=250
+			.Top=310
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Waiting for Acceptance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFactionStatus3, UIControl))
+
+		'txtFaction2 initial props
+		txtFaction2 = New UITextBox(oUILib)
+		With txtFaction2
+			.ControlName="txtFaction2"
+			.Left=5
+			.Top=285
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFaction2, UIControl))
+
+		'txtFaction3 initial props
+		txtFaction3 = New UITextBox(oUILib)
+		With txtFaction3
+			.ControlName="txtFaction3"
+			.Left=5
+			.Top=310
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtFaction3, UIControl))
+
+		'btnRemoveFaction1 initial props
+		btnRemoveFaction1 = New UIButton(oUILib)
+		With btnRemoveFaction1
+			.ControlName="btnRemoveFaction1"
+			.Left=430
+			.Top=260
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemoveFaction1, UIControl))
+
+		'btnRemoveFaction2 initial props
+		btnRemoveFaction2 = New UIButton(oUILib)
+		With btnRemoveFaction2
+			.ControlName="btnRemoveFaction2"
+			.Left=430
+			.Top=285
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemoveFaction2, UIControl))
+
+		'btnRemoveFaction3 initial props
+		btnRemoveFaction3 = New UIButton(oUILib)
+		With btnRemoveFaction3
+			.ControlName="btnRemoveFaction3"
+			.Left=430
+			.Top=310
+			.Width=80
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnRemoveFaction3, UIControl))
+
+		'lblResTimeReduct initial props
+		lblResTimeReduct = New UILabel(oUILib)
+		With lblResTimeReduct
+			.ControlName="lblResTimeReduct"
+			.Left=1
+			.Top=350
+			.Width=511
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Current Research Time Reduction: 0%"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(5, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblResTimeReduct, UIControl))
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=1
+			.Top=340
+			.Width=511
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv3, UIControl))
+
+		'btnHelp initial props
+		btnHelp = New UIButton(oUILib)
+		With btnHelp
+			.ControlName="btnHelp"
+			.Left=462
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="?"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnHelp, UIControl))
+	End Sub
+End Class

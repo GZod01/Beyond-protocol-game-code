@@ -1,0 +1,163 @@
+'Interface created from Interface Builder
+Public Class frmSignon
+	Inherits UIWindow
+
+	Private WithEvents txtUserName As UITextBox
+	Private WithEvents lblUserName As UILabel
+	Private WithEvents lblPassword As UILabel
+	Private WithEvents txtPassword As UITextBox
+	Private WithEvents cmdLogin As UIButton
+	Private WithEvents cmdExit As UIButton
+	Private WithEvents lblSignon As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmSignon initial props
+		With Me
+			.ControlName="frmSignon"
+			.Left=266
+			.Top=200
+			.Width=245
+			.Height=153
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'txtUserName initial props
+		txtUserName = New UITextBox(oUILib)
+		With txtUserName
+			.ControlName="txtUserName"
+			.Left=102
+			.Top=42
+			.Width=129
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtUserName)
+
+		'lblUserName initial props
+		lblUserName = New UILabel(oUILib)
+		With lblUserName
+			.ControlName="lblUserName"
+			.Left=13
+			.Top=42
+			.Width=100
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="User Name:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblUserName)
+
+		'lblPassword initial props
+		lblPassword = New UILabel(oUILib)
+		With lblPassword
+			.ControlName="lblPassword"
+			.Left=13
+			.Top=72
+			.Width=100
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Password:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblPassword)
+
+		'txtPassword initial props
+		txtPassword = New UITextBox(oUILib)
+		With txtPassword
+			.ControlName="txtPassword"
+			.Left=102
+			.Top=72
+			.Width=129
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+			.BackColorEnabled=System.Drawing.Color.FromArgb(-1)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(-9868951)
+			.MaxLength=0
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(txtPassword)
+
+		'cmdLogin initial props
+		cmdLogin = New UIButton(oUILib)
+		With cmdLogin
+			.ControlName="cmdLogin"
+			.Left=13
+			.Top=112
+			.Width=100
+			.Height=29
+			.Enabled=True
+			.Visible=True
+			.Caption="Login"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(cmdLogin)
+
+		'cmdExit initial props
+		cmdExit = New UIButton(oUILib)
+		With cmdExit
+			.ControlName="cmdExit"
+			.Left=130
+			.Top=112
+			.Width=100
+			.Height=29
+			.Enabled=True
+			.Visible=True
+			.Caption="Exit"
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(cmdExit)
+
+		'lblSignon initial props
+		lblSignon = New UILabel(oUILib)
+		With lblSignon
+			.ControlName="lblSignon"
+			.Left=0
+			.Top=3
+			.Width=245
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Epica Online Signon"
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+		End With
+		Me.AddChild(lblSignon)
+	End Sub
+End Class

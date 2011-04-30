@@ -1,0 +1,9 @@
+War from above! 
+[PlayerName] has engaged [PlayerName2] in [SystemName]. 
+1
+Jeffrey Rossi
+7 
+7-3- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+GNS News correspondents inside [SystemName] are reporting that the forces of [PlayerName] have initiated combat with their enemy [PlayerName2]. Military analysts assume that this engagement is part of a larger effort [EXCLUDE:TotalInvolved<3] by [PlayerSideListA] to finally crush [PlayerSideListB][/EXCLUDE] but no one in [SystemName] knows for sure what the motives of [PlayerSideListA] may be. It has been reported that the conflict began at [StartOfBattle] and so far [TotalEntitiesLostBothSides] have been confirmed to have been destroyed on both sides.<br><br>This could easily turn into a very destructive war and our military analysts inside [SystemName] will be doing their very best to analyze the strategic situation and provide you all with the latest updates as this battle rages on. Until next time stick with GNS news for all the latest on the battle in [SystemName]. 
+</div>

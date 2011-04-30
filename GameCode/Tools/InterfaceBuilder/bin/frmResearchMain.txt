@@ -1,0 +1,568 @@
+'Interface created from Interface Builder
+Public Class frmResearchMain
+	Inherits UIWindow
+
+	Private WithEvents btnAlloy As UIButton
+	Private WithEvents lblSelect As UILabel
+	Private WithEvents btnMineral As UIButton
+	Private WithEvents btnArmor As UIButton
+	Private WithEvents btnEngine As UIButton
+	Private WithEvents btnHangar As UIButton
+	Private WithEvents btnRadar As UIButton
+	Private WithEvents btnShield As UIButton
+	Private WithEvents btnWeapon As UIButton
+	Private WithEvents btnFacility As UIButton
+	Private WithEvents btnGround As UIButton
+	Private WithEvents btnMechSuit As UIButton
+	Private WithEvents btnSeaship As UIButton
+	Private WithEvents btnSpaceShip As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblMaterials As UILabel
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lblComponent As UILabel
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents lblDesigns As UILabel
+	Private WithEvents lnDiv4 As UILine
+	Private WithEvents lblResExist As UILabel
+	Private WithEvents lnDiv5 As UILine
+	Private WithEvents lstTechs As UIListBox
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv6 As UILine
+	Private WithEvents btnResearch As UIButton
+	Private WithEvents lblComponentName As UILabel
+	Private WithEvents lblComponentType As UILabel
+	Private WithEvents lblResPhase As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmResearchMain initial props
+		With Me
+			.ControlName="frmResearchMain"
+			.Left=199
+			.Top=51
+			.Width=375
+			.Height=465
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'btnAlloy initial props
+		btnAlloy = New UIButton(oUILib)
+		With btnAlloy
+			.ControlName="btnAlloy"
+			.Left=250
+			.Top=202
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Alloy"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnAlloy)
+
+		'lblSelect initial props
+		lblSelect = New UILabel(oUILib)
+		With lblSelect
+			.ControlName="lblSelect"
+			.Left=5
+			.Top=175
+			.Width=317
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="OR SELECT A RESEARCH TYPE TO DESIGN"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblSelect)
+
+		'btnMineral initial props
+		btnMineral = New UIButton(oUILib)
+		With btnMineral
+			.ControlName="btnMineral"
+			.Left=105
+			.Top=202
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Mineral"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnMineral)
+
+		'btnArmor initial props
+		btnArmor = New UIButton(oUILib)
+		With btnArmor
+			.ControlName="btnArmor"
+			.Left=105
+			.Top=240
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Armor"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnArmor)
+
+		'btnEngine initial props
+		btnEngine = New UIButton(oUILib)
+		With btnEngine
+			.ControlName="btnEngine"
+			.Left=105
+			.Top=270
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Engine"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnEngine)
+
+		'btnHangar initial props
+		btnHangar = New UIButton(oUILib)
+		With btnHangar
+			.ControlName="btnHangar"
+			.Left=105
+			.Top=300
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Hangar"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnHangar)
+
+		'btnRadar initial props
+		btnRadar = New UIButton(oUILib)
+		With btnRadar
+			.ControlName="btnRadar"
+			.Left=250
+			.Top=240
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Radar"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnRadar)
+
+		'btnShield initial props
+		btnShield = New UIButton(oUILib)
+		With btnShield
+			.ControlName="btnShield"
+			.Left=250
+			.Top=270
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Shield"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnShield)
+
+		'btnWeapon initial props
+		btnWeapon = New UIButton(oUILib)
+		With btnWeapon
+			.ControlName="btnWeapon"
+			.Left=250
+			.Top=300
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Weapon"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnWeapon)
+
+		'btnFacility initial props
+		btnFacility = New UIButton(oUILib)
+		With btnFacility
+			.ControlName="btnFacility"
+			.Left=105
+			.Top=340
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Facility"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnFacility)
+
+		'btnGround initial props
+		btnGround = New UIButton(oUILib)
+		With btnGround
+			.ControlName="btnGround"
+			.Left=105
+			.Top=370
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Land Vehicle"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnGround)
+
+		'btnMechSuit initial props
+		btnMechSuit = New UIButton(oUILib)
+		With btnMechSuit
+			.ControlName="btnMechSuit"
+			.Left=177
+			.Top=400
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Mechsuit"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnMechSuit)
+
+		'btnSeaship initial props
+		btnSeaship = New UIButton(oUILib)
+		With btnSeaship
+			.ControlName="btnSeaship"
+			.Left=250
+			.Top=340
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Naval Ship"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnSeaship)
+
+		'btnSpaceShip initial props
+		btnSpaceShip = New UIButton(oUILib)
+		With btnSpaceShip
+			.ControlName="btnSpaceShip"
+			.Left=250
+			.Top=370
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Space Ship"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnSpaceShip)
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=194
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv1)
+
+		'lblMaterials initial props
+		lblMaterials = New UILabel(oUILib)
+		With lblMaterials
+			.ControlName="lblMaterials"
+			.Left=5
+			.Top=203
+			.Width=69
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Materials:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblMaterials)
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=0
+			.Top=230
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv2)
+
+		'lblComponent initial props
+		lblComponent = New UILabel(oUILib)
+		With lblComponent
+			.ControlName="lblComponent"
+			.Left=5
+			.Top=240
+			.Width=92
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Components:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblComponent)
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=0
+			.Top=330
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv3)
+
+		'lblDesigns initial props
+		lblDesigns = New UILabel(oUILib)
+		With lblDesigns
+			.ControlName="lblDesigns"
+			.Left=5
+			.Top=340
+			.Width=92
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Designs:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblDesigns)
+
+		'lnDiv4 initial props
+		lnDiv4 = New UILine(oUILib)
+		With lnDiv4
+			.ControlName="lnDiv4"
+			.Left=0
+			.Top=170
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv4)
+
+		'lblResExist initial props
+		lblResExist = New UILabel(oUILib)
+		With lblResExist
+			.ControlName="lblResExist"
+			.Left=5
+			.Top=5
+			.Width=317
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="RESEARCH AN EXISTING DESIGN"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblResExist)
+
+		'lnDiv5 initial props
+		lnDiv5 = New UILine(oUILib)
+		With lnDiv5
+			.ControlName="lnDiv5"
+			.Left=0
+			.Top=25
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv5)
+
+		'lstTechs initial props
+		lstTechs = New UIListBox(oUILib)
+		With lstTechs
+			.ControlName="lstTechs"
+			.Left=5
+			.Top=45
+			.Width=365
+			.Height=96
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Courier New", 8.25, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lstTechs)
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=135
+			.Top=434
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnClose)
+
+		'lnDiv6 initial props
+		lnDiv6 = New UILine(oUILib)
+		With lnDiv6
+			.ControlName="lnDiv6"
+			.Left=0
+			.Top=427
+			.Width=375
+			.Height=1
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(lnDiv6)
+
+		'btnResearch initial props
+		btnResearch = New UIButton(oUILib)
+		With btnResearch
+			.ControlName="btnResearch"
+			.Left=252
+			.Top=145
+			.Width=119
+			.Height=23
+			.Enabled=True
+			.Visible=True
+			.Caption="Research"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnResearch)
+
+		'lblComponentName initial props
+		lblComponentName = New UILabel(oUILib)
+		With lblComponentName
+			.ControlName="lblComponentName"
+			.Left=5
+			.Top=28
+			.Width=101
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Component Name"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblComponentName)
+
+		'lblComponentType initial props
+		lblComponentType = New UILabel(oUILib)
+		With lblComponentType
+			.ControlName="lblComponentType"
+			.Left=145
+			.Top=28
+			.Width=32
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Type"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblComponentType)
+
+		'lblResPhase initial props
+		lblResPhase = New UILabel(oUILib)
+		With lblResPhase
+			.ControlName="lblResPhase"
+			.Left=230
+			.Top=28
+			.Width=100
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Research Phase"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblResPhase)
+	End Sub
+End Class

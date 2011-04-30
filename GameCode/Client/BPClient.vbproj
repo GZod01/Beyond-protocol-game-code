@@ -1,0 +1,542 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1516A81C-D14B-4192-99A0-3AA5B587EB24}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>bp.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>BPClient</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>BPClient</RootNamespace>
+    <StartupObject>BPClient.frmMain</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ManifestCertificateThumbprint>266F02F5DA7447847C4C74E066591B5A5C6DA125</ManifestCertificateThumbprint>
+    <ManifestKeyFile>EpicaClient_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Documents and Settings\Matthew Campbell\Desktop\TempCode\Epica_Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>Internet</TargetZone>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BPClient.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>full</DebugType>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BPClient.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TEST_HARNESS=1</DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>none</DebugType>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX">
+      <Name>Microsoft.DirectX</Name>
+      <HintPath>..\..\..\..\..\WINNT\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D">
+      <Name>Microsoft.DirectX.Direct3D</Name>
+      <HintPath>..\..\..\..\..\WINNT\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Direct3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2903.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.DirectSound">
+      <Name>Microsoft.DirectX.DirectSound</Name>
+      <HintPath>..\..\..\..\..\WINNT\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BPClient\Agents\AgentRenderer.vb" />
+    <Compile Include="BPClient\Agents\Agent.vb" />
+    <Compile Include="BPClient\Agents\AgentAssignment.vb" />
+    <Compile Include="BPClient\Agents\Goal.vb" />
+    <Compile Include="BPClient\Agents\Mission.vb" />
+    <Compile Include="BPClient\Arena\Arena.vb" />
+    <Compile Include="BPClient\Arena\ArenaContestant.vb" />
+    <Compile Include="BPClient\Arena\ArenaMap\ArenaMap.vb" />
+    <Compile Include="BPClient\Arena\ArenaMap\MapGeography.vb" />
+    <Compile Include="BPClient\Arena\ArenaSide.vb" />
+    <Compile Include="BPClient\Arena\ArenaSidePlayer.vb" />
+    <Compile Include="BPClient\Arena\ArenaTypes\DM_Arena.vb" />
+    <Compile Include="BPClient\Arena\UnitLimit.vb" />
+    <Compile Include="BPClient\Base64.vb" />
+    <Compile Include="BPClient\Entity\RouteTemplate.vb" />
+    <Compile Include="BPClient\Entity\UnitProdQueue.vb" />
+    <Compile Include="BPClient\GFX\BPFont.vb" />
+    <Compile Include="BPClient\GFX\BPLine.vb" />
+    <Compile Include="BPClient\GFX\BPSprite.vb" />
+    <Compile Include="BPClient\GFX\Shaders\BumpedPlanet.vb" />
+    <Compile Include="BPClient\GFX\Shaders\CosmoShader.vb" />
+    <Compile Include="BPClient\GFX\Shaders\LavaRender.vb" />
+    <Compile Include="BPClient\GFX\Shaders\ModelShader.vb" />
+    <Compile Include="BPClient\GFX\Shaders\TerrainShader.vb" />
+    <Compile Include="BPClient\Senate\EmpMsgBoardItem.vb" />
+    <Compile Include="BPClient\SpecialFX\AOEExplosionMgr.vb" />
+    <Compile Include="BPClient\SpecialFX\BombMgr.vb" />
+    <Compile Include="BPClient\SpecialFX\WarpointRewards.vb" />
+    <Compile Include="BPClient\Transport\Transport.vb" />
+    <Compile Include="BPClient\Transport\TransportCargo.vb" />
+    <Compile Include="BPClient\Transport\TransportRoute.vb" />
+    <Compile Include="BPClient\Transport\TransportRouteAction.vb" />
+    <Compile Include="BPClient\Tutorial\OldTutorialManager.vb" />
+    <Compile Include="BPClient\Tutorial\TutorialAlert.vb" />
+    <Compile Include="BPClient\UIScreens\Arena\frmArenaConfig.fraDMArena.vb" />
+    <Compile Include="BPClient\UIScreens\Arena\frmArenaConfig.vb" />
+    <Compile Include="BPClient\UIScreens\Arena\frmArenaMain.vb" />
+    <Compile Include="BPClient\UIScreens\Arena\frmArenaWaiting.vb" />
+    <Compile Include="BPClient\UIScreens\BugReport\frmSubmitBug.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmBuildFilter.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmAliasLogins.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmRouteTemplate.vb" />
+    <Compile Include="BPClient\UIScreens\frmClaim.vb" />
+    <Compile Include="BPClient\UIScreens\frmCredits.vb" />
+    <Compile Include="BPClient\UIScreens\frmSelectRespawn.vb" />
+    <Compile Include="BPClient\UIScreens\frmSpawnChoice.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildBillboard.vb" />
+    <Compile Include="BPClient\Guild\Guild.vb" />
+    <Compile Include="BPClient\Guild\GuildEvent.vb" />
+    <Compile Include="BPClient\Guild\GuildMember.vb" />
+    <Compile Include="BPClient\Guild\GuildRank.vb" />
+    <Compile Include="BPClient\Guild\GuildRel.vb" />
+    <Compile Include="BPClient\Guild\GuildVote.vb" />
+    <Compile Include="BPClient\Guild\SketchPad.vb" />
+    <Compile Include="BPClient\Metrics\MetricMgr.vb" />
+    <Compile Include="BPClient\Player\PlayerItemIntel.vb" />
+    <Compile Include="BPClient\Agents\PlayerMission.vb" />
+    <Compile Include="BPClient\Agents\PlayerMissionGoal.vb" />
+    <Compile Include="BPClient\Agents\Skill.vb" />
+    <Compile Include="BPClient\Agents\SkillSet.vb" />
+    <Compile Include="BPClient\Agents\SkillSet_Skill.vb" />
+    <Compile Include="BPClient\BugEntry.vb" />
+    <Compile Include="BPClient\Entity\FormationDef.vb" />
+    <Compile Include="BPClient\Main Form\frmMain.Harness.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BPClient\GFX\Shaders\OceanRender.vb" />
+    <Compile Include="BPClient\Senate\SenateProposal.vb" />
+    <Compile Include="BPClient\Senate\SenateProposalMessage.vb" />
+    <Compile Include="BPClient\Senate\SenateVote.vb" />
+    <Compile Include="BPClient\SoundFX\SongPlayer.vb" />
+    <Compile Include="BPClient\SpecialFX\BPLogo.vb" />
+    <Compile Include="BPClient\SpecialFX\CityCars.vb" />
+    <Compile Include="BPClient\SpecialFX\EntityBurnMarkManager.vb" />
+    <Compile Include="BPClient\StrEncDec.vb" />
+    <Compile Include="BPClient\Techs\BombWeaponTech.vb" />
+    <Compile Include="BPClient\UILib\ctlAgentAssignment.vb" />
+    <Compile Include="BPClient\UILib\ctlCalendar.vb" />
+    <Compile Include="BPClient\UILib\ctlGoalSS.vb" />
+    <Compile Include="BPClient\UILib\ctlSetTechMineral.vb" />
+    <Compile Include="BPClient\UILib\ctlTechProp.vb" />
+    <Compile Include="BPClient\UILib\UIFormation.vb" />
+    <Compile Include="BPClient\UILib\UITreeView.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmAgent.frames.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmAgent.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmAgentMain.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmCapturedAgent.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmIntelReport.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmMission.fraSkillSet.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmMission.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmSkillDetail.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmViewMission.fraGoalList.vb" />
+    <Compile Include="BPClient\UIScreens\Agents\frmViewMission.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmCancelBuild.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\frmChannelConfig.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\frmChannels.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.fraAgentBudget.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmColonyResearch.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmConfirmWarDec.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmCustomTitle.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmFaction.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmFormations.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmRouteConfig.vb" />
+    <Compile Include="BPClient\UIScreens\frmNotepad.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmAttachments.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildBillboardBid.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_SharedAssets.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Assets.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Events.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Finances.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_InternalAffairs.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Main.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Membership.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Politics.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.fra_Structure.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildMain.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildSearch.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmGuildSetup.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmInviteFormGuild.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmRaceConfig.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmSketchPad.vb" />
+    <Compile Include="BPClient\UIScreens\Guild\frmTournament.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmConnectionStatus.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmEnvirList.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmEnvirRelations.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmEnvirShortcuts.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmGalaxyControl.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmPlanetMapControl.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmProgressBar.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmUnitGoto.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmUnitSelectFilter.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmWarCalendar.vb" />
+    <Compile Include="BPClient\UIScreens\Mining\frmMineralBid.vb" />
+    <Compile Include="BPClient\UIScreens\Senate\frmEmpMsgBrd.vb" />
+    <Compile Include="BPClient\UIScreens\Senate\frmSenate.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\ArmorTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\BombTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\EngineTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\frmCoeff.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\MissileTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\ProjectileTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\PulseTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\RadarTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\ShieldTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\SolidTechComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmBuilderWrksht.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmSpecTechSelect.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmTechBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmTechBuilderCost.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmTechBuilderDisplay.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.fraBomb.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\Computers\TechBuilderComputer.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\ctlTransport.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\fraUnitDetails.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\fraWaypointAction.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\frmAddTransport.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\frmTransportManagement.vb" />
+    <Compile Include="BPClient\UIScreens\Transports\frmTransportOrders.vb" />
+    <Compile Include="BPClient\UIScreens\Tutorial\frmExclPoint.vb" />
+    <Compile Include="BPClient\UIScreens\Tutorial\frmTutorialStep.vb" />
+    <Compile Include="BPClient\WindowOps.vb" />
+    <Compile Include="Common\EpicaShared.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPClient\Camera.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPClient\ControlGroups.vb" />
+    <Compile Include="BPClient\Entity\EntityContents.vb" />
+    <Compile Include="BPClient\Entity\EntityDef.vb" />
+    <Compile Include="BPClient\Entity\BaseEntity.vb" />
+    <Compile Include="BPClient\Entity\UnitGroup.vb" />
+    <Compile Include="BPClient\Entity\WeaponDef.vb" />
+    <Compile Include="BPClient\SoundFX\MusicMgr.vb" />
+    <Compile Include="BPClient\SoundFX\SoundMgr.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPClient\Main Form\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BPClient\Geography\Colony.vb" />
+    <Compile Include="BPClient\Geography\BaseEnvironment.vb" />
+    <Compile Include="BPClient\Geography\Galaxy.vb" />
+    <Compile Include="BPClient\Geography\Planet.vb" />
+    <Compile Include="BPClient\Geography\SolarSystem.vb" />
+    <Compile Include="BPClient\Geography\StarType.vb" />
+    <Compile Include="BPClient\Geography\TerrainClass.vb" />
+    <Compile Include="BPClient\Geography\Wormhole.vb" />
+    <Compile Include="BPClient\GFX\BaseMesh.vb" />
+    <Compile Include="BPClient\GFX\GFXResourceManager.vb" />
+    <Compile Include="BPClient\GFX\GFXEngine.vb" />
+    <Compile Include="BPClient\GFX\Shaders\PostShader.vb" />
+    <Compile Include="BPClient\GFX\RenderObject.vb" />
+    <Compile Include="BPClient\GlobalVars.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPClient\LoginScreen.vb" />
+    <Compile Include="BPClient\Mineral\Mineral.vb" />
+    <Compile Include="BPClient\Mineral\MineralCache.vb" />
+    <Compile Include="BPClient\Mineral\MineralProperty.vb" />
+    <Compile Include="BPClient\ModelDefs.vb" />
+    <Compile Include="BPClient\MsgSystem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPClient\Player\Budget.vb" />
+    <Compile Include="BPClient\Player\Player.vb" />
+    <Compile Include="BPClient\Player\PlayerComm.vb" />
+    <Compile Include="BPClient\Player\PlayerCommFolder.vb" />
+    <Compile Include="BPClient\Player\PlayerIntel.vb" />
+    <Compile Include="BPClient\Player\PlayerRel.vb" />
+    <Compile Include="BPClient\Player\PlayerTechKnowledge.vb" />
+    <Compile Include="BPClient\SpecialFX\Fireworks.vb" />
+    <Compile Include="BPClient\SpecialFX\WormholeManager.vb" />
+    <Compile Include="BPClient\Trade\BuyOrder.vb" />
+    <Compile Include="BPClient\Trade\SellOrder.vb" />
+    <Compile Include="BPClient\Trade\Trade.vb" />
+    <Compile Include="BPClient\Trade\TradeDeliveryPackage.vb" />
+    <Compile Include="BPClient\Trade\TradeHistory.vb" />
+    <Compile Include="BPClient\Production\AvailResources.vb" />
+    <Compile Include="BPClient\Production\ProdQueueItem.vb" />
+    <Compile Include="BPClient\Production\ProductionCost.vb" />
+    <Compile Include="BPClient\Production\ProductionCostItem.vb" />
+    <Compile Include="BPClient\SpecialFX\BurnFX.vb" />
+    <Compile Include="BPClient\SpecialFX\DeathSequence.vb" />
+    <Compile Include="BPClient\SpecialFX\EpicaLogoFX.vb" />
+    <Compile Include="BPClient\SpecialFX\ExplosionFXManager.vb" />
+    <Compile Include="BPClient\SpecialFX\MissileFX.vb" />
+    <Compile Include="BPClient\SpecialFX\PlanetPFX.vb" />
+    <Compile Include="BPClient\SpecialFX\ShieldFXManager.vb" />
+    <Compile Include="BPClient\SpecialFX\WpnFXManager.vb" />
+    <Compile Include="BPClient\Techs\AlloyTech.vb" />
+    <Compile Include="BPClient\Techs\ArmorTech.vb" />
+    <Compile Include="BPClient\Techs\SolidBeamWeaponTech.vb" />
+    <Compile Include="BPClient\Techs\EngineTech.vb" />
+    <Compile Include="BPClient\Techs\Base_Tech.vb" />
+    <Compile Include="BPClient\Techs\HullTech.vb" />
+    <Compile Include="BPClient\Techs\MissileWeaponTech.vb" />
+    <Compile Include="BPClient\Techs\ProjectileWeaponTech.vb" />
+    <Compile Include="BPClient\Techs\PrototypeTech.vb" />
+    <Compile Include="BPClient\Techs\PulseWeaponTech.vb" />
+    <Compile Include="BPClient\Techs\RadarTech.vb" />
+    <Compile Include="BPClient\Techs\ShieldTech.vb" />
+    <Compile Include="BPClient\Techs\SpecialTech.vb" />
+    <Compile Include="BPClient\Techs\WeaponTech.vb" />
+    <Compile Include="BPClient\Trade\TradeOrder.vb" />
+    <Compile Include="BPClient\Tutorial\TutorialManager.vb" />
+    <Compile Include="BPClient\UILib\UIButton.vb" />
+    <Compile Include="BPClient\UILib\UICheckbox.vb" />
+    <Compile Include="BPClient\UILib\UIComboBox.vb" />
+    <Compile Include="BPClient\UILib\UIControl.vb" />
+    <Compile Include="BPClient\UILib\UIHullSlots.vb" />
+    <Compile Include="BPClient\UILib\UILabel.vb" />
+    <Compile Include="BPClient\UILib\UILabelScroll.vb" />
+    <Compile Include="BPClient\UILib\UILib.vb" />
+    <Compile Include="BPClient\UILib\UILine.vb" />
+    <Compile Include="BPClient\UILib\UIListBox.vb" />
+    <Compile Include="BPClient\UILib\UIOption.vb" />
+    <Compile Include="BPClient\UILib\UIScrollBar.vb" />
+    <Compile Include="BPClient\UILib\UITextbox.vb" />
+    <Compile Include="BPClient\UILib\UIWindow.vb" />
+    <Compile Include="BPClient\UIScreens\BugReport\frmBugDetails.vb">
+    </Compile>
+    <Compile Include="BPClient\UIScreens\BugReport\frmBugMain.vb">
+    </Compile>
+    <Compile Include="BPClient\UIScreens\Build Windows\frmAmmo.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmAvailRes.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmRepair.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmSelectFac.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\ChatTab.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\frmChatTabProps.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\frmColorSelect.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.ctlBudgetDetailItem.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.fraBudgetDetails.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.fraBudgetLineItem.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.fraBudgetSummary.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.fraDeathBudget.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmBudget.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\ctlDiplomacy.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmAliasing.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmDiplomacy.fraPlayerDetails.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmDiplomacy.fraPlayerRelList.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmDiplomacy.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmIconChooser.vb" />
+    <Compile Include="BPClient\UIScreens\Diplomacy\frmMyDipDetails.vb" />
+    <Compile Include="BPClient\UIScreens\Email\frmEmailMain.fraEmailDetail.vb" />
+    <Compile Include="BPClient\UIScreens\Email\frmAddressBook.vb" />
+    <Compile Include="BPClient\UIScreens\Email\frmEmailMain.vb" />
+    <Compile Include="BPClient\UIScreens\Email\frmEmailSetup.vb" />
+    <Compile Include="BPClient\UIScreens\Email\frmNewEmail.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmBombard.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmFleetOrders.vb" />
+    <Compile Include="BPClient\UIScreens\Fleet Management\frmFleet.vb" />
+    <Compile Include="BPClient\UIScreens\frmDeath.vb" />
+    <Compile Include="BPClient\UIScreens\frmInputBox.vb" />
+    <Compile Include="BPClient\UIScreens\frmMsgBox.vb" />
+    <Compile Include="BPClient\UIScreens\frmTransfer.vb" />
+    <Compile Include="BPClient\UIScreens\frmObserve.vb" />
+    <Compile Include="BPClient\UIScreens\frmOptions.vb" />
+    <Compile Include="BPClient\UIScreens\frmPlanetDetails.vb" />
+    <Compile Include="BPClient\UIScreens\frmPlayerSetup.vb" />
+    <Compile Include="BPClient\UIScreens\frmProdCost.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmQuickBar.vb" />
+    <Compile Include="BPClient\UIScreens\Mining\frmMining.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.fraMissiles.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.fraProjectile.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.fraPulse.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.fraSolidBeam.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraCreateBuyOrder.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraDeliverBuyOrder.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraDirectTrade.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraTradeContents.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraTradeHistory.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraTradeInProgress.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\frmNonOwnerItemDetails.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\fraCreateBuyOrderRequires.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\OldTrade\frmTrade.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmMinimapZoom.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmAlloyBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmArmorBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmBehavior.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmBuildWindow.vb" />
+    <Compile Include="BPClient\UIScreens\frmCacheSelect.vb" />
+    <Compile Include="BPClient\UIScreens\Chat\frmChat.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmColonyStats.vb" />
+    <Compile Include="BPClient\UIScreens\Colony\frmColonyStatsSmall.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmCommand.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmContents.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmAdvanceDisplay.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmEngineBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmEnvirDisplay.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmHullBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\frmLoginDlg.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmMatRes.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmMultiDisplay.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmNotification.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmProdStatus.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmMinDetail.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmPrototypeBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmRadarBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\Build Windows\frmResearchMain.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmShieldBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\HUD\frmSingleSelect.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmSpecTech.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponAppearance.vb" />
+    <Compile Include="BPClient\UIScreens\Tech Builders\frmWeaponBuilder.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\frmTradeMain.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\OldTrade\frmTradeMain.vb" />
+    <Compile Include="BPClient\UIScreens\Trade\TradePostContents.vb" />
+    <Compile Include="BPClient\UIScreens\Tutorial\frmTutorialStep_Old.vb" />
+    <Compile Include="BPClient\UIScreens\Tutorial\frmTutorialTOC.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="BPClient\Main Form\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BPClient\GFX\Shaders\PostScreenGlow.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BPClient\GFX\Shaders\Ocean.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bp.ico" />
+    <EmbeddedResource Include="BPClient\terr.txt" />
+    <EmbeddedResource Include="BPClient\Credits.txt" />
+    <EmbeddedResource Include="BPClient\UIScreens\Chat\DYK.txt" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BPClient\GFX\Shaders\NormalMap.fx" />
+    <EmbeddedResource Include="BPClient\GFX\Shaders\BumpTerrain.fx" />
+    <EmbeddedResource Include="BPClient\GFX\Shaders\PlanetBump.fx" />
+    <EmbeddedResource Include="BPClient\GFX\Shaders\Lava.fx" />
+    <EmbeddedResource Include="BPClient\GFX\Shaders\Cosmos.fx" />
+    <None Include="BPClient\TutorialScript.dat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>"C:\Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin\mt.exe" -manifest "BPClient.exe.manifest" -outputresource:"BPClient.exe";#1</PostBuildEvent>
+  </PropertyGroup>
+</Project>

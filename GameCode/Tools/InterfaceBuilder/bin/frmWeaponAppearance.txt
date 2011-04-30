@@ -1,0 +1,70 @@
+'Interface created from Interface Builder
+Public Class frmWeaponAppearance
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lscAppearance As UILabelScroller
+	Private WithEvents lnDiv1 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmWeaponAppearance initial props
+		With Me
+			.ControlName="frmWeaponAppearance"
+			.Left=228
+			.Top=98
+			.Width=180
+			.Height=300
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=0
+			.Width=153
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Weapon Appearance"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'lscAppearance initial props
+		lscAppearance = New UILabelScroller(oUILib)
+		With lscAppearance
+			.ControlName="lscAppearance"
+			.Left=5
+			.Top=20
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+		End With
+		Me.AddChild(CType(lscAppearance, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=0
+			.Top=45
+			.Width=180
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+	End Sub
+End Class

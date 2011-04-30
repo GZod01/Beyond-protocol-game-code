@@ -1,0 +1,11 @@
+Epic Conflict in [EnvirName]
+Epic Conflict in [EnvirName]
+1
+Random
+3
+3-
+<div style="font-size: 8pt; color:#E2E2E2;">
+What started as a minor fight on [StartOfBattle] has developed into a massive conflict as space-based units from [PlayerSideListA] continue to engage forces of [PlayerSideListB]. This massive conflict has already claimed [TotalLostBothSides] lives on both sides of the line.
+<br><br>
+The conflict has also begun piling up space debris as [TotalUnitLostBothSides] vessels have been wrecked and remain floating in space. The GTC has already begun making appropriations for clearing vital space lanes in the area of the more intense fighting.
+</div>

@@ -1,0 +1,94 @@
+'Interface created from Interface Builder
+Public Class frmCacheSelect
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents lnDivider As UILine
+	Private WithEvents lblMinName As UILabel
+	Private WithEvents lblConcOverQuant As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmCacheSelect initial props
+		With Me
+			.ControlName="frmCacheSelect"
+			.Left=217
+			.Top=171
+			.Width=182
+			.Height=66
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=0
+			.Top=3
+			.Width=182
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Title Bar (cache type)"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=5
+		End With
+		Me.AddChild(lblTitle)
+
+		'lnDivider initial props
+		lnDivider = New UILine(oUILib)
+		With lnDivider
+			.ControlName="lnDivider"
+			.Left=0
+			.Top=19
+			.Width=182
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(lnDivider)
+
+		'lblMinName initial props
+		lblMinName = New UILabel(oUILib)
+		With lblMinName
+			.ControlName="lblMinName"
+			.Left=6
+			.Top=25
+			.Width=182
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Mineral Name"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblMinName)
+
+		'lblConcOverQuant initial props
+		lblConcOverQuant = New UILabel(oUILib)
+		With lblConcOverQuant
+			.ControlName="lblConcOverQuant"
+			.Left=6
+			.Top=45
+			.Width=182
+			.Height=16
+			.Enabled=True
+			.Visible=True
+			.Caption="Concentration/Quantity"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblConcOverQuant)
+	End Sub
+End Class

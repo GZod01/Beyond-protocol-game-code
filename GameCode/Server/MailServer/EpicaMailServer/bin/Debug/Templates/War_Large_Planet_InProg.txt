@@ -1,0 +1,17 @@
+WAR in [EnvirName]!
+WAR in [EnvirName]!
+19
+Random
+4
+4-
+<div style="font-size: 8pt; color:#E2E2E2;">
+Hostilities continue on [EnvirName] where forces have been engaged since [StartOfBattle] in a massive conflict for control. The death toll has reached [TotalLostBothSides] dead and numerous more wounded on both sides of this horrific engagement.
+<br><br>
+The battle, which includes forces from [PlayerSideListA] fighting against elements of [PlayerSideListB], has seen [TotalUnitLostBothSides] units destroyed and [EXCLUDE:TotalFacilitiesLostBothSides=0]over [TotalFacilitiesLostBothSides] facilities [/EXCLUDE]left in ruin. The GTC has predicted a massive strain on the economy of [EnvirName] due to this conflict. However, sources within the GTC indicate that all trade routes are still intact.
+[EXCLUDE:TotalLostJobsBothSides=0]
+[EXCLUDE:TotalLostResidenceBothSides=0]
+<br><br>
+Citizens of [EnvirName] are feeling the pressure of the clash as [TotalLostJobsBothSides] jobs have been removed from the economy due to damaged facilities and [TotalLostResidenceBothSides] homes have been demolished. Some citizens have begun the process of fleeing [EnvirName] while others are determined to weather the onslaught. One citizen stated, "This is our home. I was here when we made planetfall and saw the first cornerstones of this colony established."
+[/EXCLUDE]
+[/EXCLUDE]
+</div>

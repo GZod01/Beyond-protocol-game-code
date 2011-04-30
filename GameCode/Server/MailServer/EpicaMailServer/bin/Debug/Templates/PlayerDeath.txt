@@ -1,0 +1,13 @@
+[PlayerName] Resigns
+[PlayerName] disappears!
+10
+Random
+7
+7-5-
+<div style="font-size: 8pt; color:#E2E2E2;">
+In a startling press conference, the resignation of [PlayerName] was announced. Siting many different reasons, one of which being low population within their domain, the resignation was accepted and all assets were reclaimed or removed by GTC and Galactic Senate officials.
+<br><br>
+[PlayerName] was unavailable for comment and has since disappeared. Officials linked to GTC and the Galactic Senate suggested the possibility of [PlayerName] leading a rogue colony in another sector of space.
+<br><br>
+At the peak of the regime, [PlayerName] was the leader of [MaxTotalPopulation] citizens.
+</div>

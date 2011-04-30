@@ -1,0 +1,370 @@
+'Interface created from Interface Builder
+Public Class frmChannelConfig
+	Inherits UIWindow
+
+	Private WithEvents lblTitle As UILabel
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblChannelName As UILabel
+	Private WithEvents txtChannelName As UITextBox
+	Private WithEvents lblPassword As UILabel
+	Private WithEvents txtPassword As UITextBox
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents chkPublic As UICheckBox
+	Private WithEvents lblMembers As UILabel
+	Private WithEvents lstMembers As UIListBox
+	Private WithEvents btnKick As UIButton
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents lstContacts As UIListBox
+	Private WithEvents txtInvite As UITextBox
+	Private WithEvents btnGiveAdmin As UIButton
+	Private WithEvents btnInvite As UIButton
+	Private WithEvents btnUpdate As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmChannelConfig initial props
+		With Me
+			.ControlName="frmChannelConfig"
+			.Left=377
+			.Top=134
+			.Width=256
+			.Height=450
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblTitle initial props
+		lblTitle = New UILabel(oUILib)
+		With lblTitle
+			.ControlName="lblTitle"
+			.Left=5
+			.Top=5
+			.Width=156
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Channel Configuration"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblTitle, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=231
+			.Top=2
+			.Width=24
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="X"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=2
+			.Top=25
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblChannelName initial props
+		lblChannelName = New UILabel(oUILib)
+		With lblChannelName
+			.ControlName="lblChannelName"
+			.Left=5
+			.Top=35
+			.Width=100
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Channel Name:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblChannelName, UIControl))
+
+		'txtChannelName initial props
+		txtChannelName = New UITextBox(oUILib)
+		With txtChannelName
+			.ControlName="txtChannelName"
+			.Left=105
+			.Top=35
+			.Width=145
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtChannelName, UIControl))
+
+		'lblPassword initial props
+		lblPassword = New UILabel(oUILib)
+		With lblPassword
+			.ControlName="lblPassword"
+			.Left=5
+			.Top=60
+			.Width=69
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Password:"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPassword, UIControl))
+
+		'txtPassword initial props
+		txtPassword = New UITextBox(oUILib)
+		With txtPassword
+			.ControlName="txtPassword"
+			.Left=105
+			.Top=60
+			.Width=145
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtPassword, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=1
+			.Top=135
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'chkPublic initial props
+		chkPublic = New UICheckBox(oUILib)
+		With chkPublic
+			.ControlName="chkPublic"
+			.Left=35
+			.Top=83
+			.Width=178
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Channel Viewable to Public"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkPublic, UIControl))
+
+		'lblMembers initial props
+		lblMembers = New UILabel(oUILib)
+		With lblMembers
+			.ControlName="lblMembers"
+			.Left=5
+			.Top=140
+			.Width=125
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Channel Members"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblMembers, UIControl))
+
+		'lstMembers initial props
+		lstMembers = New UIListBox(oUILib)
+		With lstMembers
+			.ControlName="lstMembers"
+			.Left=5
+			.Top=159
+			.Width=245
+			.Height=120
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstMembers, UIControl))
+
+		'btnKick initial props
+		btnKick = New UIButton(oUILib)
+		With btnKick
+			.ControlName="btnKick"
+			.Left=152
+			.Top=285
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Kick Member"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnKick, UIControl))
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=1
+			.Top=315
+			.Width=255
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv3, UIControl))
+
+		'lstContacts initial props
+		lstContacts = New UIListBox(oUILib)
+		With lstContacts
+			.ControlName="lstContacts"
+			.Left=5
+			.Top=320
+			.Width=245
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstContacts, UIControl))
+
+		'txtInvite initial props
+		txtInvite = New UITextBox(oUILib)
+		With txtInvite
+			.ControlName="txtInvite"
+			.Left=5
+			.Top=427
+			.Width=145
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtInvite, UIControl))
+
+		'btnGiveAdmin initial props
+		btnGiveAdmin = New UIButton(oUILib)
+		With btnGiveAdmin
+			.ControlName="btnGiveAdmin"
+			.Left=5
+			.Top=285
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Make Admin"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnGiveAdmin, UIControl))
+
+		'btnInvite initial props
+		btnInvite = New UIButton(oUILib)
+		With btnInvite
+			.ControlName="btnInvite"
+			.Left=152
+			.Top=425
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Invite"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnInvite, UIControl))
+
+		'btnUpdate initial props
+		btnUpdate = New UIButton(oUILib)
+		With btnUpdate
+			.ControlName="btnUpdate"
+			.Left=30
+			.Top=105
+			.Width=200
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Update Configuration"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnUpdate, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,140 @@
+'Interface created from Interface Builder
+Public Class frmBuildWindow
+	Inherits UIWindow
+
+	Private WithEvents lblBuildable As UILabel
+	Private WithEvents lstBuildable As UIListBox
+	Private WithEvents lblBuildQueue As UILabel
+	Private WithEvents lstQueue As UIListBox
+	Private WithEvents lblDetails As UILabel
+	Private WithEvents txtItemDetails As UITextBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmBuildWindow initial props
+		With Me
+			.ControlName="frmBuildWindow"
+			.Left=118
+			.Top=76
+			.Width=512
+			.Height=256
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lblBuildable initial props
+		lblBuildable = New UILabel(oUILib)
+		With lblBuildable
+			.ControlName="lblBuildable"
+			.Left=4
+			.Top=0
+			.Width=90
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Buildable Items"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBuildable, UIControl))
+
+		'lstBuildable initial props
+		lstBuildable = New UIListBox(oUILib)
+		With lstBuildable
+			.ControlName="lstBuildable"
+			.Left=4
+			.Top=20
+			.Width=280
+			.Height=95
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstBuildable, UIControl))
+
+		'lblBuildQueue initial props
+		lblBuildQueue = New UILabel(oUILib)
+		With lblBuildQueue
+			.ControlName="lblBuildQueue"
+			.Left=4
+			.Top=115
+			.Width=90
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Build Queue"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblBuildQueue, UIControl))
+
+		'lstQueue initial props
+		lstQueue = New UIListBox(oUILib)
+		With lstQueue
+			.ControlName="lstQueue"
+			.Left=4
+			.Top=135
+			.Width=280
+			.Height=95
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstQueue, UIControl))
+
+		'lblDetails initial props
+		lblDetails = New UILabel(oUILib)
+		With lblDetails
+			.ControlName="lblDetails"
+			.Left=290
+			.Top=0
+			.Width=90
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Item Details"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblDetails, UIControl))
+
+		'txtItemDetails initial props
+		txtItemDetails = New UITextBox(oUILib)
+		With txtItemDetails
+			.ControlName="txtItemDetails"
+			.Left=290
+			.Top=20
+			.Width=215
+			.Height=210
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor = muSettings.InterfaceTextBoxForeColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(0, DrawTextFormat)
+			.BackColorEnabled = muSettings.InterfaceTextBoxFillColor
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=0
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(txtItemDetails, UIControl))
+	End Sub
+End Class

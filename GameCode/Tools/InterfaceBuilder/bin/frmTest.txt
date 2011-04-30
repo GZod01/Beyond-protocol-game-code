@@ -1,0 +1,42 @@
+'Interface created from Interface Builder
+Public Class 
+	Inherits UIWindow
+
+	Private WithEvents NewControl1 As UIComboBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		' initial props
+		With Me
+			.ControlName=""
+			.Left=0
+			.Top=0
+			.Width=100
+			.Height=100
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-12549952)
+			.FullScreen=False
+		End With
+
+		'NewControl1 initial props
+		NewControl1 = New UIComboBox(oUILib)
+		With NewControl1
+			.ControlName="NewControl1"
+			.Left=0
+			.Top=0
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-1)
+			.ForeColor=System.Drawing.Color.FromArgb(-16777216)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(-16711681)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(-16777216)
+		End With
+		Me.AddChild(NewControl1)
+	End Sub
+End Class

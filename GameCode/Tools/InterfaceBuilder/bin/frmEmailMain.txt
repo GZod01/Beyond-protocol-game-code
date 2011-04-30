@@ -1,0 +1,179 @@
+'Interface created from Interface Builder
+Public Class frmEmailMain
+	Inherits UIWindow
+
+	Private WithEvents btnCompose As UIButton
+	Private WithEvents btnContacts As UIButton
+	Private WithEvents btnOptions As UIButton
+	Private WithEvents lblFolders As UILabel
+	Private WithEvents btnAddFolder As UIButton
+	Private WithEvents NewControl3 As UIListBox
+	Private WithEvents btnClose As UIButton
+	Private WithEvents lstEmails As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmEmailMain initial props
+		With Me
+			.ControlName="frmEmailMain"
+			.Left=87
+			.Top=67
+			.Width=700
+			.Height=450
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'btnCompose initial props
+		btnCompose = New UIButton(oUILib)
+		With btnCompose
+			.ControlName="btnCompose"
+			.Left=10
+			.Top=10
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Compose"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnCompose, UIControl))
+
+		'btnContacts initial props
+		btnContacts = New UIButton(oUILib)
+		With btnContacts
+			.ControlName="btnContacts"
+			.Left=120
+			.Top=10
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Contacts"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnContacts, UIControl))
+
+		'btnOptions initial props
+		btnOptions = New UIButton(oUILib)
+		With btnOptions
+			.ControlName="btnOptions"
+			.Left=230
+			.Top=10
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Options"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnOptions, UIControl))
+
+		'lblFolders initial props
+		lblFolders = New UILabel(oUILib)
+		With lblFolders
+			.ControlName="lblFolders"
+			.Left=10
+			.Top=40
+			.Width=54
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Folders"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblFolders, UIControl))
+
+		'btnAddFolder initial props
+		btnAddFolder = New UIButton(oUILib)
+		With btnAddFolder
+			.ControlName="btnAddFolder"
+			.Left=90
+			.Top=39
+			.Width=60
+			.Height=20
+			.Enabled=True
+			.Visible=True
+			.Caption="Add"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAddFolder, UIControl))
+
+		'NewControl3 initial props
+		NewControl3 = New UIListBox(oUILib)
+		With NewControl3
+			.ControlName="NewControl3"
+			.Left=10
+			.Top=65
+			.Width=140
+			.Height=150
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.0, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(NewControl3, UIControl))
+
+		'btnClose initial props
+		btnClose = New UIButton(oUILib)
+		With btnClose
+			.ControlName="btnClose"
+			.Left=590
+			.Top=10
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Close"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnClose, UIControl))
+
+		'lstEmails initial props
+		lstEmails = New UIListBox(oUILib)
+		With lstEmails
+			.ControlName="lstEmails"
+			.Left=160
+			.Top=40
+			.Width=530
+			.Height=175
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Courier New", 8.25F, FontStyle.0, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstEmails, UIControl))
+	End Sub
+End Class

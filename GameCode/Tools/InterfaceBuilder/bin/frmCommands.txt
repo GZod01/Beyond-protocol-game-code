@@ -1,0 +1,213 @@
+'Interface created from Interface Builder
+Public Class frmCommands
+    Inherits UIWindow
+
+    Private WithEvents btnMove As UIButton
+    Private WithEvents btnStop As UIButton
+    Private WithEvents btnAttack As UIButton
+    Private WithEvents btnGuard As UIButton
+    Private WithEvents btnPatrol As UIButton
+    Private WithEvents btnRepair As UIButton
+    Private WithEvents btnLoad As UIButton
+    Private WithEvents btnUnload As UIButton
+    Private WithEvents btnCapture As UIButton
+
+    Public Sub New(ByRef oUILib As UILib)
+        MyBase.New(oUILib)
+
+        'frmCommands initial props
+        With Me
+            .ControlName="frmCommands"
+            .Left=185
+            .Top=153
+            .Width=71
+            .Height=71
+            .Enabled=True
+            .Visible=True
+            .BorderColor=System.Drawing.Color.FromArgb(-16768960)
+            .FillColor=System.Drawing.Color.FromArgb(-16768960)
+            .FullScreen=False
+        End With
+
+        'btnMove initial props
+        btnMove=New UIButton(oUILib)
+        With btnMove
+            .ControlImageRect_Normal=Rectangle.FromLTRB(1, 145, 21, 165)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(0, 144, 22, 166)
+            .ControlName="btnMove"
+            .Left=0
+            .Top=0
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnMove)
+
+        'btnStop initial props
+        btnStop=New UIButton(oUILib)
+        With btnStop
+            .ControlImageRect_Normal=Rectangle.FromLTRB(25, 145, 45, 165)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(24, 144, 46, 166)
+            .ControlName="btnStop"
+            .Left=24
+            .Top=0
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnStop)
+
+        'btnAttack initial props
+        btnAttack=New UIButton(oUILib)
+        With btnAttack
+            .ControlImageRect_Normal=Rectangle.FromLTRB(49, 145, 69, 165)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(48, 144, 70, 166)
+            .ControlName="btnAttack"
+            .Left=48
+            .Top=0
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnAttack)
+
+        'btnGuard initial props
+        btnGuard=New UIButton(oUILib)
+        With btnGuard
+            .ControlImageRect_Normal=Rectangle.FromLTRB(1, 169, 21, 189)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(0, 168, 22, 190)
+            .ControlName="btnGuard"
+            .Left=0
+            .Top=25
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnGuard)
+
+        'btnPatrol initial props
+        btnPatrol=New UIButton(oUILib)
+        With btnPatrol
+            .ControlImageRect_Normal=Rectangle.FromLTRB(25, 169, 45, 189)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(24, 168, 46, 190)
+            .ControlName="btnPatrol"
+            .Left=24
+            .Top=25
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnPatrol)
+
+        'btnRepair initial props
+        btnRepair=New UIButton(oUILib)
+        With btnRepair
+            .ControlImageRect_Normal=Rectangle.FromLTRB(49, 169, 69, 189)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(48, 168, 70, 190)
+            .ControlName="btnRepair"
+            .Left=48
+            .Top=25
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnRepair)
+
+        'btnLoad initial props
+        btnLoad=New UIButton(oUILib)
+        With btnLoad
+            .ControlImageRect_Normal=Rectangle.FromLTRB(1, 193, 21, 213)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(0, 192, 22, 214)
+            .ControlName="btnLoad"
+            .Left=0
+            .Top=49
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnLoad)
+
+        'btnUnload initial props
+        btnUnload=New UIButton(oUILib)
+        With btnUnload
+            .ControlImageRect_Normal=Rectangle.FromLTRB(25, 193, 45, 213)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(24, 192, 46, 214)
+            .ControlName="btnUnload"
+            .Left=24
+            .Top=49
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnUnload)
+
+        'btnCapture initial props
+        btnCapture=New UIButton(oUILib)
+        With btnCapture
+            .ControlImageRect_Normal=Rectangle.FromLTRB(49, 193, 69, 213)
+            .ControlImageRect_Pressed=Rectangle.FromLTRB(48, 192, 70, 214)
+            .ControlName="btnCapture"
+            .Left=48
+            .Top=49
+            .Width=23
+            .Height=23
+            .Enabled=True
+            .Visible=True
+            .Caption=""
+            .ForeColor=System.Drawing.Color.FromArgb(-1)
+            .SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+            .DrawBackImage=True
+            .FontFormat=5
+        End With
+        Me.AddChild(btnCapture)
+
+    End Sub
+End Class

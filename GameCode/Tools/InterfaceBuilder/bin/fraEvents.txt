@@ -1,0 +1,41 @@
+'Interface created from Interface Builder
+Public Class fraEvents
+	Inherits UIWindow
+
+	Private WithEvents lstEvents As UIListBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraEvents initial props
+		With Me
+			.ControlName="fraEvents"
+			.Left=222
+			.Top=105
+			.Width=512
+			.Height=512
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstEvents initial props
+		lstEvents = New UIListBox(oUILib)
+		With lstEvents
+			.ControlName="lstEvents"
+			.Left=5
+			.Top=5
+			.Width=502
+			.Height=502
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstEvents, UIControl))
+	End Sub
+End Class

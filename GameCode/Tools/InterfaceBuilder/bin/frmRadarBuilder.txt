@@ -1,0 +1,365 @@
+'Interface created from Interface Builder
+Public Class frmRadarBuilder
+	Inherits UIWindow
+
+	Private WithEvents lblWepAcc As UILabel
+	Private WithEvents txtWepAcc As UITextBox
+	Private WithEvents lblScanRes As UILabel
+	Private WithEvents lblOptRng As UILabel
+	Private WithEvents lblDisRes As UILabel
+	Private WithEvents lblEmitter As UILabel
+	Private WithEvents lblDetection As UILabel
+	Private WithEvents lblCollection As UILabel
+	Private WithEvents lblCasin As UILabel
+	Private WithEvents txtScanRes As UITextBox
+	Private WithEvents txtOptRng As UITextBox
+	Private WithEvents txtDisRes As UITextBox
+	Private WithEvents cboCasing As UIComboBox
+	Private WithEvents cboCollection As UIComboBox
+	Private WithEvents cboDetection As UIComboBox
+	Private WithEvents cboEmitter As UIComboBox
+	Private WithEvents lblRadarBuilder As UILabel
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmRadarBuilder initial props
+		With Me
+			.ControlName="frmRadarBuilder"
+			.Left=21
+			.Top=11
+			.Width=669
+			.Height=454
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(128, 64, 128, 192)
+			.FullScreen=False
+		End With
+
+		'lblWepAcc initial props
+		lblWepAcc = New UILabel(oUILib)
+		With lblWepAcc
+			.ControlName="lblWepAcc"
+			.Left=320
+			.Top=10
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Weapon Accuracy:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblWepAcc)
+
+		'txtWepAcc initial props
+		txtWepAcc = New UITextBox(oUILib)
+		With txtWepAcc
+			.ControlName="txtWepAcc"
+			.Left=490
+			.Top=10
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtWepAcc)
+
+		'lblScanRes initial props
+		lblScanRes = New UILabel(oUILib)
+		With lblScanRes
+			.ControlName="lblScanRes"
+			.Left=320
+			.Top=35
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Scan Resolution:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblScanRes)
+
+		'lblOptRng initial props
+		lblOptRng = New UILabel(oUILib)
+		With lblOptRng
+			.ControlName="lblOptRng"
+			.Left=320
+			.Top=60
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Optimum Range:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblOptRng)
+
+		'lblDisRes initial props
+		lblDisRes = New UILabel(oUILib)
+		With lblDisRes
+			.ControlName="lblDisRes"
+			.Left=320
+			.Top=85
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Desired Disruption Resist:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblDisRes)
+
+		'lblEmitter initial props
+		lblEmitter = New UILabel(oUILib)
+		With lblEmitter
+			.ControlName="lblEmitter"
+			.Left=320
+			.Top=110
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Emitter Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblEmitter)
+
+		'lblDetection initial props
+		lblDetection = New UILabel(oUILib)
+		With lblDetection
+			.ControlName="lblDetection"
+			.Left=320
+			.Top=135
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Detection Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblDetection)
+
+		'lblCollection initial props
+		lblCollection = New UILabel(oUILib)
+		With lblCollection
+			.ControlName="lblCollection"
+			.Left=320
+			.Top=160
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Collection Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCollection)
+
+		'lblCasin initial props
+		lblCasin = New UILabel(oUILib)
+		With lblCasin
+			.ControlName="lblCasin"
+			.Left=320
+			.Top=185
+			.Width=161
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Select Casing Material:"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblCasin)
+
+		'txtScanRes initial props
+		txtScanRes = New UITextBox(oUILib)
+		With txtScanRes
+			.ControlName="txtScanRes"
+			.Left=490
+			.Top=35
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtScanRes)
+
+		'txtOptRng initial props
+		txtOptRng = New UITextBox(oUILib)
+		With txtOptRng
+			.ControlName="txtOptRng"
+			.Left=490
+			.Top=60
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtOptRng)
+
+		'txtDisRes initial props
+		txtDisRes = New UITextBox(oUILib)
+		With txtDisRes
+			.ControlName="txtDisRes"
+			.Left=490
+			.Top=85
+			.Width=41
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="0"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=6
+			.BackColorEnabled=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.BackColorDisabled=System.Drawing.Color.FromArgb(255, 105, 105, 105)
+			.MaxLength=3
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+		End With
+		Me.AddChild(txtDisRes)
+
+		'cboCasing initial props
+		cboCasing = New UIComboBox(oUILib)
+		With cboCasing
+			.ControlName="cboCasing"
+			.Left=490
+			.Top=185
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboCasing)
+
+		'cboCollection initial props
+		cboCollection = New UIComboBox(oUILib)
+		With cboCollection
+			.ControlName="cboCollection"
+			.Left=490
+			.Top=160
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboCollection)
+
+		'cboDetection initial props
+		cboDetection = New UIComboBox(oUILib)
+		With cboDetection
+			.ControlName="cboDetection"
+			.Left=490
+			.Top=135
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboDetection)
+
+		'cboEmitter initial props
+		cboEmitter = New UIComboBox(oUILib)
+		With cboEmitter
+			.ControlName="cboEmitter"
+			.Left=490
+			.Top=110
+			.Width=170
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.FillColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.ForeColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.DropDownListBorderColor=System.Drawing.Color.FromArgb(255, 0, 0, 0)
+		End With
+		Me.AddChild(cboEmitter)
+
+		'lblRadarBuilder initial props
+		lblRadarBuilder = New UILabel(oUILib)
+		With lblRadarBuilder
+			.ControlName="lblRadarBuilder"
+			.Left=10
+			.Top=10
+			.Width=172
+			.Height=32
+			.Enabled=True
+			.Visible=True
+			.Caption="Radar Builder"
+			.ForeColor=System.Drawing.Color.FromArgb(255, 255, 255, 255)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 18, 3, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRadarBuilder)
+	End Sub
+End Class

@@ -1,0 +1,519 @@
+'Interface created from Interface Builder
+Public Class fraRanks
+	Inherits UIWindow
+
+	Private WithEvents lstRanks As UIListBox
+	Private WithEvents lblRanks As UILabel
+	Private WithEvents lblPermissions As UILabel
+	Private WithEvents chkMOTD As UICheckBox
+	Private WithEvents chkRankNames As UICheckBox
+	Private WithEvents chkRecruitSet As UICheckBox
+	Private WithEvents chkSeeBank1 As UICheckBox
+	Private WithEvents chkSeeBank2 As UICheckBox
+	Private WithEvents chkSeeBank3 As UICheckBox
+	Private WithEvents chkWithdrawBank1 As UICheckBox
+	Private WithEvents chkWithdrawBank2 As UICheckBox
+	Private WithEvents chkWithdrawBank3 As UICheckBox
+	Private WithEvents chkRankPermissions As UICheckBox
+	Private WithEvents chkDemote As UICheckBox
+	Private WithEvents chkAccept As UICheckBox
+	Private WithEvents chkReject As UICheckBox
+	Private WithEvents chkPromote As UICheckBox
+	Private WithEvents chkDemote As UICheckBox
+	Private WithEvents chkRemove As UICheckBox
+	Private WithEvents chkCreateRank As UICheckBox
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lnDiv3 As UILine
+	Private WithEvents lnDiv4 As UILine
+	Private WithEvents btnAddRank As UIButton
+	Private WithEvents btnDeleteRank As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'fraRanks initial props
+		With Me
+			.ControlName="fraRanks"
+			.Left=267
+			.Top=128
+			.Width=512
+			.Height=390
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen=False
+		End With
+
+		'lstRanks initial props
+		lstRanks = New UIListBox(oUILib)
+		With lstRanks
+			.ControlName="lstRanks"
+			.Left=5
+			.Top=25
+			.Width=200
+			.Height=330
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+			.FillColor = muSettings.InterfaceFillColor
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.HighlightColor=System.Drawing.Color.FromArgb(255, 32, 64, 128)
+		End With
+		Me.AddChild(CType(lstRanks, UIControl))
+
+		'lblRanks initial props
+		lblRanks = New UILabel(oUILib)
+		With lblRanks
+			.ControlName="lblRanks"
+			.Left=5
+			.Top=5
+			.Width=48
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Ranks"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblRanks, UIControl))
+
+		'lblPermissions initial props
+		lblPermissions = New UILabel(oUILib)
+		With lblPermissions
+			.ControlName="lblPermissions"
+			.Left=215
+			.Top=5
+			.Width=270
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Permissions"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(4, DrawTextFormat)
+		End With
+		Me.AddChild(CType(lblPermissions, UIControl))
+
+		'chkMOTD initial props
+		chkMOTD = New UICheckBox(oUILib)
+		With chkMOTD
+			.ControlName="chkMOTD"
+			.Left=240
+			.Top=35
+			.Width=107
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Change MOTD"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkMOTD, UIControl))
+
+		'chkRankNames initial props
+		chkRankNames = New UICheckBox(oUILib)
+		With chkRankNames
+			.ControlName="chkRankNames"
+			.Left=240
+			.Top=55
+			.Width=146
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Change Rank Names"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRankNames, UIControl))
+
+		'chkRecruitSet initial props
+		chkRecruitSet = New UICheckBox(oUILib)
+		With chkRecruitSet
+			.ControlName="chkRecruitSet"
+			.Left=240
+			.Top=75
+			.Width=189
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Change Recruitment Settings"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRecruitSet, UIControl))
+
+		'chkSeeBank1 initial props
+		chkSeeBank1 = New UICheckBox(oUILib)
+		With chkSeeBank1
+			.ControlName="chkSeeBank1"
+			.Left=240
+			.Top=95
+			.Width=200
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="See Contents of Low Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSeeBank1, UIControl))
+
+		'chkSeeBank2 initial props
+		chkSeeBank2 = New UICheckBox(oUILib)
+		With chkSeeBank2
+			.ControlName="chkSeeBank2"
+			.Left=240
+			.Top=115
+			.Width=224
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="See Contents of Medium Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSeeBank2, UIControl))
+
+		'chkSeeBank3 initial props
+		chkSeeBank3 = New UICheckBox(oUILib)
+		With chkSeeBank3
+			.ControlName="chkSeeBank3"
+			.Left=240
+			.Top=135
+			.Width=204
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="See Contents of High Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkSeeBank3, UIControl))
+
+		'chkWithdrawBank1 initial props
+		chkWithdrawBank1 = New UICheckBox(oUILib)
+		With chkWithdrawBank1
+			.ControlName="chkWithdrawBank1"
+			.Left=240
+			.Top=155
+			.Width=162
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Withdraw Low Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkWithdrawBank1, UIControl))
+
+		'chkWithdrawBank2 initial props
+		chkWithdrawBank2 = New UICheckBox(oUILib)
+		With chkWithdrawBank2
+			.ControlName="chkWithdrawBank2"
+			.Left=240
+			.Top=175
+			.Width=186
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Withdraw Medium Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkWithdrawBank2, UIControl))
+
+		'chkWithdrawBank3 initial props
+		chkWithdrawBank3 = New UICheckBox(oUILib)
+		With chkWithdrawBank3
+			.ControlName="chkWithdrawBank3"
+			.Left=240
+			.Top=195
+			.Width=166
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Withdraw High Sec Bank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkWithdrawBank3, UIControl))
+
+		'chkRankPermissions initial props
+		chkRankPermissions = New UICheckBox(oUILib)
+		With chkRankPermissions
+			.ControlName="chkRankPermissions"
+			.Left=240
+			.Top=215
+			.Width=178
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Change Rank Permissions"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRankPermissions, UIControl))
+
+		'chkDemote initial props
+		chkDemote = New UICheckBox(oUILib)
+		With chkDemote
+			.ControlName="chkDemote"
+			.Left=240
+			.Top=235
+			.Width=127
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Demote Members"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkDemote, UIControl))
+
+		'chkAccept initial props
+		chkAccept = New UICheckBox(oUILib)
+		With chkAccept
+			.ControlName="chkAccept"
+			.Left=240
+			.Top=255
+			.Width=191
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Accept Member Applications"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkAccept, UIControl))
+
+		'chkReject initial props
+		chkReject = New UICheckBox(oUILib)
+		With chkReject
+			.ControlName="chkReject"
+			.Left=240
+			.Top=275
+			.Width=188
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Reject Member Applications"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkReject, UIControl))
+
+		'chkPromote initial props
+		chkPromote = New UICheckBox(oUILib)
+		With chkPromote
+			.ControlName="chkPromote"
+			.Left=240
+			.Top=295
+			.Width=165
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Promote Member Ranks"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkPromote, UIControl))
+
+		'chkDemote initial props
+		chkDemote = New UICheckBox(oUILib)
+		With chkDemote
+			.ControlName="chkDemote"
+			.Left=240
+			.Top=315
+			.Width=162
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Demote Member Ranks"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkDemote, UIControl))
+
+		'chkRemove initial props
+		chkRemove = New UICheckBox(oUILib)
+		With chkRemove
+			.ControlName="chkRemove"
+			.Left=240
+			.Top=335
+			.Width=131
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Remove Members"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkRemove, UIControl))
+
+		'chkCreateRank initial props
+		chkCreateRank = New UICheckBox(oUILib)
+		With chkCreateRank
+			.ControlName="chkCreateRank"
+			.Left=240
+			.Top=355
+			.Width=145
+			.Height=18
+			.Enabled=True
+			.Visible=True
+			.Caption="Create/Delete Ranks"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage=False
+			.FontFormat=CType(6, DrawTextFormat)
+			.Value=False
+		End With
+		Me.AddChild(CType(chkCreateRank, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName="lnDiv1"
+			.Left=215
+			.Top=25
+			.Width=280
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName="lnDiv2"
+			.Left=215
+			.Top=385
+			.Width=280
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'lnDiv3 initial props
+		lnDiv3 = New UILine(oUILib)
+		With lnDiv3
+			.ControlName="lnDiv3"
+			.Left=215
+			.Top=25
+			.Width=0
+			.Height=360
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv3, UIControl))
+
+		'lnDiv4 initial props
+		lnDiv4 = New UILine(oUILib)
+		With lnDiv4
+			.ControlName="lnDiv4"
+			.Left=495
+			.Top=25
+			.Width=0
+			.Height=360
+			.Enabled=True
+			.Visible=True
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv4, UIControl))
+
+		'btnAddRank initial props
+		btnAddRank = New UIButton(oUILib)
+		With btnAddRank
+			.ControlName="btnAddRank"
+			.Left=4
+			.Top=360
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Add Rank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnAddRank, UIControl))
+
+		'btnDeleteRank initial props
+		btnDeleteRank = New UIButton(oUILib)
+		With btnDeleteRank
+			.ControlName="btnDeleteRank"
+			.Left=110
+			.Top=360
+			.Width=100
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="Delete Rank"
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage=True
+			.FontFormat=CType(5, DrawTextFormat)
+			.ControlImageRect = New Rectangle(0, 0, 120, 32)
+		End With
+		Me.AddChild(CType(btnDeleteRank, UIControl))
+	End Sub
+End Class

@@ -1,0 +1,43 @@
+'Interface created from Interface Builder
+Public Class frmMinMax
+	Inherits UIWindow
+
+	Private WithEvents btnMinMax As UIButton
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmMinMax initial props
+		With Me
+			.ControlName="frmMinMax"
+			.Left=224
+			.Top=198
+			.Width=71
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16768960)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'btnMinMax initial props
+		btnMinMax = New UIButton(oUILib)
+		With btnMinMax
+			.ControlImageRect_Normal=Rectangle.FromLTRB(144, 120, 215, 134)
+			.ControlImageRect_Pressed=Rectangle.FromLTRB(144, 120, 215, 134)
+			.ControlName="btnMinMax"
+			.Left=0
+			.Top=0
+			.Width=71
+			.Height=14
+			.Enabled=True
+			.Visible=True
+			.Caption=""
+			.ForeColor=System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, 0, 3, 0))
+			.DrawBackImage=True
+			.FontFormat=5
+		End With
+		Me.AddChild(btnMinMax)
+	End Sub
+End Class

@@ -1,0 +1,623 @@
+'Interface created from Interface Builder
+Public Class frmBehavior
+	Inherits UIWindow
+
+	Private WithEvents lblTargetingPref As UILabel
+	Private WithEvents chkTPFighter As UICheckBox
+	Private WithEvents chkTPCargo As UICheckBox
+	Private WithEvents chkTPTroopTrans As UICheckBox
+	Private WithEvents chkTPEscort As UICheckBox
+	Private WithEvents chkTPCarrier As UICheckBox
+	Private WithEvents chkTPCapital As UICheckBox
+	Private WithEvents chkTPArmed As UICheckBox
+	Private WithEvents chkTPUnarmed As UICheckBox
+	Private WithEvents chkTPFacility As UICheckBox
+	Private WithEvents lnDiv1 As UILine
+	Private WithEvents lblEngagement As UILabel
+	Private WithEvents optEPHoldFire As UIOption
+	Private WithEvents optEPStandGround As UIOption
+	Private WithEvents optEPPursue As UIOption
+	Private WithEvents optEPEvade As UIOption
+	Private WithEvents optEPEngage As UIOption
+	Private WithEvents optEPDock As UIOption
+	Private WithEvents lnDiv2 As UILine
+	Private WithEvents lblTactic As UILabel
+	Private WithEvents optCTMinimize As UIOption
+	Private WithEvents optCTNormal As UIOption
+	Private WithEvents optCTMaximize As UIOption
+	Private WithEvents chkCTManeuver As UICheckBox
+	Private WithEvents chkCTLaunchAll As UICheckBox
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+'frmBehavior initial props
+		With Me
+			.ControlName = "frmBehavior"
+			If muSettings.BehaviorLocX = -1 Then .Left = 128 Else .Left = muSettings.BehaviorLocX
+			If muSettings.BehaviorLocY = -1 Then .Top = moUILib.oDevice.PresentationParameters.BackBufferHeight - 260 Else .Top = muSettings.BehaviorLocY
+			.Width = 312
+			.Height = 232
+			.Enabled = True
+			.Visible = True
+			'.BorderColor = System.Drawing.Color.FromArgb(255, 0, 255, 255)
+			.BorderColor = muSettings.InterfaceBorderColor
+			'.FillColor = System.Drawing.Color.FromArgb(128, 64, 128, 192)
+			.FillColor = muSettings.InterfaceFillColor
+			.FullScreen = False
+			.BorderLineWidth = 2
+		End With
+		mlStartX = Me.Left
+		mlStartY = Me.Top
+
+		'lblTargetingPref initial props
+		lblTargetingPref = New UILabel(oUILib)
+		With lblTargetingPref
+			.ControlName = "lblTargetingPref"
+			.Left = 5
+			.Top = 5
+			.Width = 153
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Targeting Preference"
+			'.ForeColor = System.Drawing.Color.FromArgb(-16711681)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.ToolTipText = "Targeting Preferences Define First Choice in Target Acquisition." & vbCrLf & "  Targets that meet this criteria will be targeted before targets that do not."
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter
+		End With
+		Me.AddChild(CType(lblTargetingPref, UIControl))
+
+		'chkTPFighter initial props
+		chkTPFighter = New UICheckBox(oUILib)
+		With chkTPFighter
+			.ControlName = "chkTPFighter"
+			.Left = 16
+			.Top = 29
+			.Width = 49
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Fighter"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Any aerial or space-bourne unit that has" & vbCrLf & "a hull size less than or equal to 300."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPFighter, UIControl))
+
+		'chkTPCargo initial props
+		chkTPCargo = New UICheckBox(oUILib)
+		With chkTPCargo
+			.ControlName = "chkTPCargo"
+			.Left = 110
+			.Top = 29
+			.Width = 46
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Cargo"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Any entity that has a third of its hull configured for cargo bay."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPCargo, UIControl))
+
+		'chkTPTroopTrans initial props
+		chkTPTroop = New UICheckBox(oUILib)
+		With chkTPTroop
+			.ControlName = "chkTPTroop"
+			.Left = 205
+			.Top = 29
+			.Width = 93
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Troop Transport"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Troopers, Infantry, Mechanized Infantry and Walkers"
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPTroop, UIControl))
+
+		'chkTPEscort initial props
+		chkTPEscort = New UICheckBox(oUILib)
+		With chkTPEscort
+			.ControlName = "chkTPEscort"
+			.Left = 16
+			.Top = 65
+			.Width = 46
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Escort"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Any unit that has a hull size greater than 300 but less than 30,000."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPEscort, UIControl))
+
+		'chkTPCarrier initial props
+		chkTPCarrier = New UICheckBox(oUILib)
+		With chkTPCarrier
+			.ControlName = "chkTPCarrier"
+			.Left = 110
+			.Top = 65
+			.Width = 48
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Carrier"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Any entity that has a third of its hull configured for cargo bay."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPCarrier, UIControl))
+
+		'chkTPCapital initial props
+		chkTPCapital = New UICheckBox(oUILib)
+		With chkTPCapital
+			.ControlName = "chkTPCapital"
+			.Left = 205
+			.Top = 65
+			.Width = 49
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Capital"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Massive warships"
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPCapital, UIControl))
+
+		'chkTPArmed initial props
+		chkTPArmed = New UICheckBox(oUILib)
+		With chkTPArmed
+			.ControlName = "chkTPArmed"
+			.Left = 16
+			.Top = 47
+			.Width = 47
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Armed"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Has at least 1 weapon on-board. Mutually exclusive with Unarmed."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPArmed, UIControl))
+
+		'chkTPUnarmed initial props
+		chkTPUnarmed = New UICheckBox(oUILib)
+		With chkTPUnarmed
+			.ControlName = "chkTPUnarmed"
+			.Left = 110
+			.Top = 47
+			.Width = 61
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Unarmed"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "No weapons on-board. Mutually exclusive with Armed."
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPUnarmed, UIControl))
+
+		'chkTPFacility initial props
+		chkTPFacility = New UICheckBox(oUILib)
+		With chkTPFacility
+			.ControlName = "chkTPFacility"
+			.Left = 205
+			.Top = 47
+			.Width = 50
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Facility"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Facilities and Space Stations"
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkTPFacility, UIControl))
+
+		'lnDiv1 initial props
+		lnDiv1 = New UILine(oUILib)
+		With lnDiv1
+			.ControlName = "lnDiv1"
+			.Left = 5
+			.Top = 85
+			.Width = 300
+			.Height = 0
+			.Enabled = True
+			.Visible = True
+			'.BorderColor = System.Drawing.Color.FromArgb(-16711681)
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv1, UIControl))
+
+		'lblEngagement initial props
+		lblEngagement = New UILabel(oUILib)
+		With lblEngagement
+			.ControlName = "lblEngagement"
+			.Left = 5
+			.Top = 90
+			.Width = 153
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Engagement Pattern"
+			'.ForeColor = System.Drawing.Color.FromArgb(-16711681)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter
+			.ToolTipText = "Defines how this object reacts to opposition"
+		End With
+		Me.AddChild(CType(lblEngagement, UIControl))
+
+		'optEPHoldFire initial props
+		optEPHoldFire = New UIOption(oUILib)
+		With optEPHoldFire
+			.ControlName = "optEPHoldFire"
+			.Left = 16
+			.Top = 110
+			.Width = 59
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Hold Fire"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will not change behavior upon engagement and will not fight back"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPHoldFire, UIControl))
+
+		'optEPStandGround initial props
+		optEPStandGround = New UIOption(oUILib)
+		With optEPStandGround
+			.ControlName = "optEPStandGround"
+			.Left = 203
+			.Top = 110
+			.Width = 84
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Stand Ground"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will fight back but will not change current destination or activity"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPStandGround, UIControl))
+
+		'optEPPursue initial props
+		optEPPursue = New UIOption(oUILib)
+		With optEPPursue
+			.ControlName = "optEPPursue"
+			.Left = 111
+			.Top = 110
+			.Width = 50
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Pursue"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Does not move unless target attempts to escape"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPPursue, UIControl))
+
+		'optEPEvade initial props
+		optEPEvade = New UIOption(oUILib)
+		With optEPEvade
+			.ControlName = "optEPEvade"
+			.Left = 16
+			.Top = 128
+			.Width = 48
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Evade"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will attempt to avoid conflict by moving away"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPEvade, UIControl))
+
+		'optEPEngage initial props
+		optEPEngage = New UIOption(oUILib)
+		With optEPEngage
+			.ControlName = "optEPEngage"
+			.Left = 111
+			.Top = 128
+			.Width = 54
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Engage"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will openly move and follow targets of opportunity"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPEngage, UIControl))
+
+		'optEPDock initial props
+		optEPDock = New UIOption(oUILib)
+		With optEPDock
+			.ControlName = "optEPDock"
+			.Left = 203
+			.Top = 128
+			.Width = 104
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Dock With Target"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will attempt to dock with the specified target (if target still exists)"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optEPDock, UIControl))
+
+		'lnDiv2 initial props
+		lnDiv2 = New UILine(oUILib)
+		With lnDiv2
+			.ControlName = "lnDiv2"
+			.Left = 5
+			.Top = 150
+			.Width = 300
+			.Height = 0
+			.Enabled = True
+			.Visible = True
+			'.BorderColor = System.Drawing.Color.FromArgb(-16711681)
+			.BorderColor = muSettings.InterfaceBorderColor
+		End With
+		Me.AddChild(CType(lnDiv2, UIControl))
+
+		'lblTactic initial props
+		lblTactic = New UILabel(oUILib)
+		With lblTactic
+			.ControlName = "lblTactic"
+			.Left = 5
+			.Top = 155
+			.Width = 153
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Combat Tactic"
+			'.ForeColor = System.Drawing.Color.FromArgb(-16711681)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 9.75, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter
+			.ToolTipText = "Defines in-combat activities, positioning and facing patterns"
+		End With
+		Me.AddChild(CType(lblTactic, UIControl))
+
+		'optCTMinimize initial props
+		optCTMinimize = New UIOption(oUILib)
+		With optCTMinimize
+			.ControlName = "optCTMinimize"
+			.Left = 16
+			.Top = 175
+			.Width = 100
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Minimize Damage"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Attempt to face the target with this object's most defended side and keep optimal range"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optCTMinimize, UIControl))
+
+		'optCTNormal initial props
+		optCTNormal = New UIOption(oUILib)
+		With optCTNormal
+			.ControlName = "optCTNormal"
+			.Left = 16
+			.Top = 193
+			.Width = 51
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Normal"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Will do as much damage as possible from the side that gives a good defense"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optCTNormal, UIControl))
+
+		'optCTMaximize initial props
+		optCTMaximize = New UIOption(oUILib)
+		With optCTMaximize
+			.ControlName = "optCTMaximize"
+			.Left = 16
+			.Top = 211
+			.Width = 104
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Maximize Damage"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Do as much damage as possible to target with no regard to self-preservation"
+			.DisplayType = UIOption.eOptionTypes.eSmallOption
+		End With
+		Me.AddChild(CType(optCTMaximize, UIControl))
+
+		'chkCTManeuver initial props
+		chkCTManeuver = New UICheckBox(oUILib)
+		With chkCTManeuver
+			.ControlName = "chkCTManeuver"
+			.Left = 205
+			.Top = 175
+			.Width = 65
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Maneuver"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Object will attempt to 'dance' around target to avoid being hit"
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkCTManeuver, UIControl))
+
+		'chkCTLaunchAll initial props
+		chkCTLaunchAll = New UICheckBox(oUILib)
+		With chkCTLaunchAll
+			.ControlName = "chkCTLaunchAll"
+			.Left = 205
+			.Top = 193
+			.Width = 94
+			.Height = 16
+			.Enabled = True
+			.Visible = True
+			.Caption = "Launch Children"
+			'.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.ForeColor = muSettings.InterfaceBorderColor
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 8.25, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = False
+			.FontFormat = DrawTextFormat.VerticalCenter Or DrawTextFormat.Right
+			.Value = False
+			.ToolTipText = "Attempts to launch all objects in hangar upon engagement"
+			.DisplayType = UICheckBox.eCheckTypes.eSmallX
+		End With
+		Me.AddChild(CType(chkCTLaunchAll, UIControl))
+
+		'btnMinMax initial props
+		btnMinMax = New UIButton(oUILib)
+		With btnMinMax
+			.ControlImageRect_Normal = New Rectangle(144, 96, 24, 24)
+			.ControlImageRect_Pressed = New Rectangle(168, 96, 24, 24)
+			.ControlImageRect_Disabled = New Rectangle(120, 96, 24, 24)
+			.ControlName = "btnMinMax"
+			.Left = Me.Width - 26
+			.Top = 2
+			.Width = 24
+			.Height = 24
+			.Enabled = True
+			.Visible = True
+			.Caption = ""
+			.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, FontStyle.Regular, GraphicsUnit.Point, 0))
+			.DrawBackImage = True
+			.ToolTipText = "Click to show/hide AI settings screen"
+			.FontFormat = DrawTextFormat.Center Or DrawTextFormat.VerticalCenter
+		End With
+		Me.AddChild(CType(btnMinMax, UIControl))
+
+		'btnRoutes initial props
+		btnRoutes = New UIButton(oUILib)
+		With btnRoutes
+			.ControlName = "btnRoutes"
+			.Left = Me.Width - 126
+			.Top = 2
+			.Width = 100
+			.Height = 24
+			.Enabled = True
+			.Visible = True
+			.Caption = "Routes"
+			.ForeColor = System.Drawing.Color.FromArgb(-1)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 10, FontStyle.Bold, GraphicsUnit.Point, 0))
+			.DrawBackImage = True
+			.ToolTipText = "Click to configure the routes for the selection"
+			.FontFormat = DrawTextFormat.Center Or DrawTextFormat.VerticalCenter
+		End With
+		Me.AddChild(CType(btnRoutes, UIControl))
+	End Sub
+End Class

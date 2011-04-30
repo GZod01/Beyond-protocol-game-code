@@ -1,0 +1,284 @@
+'Interface created from Interface Builder
+Public Class frmDefenseDisplay
+	Inherits UIWindow
+
+	Private WithEvents lblOwner As UILabel
+	Private WithEvents lblShieldHP As UILabel
+	Private WithEvents lblForeArmorHP As UILabel
+	Private WithEvents lblLeftArmorHP As UILabel
+	Private WithEvents lblRearArmorHP As UILabel
+	Private WithEvents lblRightArmorHP As UILabel
+	Private WithEvents lblStructureHP As UILabel
+	Private WithEvents lblShieldPerc As UILabel
+	Private WithEvents lblForeArmorPerc As UILabel
+	Private WithEvents lblLeftArmorPerc As UILabel
+	Private WithEvents lblRearArmorPerc As UILabel
+	Private WithEvents lblRightArmorPerc As UILabel
+	Private WithEvents lblStructurePerc As UILabel
+	Private WithEvents vln2 As UILine
+	Public Sub New(ByRef oUILib As UILib)
+		MyBase.New(oUILib)
+
+		'frmDefenseDisplay initial props
+		With Me
+			.ControlName="frmDefenseDisplay"
+			.Left=15
+			.Top=341
+			.Width=108
+			.Height=86
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+			.FillColor=System.Drawing.Color.FromArgb(-16768960)
+			.FullScreen=False
+		End With
+
+		'lblOwner initial props
+		lblOwner = New UILabel(oUILib)
+		With lblOwner
+			.ControlName="lblOwner"
+			.Left=5
+			.Top=2
+			.Width=108
+			.Height=24
+			.Enabled=True
+			.Visible=True
+			.Caption="OWNER"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Arial", 9, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=0
+		End With
+		Me.AddChild(lblOwner)
+
+		'lblShieldHP initial props
+		lblShieldHP = New UILabel(oUILib)
+		With lblShieldHP
+			.ControlName="lblShieldHP"
+			.Left=4
+			.Top=24
+			.Width=45
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="SHIELDS:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblShieldHP)
+
+		'lblForeArmorHP initial props
+		lblForeArmorHP = New UILabel(oUILib)
+		With lblForeArmorHP
+			.ControlName="lblForeArmorHP"
+			.Left=4
+			.Top=34
+			.Width=67
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="FORE ARMOR:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblForeArmorHP)
+
+		'lblLeftArmorHP initial props
+		lblLeftArmorHP = New UILabel(oUILib)
+		With lblLeftArmorHP
+			.ControlName="lblLeftArmorHP"
+			.Left=4
+			.Top=44
+			.Width=66
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="LEFT ARMOR:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblLeftArmorHP)
+
+		'lblRearArmorHP initial props
+		lblRearArmorHP = New UILabel(oUILib)
+		With lblRearArmorHP
+			.ControlName="lblRearArmorHP"
+			.Left=4
+			.Top=54
+			.Width=67
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="REAR ARMOR:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRearArmorHP)
+
+		'lblRightArmorHP initial props
+		lblRightArmorHP = New UILabel(oUILib)
+		With lblRightArmorHP
+			.ControlName="lblRightArmorHP"
+			.Left=4
+			.Top=64
+			.Width=72
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="RIGHT ARMOR:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRightArmorHP)
+
+		'lblStructureHP initial props
+		lblStructureHP = New UILabel(oUILib)
+		With lblStructureHP
+			.ControlName="lblStructureHP"
+			.Left=4
+			.Top=74
+			.Width=62
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="STRUCTURE:"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711681)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblStructureHP)
+
+		'lblShieldPerc initial props
+		lblShieldPerc = New UILabel(oUILib)
+		With lblShieldPerc
+			.ControlName="lblShieldPerc"
+			.Left=49
+			.Top=24
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblShieldPerc)
+
+		'lblForeArmorPerc initial props
+		lblForeArmorPerc = New UILabel(oUILib)
+		With lblForeArmorPerc
+			.ControlName="lblForeArmorPerc"
+			.Left=73
+			.Top=34
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblForeArmorPerc)
+
+		'lblLeftArmorPerc initial props
+		lblLeftArmorPerc = New UILabel(oUILib)
+		With lblLeftArmorPerc
+			.ControlName="lblLeftArmorPerc"
+			.Left=70
+			.Top=44
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblLeftArmorPerc)
+
+		'lblRearArmorPerc initial props
+		lblRearArmorPerc = New UILabel(oUILib)
+		With lblRearArmorPerc
+			.ControlName="lblRearArmorPerc"
+			.Left=74
+			.Top=54
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRearArmorPerc)
+
+		'lblRightArmorPerc initial props
+		lblRightArmorPerc = New UILabel(oUILib)
+		With lblRightArmorPerc
+			.ControlName="lblRightArmorPerc"
+			.Left=77
+			.Top=64
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblRightArmorPerc)
+
+		'lblStructurePerc initial props
+		lblStructurePerc = New UILabel(oUILib)
+		With lblStructurePerc
+			.ControlName="lblStructurePerc"
+			.Left=68
+			.Top=74
+			.Width=24
+			.Height=10
+			.Enabled=True
+			.Visible=True
+			.Caption="100%"
+			.ForeColor=System.Drawing.Color.FromArgb(-16711936)
+			.SetFont(New System.Drawing.Font("Microsoft Sans Serif", 6, 1, 3, 0))
+			.DrawBackImage=False
+			.FontFormat=4
+		End With
+		Me.AddChild(lblStructurePerc)
+
+		'vln2 initial props
+		vln2 = New UILine(oUILib)
+		With vln2
+			.ControlName="vln2"
+			.Left=0
+			.Top=19
+			.Width=108
+			.Height=0
+			.Enabled=True
+			.Visible=True
+			.BorderColor=System.Drawing.Color.FromArgb(-16711681)
+		End With
+		Me.AddChild(vln2)
+	End Sub
+End Class

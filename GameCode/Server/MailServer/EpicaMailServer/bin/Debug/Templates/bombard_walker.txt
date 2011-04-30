@@ -1,0 +1,9 @@
+[PlayerName] Bombs [ColonyName]! 
+BREAKING NEWS! [PlayerName] Bombs [ColonyName]! 
+16
+Jason Walker 
+7
+7- 
+<div style="font-size: 8pt; color:#E2E2E2;">
+Happening Now, [PlayerName] has orbitally bombed [ColonyName] targets as a response to conflict between [PlayerName] and [PlayerName2]. Local reporters believe that [TotalFacilitiesLostSideB] facilities were destroyed, [TotalLostResidenceSideB] homes were lost, and unfortunatley [TotalUnitLostSideB] souls were lost in the attack. Local security forces warned citizens to stay home as they expected continuing offensive operations and unnecessary movement would hamer defensive preparations. It is expected the bombardment of [ColonyName] will not only seriously deteriorate relations between [PlayerName] and [PlayerName2] but will continue to strain relations among members in the Galactic Senate
+</div>
