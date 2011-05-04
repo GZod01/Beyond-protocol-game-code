@@ -1,0 +1,159 @@
+Server Pre-Req Config
+=====================
+	Note: If you are running a compiled application, the INI files are 'bin\release\exename.ini'.  If you are going to run in debug mode the INI files are 'bin\debug\exename.vshost.ini'
+		Region and PF do not use a debug/release subdir.
+
+	Note: It's suggested you set each project for X86 as running in X64 or Any on an X64 platform will prevent you from using Edit-And-Continue.
+
+
+	Note: A Domain is an instance of a Region server.
+		TODO: (See Server Overview document)
+
+		TODO: Conflicting layout.  Region defins a PathFinding server port of 7790.  Then PF defines the domain as being 7790.
+
+	Files with a * are not included in the SVN,  all other files/directories are assumed to be there.
+
+
+
+Operator	: bin\debug\operator.vshost.ini
+			Defines which UDL file to use.  
+				Perm_Save_UDL=(filename.udl)
+  		  bin\debug\EP01.udl
+			SQL Connection Information
+
+Box Operator 	: None
+
+Email		: bin\Debug\EpicaMailServer.vshost.ini
+			This file defined server settings.  Leave as default.
+
+		  bin\Debug\Templates directory
+			These are the email templates for GNS articles.  		  
+
+
+			Install ChilkatDotNet support library.
+			Place a copy of the .DLL file inside your bin\debug\ dir.
+			
+Primary		: bin\debug\EpicaPrimary.vshost.ini
+			Defines the connections to Primary, PF, Client, and EMailServer.
+
+		  bin\debug\Female.txt
+			Simple list of random female first names for Agents.
+
+		  bin\debug\Male.txt
+			Simple list of random male first names for Agents.
+
+		  bin\debug\LastName.txt 
+			Simple list of random last names for Agents.
+
+		  bin\debug\ModelDef.dat
+			This is the server's copy of the ModelDef.DAT file that the client shares.  They must both be the same.
+		
+		  bin\debug\EpicaPrimary.UDL
+			SQL Connection Information
+
+Region		: bin\regionserver.vshost.ini
+			Defines Client port.
+		 	Defines connections to PF server.
+			Defines connections to Primary.
+			Defines which SolarSystems this region takes care of.  (see tblSolarSystem)
+				** If you hand crafted stars, instead of the normal Operator::GeoSpawner then this must be hand created.  
+				   As stars are generated, they are assigned to a region, and then are written out to the INI file.
+		  * bin\RS_Model.dat		Generated? But re-read.  TODO: EnochDagor Explain
+		  * bin\terr.txt		Output only cache file.  TODO: EnochDagor Explain
+
+
+
+
+PathFinding(PF)	: bin\EpicaPathFinding.vshost.ini
+			Defines Primary server port.
+			
+		
+
+
+Server Project - Compile time Command Line Options
+==================================================
+
+Operator	: None
+
+Box Operator 	: Installed a window service
+
+Email		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Mail Server IP]"
+			e.g. "1 10.70.5.156 7701 74.113.102.139"
+		  Configure the Email server User - Pass - etc inside globalvars.
+
+Primary		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Primary Server IP] [Primary Server Port]"
+			e.g. "1 10.70.5.156 7701 74.113.102.139 7759"
+
+Region		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Region Server IP] [Region Server Port]"
+			e.g. "1 10.70.5.156 7701 74.113.102.139 7710"
+		  Note: Setup the number of regions on the operator console.  For a small universe "Expected Boxes" will be 1.  
+
+PathFinding(PF)	: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [PF Server IP]"
+			e.g. "1 10.70.5.156 7701 74.113.102.139"
+
+Note: See the Server Setup guide for how to lay out the files.  Such as the Email Server needs the Templates\ dir located in the bin\ dir, along with some INI config.
+
+
+
+Test Mode Note
+==============
+BE SURE all applications have gb_IS_TEST_SERVER set to true.  
+	This disables emails and other external events.
+	You can enable this once your confident your setup properly.
+
+
+
+Server Startup Procedure
+========================
+
+
+1. Start Operator
+	Wait for "Server ready... waiting for at least 1 box operators to connect..." on Operator
+
+2. Start the Box Operator Service.
+	Wait for "Send Box Operator 1 spawn request for eEmailServerApp" on Operator
+
+3. Start the Email Server.
+	Wait for "Send Box Operator 1 spawn request for ePrimaryServerApp" on Operator
+
+4. Start the Primary Server.
+	Wait For "Server Initialized! Waiting for Begin Button..." on Primary
+	Wait for "Send Box Operator 1 spawn request for ePathfindingServerApp" on Operator
+
+5. Start the PF server.
+	Note: This will take some time as it has to calculate all the planets, and load into memory the grids.
+	Wait for "Pathfinding Server Initialized!" on PF
+	Wait for "Send Box Operator 1 spawn request for eRegionServerApp" on operator.
+
+6. Start your Region Server(s).  
+	Note: The Region console is barren.  You will see it loading by looking at the Primary console.
+	Wait for "Domain Indicating Ready State" on Primary.
+
+7. Click "Start Routes" on Primary.
+
+8. Click "Accept Clients" on Operator.
+
+
+To connect to this server instance either edit bpclient.ini for a compiled version, or bpclient.vshost.ini for a dev copy.
+Add: 
+	[Connection]
+	OperatorIP=74.113.102.139
+	OverrideIP=74.113.102.139
+
+
+Server Safe Shutdown
+====================
+There are two methods to shutdown a BP server.  You can just end all apps.  95% of most data has already been saved via the Async data saver.  However more current player data will be lost.  Possibly Production queues, Research queues, etc.
+Therefore we have the following SAFE shutdown procedure which ensures all data, queues, etc are written to SQL.
+
+1. Click Shutdown on Operator.
+
+2. You can now close Region, Email, and PF.
+
+3. Click Close on Primary.  
+	Note: This will begin the data dump.
+	Wait for "Program Ready to Terminate..."
+
+4. Close Primary, Operator, and stop the Box Operator service.
+
+
