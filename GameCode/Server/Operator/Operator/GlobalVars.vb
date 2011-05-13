@@ -670,6 +670,23 @@ Module GlobalVars
                 End If
             Next X
             
+            LogEvent(LogEventType.Informational, "Checking for Mineral Regeneration...")
+            For X As Int32 = 0 To glSystemUB
+                If glSystemIdx(X) > -1 Then
+                    If goSystem(X).ObjectID = 88 Then Continue For
+                    sSQL = "SELECT COUNT(CacheID) FROM tblMineralCache WHERE ParentID IN (SELECT PlanetID FROM tblPlanet WHERE tblPlanet.ParentID=" & goSystem(X).ObjectID & ")"
+                    oComm = New OleDb.OleDbCommand(sSQL, goCN)
+                    oData = oComm.ExecuteReader(CommandBehavior.Default)
+                    Dim bRegenerate As Boolean = oData.Read = False OrElse CInt(oData(0)) = 0
+                    oData.Close()
+                    oData = Nothing
+                    oComm = Nothing
+                    If bRegenerate = True Then
+                        LogEvent(LogEventType.Informational, "... Mineral Regeneration " & goSystem(X).ObjectID.ToString & " -" & BytesToString(goSystem(X).SystemName))
+                        GeoSpawner.SpawnSystemsMinerals(goSystem(X).ObjectID)
+                    End If
+                End If
+            Next
 
             bResult = True
         Catch
