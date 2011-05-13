@@ -738,5 +738,4 @@ SET IDENTITY_INSERT tblPlayer OFF
 UPDATE tblSolarSystem SET OwnerID=0
 UPDATE tblSolarSystem SET SystemName = SystemName + '(S)', SystemType=0 WHERE SystemID IN (97, 95, 89, 91)
 UPDATE tblSolarSystem SET SystemType=2 WHERE SystemID IN (98, 96, 90, 92, 75, 76, 77, 78, 82, 83, 84, 85)
-UPDATE tblWormhole SET WormholeFlag=13 WHERE System1ID IN (97, 95, 89, 91) OR System2ID IN (97, 95, 89, 91)
-
+UPDATE tblWormhole SET WormholeFlag=13 
