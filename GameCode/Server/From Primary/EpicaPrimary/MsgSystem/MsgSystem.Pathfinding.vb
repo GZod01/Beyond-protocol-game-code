@@ -89,7 +89,7 @@ Partial Class MsgSystem
 				LogEvent(GlobalVars.LogEventType.Informational, "Pathfinding Server Requesting Galaxy and Systems")
 				HandleRequestGalaxy(Index, ConnectionType.ePathfindingServerApp)
 			Case GlobalMessageCode.eRequestSystemDetails
-				LogEvent(LogEventType.Informational, "Pathfinding Server Requesting System Details")
+				LogEvent(LogEventType.Informational, "Pathfinding Server Requesting System Details - " & System.BitConverter.ToInt32(Data, 2).ToString)
 				HandleRequestSystemDetails(Index, ConnectionType.ePathfindingServerApp, Data)
 			Case GlobalMessageCode.ePFRequestEntitys
 				HandlePFRequestEntities()

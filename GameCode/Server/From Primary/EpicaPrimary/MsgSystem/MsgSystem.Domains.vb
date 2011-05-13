@@ -164,7 +164,7 @@ Partial Class MsgSystem
                 LogEvent(LogEventType.Informational, "Domain Requesting Star Types")
                 HandleRequestStarTypes(Index, ConnectionType.eRegionServerApp)
             Case GlobalMessageCode.eRequestSystemDetails
-                LogEvent(LogEventType.Informational, "Domain Requesting System Details")
+                LogEvent(LogEventType.Informational, "Domain Requesting System Details - " & System.BitConverter.ToInt32(Data, 2).ToString)
                 HandleRequestSystemDetails(Index, ConnectionType.eRegionServerApp, Data)
             Case GlobalMessageCode.eDomainServerReady
                 LogEvent(LogEventType.Informational, "Domain Indicating Ready State")
