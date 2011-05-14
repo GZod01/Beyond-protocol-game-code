@@ -3103,7 +3103,10 @@ Public Class MsgSystem
     Private mbFirstRegionHandled As Boolean = False
     Private mlRgn As Int32 = 3
     Public Function GetAvailableBoxOperator(ByVal lConnType As ConnectionType) As Int32
-        If gb_IS_TEST_SERVER = True Then Return 1
+	If gb_IS_TEST_SERVER = True Or glExpectedBoxCnt = 1 Then Return 1
+
+	'TODO: Put this all in the INI file
+	' e.g. BOX_PRIMARY=1, BOX_EMAIL=1, BOX_REGION#=42
 
         If lConnType = ConnectionType.eEmailServerApp Then Return 1
         If lConnType = ConnectionType.ePrimaryServerApp Then Return 2
