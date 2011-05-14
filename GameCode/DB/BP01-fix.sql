@@ -767,3 +767,4 @@ UPDATE tblSolarSystem SET SystemName = SystemName + '(S)', SystemType=0 WHERE Sy
 UPDATE tblSolarSystem SET SystemType=2 WHERE SystemID IN (98, 96, 90, 92, 75, 76, 77, 78, 82, 83, 84, 85)
 UPDATE tblWormhole SET WormholeFlag=13 WHERE System1ID IN (97, 95, 89, 91) OR System2ID IN (97, 95, 89, 91)
 UPDATE tblArmor SET OuterLayerMineralID=0, MiddleLayerMineralID=0, InnerLayerMineralID=0 WHERE OwnerID=0
+UPDATE tblPlanet SET PlayerSpawns=0, SpawnLocked=0, SentGNSLowRes=0, PrimaryComposition=0, OrigMinQty=0
