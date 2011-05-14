@@ -895,9 +895,9 @@ Public Class MsgSystem
             sSQL = "INSERT INTO CSRTrans (CSRName, LogTime, LogType) VALUES ('" & BytesToString(oPlayer.PlayerName) & "', " & lTime & ", 0)"
         End If
 
-        Dim oComm As Odbc.OdbcCommand = Nothing
+        Dim oComm As OleDb.OleDbCommand = Nothing
         Try
-            oComm = New Odbc.OdbcCommand(sSQL, goSuiteCN)
+            oComm = New OleDb.OleDbCommand(sSQL, goCN)
             oComm.ExecuteNonQuery()
             moServers(lIndex).SendData(yData)
         Catch ex As Exception
@@ -1811,7 +1811,7 @@ Public Class MsgSystem
 
         If gb_IS_TEST_SERVER = True Then Return True
 
-        Dim oComm As Odbc.OdbcCommand = Nothing
+        Dim oComm As OleDb.OleDbCommand = Nothing
         Dim sSQL As String = ""
 
         Dim bResult As Boolean = False
@@ -1822,8 +1822,8 @@ Public Class MsgSystem
             Try
                 'Ok, get the recent status from usertrans
                 sSQL = "SELECT CurrentStatus FROM User_Play_HX WHERE PlayerID = " & lPlayerID & " ORDER BY LoginTime DESC LIMIT 1"
-                oComm = New Odbc.OdbcCommand(sSQL, goSuiteCN)
-                Dim oData As Odbc.OdbcDataReader = oComm.ExecuteReader()
+                oComm = New OleDb.OleDbCommand(sSQL, goCN)
+                Dim oData As OleDb.OleDbDataReader = oComm.ExecuteReader()
 
                 'If first time logging in since server down, lPrevStatus will be -1
                 '  thus, if there are no records to read, or the only record is null then prevstatus will = -1
@@ -1846,7 +1846,7 @@ Public Class MsgSystem
                     sSQL = "UPDATE fc_subscriptions SET StartDate = '" & Now.ToString("yyyy-MM-dd") & "', EndDate = '" & Now.AddDays(30).ToString("yyyy-MM-dd") & "' WHERE UserID = "
                     sSQL &= "(SELECT ID FROM fc_module_users WHERE UserName = '" & sPlayerName & "') AND ProdID = 64"
 
-                    oComm = New Odbc.OdbcCommand(sSQL, goSuiteCN)
+                    oComm = New OleDb.OleDbCommand(sSQL, goCN)
                     If oComm.ExecuteNonQuery() = 0 Then
                         'Throw New Exception("No Records updated!")
                         LogEvent(LogEventType.CriticalError, "SaveLoginTransaction New Player 30Day Period Update: No Records update!" & vbCrLf & sSQL)
@@ -1856,7 +1856,7 @@ Public Class MsgSystem
 
                     sSQL = "UPDATE fc_module_users SET GameStartDate = '" & Now.ToString("yyyy-MM-dd") & "', SubExpirationDate = '" & Now.AddDays(30).ToString("yyyy-MM-dd") & _
                       "' WHERE UserName = '" & sPlayerName & "'"
-                    oComm = New Odbc.OdbcCommand(sSQL, goSuiteCN)
+                    oComm = New OleDb.OleDbCommand(sSQL, goCN)
                     If oComm.ExecuteNonQuery() = 0 Then
                         Throw New Exception("No Records Updated!")
                     End If
@@ -1881,7 +1881,7 @@ Public Class MsgSystem
             sSQL &= ", '" & MakeDBStr(sPlayerName) & "', '" & Date.SpecifyKind(Now, DateTimeKind.Local).ToUniversalTime.ToString("yyyy-MM-dd HH:mm:ss") & "', '" & _
             sIP & "', " & lStatus & ", " & lPlayTime & ")"
 
-            oComm = New Odbc.OdbcCommand(sSQL, goSuiteCN)
+            oComm = New OleDb.OleDbCommand(sSQL, goCN)
             oComm.ExecuteNonQuery()
         Catch ex As Exception
             LogEvent(LogEventType.CriticalError, "SaveLoginTransaction: " & ex.Message & vbCrLf & sSQL)

@@ -243,84 +243,84 @@ Module GlobalVars
         Return bNoErrors
     End Function
 
-    Private m_goWebCN As Odbc.OdbcConnection = Nothing
-    Public ReadOnly Property goWebCN() As Odbc.OdbcConnection
-        Get
-            If m_goWebCN Is Nothing OrElse m_goWebCN.State = ConnectionState.Closed OrElse m_goWebCN.State = ConnectionState.Broken Then
-                m_goWebCN = Nothing
-                InitializeWebConnection()
-            End If
-            Return m_goWebCN
-        End Get
-    End Property
+    'Private m_goWebCN As Odbc.OdbcConnection = Nothing
+    'Public ReadOnly Property goWebCN() As Odbc.OdbcConnection
+    '    Get
+    '        If m_goWebCN Is Nothing OrElse m_goWebCN.State = ConnectionState.Closed OrElse m_goWebCN.State = ConnectionState.Broken Then
+    '            m_goWebCN = Nothing
+    '            InitializeWebConnection()
+    '        End If
+    '        Return m_goWebCN
+    '    End Get
+    'End Property
 
-    Public Function InitializeWebConnection() As Boolean
-        'go ahead and connect
-        Dim bNoErrors As Boolean
+    'Public Function InitializeWebConnection() As Boolean
+    '    'go ahead and connect
+    '    Dim bNoErrors As Boolean
 
-        bNoErrors = True
-        Try
-            Dim sConnStr As String = "DSN=WebDB"
-            m_goWebCN = New Odbc.OdbcConnection(sConnStr)
-            m_goWebCN.Open()
-        Catch
-            bNoErrors = False
-            LogEvent(LogEventType.CriticalError, "InitializeConnection: " & Err.Description)
-        Finally
-            If bNoErrors = False Then
-                m_goWebCN = Nothing
-            End If
-        End Try
+    '    bNoErrors = True
+    '    Try
+    '        Dim sConnStr As String = "DSN=WebDB"
+    '        m_goWebCN = New Odbc.OdbcConnection(sConnStr)
+    '        m_goWebCN.Open()
+    '    Catch
+    '        bNoErrors = False
+    '        LogEvent(LogEventType.CriticalError, "InitializeConnection: " & Err.Description)
+    '    Finally
+    '        If bNoErrors = False Then
+    '            m_goWebCN = Nothing
+    '        End If
+    '    End Try
 
-        Return bNoErrors
-    End Function
+    '    Return bNoErrors
+    'End Function
 
-    Private m_goSuiteCN As Odbc.OdbcConnection = Nothing
-    Public ReadOnly Property goSuiteCN() As Odbc.OdbcConnection
-        Get
-            If m_goSuiteCN Is Nothing OrElse m_goSuiteCN.State = ConnectionState.Closed OrElse m_goSuiteCN.State = ConnectionState.Broken Then
-                m_goSuiteCN = Nothing
-                InitializeSuiteConnection()
-            End If
-            Return m_goSuiteCN
-        End Get
-    End Property
+    'Private m_goSuiteCN As Odbc.OdbcConnection = Nothing
+    'Public ReadOnly Property goSuiteCN() As Odbc.OdbcConnection
+    '    Get
+    '        If m_goSuiteCN Is Nothing OrElse m_goSuiteCN.State = ConnectionState.Closed OrElse m_goSuiteCN.State = ConnectionState.Broken Then
+    '            m_goSuiteCN = Nothing
+    '            InitializeSuiteConnection()
+    '        End If
+    '        Return m_goSuiteCN
+    '    End Get
+    'End Property
 
-    Public Function InitializeSuiteConnection() As Boolean
-        'go ahead and connect
-        Dim bNoErrors As Boolean
+    'Public Function InitializeSuiteConnection() As Boolean
+    '    'go ahead and connect
+    '    Dim bNoErrors As Boolean
 
-        bNoErrors = True
-        Try
-            Dim sConnStr As String = "DSN=SuiteDB"
-            m_goSuiteCN = New Odbc.OdbcConnection(sConnStr)
-            m_goSuiteCN.Open()
-        Catch
-            bNoErrors = False
-            LogEvent(LogEventType.CriticalError, "InitializeSuiteConnection: " & Err.Description)
-        Finally
-            If bNoErrors = False Then
-                m_goSuiteCN = Nothing
-            End If
-        End Try
+    '    bNoErrors = True
+    '    Try
+    '        Dim sConnStr As String = "DSN=SuiteDB"
+    '        m_goSuiteCN = New Odbc.OdbcConnection(sConnStr)
+    '        m_goSuiteCN.Open()
+    '    Catch
+    '        bNoErrors = False
+    '        LogEvent(LogEventType.CriticalError, "InitializeSuiteConnection: " & Err.Description)
+    '    Finally
+    '        If bNoErrors = False Then
+    '            m_goSuiteCN = Nothing
+    '        End If
+    '    End Try
 
-        Return bNoErrors
-    End Function
+    '    Return bNoErrors
+    'End Function
 
-    Public Sub CloseConn()
-        If Not m_goWebCN Is Nothing Then
-            m_goWebCN.Close()
-        End If
-        m_goWebCN = Nothing
+    'Public Sub CloseConn()
+    '    If Not m_goWebCN Is Nothing Then
+    '        m_goWebCN.Close()
+    '    End If
+    '    m_goWebCN = Nothing
 
-        If Not m_goCN Is Nothing Then
-            m_goCN.Close()
-        End If
-        m_goCN = Nothing
+    '    If Not m_goCN Is Nothing Then
+    '        m_goCN.Close()
+    '    End If
+    '    m_goCN = Nothing
 
-        If m_goSuiteCN Is Nothing = False Then m_goSuiteCN.Close()
-        m_goSuiteCN = Nothing
-    End Sub
+    '    If m_goSuiteCN Is Nothing = False Then m_goSuiteCN.Close()
+    '    m_goSuiteCN = Nothing
+    'End Sub
 #End Region
 #Region "  String Management  "
 	Public Function BytesToString(ByVal yBytes() As Byte) As String
@@ -1641,8 +1641,8 @@ Module GlobalVars
 
     Private Sub CheckTransactions()
         Dim sSQL As String
-        Dim oComm As Odbc.OdbcCommand = Nothing ' OleDb.OleDbCommand = Nothing
-        Dim oData As Odbc.OdbcDataReader = Nothing ' 'OleDb.OleDbDataReader = Nothing
+        Dim oComm As OleDb.OleDbCommand = Nothing ' OleDb.OleDbCommand = Nothing
+        Dim oData As OleDb.OleDbDataReader = Nothing ' 'OleDb.OleDbDataReader = Nothing
 
         Dim blTransExecuted As Int64 = 0
 
@@ -1653,7 +1653,7 @@ Module GlobalVars
             Dim blLastTransID As Int64 = -1
 
             sSQL = "SELECT * FROM OperatorTransID"
-            oComm = New Odbc.OdbcCommand(sSQL, goWebCN)
+            oComm = New OleDb.OleDbCommand(sSQL, goCN)
             oData = oComm.ExecuteReader(CommandBehavior.Default)
             If oData.Read = True Then
                 If oData("LastTransactionID") Is DBNull.Value = False Then blLastTransID = CLng(oData("LastTransactionID"))
@@ -1664,7 +1664,7 @@ Module GlobalVars
             oComm = Nothing
 
             sSQL = "SELECT * FROM WebsiteTrans WHERE TransactionID > " & blLastTransID & " ORDER BY TransactionID"
-            oComm = New Odbc.OdbcCommand(sSQL, goWebCN)
+            oComm = New OleDb.OleDbCommand(sSQL, goCN)
             oData = oComm.ExecuteReader(CommandBehavior.Default)
 
             Dim blInitialLastTransID As Int64 = blLastTransID
@@ -1714,12 +1714,12 @@ Module GlobalVars
 
                 'Now, write our last trans id out
                 sSQL = "UPDATE OperatorTransID SET LastTransactionID = " & blLastTransID
-                oComm = New Odbc.OdbcCommand(sSQL, goWebCN)
+                oComm = New OleDb.OleDbCommand(sSQL, goCN)
                 If oComm.ExecuteNonQuery() = 0 Then
                     oComm.Dispose()
                     oComm = Nothing
                     sSQL = "INSERT INTO OperatorTransID (LastTransactionID) VALUES (" & blLastTransID & ")"
-                    oComm = New Odbc.OdbcCommand(sSQL, goWebCN)
+                    oComm = New OleDb.OleDbCommand(sSQL, goCN)
                     oComm.ExecuteNonQuery()
                 End If
                 oComm.Dispose()

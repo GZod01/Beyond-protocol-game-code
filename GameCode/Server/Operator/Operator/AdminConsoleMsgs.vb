@@ -76,8 +76,8 @@ Public Class AdminConsoleMsg
             sSQL = sSQL & "username = '" & sUserName & "' "
         End If
 
-        Dim oComm As Odbc.OdbcCommand = New Odbc.OdbcCommand(sSQL, goWebCN)
-        Dim oData As Odbc.OdbcDataReader = oComm.ExecuteReader(CommandBehavior.Default)
+        Dim oComm As OleDb.OleDbCommand = New OleDb.OleDbCommand(sSQL, goCN)
+        Dim oData As OleDb.OleDbDataReader = oComm.ExecuteReader(CommandBehavior.Default)
         Dim counter As Int32 = 0
         Dim userlist() As Byte = Nothing
 
@@ -144,8 +144,8 @@ Public Class AdminConsoleMsg
 
             sSQL = "Select * from fc_subscriptions where email = '" & sEmailAddress & "' order by startdate desc"
 
-            Dim oCommSuite As Odbc.OdbcCommand = New Odbc.OdbcCommand(sSQL, goSuiteCN)
-            Dim oDataSuite As Odbc.OdbcDataReader = oCommSuite.ExecuteReader(CommandBehavior.Default)
+            Dim oCommSuite As OleDb.OleDbCommand = New OleDb.OleDbCommand(sSQL, goCN)
+            Dim oDataSuite As OleDb.OleDbDataReader = oCommSuite.ExecuteReader(CommandBehavior.Default)
             Dim sublPos As Int32 = 0
             While oDataSuite.Read = True
                 subcounter += 1
@@ -258,8 +258,8 @@ Public Class AdminConsoleMsg
             sSQL = sSQL & " user_email like '" & sEmailAddress & "%' "
         End If
 
-        Dim oComm As Odbc.OdbcCommand = New Odbc.OdbcCommand(sSQL, goWebCN)
-        Dim oData As Odbc.OdbcDataReader = oComm.ExecuteReader(CommandBehavior.Default)
+        Dim oComm As OleDb.OleDbCommand = New OleDb.OleDbCommand(sSQL, goCN)
+        Dim oData As OleDb.OleDbDataReader = oComm.ExecuteReader(CommandBehavior.Default)
         Dim counter As Int32 = 0
         Dim userlist() As Byte = Nothing
 

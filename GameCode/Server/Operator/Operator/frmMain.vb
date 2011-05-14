@@ -59,7 +59,7 @@ Public Class frmMain
                 LogEvent(LogEventType.CriticalError, "Saving Senate Error: " & ex.Message)
             End Try
 
-            CloseConn()
+            'CloseConn()
         Else
             btnShutdown.Text = "Confirm"
         End If
