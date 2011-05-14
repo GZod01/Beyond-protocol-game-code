@@ -45,9 +45,6 @@ CREATE TABLE [dbo].[WebsiteTrans](
 GO
 
 DELETE FROM WebsiteTrans
-SET IDENTITY_INSERT WebsiteTrans ON
-INSERT INTO WebsiteTrans (TransactionID, PreviousUserName, NewUserName, NewPassword, NewStatus, WebUserID, BBUserID, TrackerUserID ) VALUES (1, NULL, 'Scalorn', 'jas54552', 1, 100, 100, 100)
-SET IDENTITY_INSERT WebsiteTrans OFF
 
 
 if EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[dbo].[User_Play_HX]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
@@ -86,9 +83,6 @@ CREATE TABLE [dbo].[fc_module_users](
 ) ON [PRIMARY]
 GO
 
-SET IDENTITY_INSERT fc_module_users ON
-INSERT INTO fc_module_users (ID, UserName, GameStartDate, SubExpirationDate) VALUES (100, 'Scalorn','2011/1/1 00:00', '2012/1/1 00:00')
-SET IDENTITY_INSERT fc_module_users OFF
 
 if EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[dbo].[fc_subscriptions]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
 	DROP TABLE [dbo].[fc_subscriptions]
@@ -107,5 +101,16 @@ CREATE TABLE [dbo].[fc_subscriptions](
 ) ON [PRIMARY]
 GO
 
-INSERT INTO fc_subscriptions (UserID, UserName, StartDate, EndDate, ProdID) VALUES (100, 'Scalorn','2011/1/1 00:00', '2012/1/1 00:00', 64)
 
+
+
+-- To add a new username
+--SET IDENTITY_INSERT WebsiteTrans ON
+--INSERT INTO WebsiteTrans (TransactionID, PreviousUserName, NewUserName, NewPassword, NewStatus, WebUserID, BBUserID, TrackerUserID ) VALUES (1, NULL, 'username', 'password', 1, 100, 100, 100)
+--SET IDENTITY_INSERT WebsiteTrans OFF
+
+--SET IDENTITY_INSERT fc_module_users ON
+--INSERT INTO fc_module_users (ID, UserName, GameStartDate, SubExpirationDate) VALUES (100, 'username','2011/1/1 00:00', '2012/1/1 00:00')
+--SET IDENTITY_INSERT fc_module_users OFF
+
+--INSERT INTO fc_subscriptions (UserID, UserName, StartDate, EndDate, ProdID) VALUES (100, 'username','2011/1/1 00:00', '2012/1/1 00:00', 64)
