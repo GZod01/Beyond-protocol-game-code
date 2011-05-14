@@ -1821,7 +1821,7 @@ Public Class MsgSystem
         If lStatus = AccountStatusType.eActiveAccount AndAlso lPrevStatus <> AccountStatusType.eActiveAccount Then
             Try
                 'Ok, get the recent status from usertrans
-                sSQL = "SELECT CurrentStatus FROM User_Play_HX WHERE PlayerID = " & lPlayerID & " ORDER BY LoginTime DESC LIMIT 1"
+                sSQL = "SELECT TOP 1 CurrentStatus FROM User_Play_HX WHERE PlayerID = " & lPlayerID & " ORDER BY LoginTime DESC"
                 oComm = New OleDb.OleDbCommand(sSQL, goCN)
                 Dim oData As OleDb.OleDbDataReader = oComm.ExecuteReader()
 
