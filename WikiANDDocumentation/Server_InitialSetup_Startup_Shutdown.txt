@@ -11,8 +11,6 @@ Server Pre-Req Config
 
 		TODO: Conflicting layout.  Region defins a PathFinding server port of 7790.  Then PF defines the domain as being 7790.
 
-	Files with a * are not included in the SVN,  all other files/directories are assumed to be there.
-
 
 
 Operator	: bin\debug\operator.vshost.ini
@@ -69,13 +67,13 @@ Region		: bin\regionserver.vshost.ini
 			Defines which SolarSystems this region takes care of.  (see tblSolarSystem)
 				** If you hand crafted stars, instead of the normal Operator::GeoSpawner then this must be hand created.  
 				   As stars are generated, they are assigned to a region, and then are written out to the INI file.
-		  * bin\RS_Model.dat		
-		  * bin\terr.txt		
+		  bin\RS_Model.dat		
+		  bin\terr.txt		
 
 PathFinding(PF)	: bin\EpicaPathFinding.vshost.ini
 			Defines Primary server port.
-		  * bin\PF_Model.dat		
-		  * bin\terr.txt		
+		  bin\PF_Model.dat		
+		  bin\terr.txt		
 			
 		
 
