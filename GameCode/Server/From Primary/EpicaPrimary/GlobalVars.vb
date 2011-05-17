@@ -11494,7 +11494,55 @@ WORMHOLE_SAVE_BEGIN:
         lEndY = lAxisY + -CSng((dDX * Math.Sin(dRads)) - (dDY * Math.Cos(dRads)))
     End Sub
 
+#Region "  IP Parsing  "
+    Public Function ParseForIpAddress(ByVal sIpAddress As String, Optional ByRef bRoutable As Boolean = True) As String
+        'bRoutable: Only return routable ip's, not 10.x.x.x or 192.168.x.x or 172.16.x.x ~ 172.31.x.x or 5.0.x.x ~ 5.63.0.0
+        'Will return Routable as a first priority
+        If sIpAddress.ToLower = sIpAddress.ToUpper Then Return sIpAddress
+        Dim sTempIP As String = ""
+        Dim lPriority As Integer = 0
+        Dim lTempPriority As Integer = -1
 
+        If sIpAddress.ToUpper <> sIpAddress.ToLower Then 'Hostname -> Resolve it
+            Dim IPList As System.Net.IPHostEntry = System.Net.Dns.GetHostEntry(sIpAddress)
+            Dim IPaddr As System.Net.IPAddress
+            For Each IPaddr In IPList.AddressList
+                If (IPaddr.AddressFamily = System.Net.Sockets.AddressFamily.InterNetwork) Then
+                    If IsPrivateIP(IPaddr.ToString) = False Then
+                        Return IPaddr.ToString
+                    Else
+                        If lPriority > lTempPriority Then
+                            sTempIP = IPaddr.ToString
+                            lTempPriority = lPriority
+                        End If
+                    End If
+                End If
+            Next
+        End If
+        If bRoutable = False Then Return sTempIP
+        Return ""
+
+    End Function
+
+    Private Function IsPrivateIP(ByVal CheckIP As String, Optional ByRef lPriority As Integer = -1) As Boolean
+        Dim Quad() As Byte = CType(System.Net.IPAddress.Parse(CheckIP), System.Net.IPAddress).GetAddressBytes
+        Select Case Quad(0)
+            Case 10
+                lPriority = 30
+                Return True
+            Case 172
+                lPriority = 20
+                If Quad(1) >= 16 And Quad(1) <= 31 Then Return True
+            Case 5
+                lPriority = 10
+                If Quad(1) >= 0 And Quad(1) <= 63 Then Return True
+            Case 192
+                lPriority = 30
+                If Quad(1) = 168 Then Return True
+        End Select
+        Return False
+    End Function
+#End Region
 
 #Region "  Respawn List System  "
     Private Class RespawnListItem
@@ -11749,8 +11797,7 @@ WORMHOLE_SAVE_BEGIN:
         'End If
         Return myCompiledRespawnList
     End Function
-
 #End Region
-    
+
 
 End Module

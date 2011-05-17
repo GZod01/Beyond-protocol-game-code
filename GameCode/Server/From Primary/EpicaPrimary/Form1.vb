@@ -361,7 +361,7 @@ Public Class Form1
 
             gsOperatorIP = My.Application.CommandLineArgs(1)
             glOperatorPort = CInt(Val(My.Application.CommandLineArgs(2)))
-            gsExternalIP = My.Application.CommandLineArgs(3)
+            gsExternalIP = ParseForIpAddress(My.Application.CommandLineArgs(3))
             Return True
         Catch ex As Exception
             MsgBox("ParseCommandLine: " & ex.Message)

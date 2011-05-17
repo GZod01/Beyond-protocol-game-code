@@ -595,7 +595,7 @@ Public Class MsgSystem
                         If .uListeners(Y).lConnectionType = ConnectionType.eClientConnection Then
                             bFound = True
                             If .uListeners(Y).sIPAddress.ToUpper = "EXTERNALIPADDY" Then
-                                StringToBytes(gsExternalAddress).CopyTo(yResp, lPos) : lPos += 20
+                                StringToBytes(ParseForIpAddress(gsExternalAddress)).CopyTo(yResp, lPos) : lPos += 20
                             Else
                                 StringToBytes(.uListeners(Y).sIPAddress).CopyTo(yResp, lPos) : lPos += 20
                             End If
@@ -2131,7 +2131,7 @@ Public Class MsgSystem
                             If .uListeners(Y).lConnectionType = ConnectionType.eClientConnection Then
                                 bFound = True
                                 If .uListeners(Y).sIPAddress.ToUpper = "EXTERNALIPADDY" Then
-                                    StringToBytes(gsExternalAddress).CopyTo(yResp, lPos) : lPos += 20
+                                    StringToBytes(ParseForIpAddress(gsExternalAddress)).CopyTo(yResp, lPos) : lPos += 20
                                 Else
                                     StringToBytes(.uListeners(Y).sIPAddress).CopyTo(yResp, lPos) : lPos += 20
                                 End If
@@ -3498,7 +3498,7 @@ Public Class MsgSystem
 
 
                             If .uListeners(Y).sIPAddress.ToUpper = "EXTERNALIPADDY" Then
-                                StringToBytes(gsExternalAddress).CopyTo(yResp, lPos) : lPos += 20
+                                StringToBytes(ParseForIpAddress(gsExternalAddress)).CopyTo(yResp, lPos) : lPos += 20
                             Else
                                 StringToBytes(.uListeners(Y).sIPAddress).CopyTo(yResp, lPos) : lPos += 20
                             End If
