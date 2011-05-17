@@ -83,23 +83,26 @@ PathFinding(PF)	: bin\EpicaPathFinding.vshost.ini
 Server Project - Compile time Command Line Options
 ==================================================
 
-Operator	: None
+Operator	: Cmd Line Arguments "[Backup Operator ID]"
+		  Note: if Backup Operator ID is numeric > 0 then this instance of Operator is a backup
+		  Note: gsExternalAddress, gsMainOperatorIP, glMainOperatorPort must be compiled in. 
+                        TODO: Put these part of the INI or the command line.
 
 Box Operator 	: Installed a window service
 
-Email		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Mail Server IP]"
+Email		: Cmd Line Arguments "[BoxOperator ID] [Operator IP] [Operator Port]"
 			e.g. "1 10.70.5.156 7701 74.113.102.139"
 		  Configure the Email server User - Pass - etc inside globalvars.
 
-Primary		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Primary Server IP] [Primary Server Port]"
+Primary		: Cmd Line Arguments "[BoxOperator ID] [Operator IP] [Operator Port] [Primary External IP/Hostname] [Primary Server Port]"
 			e.g. "1 10.70.5.156 7701 74.113.102.139 7759"
 
-Region		: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [Region Server IP] [Region Server Port]"
+Region		: Cmd Line Arguments "[BoxOperator ID] [Operator IP] [Operator Port] [Region Server External IP/Hostname] [Region Server Port]"
 			e.g. "1 10.70.5.156 7701 74.113.102.139 7710"
 		  Note: Setup the number of regions on the operator console.  For a small universe "Expected Boxes" will be 1.  
 
-PathFinding(PF)	: Cmd Line Arguments "[Operator ID] [Operator IP] [Operator Port] [PF Server IP]"
-			e.g. "1 10.70.5.156 7701 74.113.102.139"
+PathFinding(PF)	: Cmd Line Arguments "[BoxOperator ID] [Operator IP] [Operator Port]"
+			e.g. "1 10.70.5.156 7701"
 
 Note: See the Server Setup guide for how to lay out the files.  Such as the Email Server needs the Templates\ dir located in the bin\ dir, along with some INI config.
 
