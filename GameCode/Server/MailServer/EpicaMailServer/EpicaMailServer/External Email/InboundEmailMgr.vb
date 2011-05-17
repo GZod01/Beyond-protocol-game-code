@@ -28,7 +28,7 @@ Public Class InboundEmailMgr
 
             Dim oMail As New Chilkat.MailMan
             'set up our credentials...
-			oMail.UnlockComponent("MATTHEWCAMMAILQ_XkMwRUTd4Tpy")
+            'oMail.UnlockComponent("PASTE_LICENSEKEY_HERE")
             oMail.MailHost = gsInHostName
             oMail.PopPassword = gsEmailPassword
             oMail.PopUsername = gsEmailUserName
