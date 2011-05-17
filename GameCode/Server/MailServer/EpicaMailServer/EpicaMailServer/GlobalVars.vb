@@ -1,7 +1,7 @@
 Public Module GlobalVars
     Public Const gl_SECONDS_TO_LIVE As Int32 = 28800        '8 hrs
 
-    Public gb_IS_TEST_SERVER As Boolean = False
+    Public gb_IS_TEST_SERVER As Boolean = True
 
     Public Enum PlayerAlertType As Byte
         eUnderAttack = 0
@@ -11,16 +11,13 @@ Public Module GlobalVars
         eColonyLost = 4
         eBuyOrderAccepted = 5
     End Enum
-    'Public gsOutHostName As String = "mail.epicaonline.com"
-    'Public gsOutEmailUserName As String = "fleetcommander@epicaonline.com"
-    'Public gsOutEmailPassword As String = "uuvb9nvb3"
-    'Public gsOutEmailFrom As String = "fleetcommander@epicaonline.com"
-    Public gsOutHostName As String = "10.70.5.51"
-    Public gsInHostName As String = "10.70.5.51"
-	Public gsEmailUserName As String = "fleetcommander" '@beyondprotocol.com"
-	Public gsEmailPassword As String = "nu4tuibezl@pspos"
-	Public gsOutEmailFrom As String = "fleetcommander@beyondprotocol.com"
-	Public gsReplyToDomain As String = "@beyondprotocol.com"
+
+    Public gsOutHostName As String = "smtpserver.mydomain.com"
+    Public gsInHostName As String = "pop3server.mydomain.com"
+    Public gsEmailUserName As String = "MyEmailAddress" 'before the @
+    Public gsEmailPassword As String = "MyEmailPassword"
+    Public gsOutEmailFrom As String = "fleetcommander@mydomain.com"
+    Public gsReplyToDomain As String = "@mydomain.com" 'This is appended to outgoing automated emails
 
     Public goOutQueue As MailQueue 
 
