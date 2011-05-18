@@ -19,7 +19,7 @@ Module GlobalVars
 	Public uSpawnRequests() As SpawnRequest
 	Public lSpawnRequestUB As Int32 = -1
 
-    Public glExpectedBoxCnt As Int32 = 6
+    Public glExpectedBoxCnt As Int32 = 1
 
 	Public gyBackupOperator As eyOperatorState = eyOperatorState.LonelyOperator
 	Public goOperatorSW As Stopwatch

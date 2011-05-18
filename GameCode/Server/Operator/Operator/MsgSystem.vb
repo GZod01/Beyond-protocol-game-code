@@ -1194,7 +1194,7 @@ Public Class MsgSystem
                 Case ConnectionType.eRegionServerApp
                     'are we done? if so, indicate server start to Primary and Regions
                     mlRegionReadyCnt += 1
-                    If mlRegionReadyCnt = 9 OrElse gb_IS_TEST_SERVER = True Then
+                    If mlRegionReadyCnt = glExpectedBoxCnt OrElse gb_IS_TEST_SERVER = True Then
                         Dim yMsg(1) As Byte
                         System.BitConverter.GetBytes(GlobalMessageCode.eDomainServerReady).CopyTo(yMsg, 0)
                         'uSpawnRequests(.lSpawnRequestIdx).oRelatedServer.oSocket.SendData(yMsg)
