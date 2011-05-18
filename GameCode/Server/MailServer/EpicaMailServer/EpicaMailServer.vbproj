@@ -41,10 +41,6 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ChilkatDotNet2, Version=8.3.0.0, Culture=neutral, PublicKeyToken=eb5fc1fc52ef09bd, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Chilkat Software Inc\Chilkat.NET-v2.0-Framework\ChilkatDotNet2.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -74,6 +70,20 @@
     <Compile Include="EpicaMailServer\External Email\InboundEmailMgr.vb" />
     <Compile Include="EpicaMailServer\BaseObjects\Player.vb" />
     <Compile Include="EpicaMailServer\MailSocket.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Client.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Component.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3ConnectException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Credential.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3LoginException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Message.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3MessageComponents.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3MessageException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3MissingBoundaryException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Parse.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3ReceiveException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3SendException.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3StateObject.vb" />
+    <Compile Include="EpicaMailServer\Pop3\Pop3Statics.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

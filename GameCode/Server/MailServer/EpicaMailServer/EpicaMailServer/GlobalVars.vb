@@ -91,7 +91,7 @@ Public Module GlobalVars
 
                     'Go and get our inbound emails
                     If oInSW.ElapsedMilliseconds > 1000 Then
-                        Dim lResult As Int32 = goInboundEmailMgr.RetreiveEmails()
+                        Dim bResult As Boolean = goInboundEmailMgr.RetreiveEmails()
                         'read one inbound email (if there is one)
                         goInboundEmailMgr.ParseEmailFile()
                         oInSW.Stop()
