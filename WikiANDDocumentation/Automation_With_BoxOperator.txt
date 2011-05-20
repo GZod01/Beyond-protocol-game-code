@@ -1,0 +1,215 @@
+1. Replace @EXTERNAL_IP@ with your external, outside nat, IpAddress or DNS HostName.
+2. Replace @INTERNAL_IP@ with your internal, primary server ip.
+3. run install.bat
+4. read startup.bat
+
+=============================
+DIR c:\BpServer /s
+=============================
+ Directory of C:\BpServer
+
+05/19/2011  09:33 PM    <DIR>          .
+05/19/2011  09:33 PM    <DIR>          ..
+05/19/2011  01:44 PM            69,632 BoxOperator.exe
+05/19/2011  09:29 PM               340 BoxOperator.ini
+
+05/19/2011  09:30 PM                91 install.bat
+05/19/2011  09:31 PM                62 startup.bat
+
+05/19/2011  09:32 PM    <DIR>          Mailserver
+05/19/2011  09:32 PM    <DIR>          Operator
+05/19/2011  09:12 PM    <DIR>          Pathfinding
+05/19/2011  09:32 PM    <DIR>          Primary
+05/19/2011  09:13 PM    <DIR>          Region
+
+ Directory of C:\BpServer\Mailserver
+
+05/19/2011  09:32 PM    <DIR>          .
+05/19/2011  09:32 PM    <DIR>          ..
+05/19/2011  01:07 PM           151,552 EpicaMailServer.exe
+04/30/2011  04:31 PM                36 EpicaMailServer.ini
+05/19/2011  09:21 PM             1,029 EpicaMailServer.sln
+05/19/2011  09:11 PM    <DIR>          Templates
+
+ Directory of C:\BpServer\Mailserver\Templates
+
+05/19/2011  09:11 PM    <DIR>          .
+05/19/2011  09:11 PM    <DIR>          ..
+04/30/2011  04:31 PM             1,285 Acquisition_Rossi.txt
+04/30/2011  04:31 PM             1,038 alliance_rossi.txt
+...
+04/30/2011  04:31 PM               599 War_Small_Space_Start.txt
+
+ Directory of C:\BpServer\Operator
+
+05/19/2011  09:32 PM    <DIR>          .
+05/19/2011  09:32 PM    <DIR>          ..
+05/12/2011  06:00 PM               380 EP01.udl
+05/19/2011  01:05 PM           315,392 Operator.exe
+05/04/2011  02:21 PM                84 Operator.ini
+
+ Directory of C:\BpServer\Pathfinding
+
+05/19/2011  09:12 PM    <DIR>          .
+05/19/2011  09:12 PM    <DIR>          ..
+05/17/2011  05:51 PM           151,552 EpicaPathfinding.exe
+05/19/2011  09:31 PM                87 EpicaPathfinding.ini
+01/16/2009  01:05 PM             7,473 PF_Model.dat
+08/19/2008  11:40 AM           187,577 terr.txt
+
+ Directory of C:\BpServer\Primary
+
+05/19/2011  09:32 PM    <DIR>          .
+05/19/2011  09:32 PM    <DIR>          ..
+05/19/2011  01:07 PM         1,900,544 EpicaPrimary.exe
+05/19/2011  02:03 PM               259 EpicaPrimary.ini
+05/12/2011  06:23 PM               380 EpicaPrimary.udl
+11/28/2006  04:09 PM             8,519 Female.txt
+11/29/2006  12:50 PM             3,882 LastName.txt
+11/28/2006  04:15 PM             8,242 Male.txt
+
+
+ Directory of C:\BpServer\Region
+
+05/19/2011  09:13 PM    <DIR>          .
+05/19/2011  09:13 PM    <DIR>          ..
+05/19/2011  02:02 PM           331,776 RegionServer.exe
+05/19/2011  02:02 PM               699 regionserver.ini
+01/16/2009  01:06 PM            16,551 RS_Model.dat
+08/19/2008  11:40 AM           187,577 terr.txt
+               4 File(s)        536,603 bytes
+
+
+=============================
+C:\bp\install.bat
+=============================
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe c:\BpServer\BoxOperator.exe
+
+=============================
+C:\bp\startup.bat
+=============================
+start c:\BpServer\Operator\Operator.exe
+net start BoxOperator
+
+=============================
+C:\bp\BoxOperator.ini
+=============================
+[CONNECTION]
+OperatorPort=7701
+OperatorIP=@INTERNAL_IP@
+
+[SETTINGS]
+ProcessDirectory=c:\BpServer
+OperatorListenerPort=8001
+ExternalIP=@EXTERNAL_IP@
+BackupOperator=Operator.exe
+Pathfinding=pathfinding\EpicaPathfinding.exe
+Primary=Primary\EpicaPrimary.exe
+Region=Region\RegionServer.exe
+MailServer=MailServer\EpicaMailServer.exe
+
+=============================
+C:\bp\Operator\Operator.ini
+=============================
+[SETTINGS]
+Perm_Save_UDL=EP01.udl
+ClientListenerPort=7779
+ServerListenerPort=7701
+
+=============================
+C:\bp\MailServer\EpicaMailServer.ini
+=============================
+[SETTINGS]
+PrimaryListenerPort=8000
+
+=============================
+C:\bp\Primary\EpicaPrimary.ini
+=============================
+[SETTINGS]
+Perm_Save_UDL=EpicaPrimary.udl
+DomainListenerPort=7777
+PathfindingListenerPort=7778
+ClientListenerPort=7759
+MOTD=Go to BeyondProtocol.com for more information!
+
+[CONNECTION]
+ConnectTimeout=10000
+EmailSrvrPort=8000
+EmailSrvrIP=@INTERNAL_IP@
+
+=============================
+C:\bp\PathFinding\EpicaPathFinding.ini
+=============================
+[SETTINGS]
+DomainListenPort=7790
+
+[PRIMARY]
+PortNumber=7778
+IPAddress=@INTERNAL_IP@
+
+=============================
+C:\bp\Region\RegionServer.ini
+=============================
+[SETTINGS]
+ClientListenPort=7710
+[PRIMARY]
+PortNumber=7777
+IPAddress=@INTERNAL_IP@
+[DOMAIN]
+ID1=36
+TypeID1=2
+ID2=88
+TypeID2=2
+ID3=81
+TypeID3=2
+ID4=89
+TypeID4=2
+ID5=91
+TypeID5=2
+ID6=95
+TypeID6=2
+ID7=97
+TypeID7=2
+ID8=75
+TypeID8=2
+ID9=76
+TypeID9=2
+ID10=77
+TypeID10=2
+ID11=78
+TypeID11=2
+ID12=82
+TypeID12=2
+ID13=83
+TypeID13=2
+ID14=84
+TypeID14=2
+ID15=85
+TypeID15=2
+ID16=90
+TypeID16=2
+ID17=92
+TypeID17=2
+ID18=96
+TypeID18=2
+ID19=98
+TypeID19=2
+ID20=93
+TypeID20=2
+ID21=94
+TypeID21=2
+ID22=99
+TypeID22=2
+ID23=100
+TypeID23=2
+ID24=79
+TypeID24=2
+ID25=80
+TypeID25=2
+ID26=86
+TypeID26=2
+ID27=87
+TypeID27=2
+[PATHFINDING]
+IPAddress=@INTERNAL_IP@
+PortNumber=7790
