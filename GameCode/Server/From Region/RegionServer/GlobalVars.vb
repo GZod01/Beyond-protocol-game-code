@@ -349,7 +349,7 @@ Module GlobalVars
             gsOperatorIP = My.Application.CommandLineArgs(1)
             glOperatorPort = CInt(Val(My.Application.CommandLineArgs(2)))
             gsExternalIP = ParseForIpAddress(My.Application.CommandLineArgs(3))
-            glExternalPort = CInt(Val(My.Application.CommandLineArgs(4)))
+            If My.Application.CommandLineArgs.Count > 4 Then glExternalPort = CInt(Val(My.Application.CommandLineArgs(4)))
 
             Return True
         Catch ex As Exception
