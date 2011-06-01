@@ -104,7 +104,7 @@ Public Class frmColonyResearch
                 lblItemCosts.Caption = "Item Costs"
                 lblResQueue.Caption = "Colonial Production Queue"
                 lblResFacs.Caption = "Production Facilities"
-                If muResearchers Is Nothing = False AndAlso muFactories.GetUpperBound(0) > 0 Then
+                If muFactoriesIs Nothing = False AndAlso muFactories.GetUpperBound(0) > 0 Then
                     lblResFacs.Caption = "Production Facilities (" & (muFactories.GetUpperBound(0) + 1).ToString & ")"
                 End If
                 txtQuantity.Visible = True
